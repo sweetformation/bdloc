@@ -1,0 +1,5 @@
+bdloc_app:
+    resource: "@BdlocAppBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

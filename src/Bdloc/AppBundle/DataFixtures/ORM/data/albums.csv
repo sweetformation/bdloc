@@ -1,0 +1,477 @@
+IdAlbum,Num,Titre,IdSerie,IdDessinateur,IdColoriste,IdScenariste,Editeur,Reference,Couverture,,Exlibris,NbPages,Planche,IdBEL,Exemplaires
+2,3,Ce qui est en bas,1,3,4,2,Les Humanoïdes Associés,2-7316-0241-4,johndifoolt3cequiestenbas1983.jpg,,johndifool03v_520.jpg,60,NULL,520,4
+3,5,5ème essence : galaxie qui songe,1,3,5,2,Les Humanoïdes Associés,2-7316-0531-6,johndifoolt5la5essence1galaxiequisonge1988.jpg,,johndifool05v_522.jpg,45,NULL,522,3
+4,6,5ème essence : La planète Difool,1,3,5,2,Les Humanoïdes Associés,2-7316-0532-4,johndifoolt6la5essence2laplanetedifool1988.jpg,,johndifool06v_523.jpg,46,NULL,523,7
+5,1,L'Incal Noir,1,3,6,2,Les Humanoïdes Associés,2-7316-0084-5,johndifoolt1lincalnoir1981.jpg,,johndifool01v_13464.jpg,50,NULL,13464,5
+6,2,L'Incal lumière,1,3,6,2,Les Humanoïdes Associés,2-7316-0135-3,johndifoolt2lincallumiere1982.jpg,,johndifool02v_519.jpg,52,NULL,519,4
+7,4,Ce qui est en haut,1,3,1,2,Les Humanoïdes Associés,2-7316-0361-5,johndifoolt4cequiestenhaut1985.jpg,,johndifool04v_521.jpg,57,NULL,521,2
+8,1,Adieu le père,2,5,7,2,Les Humanoïdes Associés,2-73161-197-9,incalavant1.jpg,,NULL,47,NULL,14057,5
+9,2,Détective privé de classe 'R',2,5,7,2,Les Humanoïdes Associés,2-7316-1198-7,Avantlincal02_01062002.jpg,,NULL,48,NULL,15872,1
+10,3,Croot,2,5,8,2,Les Humanoïdes Associés,2-7316-1438-2,Avantlincal03_27062002.jpg,,NULL,50,NULL,17298,1
+11,4,Anarcopsychotiques,2,5,8,2,Les Humanoïdes Associés,2-73161-439-0,incalavant4.jpg,,NULL,46,NULL,18044,4
+12,5,"Ouisky, SPV & homéoputes",2,5,8,2,Les Humanoïdes Associés,2-7316-1440-4,incalavant5.jpg,,NULL,48,NULL,19289,2
+13,6,Suicide allée,2,5,8,2,Les Humanoïdes Associés,2-7316-1441-2,incalavantcouv06a.jpg,,NULL,46,NULL,20865,3
+14,1,Fils de Flingue,3,9,1,2,Les Humanoïdes Associés,2-73161-083-2,JuanSolo01.jpg,,juansolo01v.jpg,58,juansolo01p.jpg,2452,4
+15,2,Les Chiens du pouvoir,3,9,10,2,Les Humanoïdes Associés,2-73161-134-0,JuanSolo02.jpg,,juansolo02v.jpg,52,juansolo02p.jpg,2453,6
+16,3,La Chair et la gale,3,9,1,2,Les Humanoïdes Associés,2-7316-1253-3,JuanSolo03.jpg,,juansolo03v.jpg,52,juansolo03p.jpg,2454,7
+18,4,Saint Salaud,3,9,9,2,Les Humanoïdes Associés,2-7316-1390-4,JuanSolo04.jpg,,juansolo04v.jpg,52,juansolo04p.jpg,2455,8
+19,1,Long feu,4,12,12,11,Casterman,2-203-38916-8,tueur01aS040104_04012004.jpg,,NULL,62,tueur01p.jpg,37800,3
+20,2,L'engrenage,4,12,12,11,Casterman,2-203-38941-9,TueurLe02.jpg,,tueur02v.jpg,62,tueur02p.jpg,2174,1
+21,3,La dette,4,12,12,11,Casterman,2-203-38966-4,tueur03.jpg,,NULL,54,tueur03p.jpg,5533,2
+22,4,Les liens du sang,4,12,12,11,Casterman,2-203-389982,tueur04.jpg,,tueur04v.jpg,54,tueur04p.jpg,17900,4
+23,5,La mort dans l'âme,4,12,12,11,Casterman,2-203-38600-2,tueur05couv.jpg,,tueur05v.jpg,54,tueur05p.jpg,30401,5
+24,6,Modus Vivendi,4,12,1,11,Casterman,978-2-203-00181-7,tueur06.jpg,,tueur06v.jpg,54,tueur06p.jpg,66991,2
+25,1,Joshua,5,14,14,13,Delcourt,2-906187-87-9,pouvoirinnocents01acouv.jpg,,NULL,64,NULL,NULL,2
+26,3,Providence,5,14,15,13,Delcourt,2-84055-077-6,pouvoirdesinnocents03couv.jpg,,NULL,56,pouvoirdesinnocents03p_8255.jpg,NULL,3
+27,4,Jessica,5,14,15,13,Delcourt,2-84055-183-7,pouvoirinnocents04couv.jpg,,NULL,56,pouvoirdesinnocents04p_3095.jpg,NULL,2
+28,NULL,L'outremangeur,6,17,17,16,Casterman,2-203-38913-3,outremangeur.jpg,,outremangeurv_6173.jpg,56,NULL,6173,3
+29,NULL,Sang des voyous (Le),7,19,19,18,Casterman,2-203-36606-0,SangDesVoyousLe_08092006.jpg,,NULL,64,NULL,57840,4
+30,NULL,Lettres et Carnets du front 1914-1918,8,20,20,20,Soleil Productions / France Inter,2-84946-597-6,parolesdepoilus.jpg,,parolesdepoilusv.jpg,79,parolesdepoilusp.jpg,58769,5
+31,NULL,Un homme est mort,9,22,22,21,Futuropolis,2-75480-010-7,unhommeestmort01.jpg,,unhommeestmort01v.jpg,62,unhommeestmortp.jpg,58496,6
+32,2,Jour de colère,10,23,24,23,Casterman,2-203-33415-0,giuseppebergman02.jpg,,NULL,166,NULL,7416,7
+33,NULL,L'intégrale,11,25,24,25,Vents d'Ouest,2-7493-0181-5,ibicusint.jpg,,NULL,530,IbicusIntegralep_51168.jpg,51168,2
+34,1,Quelque part entre les ombres,12,27,27,26,Dargaud,2-205-04965-8,Blacksad_01_15161.jpg,,blacksad01v.jpg,46,blacksad01p.jpg,15161,4
+35,2,Arctic-Nation,12,27,27,26,Dargaud,2-205-05199-7,Blacksad_02_24600.jpg,,blacksad02v.jpg,54,blacksad02p.jpg,24600,5
+36,3,Âme Rouge,12,27,27,26,Dargaud,2-205-05564-X,blacksadtome03.jpg,,Blacksad_03v_51823.jpg,54,blacksad03p.jpg,51823,6
+37,1,Volume 1,13,29,1,28,Gallimard,2-07-057311-7,aya1couvrc9_51991.jpg,,aya01v.jpg,96,ayadeyopougon01p.jpg,51991,2
+39,1,Aussi loin que je me rappelle...,15,33,33,32,Casterman,2-203-36501-3,anitabombacou01.JPG,,anita01v.jpg,44,NULL,727,4
+40,2,C'est pas parceque je suis pauvre...,15,33,33,32,Casterman,2-203-36502-1,anitabombacou02.JPG,,NULL,44,NULL,728,3
+41,3,"Un jour, j'ai arrêté de bosser...",15,33,1,32,Casterman,2-203-36503-X,anitabombacouv03.jpg,,anitabomba03v.jpg,44,NULL,817,2
+42,4,La vie est trop courte ...,15,33,33,32,Casterman,2-203-36504-8,anitabombacouv04.jpg,,anitabomba04v.jpg,44,NULL,1078,2
+43,1,Princesse Salma,16,35,35,34,Vents d'Ouest,2-86967-751-0,kucek01a.jpg,,kucek01av.jpg,46,kucek1a_p.jpg,735,5
+44,2,Kanchack le fourbe,16,35,35,34,Vents d'Ouest,2-86967-752-9,kucek02a.jpg,,kucek02av.jpg,46,kucek02a_p.jpg,736,6
+45,3,L'élu,16,35,35,34,Vents d'Ouest,2-86967-753-7,kucek03a.jpg,,kucek03av.jpg,46,kucek03a_p.jpg,896,7
+46,1,Où le regard ne porte pas...,17,35,36,34,Dargaud,2-205-05092-3,ouleregardneportepascouv01.jpg,,ouleregardneportepas01v.jpg,94,ouleregardneportepas01p_32202.jpg,32202,1
+47,2,Où le regard ne porte pas...,17,35,36,34,Dargaud,2-205-05098-2,OuLeRegardNePortePas02.jpg,,ouleregardneportepas02v.jpg,96,ouleregardneportepas02p_37938.jpg,37938,2
+48,1,Un ventre aride,18,38,1,37,Glénat,2-7234-3256-4,hariticouv01.jpg,,hariti01-v_6474.jpg,46,NULL,6474,3
+49,2,Le fruit de nos entrailles,18,38,1,37,Glénat,2-7234-3538-5,hariticouv02.JPG,,hariti02-v_23646.jpg,46,NULL,23646,2
+50,3,Toutes les sèves de l'aurore,18,38,1,37,Glénat,2-7234-4327-2,hariti03_39329.jpg,,hariti03-v_39329.jpg,46,NULL,39329,1
+51,NULL,Secteur 7,19,40,40,39,Glénat,2-7234-4863-0,Secteur7_09122005.jpg,,NULL,56,NULL,52530,5
+52,NULL,Mystère Ovale,20,41,41,41,Glénat,2-7234-3963-1,MystereOvale_09042004.jpg,,NULL,54,NULL,34641,3
+53,1,Rien ou presque,21,42,42,42,Glénat,2-7234-3672-1,akarus01.jpg,,NULL,52,NULL,22775,4
+54,2,"Dors, Petite Sœur",21,42,42,42,Glénat,2-7234-4087-7,akarus02_30102003.jpg,,NULL,54,NULL,30575,5
+55,1,L'épouvantail pointeur,22,44,1,43,Glénat,2-7234-3740-X,epouvpoint.jpg,,epouvantailpointeurv_21444.jpg,54,NULL,21444,6
+56,1,La chrysalide diaprée,23,46,46,45,Vents d'Ouest,2-86967-551-8,mangecoeur01a.JPG,,NULL,48,NULL,37942,7
+57,2,Dans le jeu des miroirs,23,46,46,45,Vents d'Ouest,2-86967-552-6,mangecoeur02a.JPG,,NULL,48,NULL,35166,4
+58,3,Le Rêve d'Argemme,23,46,46,45,Vents d'Ouest,2-86967-532-1,mangecoeur03a.JPG,,NULL,48,NULL,37941,3
+60,NULL,Black Hole,26,50,24,50,Delcourt,2-7560-0379-4,BlackHolein_11112006.jpg,,blackholeintv_59088.jpg,361,NULL,59088,7
+61,5,Spirit,27,51,51,51,Les Humanoïdes Associés,2-7316-0045-4,spiritle05.jpg,,spiritle05v.jpg,60,NULL,18728,5
+62,1,The hard goodbye,28,52,24,52,Dark horse books,1-593-07293-7,SinCity1_16032008_163359.jpg,,SinCity1_16032008_163359.jpg,200,NULL,NULL,4
+63,4,That yellow bastard,28,52,24,52,Dark horse books,1-593-07296-1,SinCity4_16032008_163353.jpg,,SinCity4_16032008_163353.jpg,223,AlbsinCity4_16032008_163353.jpg,NULL,2
+64,5,Family values,28,52,24,52,Dark horse books,1-593-07297-X,SinCity5_16032008_163347.jpg,,SinCity5_16032008_163347.jpg,126,AlbsinCity5_16032008_163347.jpg,NULL,5
+65,2,A dame to kill for,28,52,24,52,Dark horse books,1-593-07293-7,SinCity1_16032008_163359.jpg,,SinCity1_16032008_163359.jpg,200,NULL,NULL,1
+66,3,The big fat kill,28,52,24,52,Dark horse books,1-593-07293-7,SinCity1_16032008_163359.jpg,,SinCity1_16032008_163359.jpg,200,NULL,NULL,1
+67,6,"Booze, broads and bullets",28,52,24,52,Dark horse books,NULL,SinCity1_16032008_163359.jpg,,SinCity1_16032008_163359.jpg,200,NULL,NULL,4
+68,7,Hell and back,28,52,24,52,Dark horse books,NULL,SinCity1_16032008_163359.jpg,,SinCity1_16032008_163359.jpg,200,NULL,NULL,2
+69,NULL,NonNonBâ,29,53,24,53,Cornélius,2-915492-25-5,Nonnonba_09102006.jpg,,NULL,420,NULL,58486,3
+70,NULL,Le Gourmet Solitaire,30,55,24,54,Casterman,2-203-37334-2,GourmetSolitaireLe.jpg,,NULL,198,NULL,51375,4
+71,2,Paul a un travail d'été,31,56,24,56,Les éditions de la Pastèque,2-922585-08-5,paul02.jpg,,NULL,152,NULL,NULL,6
+72,3,Paul en appartement,31,56,24,56,Les éditions de la Pastèque,2-922585-22-0,Paul3_23062004.jpg,,NULL,104,NULL,36865,7
+73,4,Paul dans le métro,31,56,24,56,Les éditions de la Pastèque,2-922585-27-1,Paul4_24042005_46320.jpg,,NULL,91,NULL,46320,8
+74,1,Paul à la campagne,31,56,24,56,Les éditions de la pastèque,978-2-922585-01-8,Paul1a_24022008_153143.jpg,,Paul1a_24022008_153143.jpg,48,NULL,NULL,3
+75,1,Celui qui parle aux fantômes,32,57,57,57,Soleil Productions,2-84565-412-X,SagahNah01_17122002.jpg,,NULL,44,NULL,21339,1
+76,2,La confrérie des Tueurs de Monstres,32,57,57,57,Soleil Productions,2-84565-783-8,sagahnah02couv.jpg,,NULL,46,NULL,37508,2
+77,NULL,Le moral des troupes,33,58,24,58,Mécanique Générale,2-922827-14-3,MoralDesTroupesLe_24042005.jpg,,NULL,158,NULL,46321,4
+78,NULL,Réédition très très augmentée,34,58,24,58,Les 400 Coups,2-922827-27-5,QuelquesPeluresb_24122006.jpg,,NULL,126,NULL,59921,5
+79,NULL,Résine de synthèse,35,58,1,58,Mécanique Générale,2-922827-03-8,ResineDeSynthese_24042005.jpg,,NULL,90,NULL,46322,2
+81,NULL,Guide de la survie en Entreprise,36,59,60,59,Audie,2-85815-434-1,GuideDeLaSurvieEnEntreprise_13052005.jpg,,guidedelasurvieenentreprisev.jpg,45,NULL,46819,2
+82,1,Sigmund Freud - Le temps de chien,37,59,59,59,Dargaud,2-205-05291-8,UneAventureRocambolesqueDe01.jpg,,NULL,46,NULL,NULL,3
+83,1,Les cosmonautes du futur,38,59,62,61,Dargaud,2-205-04913-5,cosmonautesdufutur1.jpg,,cosmonautesfutur01v.jpg,46,NULL,1934,2
+84,2,Le retour,38,59,62,61,Dargaud,2-205-05078-8,cosmonautesdufutur2.jpg,,cosmonautesfutur02v.jpg,46,NULL,2175,3
+85,3,Résurrection,38,59,62,61,Dargaud,2-205-05293-4,cosmonautesdufutur03_08012004.jpg,,cosmonautesfutur03v.jpg,46,NULL,NULL,4
+88,1,Total souk pour Nic Oumouk,39,59,60,59,Dargaud,2-205-05686-7,nicoumouk01_45629.jpg,,nicoumouk01-v_45629.jpg,46,NicOumouk01p_45629.jpg,45629,5
+89,1,La vraie vie,40,59,62,63,Dargaud,2-205-05819-3,RetourALaTerreLe1b_13082005.jpg,,retouralaterre01bv_48729.jpg,46,NULL,48729,6
+90,4,Le déluge,40,59,62,63,Dargaud,2-205-05814-2,RetourALaTerreLe4_31082006.jpg,,retouralaterre04ver.jpg,46,retourterre_t4_57719.jpg,57719,7
+91,1,Le combat ordinaire,41,59,60,59,Dargaud,2-205-05425-2,combatordinaire01.jpg,,combatordinaire01v_24146.jpg,50,combatordinaire01p.jpg,NULL,2
+92,2,Les quantités négligeables,41,59,60,59,Dargaud,2-205-05589-5,combatordinaire02.jpg,,combatordinaire02v.jpg,60,combatordinaire02p.jpg,NULL,4
+93,3,Ce qui est précieux,41,59,60,59,Dargaud,2-205-05791-X,CombatOrdinaireLe03.jpg,,combatordinaire03v.jpg,60,combatordinaire03p.jpg,54294,5
+94,4,Planter des clous,41,59,60,59,Dargaud,978-2-205-06140-6,combatordinaire04_72375.jpg,,combatordinaire04v_72375.jpg,60,combatordinaire04p_72375.jpg,72375,6
+95,7,La java bleue,42,64,64,64,L'Association,2-84414-180-3,Pascinhs_29112005.jpg,,NULL,74,NULL,52293,2
+96,NULL,La fille du professeur,43,65,65,64,Dupuis,2-8001-3454-2,filleduprofesseura_15102003.jpg,,NULL,60,NULL,30310,4
+97,1,La Bar-Mitsva,44,64,62,64,Dargaud,2-205-05820-7,chatdurabin01libe.jpg,,NULL,46,NULL,NULL,3
+98,2,Le Malka des Lions,44,64,62,64,Dargaud,2-205-05369-8,chatdurabin02_07112002.jpg,,NULL,46,NULL,NULL,2
+99,3,L'exode,44,64,62,64,Dargaud,2-205-05497-X,chatdurabbin03.JPG,,NULL,46,chatdurabbin03p_29897.jpg,NULL,2
+100,4,Le Paradis Terrestre,44,64,62,64,Dargaud,2-205-05725-1,chatdurabbin04couv.JPG,,chatdurabbin04v.jpg,48,chatdurabbin04p_50072.jpg,50072,5
+101,5,Jérusalem d'Afrique,44,64,62,64,Dargaud,2-205-05868-1,ChatDuRabbinLe05.jpg,,chatdurabbin05v.jpg,80,chatdurabbin05p_59668.jpg,59668,6
+102,1,Chez Francisque,45,59,59,66,Audie,2-85815-497-X,chezfrancisque01_58611.jpg,,chezfrancisque01v_58611.jpg,48,NULL,58611,7
+103,2,Les nuits les plus blanches,46,69,68,67,Les Humanoïdes Associés,2-7316-0986-9,monsieurjean02.jpg,,monsieurjean02v_1151.jpg,45,NULL,NULL,1
+104,3,La fuite des cerveaux,47,70,71,70,Dargaud,2-205-05867-3,Supermurgeman3_07102006.jpg,,NULL,48,NULL,58408,2
+105,12,La vie comme elle vient,48,61,62,61,Dargaud,2-205-05385-X,FormidablesAventuresDeLapinotLes8_03072004.jpg,,NULL,44,NULL,37048,3
+106,9,Vacances de printemps,48,61,62,72,Dargaud,2-205-04669-1,lapinot05.jpg,,NULL,46,NULL,NULL,2
+107,5,Pichenettes,48,61,62,61,Dargaud,978-2-205-06000-3,LapinotLesFormidablesAventuresDe2a_22012007.jpg,,NULL,46,NULL,60399,1
+108,1,La Vierge du bordel,49,74,73,73,Dargaud,2-205-05811-8,misspastouche01couv.JPG,,NULL,46,NULL,55261,5
+109,2,Du sang sur les mains,49,74,73,73,Dargaud,978-2205-05902-1,misspastouche02.JPG,,misspastouche02v.jpg,46,NULL,61056,3
+110,1,Nathalie,50,75,76,75,Dargaud,978-2-205-05798-0,Gus01_60211.jpg,,Gus01v_60211.jpg,78,Gus01p_60211.jpg,60211,4
+111,1,Londres,51,77,77,77,Vents d'Ouest,2-86967-115-5,PeterPan01.jpg,,NULL,48,peterpan01planche_3190.jpg,3190,5
+112,2,Opikanoba,51,77,77,77,Vents d'Ouest,2-86967-191-1,PeterPan02.jpg,,peterpan02v.jpg,58,PeterPan02p.jpg,3194,6
+113,4,Mains rouges,51,77,77,77,Vents d'Ouest,2-86967-520-8,PeterPan04.jpg,,peterpan04v.jpg,56,PeterPan04p.jpg,3193,7
+114,5,Crochet,51,77,77,77,Vents d'Ouest,2-86967-849-5,PeterPan05.jpg,,peterpan05v.jpg,50,peterpan05planche_7929.jpg,7929,4
+115,6,Destins,51,77,77,77,Vents d'Ouest,2-7493-0127-0,PeterPan06.jpg,,peterpan06v.jpg,46,PeterPan06p.jpg,40086,3
+116,3,Tempête,51,77,77,77,Vents d'Ouest,2-86967-292-6,PeterPan03.jpg,,peterpan03v.jpg,57,PeterPan03p.jpg,3192,7
+117,1,A la recherche de peter pan,52,78,78,78,Le lombard,2-8036-590-8,ALaRechercheDePeterPan1c_11022008_172842.jpg,,ALaRechercheDePeterPan1c_11022008_172842.jpg,52,NULL,71552,5
+118,2,A la recherche de peter pan,52,78,78,78,Le Lombard,2-8036-591-9,ALaRechercheDePeterPan2c_11022008_172617.jpg,,ALaRechercheDePeterPan2c_11022008_172617.jpg,67,NULL,71551,4
+119,3,"Révolution, révolution...",53,79,79,79,Glénat,2-7234-1516-3,sambrecouv03.JPG,,sambre03v.jpg,50,Sambre03p_332.jpg,332,2
+120,5,Maudit soit le fruit de ses entrailles...,53,79,79,79,Glénat,2-7234-3548-2,sambre05.jpg,,sambre05v.jpg,44,Sambre05p_28929.jpg,28929,5
+121,1,Plus ne m'est rien...,53,79,79,80,Glénat,2-7234-0641-5,sambrecouv01.JPG,,sambre01v.jpg,47,Sambre01p_330.jpg,330,1
+122,2,Je sais que tu viendras...,53,79,79,79,Glénat,2-7234-1139-7,sambrecouv02.JPG,,sambre02v.jpg,46,Sambre02p_331.jpg,331,1
+123,4,Faut-il que nous mourions ensemble...,53,79,79,79,Glénat,2-7234-2000-0,sambrecouv04.JPG,,sambre04v.jpg,53,Sambre04p_947.jpg,947,4
+124,1,"Hugo & Iris, Chapitre 1 - Printemps 1830",54,81,82,79,Futuropolis,978-2-7548-0057-0,guerredessambre01.jpg,,guerredessambresdos01.jpg,54,NULL,62835,2
+125,4,L'oeuf des ténébres,55,77,77,83,Dargaud,2-205-03460-X,QuetedelOiseauduTempsLa04.jpg,,quetedeloiseaudutemps04v_322.jpg,62,quetedeloiseaudutemps04planche_322.jpg,322,3
+126,5,L'ami Javin,55,84,77,83,Dargaud,2-205-04394-3,QuetedelOiseauduTempsLa05.jpg,,queteoiseautemps05v.jpg,62,quetedeloiseaudutemps05planche_1361.jpg,1361,4
+127,6,Le grimoire des dieux,55,85,57,83,Dargaud,978-2-205-05633-4,quetedeloiseaudutemps06.jpg,,quetedeloiseaudutemps06v.jpg,64,quetedeloiseaudutemps06p.jpg,69122,6
+129,1,La conque de Ramor,55,77,86,83,Dargaud,2-205-02406-X,QuetedelOiseauduTempsLa01.jpg,,quetedeloiseaudutemps01v_15409.jpg,46,quetedeloiseaudutemps01planche_15409.jpg,15409,7
+130,2,Le temple de l'oubli,55,77,87,83,Dargaud,2-205-02576-7,QuetedelOiseauduTempsLa02.jpg,,quetedeloiseaudutemps02v_15408.jpg,47,quetedeloiseaudutemps02planche_15408.jpg,15408,8
+131,3,Le Rige,55,77,77,83,Dargaud,2-205-02952-5,QuetedelOiseauduTempsLa03.jpg,,quetedeloiseaudutemps03v_321.jpg,58,quetedeloiseaudutemps03planche_321.jpg,321,3
+132,2,Le grand trou,56,89,90,88,Les Humanoïdes Associés,2-7316-6340-5,koma02.jpg,,koma02ver.jpg,46,koma02p_35670.jpg,35670,1
+133,3,Comme dans les westerns,56,89,90,88,Les Humanoïdes Associés,2-7316-1648-2,Koma3_08032005.jpg,,koma03ver.jpg,46,koma03p.jpg,44939,2
+134,1,La voix des cheminées,56,89,90,88,Les Humanoïdes Associés,2-7316-6318-9,koma01_07102003.jpg,,koma01ver.jpg,46,koma01p.jpg,30115,4
+135,4,L'Hôtel,56,89,90,88,Les Humanoïdes Associés,2-7316-1792-6,Koma4_23052006.jpg,,koma04ver.jpg,46,koma04p.jpg,56250,5
+136,5,Le duel,56,89,90,88,Les Humanoïdes Associés,978-2-7316-1944-7,koma05.jpg,,koma05v.jpg,46,koma05p.jpg,66385,2
+137,1,Volume 1,57,89,24,89,Atrabile,2-940329-03-6,Lupuscouv01.jpg,,lupus01ver.jpg,92,NULL,23000,2
+138,2,Volume 2,57,89,24,89,Atrabile,2-940329-10-9,lupus02_21012004.jpg,,lupus02ver.jpg,92,NULL,32536,3
+139,3,Volume 3,57,89,24,89,Atrabile,2-940329-18-4,lupus03couv.jpg,,lupus03v_46445.jpg,92,NULL,46445,2
+140,4,Volume 4,57,89,24,89,Atrabile,2-940329-23-0,lupus04.jpg,,lupus04v_54387.jpg,108,NULL,54387,3
+144,4,Le mystère de l'île étrange,58,92,92,91,Delcourt,2-84055-335-X,DeCapeEtDeCrocs4a_13032006.jpg,,NULL,46,NULL,54289,4
+145,5,Jean sans lune,58,92,92,91,Delcourt,2-84055-578-6,DeCapeEtDeCrocs5a_13032006.jpg,,NULL,46,NULL,54290,5
+148,8,Le maître d'armes,58,92,92,91,Delcourt,978-2-7560-0318-4,decapeetdecrocs08_68195.jpg,,DeCapeEtDeCrocs8_31102007_071208.jpg,46,decapeetdecrocs08p.jpg,68195,6
+151,NULL,Les petits ruisseaux,61,25,25,25,Futuropolis,2-7548-0016-6,PetitsRuisseauxLes_06052006.jpg,,petitsruisseauxv.jpg,92,NULL,55760,7
+155,NULL,Intégrale,63,103,103,47,Delcourt,2-84055-263-9,VPourVendettacintegrale.jpg,,NULL,272,NULL,7823,2
+160,2,Tome 2,65,65,65,106,Dupuis,2-8001-3540-9,photographele02_38982.jpg,,photographele02-v_38982.jpg,76,Photographe02p_38982.jpg,38982,4
+161,3,Tome 3,65,65,65,106,Dupuis,2-8001-3544-1,photographele03_53163.jpg,,photographele03-v_53163.jpg,96,Photographe03p_53163.jpg,53163,5
+162,NULL,Notes pour une histoire de guerre,66,107,24,107,Actes Sud,2-7427-5352-4,notespourunehistoiredeguerre.JPG,,NULL,96,NULL,42931,6
+163,1,Riyad-sur-Seine,67,89,89,108,Gallimard,978-2-07-057907-5,RG01.jpg,,rgverso.jpg,104,rg_t1_62698.jpg,62698,2
+164,2,Bangkok-Belleville,67,89,89,108,Gallimard,978-2-07-061527-8,Rg2_18032008_201939.jpg,,Rg2_18032008_201939.jpg,104,Albrg2_18032008_201939.jpg,72828,4
+165,NULL,Lucille,68,109,24,109,Futuropolis,2-7548-0051-4,Lucille_31012006.jpg,,LucilleVerso_53607.jpg,544,LucillePlanche_53607.jpg,53607,3
+166,NULL,Le réducteur de vitesse,69,75,76,75,Dupuis,2-8001-2801-1,ReducteurDeVitesseLeb_14082007_174306.jpg,,NULL,76,NULL,65798,2
+167,1,Le roi de Paris,70,110,24,110,Audie,2-85815-263-2,blotch01.jpg,,blotch01v_1891.jpg,45,NULL,1891,2
+168,2,Face à son destin,70,110,24,110,Audie,2-85815-286-1,blotch02couv.jpg,,blotch02v_24876.jpg,51,NULL,24876,5
+169,NULL,Péplum,71,110,24,110,Cornélius,2-909990-33-8,Pepluma_13062004.jpg,,NULL,112,NULL,36604,6
+170,26,Le Royaume sous le Sable,72,112,113,111,Le Lombard,2-8036-1665-3,thorgal26.jpg,,thorgal26_verso.jpg,46,Thorgal26p.jpg,6894,7
+171,27,Le barbare,72,112,113,111,Le Lombard,2-80361-775-7,thorgal27.jpg,,thorgal27_verso.jpg,46,Thorgal27p.jpg,19993,1
+172,28,Kriss de Valnor,72,112,113,111,Le Lombard,2-80362-003-0,thorgal28.jpg,,thorgal28_verso.jpg,46,Thorgal28p.jpg,39436,2
+173,29,Le sacrifice,72,112,112,111,Le Lombard,2803621983,Thorgal29_24112006.jpg,,thorgal29v.jpg,46,thorgal29p.jpg,59361,3
+174,30,"Moi, Jolan",72,112,112,114,Le Lombard,978-2-80362-265-8,thorgal30.jpg,,thorgal30v.jpg,46,Thorgal30planche.jpg,67373,2
+175,1,La magicienne trahie,72,112,1,111,Lombard,2-8036-0358-6,thorgal01a.jpg,,NULL,46,NULL,43224,1
+176,2,L'île des mers gelées,72,112,1,111,Lombard,2-8036-0359-4,Thorgal2b_30012005.jpg,,thorgal02a.jpg,46,NULL,43223,5
+177,3,Les trois vieillards du pays d'Aran,72,112,1,111,Le Lombard,2-8036-0001-3,Thorgal3a_10022005.jpg,,NULL,46,thorgal03ap.jpg,43922,3
+178,4,La galère noire,72,112,112,111,Le Lombard,2-8036-0026-9,Thorgal4b_24082005.jpg,,NULL,46,NULL,49343,4
+179,5,Au-delà des ombres,72,112,1,111,Le Lombard,2-8036-0407-8,Thorgal5a_12062004.jpg,,NULL,46,NULL,36547,5
+180,6,La chute de Brek Zarith,72,112,1,111,Le Lombard,2-8036-0451-5,Thorgal06a.jpg,,NULL,46,NULL,35506,6
+181,7,L'enfant des étoiles,72,112,112,111,Le Lombard,2-8036-0460-4,Thorgal07a.jpg,,NULL,46,NULL,49345,7
+182,8,Alinoë,72,112,112,111,Le Lombard,2-8036-0482-5,Thorgal8b_24082005.jpg,,NULL,46,NULL,49346,4
+183,9,Les archers,72,112,1,111,Le Lombard,2-80361-423-5,Thorgal09a.jpg,,NULL,46,NULL,49347,3
+184,10,Le pays Qâ,72,112,1,111,Le Lombard,2-8036-0549-X,Thorgal10a_10022005.jpg,,NULL,46,NULL,43924,7
+185,11,Les yeux de tanatloc,72,112,112,111,Le Lombard,2-8036-0576-7,Thorgal11a_23022008_094737.jpg,,Thorgal11a_23022008_094737.jpg,46,NULL,71882,5
+186,12,La cité du dieu perdu,72,112,1,111,Lombard,2-8036-0639-9,Thorgal12a.jpg,,NULL,46,NULL,49348,4
+188,14,Aaricia,72,112,1,111,Le Lombard,2-8036-0745-X,Thorgal14a_10022005.jpg,,NULL,46,NULL,43926,2
+189,15,Le maître des montagnes,72,112,1,111,Le Lombard,2-8036-0754-9,Thorgal15a_10022005.jpg,,NULL,46,NULL,43927,5
+190,16,Louve,72,112,1,111,Le Lombard,2-8036-0845-6,Thorgal16a_10022005.jpg,,NULL,46,NULL,43928,1
+191,17,La gardienne des clés,72,112,1,111,Le Lombard,2-8036-0932-0,Thorgal17a_10022005.jpg,,NULL,46,NULL,43929,1
+192,18,L'épée-Soleil,72,112,1,111,Le Lombard,2-8036-0988-6,Thorgal18a_10022005.jpg,,NULL,46,NULL,43930,4
+193,19,La forteresse invisible,72,112,113,111,Le Lombard,2-8036-1052-3,Thorgal19a_23022008_103421.jpg,,Thorgal19a_23022008_103421.jpg,46,NULL,71890,2
+194,21,La couronne d'ogotaï,72,112,113,111,Le Lombard,2-8036-1161-9,Thorgal21a_23022008_104414.jpg,,Thorgal21a_23022008_104414.jpg,46,NULL,71892,3
+195,22,Géants,72,112,113,111,Le Lombard,2-8036-1220-8,Thorgal22a_23022008_104922.jpg,,Thorgal22a_23022008_104922.jpg,46,NULL,71893,4
+196,23,La cage,72,112,113,111,Le Lombard,2-8036-1275-5,thorgal23.jpg,,thorgal23_verso.jpg,46,Thorgal23p.jpg,1109,6
+197,24,Arachnéa,72,112,113,111,Le Lombard,2-8036-1362-X,thorgal24.jpg,,thorgal24_verso.jpg,46,Thorgal24p.jpg,1588,7
+198,25,Le Mal bleu,72,112,113,111,Le Lombard,2-8036-1414-6,thorgal25.jpg,,thorgal25_verso.jpg,46,Thorgal25p.jpg,1803,8
+199,13,Entre terre et lumière,72,112,1,111,Le Lombard,2-8036-0713-1,Thorgal13a_10022005.jpg,,NULL,46,NULL,43925,3
+200,1,L'ivoire du Magohamoth,73,116,86,115,Soleil Productions,2-87764-257-7,lanfeustdetroy01fc_35653.jpg,,lanfeustdetroy01f-v_35653.jpg,44,NULL,35653,1
+201,2,Thanos l'incongru,73,116,86,115,Soleil Productions,2-87764-306-9,lanfeustdetroy02ac_29435.jpg,,lanfeustdetroy02a-v_29435.jpg,46,lanfeustdetroy02p.jpg,29435,2
+202,3,Castel Or-Azur,73,116,86,115,Soleil Productions,2-87764-394-8,lanfeustdetroy03ac_29436.jpg,,lanfeustdetroy03a-v_29436.jpg,52,lanfeustdetroy03p.jpg,29436,4
+203,4,Le paladin d'Eckmül,73,116,86,115,Soleil Productions,2-87764-566-5,lanfeustdetroy04ac_29437.jpg,,lanfeustdetroy04a-v_29437.jpg,45,lanfeustdetroy04p.jpg,29437,5
+204,5,Le frisson de l'haruspice,73,116,86,115,Soleil Productions,2-87764-646-7,lanfeustdetroy05cof.jpg,,lanfeustdetroy05cofv.jpg,52,lanfeustdetroy05p.jpg,20604,2
+205,6,Cixi impératrice,73,116,86,115,Soleil Productions,2-87764-795-1,lanfeustdetroy06cof.jpg,,lanfeustdetroy06cofv.jpg,46,lanfeustdetroy06p.jpg,20603,2
+206,7,Les pétaures se cachent pour mourir,73,116,15,115,Soleil Productions,2-87764-923-7,lanfeustdetroy07cof.jpg,,lanfeustdetroy07cofv.jpg,52,lanfeustdetroy07p.jpg,20602,3
+207,8,La bête fabuleuse,73,116,15,115,Soleil Productions,2-84565-110-4,lanfeustdetroy08cof.jpg,,lanfeustdetroy08cofv.jpg,58,lanfeustdetroy08p.jpg,10891,2
+208,1,"Un, deux... Troy",74,116,15,115,Soleil Productions,2-84946-125-3,LanfeustDesEtoiles01solo.jpg,,NULL,46,lanfeustdesetoiles01p.jpg,49553,3
+209,2,Les tours de Meirrion,74,116,15,115,Soleil Productions,2-84565-405-7,LanfeustDesEtoiles02.jpg,,lanfeustetoiles02v.jpg,46,lanfeustdesetoiles02p.jpg,24871,4
+210,3,Les sables d'Abraxar,74,116,15,115,Soleil Productions,2-84565-683-1,lanfeustdesetoilescouv03.jpg,,lanfeustetoiles03v.jpg,47,lanfeustdesetoiles03p.jpg,32527,5
+211,4,Les buveurs de mondes,74,116,15,115,Soleil Productions,2-84565-900-8,lanfeustdestoilesco04.jpg,,NULL,46,lanfeustdesetoiles04p.jpg,41053,6
+212,5,La chevauchée des bactéries,74,116,15,115,Soleil Productions,2-84946-318-3,lanfeustdesetoiles05.jpg,,lanfeustdesetoiles05v.jpg,48,lanfeustdesetoiles05p.jpg,52352,7
+213,6,Le râle du flibustier,74,116,15,115,Soleil Productions,2-84946-641-7,LanfeustDesEtoiles06.jpg,,lanfeustdesetoiles06v.jpg,51,lanfeustdesetoiles06p.jpg,59589,2
+214,7,Le secret des Dolphantes,74,116,15,115,Soleil Productions,978-2-302-00031-5,lanfeustdesetoiles07.jpg,,lanfeustdesetoiles07v.jpg,47,AlblanfeustDesEtoiles7_06122007_203300.jpg,69820,4
+215,2,Les projets,40,59,62,63,Dargaud,2-205-05732-4,RetourALaTerreLe2a_21012005.jpg,,NULL,45,NULL,42554,5
+216,3,Le vaste monde,40,59,62,63,Dargaud,2-205-05625-5,RetourALaTerreLe3_11012005.jpg,,retouralaterre03v.jpg,46,retouralaterre03p.jpg,NULL,6
+217,1,Les premiers mots,75,117,117,117,Dupuis,2-8001-0781-2,bidouilleetviolette01.jpg,,bidouilleetviolette01v.jpg,41,NULL,3403,2
+218,2,Les jours sombres,75,117,117,117,Dupuis,2-8001-0879-7,bidouilletviolette02.jpg,,bidouilleetviolette02v.jpg,47,NULL,3404,4
+219,3,La Reine des glaces,75,117,117,117,Dupuis,2-8001-1011-2,bidouilleetviolette03.jpg,,bidouilleetviolette03v.jpg,48,NULL,3405,3
+220,4,La ville de tous les jours,75,117,117,117,Dupuis,2-8001-1247-6,bidouille04.jpg,,bidouilleetviolette04v.jpg,44,NULL,3406,2
+221,1,Les Canons du 18 mars,76,119,24,118,Casterman,2-203-39927-9,cridupeuplecouv01_6697.jpg,,NULL,76,NULL,6697,2
+222,3,Les heures sanglantes,76,119,24,118,Casterman,2-203-39930-9,cridupeuplecouv03_28933.jpg,,cridupeuple03v_28933.jpg,74,NULL,28933,5
+223,2,L'espoir assassiné,76,119,24,118,Casterman,2-203-39929-5,cridupeuplecouv02_22778.jpg,,cridupeuple02v_22778.jpg,84,NULL,22778,6
+224,4,Le testament des ruines,76,119,24,118,Casterman,2-203-39931-7,cridupeuplecouv04_39428.jpg,,cridupeuple04v_39428.jpg,74,NULL,39428,7
+225,NULL,Guerre éternelle,77,121,122,120,Dupuis,2-8001-2640-X,guerreeternelle_int.jpg,,guerreeternelleintver.jpg,165,NULL,12495,1
+226,14,La machination Voronov,78,123,124,114,Blake et Mortimer,2-87097-052-8,blakeetmortimereditionbmcouv14.JPG,,blakeetmortimereditionbetm14v.jpg,62,BlakeMortimerEditionsBlakeMortimer14_p_7665.jpg,7665,2
+227,NULL,Le voyage en Italie,79,78,1,78,Dupuis,2-8001-3166-7,voyageenitalieint.jpg,,NULL,96,NULL,1169,3
+228,NULL,Zélie Nord - Sud,80,78,125,78,Le Lombard,978-2-8036-2400-3,ZelieNordSuda_03062008_200452.jpg,,ZelieNordSuda_03062008_200452.jpg,44,NULL,74975,2
+229,1,Tome 1,81,126,126,126,Dupuis,2-8001-2870-4,sursiscouv01b_30562.jpg,,sursisverso01b_30562.jpg,52,sursisle01p.jpg,30562,1
+230,2,Tome 2,81,126,126,126,Dupuis,2-8001-2598-5,sursiscouv02a_30561.jpg,,sursisverso02a_30561.jpg,54,sursisle02p.jpg,30561,5
+231,NULL,Intégrale,82,128,129,127,Glénat,2-7234-4042-7,gilsaintandreint_bel.jpg,,NULL,135,NULL,20824,3
+232,NULL,Le cahier bleu,83,123,123,123,Casterman,2-203-39103-0,cahierbleu01a.jpg,,cahierbleu01av_24868.jpg,68,cahierbleup.jpg,24868,4
+233,NULL,Un peu de fumée bleue,84,131,131,130,Dupuis,2-8001-2973-5,unpeudefumeebleucouv.jpg,,NULL,76,NULL,2108,5
+234,NULL,Le long voyage de Léna,85,123,123,132,Dargaud,2-205-05743-X,LongVoyageDeLenaLe_04092006.jpg,,longvoyagedelena01v.jpg,54,NULL,57770,6
+235,NULL,Après la pluie,86,123,123,123,Casterman,2-203-38906-0,apreslapluie.jpg,,apreslapluieverso.jpg,52,NULL,25589,7
+236,1,Le vol du corbeau - 1,87,126,126,126,Dupuis,2-8001-3141-1,volducorbeau01.JPG,,volcorbeau01v.jpg,54,volducorbeau01p.jpg,18220,4
+237,2,Le vol du corbeau - 2,87,126,126,126,Dupuis,2-8001-3376-7,VolDuCorbeauLe02.jpg,,volducorbeau02v.jpg,54,volducorbeau02p.jpg,45812,3
+238,NULL,Pilules Bleues,88,89,24,89,Atrabile,2-9700165-6-7,pilulesbleuesco.jpg,,pilulesbleuesver.jpg,190,pilulesbleuesp.jpg,7463,7
+239,1,Persepolis 1,89,133,24,133,L'Association,2-84414-058-0,persepolis01.jpg,,NULL,69,NULL,8457,5
+240,2,Persepolis 2,89,133,24,133,L'Association,2-84414-079-3,persepolis02.jpg,,NULL,100,NULL,6703,4
+241,3,Persepolis 3,89,133,24,133,L'Association,2-84414-104-8,Persepolis03_08092002.jpg,,persepolis03ver.jpg,92,NULL,18355,2
+242,4,Persepolis 4,89,133,24,133,L'Association,2-84414-137-4,persepolis04_19092003.jpg,,persepolis04ver.jpg,100,NULL,29303,5
+243,NULL,Poulet aux prunes,90,133,24,133,L'Association,2-84414-159-5,PouletAuxPrunes_13102004.jpg,,pouletauxprunesv.jpg,NULL,pouletauxprunesp.jpg,39901,1
+244,1,Premier Tome,91,134,134,134,Les Humanoïdes Associés,2-7316-1312-2,bibendumceleste01a.jpg,,NULL,60,NULL,NULL,1
+245,2,Deuxième tome,91,134,134,134,Les Humanoïdes Associés,2-7316-1367-X,BibendumCelesteLe02EO.jpg,,NULL,60,NULL,NULL,4
+246,3,Troisième tome,91,134,76,134,Les Humanoïdes Associés,2-7316-1451-X,BibendumCelesteLe03EO.jpg,,bibendumceleste03v_8237.jpg,67,NULL,8237,2
+247,NULL,Foligatto,92,134,1,135,Les Humanoïdes Associés,2-7316-1334-3,Foligatto1998.jpg,,NULL,60,NULL,36959,3
+248,1,Transports amoureux,93,134,136,134,Dupuis,2-8001-3625-1,Salvatore01.jpg,,salvatore01v_41768.jpg,46,Salvatore01p_41768.jpg,41768,4
+249,2,Le grand départ,93,134,76,134,Dupuis,2-8001-3834-3,salvatore02.jpg,,salvatore02ver.jpg,52,Salvatore02p_56511.jpg,56511,6
+250,1,Léon la came,94,134,134,137,Casterman,2-203-33609-9,Leonlacame01a_06112003.jpg,,NULL,120,NULL,30778,7
+251,2,Laid pauvre et malade,94,134,134,137,Casterman,2-203-35914-5,leonlacame02.jpg,,NULL,115,NULL,21314,8
+252,3,Priez pour nous,94,134,1,137,Casterman,2-203-35916-1,leonlacame03.jpg,,NULL,72,NULL,21305,3
+253,1,L'Anguille,95,138,139,137,Glénat,2-7234-1392-6,pontdanslavase01.jpg,,pontvase01v.jpg,46,NULL,6725,1
+254,2,Orlandus,95,138,140,137,Glénat,2-7234-1732-8,pontdanslavase02.jpg,,pontvase02v.jpg,46,NULL,6726,2
+255,3,Malocchio,95,138,140,137,Glénat,2-7234-2326-3,pontdanslavase03.jpg,,pontvase03v.jpg,46,NULL,6727,4
+256,4,Barthelemy,95,138,141,137,Glénat,2-7234-3174-6,pontdanslavase04.jpg,,pontvase04v.jpg,46,NULL,23339,5
+257,NULL,Pourquoi j'ai tué Pierre,96,143,144,142,Delcourt,2-7560-0380-8,PourquoiJaiTuePierre_14092006.jpg,,pourquoijaituepierrev.jpg,112,pourquoijaituepierrep.jpg,57975,2
+258,NULL,Intégrale,97,146,146,145,Delcourt,2-84055-044-X,legendescontreesoublieesint.jpg,,LEGENDESDESCONTREEOUBLIEESVINTA.jpg,NULL,NULL,2358,2
+259,1,La planète,98,147,147,147,Dargaud,2-205-04902-X,betelgeuse01.jpg,,betelgeuse01v_7480.jpg,46,Betelgeuse01p_7480.jpg,NULL,3
+261,3,L'expédition,98,147,147,147,Dargaud,2-205-05231-4,betelgeuse03.jpg,,betelgeuse03v_12692.jpg,46,Betelgeuse03p_12692.jpg,NULL,2
+262,4,Les cavernes,98,147,147,147,Dargaud,2-205-05475-9,betelgeusecou04.jpg,,betelgeuse04v_30572.jpg,46,Betelgeuse04p_30572.jpg,30572,3
+263,5,L'autre,98,147,147,147,Dargaud,2-205-05636-0,betelgeuse05.jpg,,betelgeuse05v.jpg,46,Betelgeuse05ESp_49318.jpg,49318,4
+264,1,Episode 1,99,147,147,147,Dargaud,978-2205-05889-5,Antares01.jpg,,antares01v.jpg,55,mondesdaldebaranantares01p_62073.jpg,62073,5
+265,1,Apparitions,100,147,148,147,Dargaud,2-205-05197-0,kenya01.jpg,,kenya01v_6463.jpg,46,kenya01p_6463.jpg,6463,6
+266,2,Rencontres,100,147,148,147,Dargaud,2-205-05335-3,kenyaco02.jpg,,kenya02v.jpg,46,kenya02p.jpg,22737,12
+267,3,Aberrations,100,147,148,147,Dargaud,2-205-05499-6,kenya03.jpg,,kenya03v.jpg,46,kenya03p_36465.jpg,36465,2
+268,4,Interventions,100,147,148,149,Dargaud,2-205-05712-X,Kenya04.jpg,,kenya04v.jpg,46,kenya04p.jpg,53166,4
+269,5,Illusions,100,147,150,149,Dargaud,978-2-205-06054-6,kenya05_74803.jpg,,kenya05v_74803.jpg,46,kenya05p_74803.jpg,74803,5
+271,1,tome 1,102,151,1,151,Soleil Productions,2-87764-764-1,petitpolio1_26112002.JPG,,NULL,50,NULL,NULL,6
+272,2,tome 2,102,151,1,151,Soleil Productions,2-87764-916-4,petitpolio2_26112002.JPG,,NULL,52,NULL,20958,2
+273,3,Mémé d'Arménie,102,151,1,151,Soleil Productions,2-84565-204-6,petitpolio3_19122002.JPG,,NULL,49,NULL,21393,4
+274,4,Les années ventoline,102,151,151,151,Futuropolis,978-2-7548-0026-6,PetitPolio3_11112007_125910.jpg,,NULL,59,NULL,68456,3
+275,1,Le bar du vieux français 1,103,152,152,130,Dupuis,2-8001-1910-1,barduvieuxfrancaiscouv01.jpg,,barfrancais14p.jpg,54,barduvieuxfrancais01p.jpg,6789,2
+277,NULL,La belette,104,153,24,153,Casterman,2-203-33417-7,Comes_Belette_01.jpg,,Comes_Belette_01v.jpg,140,Belette_p_22883.jpg,22883,2
+278,NULL,L'arbre-coeur,105,153,24,153,Casterman,2-203-33442-8,arbrecoeur_19012003.jpg,,arbrecoeurverso.jpg,84,NULL,22884,5
+279,2,Le Maître des Ténèbres,106,153,153,153,Casterman,2-203-33502-5,ergunlerrant02a.jpg,,ergunlerrant02av.jpg,44,ergunlerrant02p.jpg,32218,6
+280,NULL,"Dracula, Dracul, Vlad?, bah...",107,154,154,154,Les Humanoïdes Associés,2-73161-105-7,dracula_30082002.jpg,,NULL,80,NULL,18093,4
+281,NULL,L'arrière boutique du magasin général II,108,96,24,77,Casterman,2-203-34809-7,MagasinGeneral2hs_04112006.jpg,,MAGASINGENERALHSVT02.jpg,151,magasingeneral02hsp.jpg,58986,3
+282,1,Marie,108,96,57,77,Casterman,2-203-37011-4,magasingeneral01.jpg,,magasingeneral01v.jpg,76,NULL,54297,7
+283,2,Serge,108,96,57,77,Casterman,2-203-37013-0,magasingeneral02couv.jpg,,magasingeneral02v.jpg,68,magasingeneral02p.jpg,58729,5
+284,3,Les hommes,108,96,57,77,Casterman,978-2-203-34810-3,magasingeneral03.jpg,,magasingeneral03v.jpg,76,AlbmagasinGeneral4_31102007_063336.jpg,68193,4
+285,1,http://www.xxeciel.com/mémoires98,109,79,79,79,Les Humanoïdes Associés,2-7316-1406-4,xxcielcouv01a.jpg,,xxemesiecle01v_6553.jpg,59,XXeciel01ap_6553.jpg,NULL,2
+286,2,http://www.xxeciel.com/mémoires99,109,79,79,79,Les Humanoïdes Associés,2-7316-1416-1,xxcielcouv02.JPG,,xxemesiecle02v.jpg,62,XXeciel02p_6554.jpg,6554,5
+287,3,http://www.xxeciel.com/mémoires<19>00,109,79,79,79,Les Humanoïdes Associés,2-7316-1554-0,xxemeciel031900.jpg,,xxemecielcom1900v.jpg,72,XXeciel031p_40890.jpg,40890,1
+288,1,[avant]...,110,79,79,79,Futuropolis,2-7548-0005-0,cielaudessusdebruxelles01.jpg,,cielaudessusdebruxelles01v.jpg,68,NULL,54306,1
+289,2,...[après],110,79,79,79,Futuropolis,978-2-75480-084-6,cielaudessusdebruxelles02.jpg,,cielaudessusdebruxelles02v.jpg,94,cielaudessusdebruxelles02p.jpg,62194,4
+290,1,Le secret du Janissaire,58,92,92,91,Delcourt,2-84055-059-8,DeCapeEtDeCrocs1a_13032006.jpg,,DeCapeEtDeCrocs01.jpg,46,decapeetdecrocs01p_1063.jpg,1063,2
+291,2,Pavillon noir !,58,92,92,91,Delcourt,2-84055-143-8,DeCapeEtDeCrocs2a_13032006.jpg,,DeCapeEtDeCrocs02.jpg,46,decapeetdecrocs02p_1064.jpg,1064,3
+292,3,L'archipel du danger,58,92,92,91,Delcourt,2-84055-236-1,DeCapeEtDeCrocs3a_13032006.jpg,,DeCapeEtDeCrocs03.jpg,47,decapeetdecrocs03p_1354.jpg,1354,4
+293,6,Luna Incognita,58,92,92,91,Delcourt,2-84789-112-9,DeCapeEtDeCrocs5a_13032006.jpg,,decapeetdecrocs06v.jpg,46,decapeetdecrocs06p_35016.jpg,35016,6
+294,7,Chasseurs de Chimères,58,92,92,91,Delcourt,2-84789-925-1,decapeetdecrocs_07.jpg,,decapeetdecrocs07v.jpg,49,decapeetdecrocs07p_53167.jpg,53167,7
+303,1,Le secret des eaux,115,164,165,163,Delcourt,2-84789-103-X,AlimleTanneur01.jpg,,alimletanneur01v.jpg,46,alimletanneur01p.jpg,39219,8
+304,2,Le vent de l'exil,115,164,165,163,Delcourt,2-84789-946-4,alimletanneur_02.jpg,,alimletanneur02v.jpg,46,alimletanneur02p.jpg,54302,3
+305,3,La terre du prophète pâle,115,164,164,163,Delcourt,978-2-7560-0369-6,AlimLeTanneur3_27112007_232724.jpg,,AlimLeTanneur3_27112007_232724.jpg,54,AlbalimLeTanneur3_27112007_232724.jpg,69058,1
+314,NULL,Canoë Bay,111,156,156,155,Daniel Maghen,978-2-356-74009-0,CanoeBay_21032009_074933.jpg,,CanoeBay_21032009_074933.jpg,76,canoebay01p_85094_85149.jpg,85149,2
+316,5,Les révolutions,40,59,62,63,Dargaud,978-2-205-06235-9,RetourALaTerreLe5_29112008_200007.jpg,,RetourALaTerreLe5_29112008_200007.jpg,45,AlbretourALaTerreLe5_29112008_200007.jpg,80700,4
+317,1,Livre I : Le Chant d'Anoroer,113,160,160,159,Soleil Productions,2-84946-422-8,Servitude1.jpg,,Servitude01v_56319.jpg,52,servitude01p.jpg,56319,5
+318,2,Livre II : Drekkars,113,160,160,159,Soleil Productions,978-2-302-00214-2,Servitude2_18122008_214301.jpg,,Servitude2_18122008_214301.jpg,46,Albservitude2_18122008_214301.jpg,81914,2
+319,5,Poussière d'ange,15,33,33,32,Albin Michel,2-226-17542-3,AnitaBomba5_21112006.jpg,,anitabomba05v_59298.jpg,48,NULL,59298,2
+320,2,Beau bandit,50,75,76,75,Dargaud,978-2205-05953-3,Gus02_71318.jpg,,Gus02v_71318.jpg,84,Gus02p_71318.jpg,71318,3
+321,3,Ernest,50,75,170,75,Dargaud,978-2-205-06086-7,Gus3_01122008_184848.jpg,,Gus3_01122008_184848.jpg,88,Albgus3_01122008_184848.jpg,80841,2
+322,6,Au commencement,56,89,90,88,Les Humanoïdes Associés,978-2-7316-2188-4,koma06_79842.jpg,,koma06v_79842.jpg,46,koma06p_79842.jpg,79842,3
+323,8,Le sang des comètes,117,116,15,173,Soleil Productions,978-2-30200-382-8,lanfeustdesetoiles08_80608.jpg,,lanfeustdesetoiles08v_80608.jpg,54,lanfeustdesetoiles08p_80608.jpg,80608,4
+324,2,Episode 2,99,176,176,176,Dargaud,978-2-205-06185-7,Antares_02_84321.jpg,,MondesAldebaran_antares2v_84321.jpg,46,AlbmondesDaldebaranLesAntares2_20022009_113229.jpg,84321,5
+328,2,"Hugo & Iris, Chapitre 2 - Automne 1830",54,81,81,79,Futuropolis/Glénat,978-2-7548-0108-9,sambrelaguerredessambre02_78011.jpg,,sambrelaguerredessambre02v_78011.jpg,46,guerredessambre02_78011.jpg,78011,6
+329,31,Le bouclier de Thor,72,112,112,114,Le Lombard,978-2-8036-2486-7,thorgal31couv_80551.jpg,,thorgal31v_80551.jpg,46,Albthorgal31_26112008_132602.jpg,80551,7
+330,2,Vincent Van Gogh - La ligne de front,37,59,60,59,Dargaud,2-205-05466-X,UneAventureRocambolesqueDe02_34422.jpg,,UneAventureRocambolesqueDe02V_34422.jpg,46,NULL,34422,2
+334,1,Zoo 1,62,177,177,101,Dupuis,2-8001-2132-7,Zoo01.jpg,,Zoo01ver.jpg,70,zoo01ap.jpg,22784,4
+335,2,Zoo 2,62,177,177,101,Dupuis,2-8001-2324-9,Zoo02.jpg,,zoo02ver.jpg,62,zoo02ap.jpg,22785,5
+336,3,Zoo 3,62,177,177,101,Dupuis,978-2-8001-4004-9,zoo03.jpg,,zoo03v.jpg,72,zoo03p.jpg,68055,6
+337,1,Le nouveau rêve,118,178,7,2,Les Humanoïdes Associés,2-7316-1425-0,apreslincalcouv01.jpg,,apresincal01v.jpg,56,NULL,2101,2
+338,1,Monsieur Fruit - T1,119,134,24,134,Seuil,2-0202-3701-6,monsieurfruit01couv.jpg,,NULL,153,NULL,15788,4
+341,2,Monsieur Fruit - T2,119,134,24,134,Seuil,2-02-029670-5,MonsieurFruit02a.jpg,,NULL,149,NULL,51362,3
+342,4,Confessions,108,96,57,77,Casterman,978-2-203-01691-0,magasingeneral04_79885.jpg,,magasingeneral04v_79885.jpg,66,magasingeneral04p_79885.jpg,79885,11
+343,3,Le prince charmant,49,74,73,73,Dargaud,978-2205-06083-6,misspastouche03_77426.jpg,,misspastouche03v_77426.jpg,46,AlbmissPasTouche3_04092008_205317.jpg,77426,2
+344,2,Les survivants,98,176,176,176,Dargaud,2-205-04987-9,betelgeuse02.jpg,,Betelgeuse02v_7481.jpg,46,Betelgeuse02p_7481.jpg,NULL,5
+345,1,La catastrophe,120,176,176,176,Dargaud,2-205-04186-X,aldebaran01a.jpg,,NULL,48,NULL,26411,6
+346,2,La blonde,120,176,176,176,Dargaud,2-205-04968-2,aldebaran02a.jpg,,MondesDaldebaranLes2b_26412.jpg,46,NULL,NULL,7
+347,3,La photo,120,176,176,176,Dargaud,2-205-04969-0,MondesDaldebaranLes3b_07102007_170606.jpg,,MondesDaldebaranLes3b_07102007_170606.jpg,46,aldebaran03apl_67559.jpg,NULL,1
+348,4,Le groupe,120,176,176,176,Dargaud,2-205-04970-4,aldebaran04a.jpg,,MondesDaldebaranLesverso04_26414.jpg,46,NULL,NULL,2
+349,5,La créature,120,176,176,176,Dargaud,2-205-04968-2,MondesDaldebaranLes5c_20022008_101535.jpg,,MondesDaldebaranLes5c_20022008_101535.jpg,46,NULL,NULL,3
+350,2,Amy,5,14,14,13,Delcourt,2-84055-035-0,pouvoirinnocents02couv.jpg,,NULL,64,pouvoirdesinnocents02p_3093.jpg,NULL,2
+351,5,Sergent Logan,5,14,14,13,Delcourt,2-84055-440-2,pouvoirdesinnocents05couv.jpg,,pouvoirdesinnocents05v_7820.jpg,62,pouvoirdesinnocents05p_7820.jpg,7820,1
+352,1,Pourquoi cette nuit est-elle différente des autres nuits ?,121,65,76,64,Dupuis,2-8001-3149-7,olivesnoires01.jpg,,olivesnoires01v_2212.jpg,48,NULL,NULL,5
+353,2,Adam Harishon,121,65,76,64,Dupuis,2-8001-3220-5,olivesnoires02.jpg,,olivesnoires02v_7821.jpg,48,NULL,7821,3
+354,3,Tu ne mangeras pas le chevreau dans le lait de sa mère,121,65,76,64,Dupuis,2-8001-3378-3,olivesnoires03.jpg,,olivesnoires03v_22541.jpg,48,NULL,NULL,4
+355,1,Première époque (1914-1915),122,126,126,126,Futuropolis,978-2-7548-0113-3,matteo01_78761.jpg,,matteo01v_78761.jpg,62,matteop_78761.jpg,78761,5
+356,NULL,Troubles fêtes,123,77,77,180,Les Humanoïdes Associés,2-7316-0652-5,loiseltroublesreed.jpg,,loisel-troubles-reed-4emeplat.jpg,70,NULL,NULL,6
+358,NULL,Les portes du possible,124,182,182,181,Casterman,2-203-34322-2,portesdupossible.jpg,,portesdupossiblev.jpg,46,portesdupossiblep.jpg,51224,7
+367,1,La chanson,126,190,191,189,Delcourt,2-84055-686-3,ChevalierMalheur01couv_20081023_8860.jpg,,ChevalierMalheur01verso_20081023_8860.jpg,48,ChevalierMalheur01plan_20081023_8860.jpg,8860,4
+368,2,Citadelle,126,190,191,189,Delcourt,2-84055-903-X,ChevalierMalheur02couv_20081023_23695.jpg,,ChevalierMalheur02verso_20081023_23695.jpg,48,ChevalierMalheur02plan_20081023_23695.jpg,23695,3
+369,3,Tel père tel fils,126,190,192,189,Delcourt,2-84789-405-5,ChevalierMalheur03couv_20081023_42412.jpg,,ChevalierMalheur03verso_20081023_42412.jpg,46,ChevalierMalheur03plan_20081023_42412.jpg,42412,7
+373,4,Le déluge,127,193,193,193,Soleil Productions,2-84565-234-8,universalwarone4.jpg,,UniversalWarOne04v_7001.jpg,48,UniversalWarOne04p_7001.jpg,7001,5
+374,5,Babel,127,193,193,193,Soleil Productions,2-84565-406-5,universalwar05.jpg,,UniversalWarOne05v_39525.jpg,46,UniversalWarOne05p_39525.jpg,39525,4
+375,6,Le patriarche,127,193,193,193,Soleil Productions,2-84946-095-8,UniversalWarOne6_21062006.jpg,,universalwarone06v.jpg,46,UniversalWarOne06p_56815.jpg,56815,2
+376,1,Le bois sauvage,128,194,194,194,Delcourt,2-84055-107-1,VentDanslesSaulesLe01.JPG,,NULL,31,NULL,931,5
+377,2,"Auto, crapaud, blaireau",128,194,194,194,Delcourt,2-84055-168-3,ventdanslessaulescouv02.JPG,,NULL,32,NULL,1149,1
+378,3,L'échappée belle,128,194,194,194,Delcourt,2-84055-252-3,VentDanslesSaulesLe03.JPG,,NULL,32,ventdanslessaules03p.jpg,1753,1
+379,4,Foutoir au manoir,128,194,194,194,Delcourt,2-84055-580-8,VentDanslesSaulesLe04.JPG,,ventdanslessaules04ver.jpg,31,NULL,7127,4
+381,NULL,Animal'z,112,158,158,158,Casterman,978-2-203-01966-9,Animalz_10032009_223059.jpg,,Animalz_10032009_223059.jpg,96,animalz01p_84895.jpg,84895,2
+382,1,L'empire de Monsieur Joseph,114,128,162,161,Glénat,978-2-7234-5580-8,IlEtaitUneFoisEnFrance1_04102007_192650.jpg,,IlEtaitUneFoisEnFrance1_04102007_192650.jpg,54,AlbilEtaitUneFoisEnFrance1_04102007_192650.jpg,67443,3
+383,2,Le vol noir des corbeaux,114,128,162,161,Glénat,978-2-7234-6183-2,IlEtaitUneFoisEnFrance2_02102008_110958.jpg,,IlEtaitUneFoisEnFrance2_02102008_110958.jpg,56,AlbilEtaitUneFoisEnFrance2_02102008_110958.jpg,78501,4
+384,1,Papillons de nuit,129,197,197,196,Les Humanoïdes Associés,2-7316-1294-0,reseaubombyce01.jpg,,reseaubombyce01v.jpg,46,reseaubombyce01p.jpg,6185,6
+385,2,Monsieur lune,129,197,197,196,Les Humanoïdes Associés,2-7316-1460-9,reseaubombyce02.jpg,,reseaubombyce02v.jpg,46,reseaubombyce02p.jpg,21006,7
+386,1,L'invitation au voyage,130,194,194,194,Delcourt,2-84789-674-0,ventdanssables01_44911.jpg,,ventdanssables01v.jpg,32,ventdanslessables01p.jpg,44911,8
+387,2,Etranges étrangers,130,194,194,194,Delcourt,978-2-7560-0564-5,VentDansLesSablesLe2_17042007.jpg,,ventdanslessables02v.jpg,32,ventdanslessables02p.jpg,62060,3
+388,3,La Tentation du Désert,130,194,194,194,Delcourt,978-2-7560-1269-8,ventdanslessables03_84663.jpg,,ventdanslessables03v_84663.jpg,32,ventdanslessables03p_84663.jpg,84663,1
+389,9,Revers de fortune,58,92,92,91,Delcourt,978-2-7560-0835-6,Couv_96637.jpg,,Verso_96637.jpg,47,96637_pla.jpg,96637,2
+390,5,Montréal,108,96,57,77,Casterman,978-2-203-02463-2,Couv_97432.jpg,,Verso_97432.jpg,70,PlancheA_97432.jpg,97432,4
+391,3,Episode 3,99,176,176,176,Dargaud,978-2-205-06371-4,antaresmondesaldebaran03_103248.jpg,,antaresmondesaldebaran03v_103248.jpg,46,antaresmondesaldebaran03p_103248.jpg,103248,5
+392,7,La voie du Rige,55,198,57,83,Dargaud,978-2-205-06009-6,Couv_105589.jpg,,Verso_105589.jpg,66,quetedeloiseaudutemps07p_105589.jpg,105589,2
+393,3,"Hugo & Iris, Chapitre 3 - Hiver 1831",54,81,81,199,Futuropolis/Glénat,978-2-7548-0109-6,Couv_98900.jpg,,Verso_98900.jpg,56,PlancheA_98900.jpg,98900,2
+394,7,Le commun des mortels,4,12,12,11,Casterman,978-2-203-01438-1,tueur07_91979.jpg,,tueur07v_91979.jpg,54,tueur07p_91979.jpg,91979,3
+395,8,L'ordre naturel des choses,4,12,12,11,Casterman,978-2-203-03167-8,Tueur8-couv_110520.jpg,,Tueur8-verso_110520.jpg,54,Tueur8-planc_110520.jpg,110520,2
+396,NULL,Les armes du Meta-Baron,131,5,201,2,Les humanoïdes associés,978-2-7316-1447-3,ArmesDuMetabaronLes1_21092008_182642.jpg,,ArmesDuMetabaronLes1_21092008_182642.jpg,56,NULL,78033,3
+397,NULL,Les derniers corsaires,132,205,1,204,Les éditions de la Pastèque,2-922585-37-9,DerniersCorsairesLes_04082006.jpg,,NULL,62,NULL,57287,4
+398,1,Tome 1,133,207,207,206,Robert Laffont,978-2-221-10727-0,BoisDesViergesLe1_12022008_230258.jpg,,boisdesvierges01v_71599.jpg,54,BoisVierges01P2_71599.jpg,71599,5
+399,1,La Genèse,127,193,193,193,Soleil Productions,2-87764-807-9,UniversalWarOneQuadrantSolaire.jpg,,NULL,46,NULL,NULL,6
+400,NULL,Québec. un détroit dans le fleuve,59,20,20,20,Casterman,978-2-203-01448-0,Quebec_19032008_144825.jpg,,Quebec_19032008_144825.jpg,64,Albquebec_19032008_144825.jpg,72857,7
+401,NULL,Le petit Prince,134,64,62,64,Gallimard,978-2-07-060339-8,petitprincesfar_78379.jpg,,petitptincesfarv_78379.jpg,110,NULL,78379,2
+402,1,Grasse Carcasse,135,59,59,59,Dargaud,978-2-205-06397-4,Couv_97655.jpg,,Verso_97655.jpg,200,PlancheA_97655.jpg,97655,4
+404,NULL,Pachyderme,136,89,89,89,Gallimard,978-2-07-062704-2,pachyderme_93213.jpg,,pachydermev_93213.jpg,80,PachidermeP2_93213.jpg,93213,5
+405,4,Jusqu'à ce que la mort nous sépare,49,211,73,73,Dargaud,978-2-205-06292-2,misspastouche04_91861.jpg,,misspastouche04v_91861.jpg,46,misspastouche04p_91861.jpg,91861,6
+406,9,Le piège diabolique,137,212,213,212,Blake et Mortimer,2-87097-020-X,BlakeEtMortimerEditionsBlakeEtMortimer9a_08072007_211054.jpg,,NULL,62,NULL,64713,2
+408,2,Second livre,138,209,209,209,Futuropolis,978-2-7548-0103-4,Couv_106299.jpg,,Verso_106299.jpg,76,PlancheA_106299.jpg,NULL,4
+409,1,Le roi n'embrasse pas,139,64,62,64,Gallimard,978-2-07-061819-4,Couv_99015.jpg,,Verso_99015.jpg,138,PlancheA_99015.jpg,99015,3
+414,106,Révolutions,140,215,76,64,Delcourt,978-2-7560-0608-6,donjoncrepuscule106_88442.jpg,,donjoncrepuscule106v_88442.jpg,48,donjoncrepuscule106pl_88442.jpg,88442,2
+415,1,Cœur de canard,64,61,61,64,Delcourt,2-84055-197-7,DonjonZenith1.jpg,,donjonzenith01v.jpg,46,zenith1p_8933.jpg,NULL,2
+416,2,Le roi de la bagarre,64,61,76,64,Delcourt,2-84055-249-3,donjonzenith02_8935.jpg,,donjonzenith02verso_8935.jpg,46,zenith2p_8935.jpg,NULL,5
+417,1,Adèle et la bête,141,119,216,119,Casterman,2-203-30501-0,AdeleBlancsec1e_12022008_153356.jpg,,Verso_71591.jpg,46,AlbadeleBlancsec1e_12022008_153356.jpg,71591,6
+418,2,Le démon de la tour eiffel,141,119,216,119,Casterman,2-203-30502-9,AdeleBlancsec2c_12022008_153133.jpg,,AdeleBlancsec2c_12022008_153133.jpg,46,NULL,71586,7
+419,6,Le noyé à deux têtes,141,119,125,119,Casterman,2-203-30507-X,Adele_BlancSec_06.jpg,,Adele_BlancSec_06v.jpg,46,adeleblancsec06p.jpg,NULL,1
+420,1,Trois ombres,142,217,24,217,Delcourt,978-2-7560-0470-9,TroisOmbres_14092007_204959.jpg,,TroisOmbres_14092007_204959.jpg,268,AlbtroisOmbres_14092007_204959.jpg,NULL,2
+424,4,March of the wooden soldiers,143,186,187,183,DC Comics,1-401-20222-5,Fables4_07092007_214716.jpg,,Fables4_07092007_214716.jpg,223,NULL,66496,3
+425,5,The mean seasons,143,186,187,183,DC Comics,1-401-20486-4,Fables5_07092007_214710.jpg,,Fables5_07092007_214710.jpg,159,NULL,66495,2
+426,6,Homelands,143,186,187,183,DC Comics,1-401-20500-3,Fables6_07092007_214704.jpg,,Fables6_07092007_214704.jpg,184,NULL,66494,1
+427,7,Arabian nights (and days),143,186,187,183,DC Comics,1-401-21000-7,Fables7_07092007_214658.jpg,,Fables7_07092007_214658.jpg,137,NULL,66493,5
+428,8,Wolves,143,186,233,183,DC Comics,1-401-21001-5,Fables8_07092007_214652.jpg,,Fables8_07092007_214652.jpg,117,NULL,66492,3
+429,9,Sons of empire,143,20,233,183,DC Comics,978-1-401-21316-9,Fables9_07092007_214647.jpg,,Fables9_07092007_214647.jpg,193,NULL,66491,4
+430,10,The good prince,143,186,233,183,DC Comics,978-1-401-21686-3,FablesV010_26062008_200217.jpg,,FablesV010_26062008_200217.jpg,220,NULL,75687,5
+431,11,War and pieces,143,186,233,183,DC Comics,978-1-401-21913-0,Couv_100441.jpg,,NULL,192,NULL,100441,6
+432,1,Volume 1,144,55,24,238,Kana,2-87129-578-6,Lesommetdesdieux_07032004.jpg,,sommetdesdieux01v.jpg,318,sommetdesdieux01p_33801.jpg,33801,7
+433,2,Volume 2,144,55,24,238,Kana,2-87129-579-4,sommetdesdieux02couv.jpg,,sommetdesdieux02v.jpg,333,NULL,36774,4
+434,3,Volume 3,144,55,24,238,Kana,2-87129-580-8,SommetDesDieuxLe3_15102004.jpg,,sommetdesdieux03v.jpg,333,NULL,39918,3
+435,4,Volume 4,144,55,24,238,Kana,2-87129-721-5,sommetdesdieux04.jpg,,sommetdesdieux04v.jpg,306,NULL,44701,7
+436,5,Volume 5,144,55,24,238,Kana,2-87129-780-0,SommetDesDieuxLe5_17052005.jpg,,sommetdesdieux05v.jpg,300,NULL,46937,5
+438,2,Le bar du vieux français 2,103,152,152,130,Dupuis,2-8001-1996-9,barduvieuxfrancaiscouv02.jpg,,barfrancais24p.jpg,54,barduvieuxfrancais02p.jpg,6579,4
+439,1,Première partie,116,167,167,25,Futuropolis,2-7548-0033-6,marieenplastique01.jpg,,NULL,54,NULL,57821,2
+440,2,Seconde partie,116,167,168,25,Futuropolis,978-2-7548-0060-0,MarieEnPlastiqueLa2_02062007.jpg,,NULL,62,NULL,63206,5
+443,1,Tome 1,145,241,241,241,Dupuis,2-8001-3724-X,BouddhaDazurLe1_04102005.jpg,,Bouddhadazurle01v_50670.jpg,59,Bouddhadazurle01p_50670.jpg,50670,1
+444,2,Tome 2,145,241,241,241,Dupuis,2-8001-3839-4,bouddhadazurle_02.JPG,,bouddhadazur02v.jpg,75,Bouddhadazurle02p_59069.jpg,59069,1
+446,NULL,Un peu avant la fortune,146,67,136,242,Dupuis,978-2-8001-3854-1,UnPeuAvantLaFortune_27012008_111203.jpg,,UnPeuAvantLaFortune_27012008_111203.jpg,78,UPALF02_71106.jpg,71106,4
+447,NULL,Retour au collège,147,243,24,243,Hachette,2-01-235861-6,retouraucollegecouv.jpg,,NULL,90,NULL,49882,2
+448,1,(Livre premier),148,244,244,244,Futuropolis,978-2-7548-0239-0,Canarrive-couv_109573.jpg,,Verso_109573.jpg,60,Canarrive-planc_109573.jpg,109573,3
+449,NULL,Page Noire,149,246,247,245,Futuropolis,978-2-7548-0147-8,Couv_113972.jpg,,PageNoire-verso_113972.jpg,98,PageNoire-planc_113972.jpg,113972,4
+450,4,Là où brûlent les regards,115,164,164,163,Delcourt,978-2-7560-1264-3,Alim4-couv_98261.jpg,,Alim4-verso_98261.jpg,64,98261_pla.jpg,98261,6
+451,4,"L'Enfer, le silence",12,27,27,26,Dargaud,978-2-205-06313-4,Couv_113281.jpg,,Verso_113281.jpg,54,PlancheA_113281.jpg,113281,7
+452,2,Loup,133,207,207,206,Delcourt,978-2-7560-1903-1,Couv_115974.jpg,,Verso_115974.jpg,54,PlancheA_115974.jpg,115974,8
+453,6,Ernest Latulippe,108,96,57,77,Casterman,978-2-203-02616-2,Couv_117401.jpg,,Verso_117401.jpg,68,PlancheA_117401.jpg,117401,3
+454,3,Stigmates,129,197,253,252,Les Humanoïdes Associés,978-2-7316-1723-8,Couv_116124.jpg,,Verso_116124.jpg,46,PlancheA_116124.jpg,116124,1
+455,1,Eauxfolles,150,254,254,254,Delcourt,2-84055-005-9,nefdesfous01_589.jpg,,nefdesfous01v_589.jpg,46,nefdesfous01p_589.jpg,589,2
+456,2,Pluvior 627,150,254,254,254,Delcourt,2-84055-025-3,nefdesfous02_590.jpg,,nefdesfous02v_590.jpg,46,nefdesfous02p_590.jpg,590,4
+457,3,Turbulences,150,254,254,254,Delcourt,2-84055-129-2,nefdesfous03_950.jpg,,nefdesfous03v_950.jpg,54,nefdesfous03p_950.jpg,950,5
+458,4,Au turf,150,254,254,254,Delcourt,2-84055-456-9,nefdesfous04.jpg,,nefdesfous04v_2146.jpg,46,nefdesfous04p_2146.jpg,2146,2
+459,5,Puzzle,150,254,254,254,Delcourt,2-84055-838-6,NefDesFousLa05.jpg,,nefdesfous05.jpg,46,nefdesfous05p.jpg,46331,2
+460,6,Les Chemins énigmatiques,150,254,254,254,Delcourt,978-2-7560-0187-6,nefdesfous06.jpg,,nefdesfous06v.jpg,46,nefdesfous06p.jpg,60764,3
+461,7,Terminus,150,254,254,254,Delcourt,978-2-7560-1069-4,nefdesfous07_82677.jpg,,nefdesfous07v_82677.jpg,46,nefdesfous07p_82677.jpg,82677,2
+464,3,Honneur et Police,114,128,162,161,Glénat,978-2-7234-6873-2,Couv_94966.jpg,,Verso_94966.jpg,54,94966_pla.jpg,94966,3
+465,4,"Aux armes, citoyens !",114,128,162,161,Glénat,978-2-7234-7716-1,Couv_115654.jpg,,Verso_115654.jpg,62,PlancheA_115654.jpg,115654,4
+466,1,Home Sweet Home,151,257,257,256,Dargaud,978-2-87129-959-2,jazzmaynard01.jpg,,jazzmaynard01v.jpg,46,JazzMaynard1_62346.jpg,62346,5
+467,2,Mélodie d'El Raval,151,257,257,256,Dargaud,978-2-505-00347-2,JazzMaynard2_18042008_174047.jpg,,JazzMaynard2_18042008_174047.jpg,46,AlbjazzMaynard2_18042008_174047.jpg,73704,6
+468,3,Envers et contre tout,151,257,257,256,Dargaud,978-2-505-00509-4,JazzMaynard3_10012009_155254.jpg,,JazzMaynard3_10012009_155254.jpg,46,AlbjazzMaynard3_10012009_155254.jpg,82731,7
+469,4,Sans espoir,151,257,257,256,Dargaud,978-2-505-00805-7,Couv_106462.jpg,,Verso_106462.jpg,46,106462_pla.jpg,106462,2
+470,1,Première partie,152,259,259,13,Futuropolis,2-7548-0003-4,MemoireDansLesPochesLa1_07062006.jpg,,memoiredanslespoches01v.jpg,86,memoiredanslespoches01p.jpg,56523,4
+471,2,Deuxième partie,152,259,260,13,Futuropolis,978-2-7548-0099-0,memoireanslespoches02_87937.jpg,,memoireanslespoches02v_87937.jpg,69,memoireanslespoches02p_87937.jpg,87937,5
+472,1,La Géométrie du hasard,153,122,122,122,Quadrants,978-2-302-00093-3,QuelquesPasVersLaLumiere01_71184.jpg,,QuelquesPasVersLaLumiere01v_71184.jpg,46,QuelquesPasVersLaLumiere01p_71184.jpg,71184,6
+473,2,Le Voyage improbable,153,122,122,122,Quadrants,978-2-30200-543-3,quelquecouv_87030.jpg,,quelquedos_87030.jpg,46,AlbquelquesPasVersLaLumiere2_24042009_183148.jpg,87030,2
+474,3,Les Voyageurs de l'autre monde,153,122,122,122,Quadrants,978-2-302-01242-4,Couv_114228.jpg,,Verso_114228.jpg,46,PlancheA_114228.jpg,114228,4
+475,1,La marque du diable,154,262,262,261,Dargaud,2-87129-301-5,scorpion01.jpg,,scorpion01v.jpg,46,Scorpion01p_2052.jpg,2052,3
+476,2,Le secret du Pape,154,262,262,261,Dargaud,2-87129-352-X,scorpion02.jpg,,scorpion02v.jpg,46,Scorpion02p_6461.jpg,6461,2
+477,3,La croix de Pierre,154,262,262,261,Dargaud,2-87129-463-1,scorpion03couv.JPG,,scorpion03v.jpg,46,PlancheA_20698.jpg,20698,2
+478,4,Le Démon au Vatican,154,262,262,261,Dargaud,2-87129-570-0,scorpion04.JPG,,scorpion04v.jpg,46,Scorpion04p_34408.jpg,34408,5
+479,5,La vallée sacrée,154,262,262,261,Dargaud,2-87129-677-4,scorpion05.JPG,,scorpion05v.jpg,46,Scorpion05p_40160.jpg,40160,6
+480,6,Le trésor du Temple,154,262,262,261,Dargaud,2-87129-760-6,scorpion06.JPG,,scorpion06v.jpg,46,scorpion06p.jpg,51459,7
+481,7,Au Nom du Père,154,262,262,261,Dargaud,2-505-00018-2,scorpion07.jpg,,scorpion07v.jpg,46,PlancheA_58944.jpg,58944,1
+482,8,L'ombre de l'Ange,154,262,262,261,Dargaud,978-2-505-00474-5,scorpion08_79729.jpg,,scorpion08v_79729.jpg,46,scorpion08p_79729.jpg,79729,2
+483,9,Masque de la Vérité,154,262,262,261,Dargaud,978-2-505-00914-6,Couv_113222.jpg,,Verso_113222.jpg,46,113222_pla.jpg,113222,3
+484,1,La fille sous la dunette,155,264,264,264,Glénat,2-7234-0132-4,passagersduvent01_302.jpg,,passagersduvent01v_302.jpg,46,passagers1-planc_302.jpg,302,2
+485,2,Le ponton,155,264,264,264,Glénat,2-7234-0164-2,passagerduventcouv02eo.jpg,,passagersduvents02v_303.jpg,46,passagersduvents02p_303.jpg,303,1
+486,3,Le comptoir de Juda,155,264,264,264,Glénat,2-7234-0215-0,passagerduventcouv03eo.jpg,,passagersduvents03v_304.jpg,46,passagersduvents03p_304.jpg,304,5
+487,4,L'heure du serpent,155,264,264,264,Glénat,2-7234-0290-8,passagersduvent04.jpg,,passagersduvents04v_305.jpg,46,passagersduvents04p_305.jpg,305,3
+488,5,Le bois d'ébène,155,264,264,264,Glénat,2-7234-0440-4,passagersduvent05_306.jpg,,passagersduvents05v_306.jpg,46,passagersduvents05p_306.jpg,306,4
+489,6,La Petite Fille Bois-Caïman - Livre 1,155,264,264,264,12bis,978-2-356-48066-8,PassagersDuVent_06_93413.jpg,,PassagersDuVent_06_VER_93413.jpg,78,PassagersDuVent_06_PL_93413.jpg,93413,5
+490,7,La Petite Fille Bois-Caïman - Livre 2,155,264,264,264,12bis,978-2-356-48112-2,Couv_99109.jpg,,Verso_99109.jpg,64,PlancheA_99109.jpg,99109,6
+491,2,Volume 2,13,29,1,28,Gallimard,2-07-057588-8,AyaDeYopougon2_29092006.jpg,,ayadeyopougon02v.jpg,106,ayadeyopougon02p.jpg,NULL,7
+492,3,Volume 3,13,29,1,28,Gallimard,978-2-07-061543-8,AyaDeYopougon3_09102007_180143.jpg,,AyaDeYopougon3_09102007_180143.jpg,126,ayadeyopougon03p.jpg,NULL,4
+493,4,Volume 4,13,29,29,28,Gallimard,978-2-07-061995-5,AyaDeYopougon_04_80396.jpg,,AyaDeYopougon_04_VER_80396.jpg,106,AyaDeYopougon_04_PL_80396.jpg,NULL,3
+494,5,Volume 5,13,29,29,28,Gallimard,978-2-07-062803-2,Couv_98840.jpg,,Verso_98840.jpg,107,PlancheA_98840.jpg,98840,7
+495,6,Volume 6,13,29,29,28,Gallimard,978-2-07-069512-6,Couv_118426.jpg,,Verso_118426.jpg,104,PlancheA_118426.jpg,118426,5
+496,2,L'apocalypse selon Saint Jacky,135,59,59,59,Dargaud,978-2-205-06759-0,Couv_123954.jpg,,Verso_123954.jpg,208,PlancheA_123954.jpg,123954,4
+497,2,(Livre second),148,265,265,265,Futuropolis,978-2-7548-0393-9,Couv_116325.jpg,,Verso_116325.jpg,60,PlancheA_116325.jpg,116325,2
+498,7,Charleston,108,96,57,77,Casterman,978-2-203-03219-4,Couv_138758.jpg,,Verso_138758.jpg,78,PlancheA_138758.jpg,138758,5
+499,2,Deuxième époque (1917-1918),122,126,126,126,Futuropolis,978-2-7548-0114-0,Matteo2-couv_115131.jpg,,Matteo2-verso_115131.jpg,71,Matteo2-planc_115131.jpg,115131,1
+500,5,Paul à la pêche,31,56,24,56,Les éditions de la Pastèque,2-922585-39-5,paul5_59923.jpg,,NULL,200,NULL,59923,1
+501,6,Paul à Québec,31,56,24,56,Les éditions de la Pastèque,978-2-922585-70-4,Couv_87049.jpg,,Verso_87049.jpg,188,PlancheA_87049.jpg,87049,4
+502,7,Paul au parc,31,56,24,56,Les éditions de la Pastèque,978-2-923841-05-2,Couv_145258.jpg,,Verso_145258.jpg,144,PlancheA_145258.jpg,145258,2
+503,3,Une traversée mouvementée,93,134,76,134,Dupuis,978-2-8001-4085-8,Salvatore3_03102009_170132.jpg,,Verso_95349.jpg,52,Albsalvatore3_03102009_170132.jpg,95349,3
+504,4,Retour à Brest,93,134,76,134,Dupuis,978-2-8001-4849-6,Couv_115181.jpg,,Verso_115181.jpg,54,PlancheA_115181.jpg,115181,4
+505,6,La mer vue du Purgatoire...,53,199,199,199,Glénat,978-2-7234-4429-3,Couv_126674.jpg,,Verso_126674.jpg,64,PlancheA_126674.jpg,126674,6
+506,2,Animal farm,143,186,187,183,DC Comics,978-1-401-20077-0,Couv_99737.jpg,,Verso_99737.jpg,115,NULL,99737,7
+507,3,Storybook love,143,186,218,183,DC Comics,978-1-401-20256-9,Couv_99738.jpg,,Verso_99738.jpg,184,NULL,99738,8
+508,1,Legends in exile,143,184,185,183,DC Comics,978-1-563-89942-3,FablesV01_18102009_101424.jpg,,FablesV01_18102009_101424.jpg,112,NULL,97338,3
+512,4,Épisode 4,156,266,266,266,Dargaud,978-2-205-06765-1,Couv_138040.jpg,,Verso_138040.jpg,46,PlancheA_138040.jpg,138040,1
+513,1,Anomalies quantiques - Épisode 1,157,266,266,266,Dargaud,978-2-205-06524-4,Couv_120743.jpg,,Verso_120743.jpg,48,PlancheA_120743.jpg,120743,2
+514,1,Episode 1,158,267,268,266,Dargaud,978-2-205-06085-0,Couv_105592.jpg,,Verso_105592.jpg,46,105592_pla.jpg,105592,4
+515,2,Épisode 2,158,267,268,149,Dargaud,978-2-205-06529-9,Couv_117129.jpg,,Verso_117129.jpg,46,PlancheA_117129.jpg,117129,5
+516,1,Livre 1/2,159,270,271,269,Dargaud,978-2-205-06740-8,Couv_126734.jpg,,Verso_126734.jpg,54,PlancheA_126734.jpg,126734,2
+518,2,Livre 2/2,159,270,271,269,Dargaud,978-2-205-06764-4,Couv_138242.jpg,,Verso_138242.jpg,54,PlancheA_138242.jpg,138242,2
+520,NULL,Là où vont nos pères,60,100,100,100,Dargaud,978-2-205-05970-0,Couv_143518.jpg,,Verso_143518.jpg,116,PlancheA_143518.jpg,NULL,3
+521,3,Kettricken,160,274,275,273,Soleil Productions,978-2-302-00888-5,Couv_100036.jpg,,Verso_100036.jpg,46,PlancheA_100036.jpg,100036,2
+522,4,Molly,160,274,275,273,Soleil Productions,978-2-302-01235-6,Couv_115483.jpg,,Verso_115483.jpg,47,PlancheA_115483.jpg,115483,3
+523,1,Le bâtard,160,277,275,273,France Loisirs,978-2-298-03773-9,Couv_134606.jpg,,Verso_134606.jpg,46,PlancheA_134606.jpg,134606,4
+524,2,L'art,160,277,275,273,France Loisirs,978-2-298-04403-4,Couv_134608.jpg,,Verso_134608.jpg,46,PlancheA_134608.jpg,134608,5
+525,6,"L'Héritage du Kaiser - Château de Stolditz, Allemagne. 1936...",161,280,174,279,Delcourt,978-2-7560-1739-6,118033_c.jpg,,Verso_118033.jpg,54,118033_pla.jpg,118033,6
+526,5,"Gold Rush - Yukon, 1899...",161,282,283,281,Delcourt,978-2-7560-1738-9,115618_c.jpg,,Verso_115618.jpg,62,115618_pla.jpg,115618,7
+527,1,Premier livre,138,209,209,209,Futuropolis,978-2-7548-0102-7,LuluFemmeNue1_28102008_232856.jpg,,LuluFemmeNue1_28102008_232856.jpg,76,lulufemmenue01p_79439.jpg,NULL,2
+529,NULL,Là-bas,162,265,265,284,Dupuis,2-8001-3457-7,Labas_05092003.jpg,,labasv_28823.jpg,64,NULL,NULL,4
+530,2,Le fruit de la connaissance,127,193,193,193,Soleil Productions,2-87764-937-7,Couv_136848.jpg,,Verso_136848.jpg,46,NULL,136848,5
+532,3,Caïn et Abel,127,193,193,193,Soleil Productions,2-84565-037-X,Couv_136847.jpg,,Verso_136847.jpg,48,NULL,136847,6
+533,1,Esclaves,163,285,285,206,Dargaud,978-2-505-00971-9,Couv_115029.jpg,,Verso_115029.jpg,52,PlancheA_115029.jpg,115029,2
+534,1,Un héros sans cœur,164,286,286,2,Delcourt,978-2-7560-1942-0,115972_c.jpg,,Verso_115972.jpg,46,115972_pla.jpg,115972,4
+535,1,Le discours,165,14,14,13,Futuropolis,978-2-7548-0353-3,Couv_125488.jpg,,Verso_125488.jpg,34,PlancheA_125488.jpg,125488,3
+536,NULL,Julia & Roem,166,158,158,158,Casterman,978-2-203-03308-5,Couv_125622.jpg,,Verso_125622.jpg,84,PlancheA_125622.jpg,125622,2
+537,NULL,Essex County,167,287,24,287,Futuropolis,978-2-7548-0235-2,Couv_108626.jpg,,Verso_108626.jpg,496,PlancheA_108626.jpg,108626,2
+538,NULL,La Fugue,168,288,289,288,Éditions de la Pastèque,2-922585-30-1,FugueLaBlanchet_05082006.jpg,,NULL,136,NULL,NULL,5
+539,NULL,Body World,169,290,290,290,Dargaud,978-2-205-06316-5,Couv_118236.jpg,,NULL,384,NULL,118236,6
+540,NULL,Le journal d'un remplaçant,170,291,24,291,Delcourt,978-2-7560-0641-3,JournalDunRemplacantLe_30122006.jpg,,journaldunremplacantv.jpg,124,PlancheA_60018.jpg,NULL,7
+541,NULL,Broderies,171,133,24,133,L'Association,2-84414-095-5,Broderies_09022003.jpg,,NULL,130,NULL,NULL,1
+542,1,Comment je ne me suis pas fait kidnapper en Afghanistan,172,292,24,292,La boîte à bulles,978-2-84953-053-5,kaboul_1_67647.jpg,,KaboulDisco_01_VER_67647.jpg,145,kaboul_5_67647.jpg,67647,2
+543,NULL,Shenzhen,173,293,24,293,L'Association,2-84414-035-1,shenzen01_11278.jpg,,NULL,150,NULL,NULL,3
+544,NULL,Logicomix,174,295,296,294,Vuibert,978-2-7117-4351-3,Couv_112031.jpg,,Verso_112031.jpg,304,PlancheA_112031.jpg,112031,2
+545,NULL,Watchmen,25,48,49,47,DC Comics,0-930289-23-4,Watchmenint2_12072009_001753.jpg,,Watchmenint2_12072009_001753.jpg,416,Albwatchmenint2_12072009_001753.jpg,89404,1
+546,2,Final incal,118,300,300,2,Les Humanoïdes Associés,978-2-7316-1444-2,Couv_133712.jpg,,Verso_133712.jpg,62,PlancheA_133712.jpg,133712,5
+547,2,Renée,68,109,24,109,Futuropolis,2-7548-0085-9,Couv_120701.jpg,,Verso_120701.jpg,464,PlancheA_120701.jpg,120701,3
+548,3,Livre III - L'Adieu aux Rois,113,303,303,159,Soleil Productions,978-2-302-01893-8,Couv_142820.jpg,,Verso_142820.jpg,51,PlancheA_142820.jpg,142820,4
+549,32,La Bataille d'Asgard ,72,112,112,114,Le Lombard,978-2-8036-2754-7,Couv_117408.jpg,,Verso_117408.jpg,46,PlancheA_117408.jpg,117408,5
+550,33,Le Bateau-Sabre,72,112,112,114,Le Lombard,978-2-8036-2995-4,Couv_140423.jpg,,Verso_140423.jpg,46,PlancheA_140423.jpg,140423,6
+551,9,Concurrence déloyale,4,12,12,11,Casterman,978-2-203-03178-4,Couv_126818.jpg,,Verso_126818.jpg,54,PlancheA_126818.jpg,126818,7
+552,4,Le Chant des dunes,130,194,194,194,Delcourt,978-2-7560-1989-5,Couv_118876.jpg,,Verso_118876.jpg,32,118876_pla.jpg,118876,4
+553,1,Larmes d'abeille,175,198,57,77,Vents d'Ouest,978-2-7493-0268-3,GrandMortLe1_14112007_210502.jpg,,GrandMortLe1_14112007_210502.jpg,56,AlbgrandMortLe1_14112007_210502.jpg,68515,3
+554,2,Pauline...,175,198,57,77,Vents d'Ouest,978-2-7493-0394-9,GrandMort_02_79711.jpg,,GrandMort_02_VER_79711.jpg,58,GrandMort_02_PL_79711.jpg,79711,7
+555,3,Blanche,175,198,57,77,Vents d'Ouest,978-2-7493-0595-0,Couv_135013.jpg,,Verso_135013.jpg,54,PlancheA_135013.jpg,135013,5
+556,1,508 statues souriantes,176,305,305,13,Futuropolis,978-2-7548-0356-4,Couv_134093.jpg,,Verso_134093.jpg,48,PlancheA_134093.jpg,134093,4
+557,1,Chili con Carnage,177,306,283,163,Delcourt,978-2-7560-1807-2,Couv_124457.jpg,,Verso_124457.jpg,46,PlancheA_124457.jpg,124457,2
+558,1,Chroniques diplomatiques,178,75,308,307,Dargaud,978-2-205-06132-1,Couv_108242.jpg,,Verso_108242.jpg,94,108242_pla.jpg,108242,5
+559,2,Chroniques diplomatiques,178,75,308,307,Dargaud,978-2-205-06679-1,Couv_141851.jpg,,Verso_141851.jpg,96,PlancheA_141851.jpg,141851,1
+560,NULL,Frenchman,179,156,156,156,Daniel Maghen,978-2-356-74023-6,Couv_136258.jpg,,Verso_136258.jpg,74,PlancheA_136258.jpg,136258,1
+561,1,Les règles du jeu,180,309,309,13,Futuropolis,978-2-7548-0318-2,Couv_135303.jpg,,Verso_135303.jpg,48,PlancheA_135303.jpg,135303,4
+562,1,Quinquennat nerveux,181,291,291,291,Delcourt,978-2-7560-2824-8,141736_c.jpg,,NULL,NULL,NULL,141736,2

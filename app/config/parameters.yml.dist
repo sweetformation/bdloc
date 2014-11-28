@@ -1,0 +1,17 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: bdloc
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: smtp.mandrillapp.com
+    mailer_port: 587
+    mailer_user: machinchoseformation@gmail.com
+    mailer_password: 38Utc_Sd5KdI4sz0Gr2Y4g
+    locale: fr
+    secret: fjdsf323093R32a09ewIJrqrjqr9bczcvEjfdgpfqewr543534Fw
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true

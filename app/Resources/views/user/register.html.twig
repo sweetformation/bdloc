@@ -7,7 +7,14 @@
 {% endblock %}
 
 {% block main_content %}
-    <div>Abonnement : Informations personnelles, choix du point relais, choix du mode d'abonnement et paiement</div>
+    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+    <div id="menuAbonnement">
+        <ul>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+        </ul>
+    </div>
     <h1 class="formTitle">Abonnement | Informations personnelles</h1>
     {{ form(registerForm, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}

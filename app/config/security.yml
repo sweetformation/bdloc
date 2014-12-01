@@ -15,7 +15,7 @@ security:
         - { path: ^/admin/, roles: ROLE_ADMIN }
         # Include the following line to also secure the /admin path itself
         # - { path: ^/admin$, roles: ROLE_ADMIN }
-        - { path: ^/account/, roles: ROLE_USER }
+        # - { path: ^/compte/, roles: ROLE_USER }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
     role_hierarchy:

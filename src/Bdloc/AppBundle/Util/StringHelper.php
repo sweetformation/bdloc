@@ -1,6 +1,6 @@
 <?php
 
-namespace MC\AppBundle\Util;
+namespace Bdloc\AppBundle\Util;
 
 class StringHelper {
 

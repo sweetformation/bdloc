@@ -167,6 +167,12 @@ class User implements AdvancedUserInterface
      */
     private $dropspot;
 
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="CreditCard", mappedBy="user")
+     */
+    private $creditCards;
+
 
     /**
      * Get id
@@ -566,5 +572,45 @@ class User implements AdvancedUserInterface
     public function getDropspot()
     {
         return $this->dropspot;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->creditCards = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add creditCards
+     *
+     * @param \Bdloc\AppBundle\Entity\CreditCard $creditCards
+     * @return User
+     */
+    public function addCreditCard(\Bdloc\AppBundle\Entity\CreditCard $creditCards)
+    {
+        $this->creditCards[] = $creditCards;
+
+        return $this;
+    }
+
+    /**
+     * Remove creditCards
+     *
+     * @param \Bdloc\AppBundle\Entity\CreditCard $creditCards
+     */
+    public function removeCreditCard(\Bdloc\AppBundle\Entity\CreditCard $creditCards)
+    {
+        $this->creditCards->removeElement($creditCards);
+    }
+
+    /**
+     * Get creditCards
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCreditCards()
+    {
+        return $this->creditCards;
     }
 }

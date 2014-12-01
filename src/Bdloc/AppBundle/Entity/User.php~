@@ -167,6 +167,12 @@ class User implements AdvancedUserInterface
      */
     private $dropspot;
 
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="CreditCard", mappedBy="user")
+     */
+    private $creditCards;
+
 
     /**
      * Get id
@@ -543,5 +549,28 @@ class User implements AdvancedUserInterface
      */
     public function beforeEdit() {
         $this->setDateModified( new \DateTime() );
+    }
+
+    /**
+     * Set dropspot
+     *
+     * @param \Bdloc\AppBundle\Entity\DropSpot $dropspot
+     * @return User
+     */
+    public function setDropspot(\Bdloc\AppBundle\Entity\DropSpot $dropspot = null)
+    {
+        $this->dropspot = $dropspot;
+
+        return $this;
+    }
+
+    /**
+     * Get dropspot
+     *
+     * @return \Bdloc\AppBundle\Entity\DropSpot 
+     */
+    public function getDropspot()
+    {
+        return $this->dropspot;
     }
 }

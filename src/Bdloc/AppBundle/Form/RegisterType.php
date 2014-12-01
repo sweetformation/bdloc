@@ -54,7 +54,7 @@ class RegisterType extends AbstractType
             //    'property' => "name"
             //))
             ->add('submit', 'submit', array(
-                "label" => "Inscription"
+                "label" => "Suivant"
                 ))
         ;
     }

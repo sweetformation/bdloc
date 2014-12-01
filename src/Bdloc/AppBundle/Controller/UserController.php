@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
 use Bdloc\AppBundle\Form\RegisterType;
+use Bdloc\AppBundle\Form\DropSpotType;
 use Bdloc\AppBundle\Entity\User;
 use Bdloc\AppBundle\Util\StringHelper;
 //use Bdloc\AppBundle\Form\ForgotPassword1Type;
@@ -69,7 +70,7 @@ class UserController extends Controller
 
             // on termine l'hydratation de notre objet User avant enregistrement (dates, salt, token, roles, isEnabled)
             // dates prises en charge par Doctrine en lifecycle callbacks avec @ORM\PrePersist et @ORM\PreUpdate
-
+            $user->setAddress( explode(',', $user->getAddress())[0] );
             $user->setRoles( array("ROLE_USER") );
             $user->setIsEnabled( 0 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
 
@@ -95,18 +96,22 @@ class UserController extends Controller
                 'Bienvenue !'
             );
 
-            // Pour loguer automatiquement qd on s'inscrit !
+            // Mettre en session l'id de l'utilisateur
+            $this->get('session')->set('id', $user->getId());
+
+            // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
+            // 
             // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
-                $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+                /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
                 $this->get('security.context')->setToken($token);
-                $this->get('session')->set('_security_main',serialize($token));
+                $this->get('session')->set('_security_main',serialize($token));*/
 
 
             // Vider le formulaire et empêche la resoumission des données
-            return $this->redirect( $this->generateUrl("bdloc_app_user_register") );
+            //return $this->redirect( $this->generateUrl("bdloc_app_user_register") );
             //
             // Redirection vers étape 2, choix du point relais
-            //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
+            return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
 
         }
 
@@ -121,6 +126,52 @@ class UserController extends Controller
     public function chooseDropSpotAction() {
 
         $params = array();
+
+        // --------------------- FORMULAIRE POINT RELAIS ---------------------
+        // Récupère l'id utilisateur
+        $id = $this->get('session')->get('id');
+
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $user = $userRepo->find( $id );
+
+        //\Doctrine\Common\Util\Debug::dump($user);
+
+        if (empty($user)) {
+            $this->get('session')->getFlashBag()->add(
+                'error',
+                'Utilisateur non trouvé !'
+            );     
+            return $this->redirect( $this->generateUrl("bdloc_app_user_register") );       
+        }
+
+        $dropspotForm = $this->createForm(new DropSpotType(), $user);
+
+        // Demande à SF d'injecter les données du formulaire dans notre entité ($user)
+        $request = $this->getRequest();
+        $dropspotForm->handleRequest($request);
+
+        // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
+        if ($dropspotForm->isValid()) {
+
+            // update en bdd pour DropSpotType
+            $em = $this->getDoctrine()->getManager(); 
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Point relais ajouté !'
+            );
+
+            // Vider le formulaire et empêche la resoumission des données
+            //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
+            //
+            // Redirection vers étape 3, choix du paiement
+            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
+
+        }
+
+        $params['dropspotForm'] = $dropspotForm->createView();
 
         return $this->render("user/choose_drop_spot.html.twig", $params);
     }

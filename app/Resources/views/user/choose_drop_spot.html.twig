@@ -1,0 +1,20 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Inscription | BDLOC{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block main_content %}
+    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+    <div id="menuAbonnement">
+        <ul>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
+            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+        </ul>
+    </div>
+    <h1 class="formTitle">Abonnement | Choix du point relais</h1>
+    {{ form(dropspotForm, {'attr': {'novalidate': 'novalidate'}}) }}
+{% endblock %}

@@ -27,13 +27,27 @@
             </div>
         </header>
 
-        <main>
+        <main id="main">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div class="flash-error">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
             {% block main_content %}{% endblock %}
         </main>
 
         <footer id="footer">
             <div>Copyright <span id="copyright">&copy;</span> {{ "now"|date("Y") }} BdLoc. Tous droits réservés. | By M-C and Calimero.</div>
         </footer>
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="//maps.googleapis.com/maps/api/js?libraries=places"></script> <!-- https: type="text/javascript" -->
+        {% endblock %}
     </body>
 </html>

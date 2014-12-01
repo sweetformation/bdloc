@@ -4,10 +4,48 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Bdloc !{% endblock %}</title>
         {% block stylesheets %}<link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}">{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('faviconBdloc.ico') }}" />
     </head>
     <body>
-        {% block main_content %}{% endblock %}
+        <header id="header">
+
+            <h1 id="titreSite" class="left">BdLoc</h1>
+
+            <nav id="nav">
+
+                    <div id="listeNav" class="left">
+                        <ul>
+                            <li><a href="">Les BDs !</a></li>
+                            <li><a href="">Mon Panier (nombre d'articles du panier dynamique)</a></li>
+                            <li><a href="">Mon Compte</a></li>     
+                        </ul>                   
+                    </div>
+            </nav>
+            <div class="right">
+                <div>Bonjour (Prénom) !</div>
+                <a href="">Déconnexion</a>
+            </div>
+            
+
+        </header>
+        <main>
+        {% block main_content %}
+            
+
+
+
+
+
+        {% endblock %}
+        </main>
+        <footer id="footer">
+            <div>Copyright <span id="copyright">©</span> {{ "now"|date("Y") }} BdLoc. Tous droits réservés. | By M-C and Calimero.</div>
+
+
+
+
+
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

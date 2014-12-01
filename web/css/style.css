@@ -1,0 +1,221 @@
+@import "reset.css";
+
+
+/********************************************* BORDER-BOX *************
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+	height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* A CORRIGER POUR LE SURLIGNAGE */
+*::selection {
+background:red;
+color:yellow;
+}
+
+/*Pour la scrollbar*/
+/*
+::-webkit-scrollbar {
+    width: 16px;
+    background: black;
+    border-style: solid;
+    border-width: 10px;
+    border-color: yellow;
+    padding-right: 2px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: black;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #0EE21E;
+}
+
+::-webkit-scrollbar-corner {
+	background: black;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #0EE21E;
+}*/
+
+/*Pour modifier les input*/
+/*input {
+	color: #0EE21E;
+	border-radius: 50px;
+	outline: none;
+}*/
+
+/*Pour modifier les select*/
+/*select {
+	color: #0EE21E;
+    border-radius: 50px;
+}*/
+
+
+/* input:focus {
+} */
+
+
+/*input::active,
+input::focus {
+	border: none;
+}*/
+/********************************************************************* */
+
+
+body {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    width: 60%;
+    position: relative;
+/*  font-family: Courier;*/
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 20px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.borderBottom{
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #0EE21E;
+}
+/*
+.borderBottomReponse {
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #0EE21E;
+}
+
+#mceu_20{
+    display: none;
+}*/
+
+.hidden {
+    visibility: hidden;
+}
+
+strong {
+    font-weight: 700;
+}
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************** HEADER *****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+/*Cadre du header*/
+#header{
+    padding: 50px;
+    background: grey;
+}
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ **************************************************** NAV ******************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+/*cadre de la nav*/
+#nav {
+    margin: 20px;
+    padding: 50px;
+}
+
+/*li de la nav*/
+#listeNav li {
+    /*background: blue;
+    color: red;*/;
+    text-decoration: none;
+    padding: 5px;
+    float: left;
+    list-style: none;
+    min-width: 100px;
+    text-align: center;
+}
+
+/*liens des liens de la nav*/
+#listeNav li a {
+    background: blue;
+    color: red;
+    text-decoration: none;
+    padding: 5px;
+    float: left;
+    list-style: none;
+    margin: 0 0 20px 10px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/*liens des liens de la nav en hover*/
+#nav ul li a:hover {
+    background: red;
+    color: blue;
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************** FOOTER *****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+#footer {
+    background: green;
+    padding: 50px;
+    text-align: center;
+	width: 100%;
+}
+
+#copyright {
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************ EASTER EGG ***************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+

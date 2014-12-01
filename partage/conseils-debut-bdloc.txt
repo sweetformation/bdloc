@@ -1,0 +1,66 @@
+
+    Pour bien commencer
+
+        Quels contrôleurs ?
+            Quels nom d'actions ? 
+                Et donc implicitement, quels noms de routes ? 
+
+        Fichier de layouts ?
+            combien, quel contenu ?
+
+        Quelles entités / relations ?
+            En prévoir un max, mais ne pas toutes les générer (c'est long et relou à faire, surtout les relations)
+
+        Qui fait quoi ? 
+
+            Gros morceaux : 
+                User et sécurité
+                    inscription
+                    login / logout
+                    modification du mot de passe
+                    oubli du mot de passe
+                    etc.
+
+                Affichage des points relais sur une carte (JS)
+                    - optionnel (pour les JS lovers)
+
+                Paiement avec Paypal API
+
+                Page Catalogue
+                    filtres
+                    recherche par mot-clef
+                    pagination
+
+                Système de panier
+                    ajout / retrait de livres au panier
+                    validation du panier (transformation en commande ?)
+                    historique
+
+                Gestion des stocks !
+
+
+
+    Pour utiliser mon début de projet avec des fixtures, dans l'ordre : 
+
+        Sur Github : 
+            Faite un fork de mon projet dans un de vos comptes
+                https://github.com/machinchoseformation/bdloc
+
+        Dans Git Bash : 
+            cd c:/xampp2/htdocs
+            git clone https://{VOTRE URL DE DÉPÔT GIT}  bdloc/
+            cd bdloc
+            composer install
+
+        Dans le navigateur pour tester : 
+            http://localhost/bdloc/web/app_dev.php/
+
+        Pour importer les données : 
+            php app/console doctrine:database:create
+            php app/console doctrine:schema:update --force
+            php app/console doctrine:fixture:load
+                confirmer avec Y
+
+        Nouveau : 
+            Pour ne pas avoir à toujours taper "git push origin master", faites un :
+            git push -u origin master

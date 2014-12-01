@@ -1,0 +1,13 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Inscription | BDLOC{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block main_content %}
+    <div>Abonnement : Informations personnelles, choix du point relais, choix du mode d'abonnement et paiement</div>
+    <h1 class="formTitle">Abonnement | Informations personnelles</h1>
+    {{ form(registerForm, {'attr': {'novalidate': 'novalidate'}}) }}
+{% endblock %}

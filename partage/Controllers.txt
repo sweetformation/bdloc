@@ -1,55 +1,14 @@
 DefaultController
 
-    route(/)
+    /
     homeAction()
 
 
-UserController
-
-    /abonnement/etape1
-    register1Action()
-
-    /abonnement/etape2
-    register2Action()
-
-    /abonnement/etape3
-    register3Action()
-
-    /compte/{id}/modifier
-    editAccountAction($id)
-
-    /compte/{id}/modifier/mot-de-passe
-    changePasswordAction($id)
-
-    /compte/{id}/modifier/point-relais
-    changeDropSpotAction($id)
-
-    /compte/{id}/modifier/infos-paiement
-    changePaymentAction($id)
-
-    /compte/{id}/historique
-    displayHistoryAction($id)
-
-    /compte/{id}/amende
-    payFineAction($id)
-
-    /compte/{id}/desabonnement
-    unsubscribeAction($id)
-
-    /mot-de-passe-oublie-1
-    forgotPassword1Action()
-
-    /mot-de-passe-oublie-2/{email}/{token}
-    forgotPassword2Action($email, $token)
 
 
 
 
 
-SecurityController
-
-    /login
-    loginAction()
 
 
 AdminController
@@ -64,18 +23,107 @@ AdminController
     addSerieAction()
 
 
+
+
+
+
+
+UserController
+
+    /login
+    loginAction()
+
+    /abonnement/inscription
+    registerAction()
+
+    /abonnement/choix-point-relais
+    chooseDropSpotAction()
+
+    /abonnement/choix-de-paiement
+    showSubsriptionPaymentFormAction()
+
+    /mot-de-passe-oublie/etape1
+    forgotPasswordStepOneAction()
+
+    /mot-de-passe-oublie/etape2/{email}/{token}
+    forgotPasswordStepTwoAction($email, $token)
+
+
+
+
+
+
+
+
+AccountController
+
+    /compte/{id}
+    homeAction($id)
+
+    /compte/{id}/modifier
+    editInfoAction($id)
+
+    /compte/{id}/modifier/mot-de-passe
+    editPasswordAction($id)
+
+    /compte/{id}/modifier/point-relais
+    editDropSpotAction($id)
+
+    /compte/{id}/historique
+    historyAction($id)
+
+    /compte/{id}/amende
+    showFinePaymentFormAction($id)
+
+    /compte/{id}/desabonnement
+    unsubscribeAction($id)
+
+    ##/compte/{id}/modifier/infos-paiement
+    ##changePaymentAction($id)
+
+
+
+
+
+
+PaymentController
+    
+    /paiement
+    takeSubscriptionPaymentAction()
+
+    /paiement/amende
+    takeFinePaymentAction()
+
+
+
+
+
 CartController
-    /panier/{id}
-    displayCartAction($id)
+
+    /panier/{id}/ajout/bd
+    addBookAction($id)
+
+    /panier/{id}/supprime/bd
+    removeBookAction($id)
+
+    /panier/{id}/
+    recapAction($id)
 
     /panier/{id}/validation
-    confirmCartAction($id)
+    validateAction($id)
 
 
-LibraryController
+
+
+
+
+
+
+
+BookController
     /catalogue/{filter1}...
-    displayBdAction($filter1, $filter2..., $page...)
+    catalogAction($filter1, $filter2..., $page...)
 
     /catalogue/details/{id}
-    detailsBdAction($id)
+    detailsAction($id)
 

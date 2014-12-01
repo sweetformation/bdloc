@@ -1,0 +1,29 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Connexion | BDLOC{% endblock %}
+
+{% block main_content %}
+    {% if error %}
+        <div>{{ error.message }}</div>
+    {% endif %}
+    <h1>Connexion</h1>
+    <form action="{{ path('login_check') }}" method="post">
+        <div>
+            <label for="username">Pseudo ou email :</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </div>
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="_password" />
+        </div>
+
+        {#
+            If you want to control the URL the user
+            is redirected to on success (more details below)
+            <input type="hidden" name="_target_path" value="/account" />
+        #}
+
+        <button type="submit">Connexion</button>
+    </form>
+    <!-- <a href="{ { path('mc_app_user_forgotpasswordone') }}" >Mot de passe oublié ?</a> -->
+{% endblock %}

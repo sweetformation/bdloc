@@ -1,0 +1,37 @@
+
+
+    DefaultController
+        home
+        legal
+        //et autres pages statiques
+
+    BookController
+        catalog
+        details
+
+    UserController
+        login
+        register
+        chooseDropSpot
+        showSubsriptionPaymentForm
+        forgotPasswordStepOne
+        forgotPasswordStepTwo
+
+    AccountController
+        home
+        editInfo
+        editDropSpot
+        editPassword
+        history
+        showFinePaymentForm
+        unsubscribe
+
+    PaymentController
+        takeSubscriptionPayment
+        takeFinePayment
+
+    CartController
+        addBook
+        removeBook
+        recap
+        validate

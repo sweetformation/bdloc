@@ -1,0 +1,12 @@
+
+Déjà faites :
+    Serie
+    Author
+    Book
+    User (attention renommer en users pour BDD)
+
+ToDO : 
+    DropSpot
+    CreditCard
+    Cart
+    CartItem

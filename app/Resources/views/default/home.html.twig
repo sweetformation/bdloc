@@ -1,6 +1,6 @@
 {% extends ':layouts:base.html.twig' %}
 
-{% block title %}Bdloc | Accueil {% endblock %}
+{% block title %}Bdloc | Accueil{% endblock %}
 
 {% block main_content %}
     <h1>Bienvenue sur BdLoc !</h1>
@@ -22,5 +22,5 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
-    <a href="">S'abonner !</a>
+    <a href="{{ path('bdloc_app_user_register') }}">S'abonner !</a>
 {% endblock %}

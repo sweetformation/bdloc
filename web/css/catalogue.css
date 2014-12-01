@@ -1,0 +1,95 @@
+#containerCatalogue{
+    width: 80%;
+    float: right;
+    margin-bottom: 50px;
+}
+
+#barreFiltre{
+    background: yellow;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    margin: 10px;
+    margin-right: 20px;
+    margin-left: 5px;
+    padding: 15px;
+}
+
+#filtreAffich {
+    width: 50%;
+    background: orange;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    display: inline;
+    padding: 5px;
+}
+
+#pagination {
+    width: 50%;
+    background: purple;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    display: inline;
+    padding: 5px;
+}
+
+.BdPost {
+    width: 48%;
+    float: left;
+    background: green;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    margin: 5px;
+    padding: 5px;
+}
+
+.BdPost img {
+    height: 250px;
+    float: left;
+    margin: 10px;
+    margin-right: 20px;
+} 
+
+#infos{
+    margin: 10px;
+    margin-right: 20px;
+
+}
+
+.titreBd {
+    font-size: 2em;
+    margin-top: 10px
+}
+
+.auteur {
+    font-size: 1em;
+    margin-top: 10px
+}
+
+.coloriste {
+    font-size: 1em;
+    margin-top: 10px
+}
+
+.scenariste {
+    font-size: 1em;
+    margin-top: 10px
+}
+
+.disponibilite {
+    font-size: 1em;
+    margin-top: 10px
+}
+
+.details {
+margin-top: 20px;
+margin-left: 20px;
+}
+
+.commander {
+margin-top: 30px;
+margin-left: 20px;
+}

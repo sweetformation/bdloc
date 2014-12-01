@@ -13,7 +13,7 @@ DefaultController
 
 AdminController
 
-    /admin/
+    /admin
     backOfficeAction()
 
     /admin/ajout/bd

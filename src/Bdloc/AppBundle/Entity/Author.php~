@@ -15,7 +15,7 @@ class Author
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $firstName;
 
@@ -301,7 +301,7 @@ class Author
      * @param \DateTime $dateCreated
      * @return Author
      */
-    public function setDateCreated($dateCreated)
+    public function setDateCreated(\DateTime $dateCreated)
     {
         $this->dateCreated = $dateCreated;
 
@@ -324,7 +324,7 @@ class Author
      * @param \DateTime $dateModified
      * @return Author
      */
-    public function setDateModified($dateModified)
+    public function setDateModified(\DateTime $dateModified)
     {
         $this->dateModified = $dateModified;
 

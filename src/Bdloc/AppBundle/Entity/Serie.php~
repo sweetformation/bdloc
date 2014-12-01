@@ -45,12 +45,12 @@ class Serie
     private $language;
 
     /**
-     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateModified;
 
     /**
-     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateCreated;
 
@@ -64,6 +64,19 @@ class Serie
     public function __construct()
     {
         $this->books = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Serie
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -245,5 +258,51 @@ class Serie
     public function getBooks()
     {
         return $this->books;
+    }
+
+    /**
+     * Set dateModified
+     *
+     * @param \DateTime $dateModified
+     * @return Serie
+     */
+    public function setDateModified(\DateTime $dateModified)
+    {
+        $this->dateModified = $dateModified;
+
+        return $this;
+    }
+
+    /**
+     * Get dateModified
+     *
+     * @return \DateTime 
+     */
+    public function getDateModified()
+    {
+        return $this->dateModified;
+    }
+
+    /**
+     * Set dateCreated
+     *
+     * @param \DateTime $dateCreated
+     * @return Serie
+     */
+    public function setDateCreated(\DateTime $dateCreated)
+    {
+        $this->dateCreated = $dateCreated;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreated
+     *
+     * @return \DateTime 
+     */
+    public function getDateCreated()
+    {
+        return $this->dateCreated;
     }
 }

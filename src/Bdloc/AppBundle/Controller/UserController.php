@@ -71,7 +71,7 @@ class UserController extends Controller
             // dates prises en charge par Doctrine en lifecycle callbacks avec @ORM\PrePersist et @ORM\PreUpdate
 
             $user->setRoles( array("ROLE_USER") );
-            $user->setIsEnabled( 1 );
+            $user->setIsEnabled( 0 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
 
             // salt (tjs avant de hasher le mdp!!) & token avec notre propre classe
             $stringHelper = new StringHelper();

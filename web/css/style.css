@@ -137,8 +137,9 @@ strong {
 
 /*Cadre du header*/
 #header{
-    padding: 50px;
     background: grey;
+    overflow: hidden;
+    padding: 50px;
 }
 
 
@@ -152,16 +153,14 @@ strong {
 
 /*cadre de la nav*/
 #nav {
-    margin: 20px;
-    padding: 50px;
+    margin: 20px 0;
 }
 
 /*li de la nav*/
-#listeNav li {
+#nav li {
     /*background: blue;
     color: red;*/;
     text-decoration: none;
-    padding: 5px;
     float: left;
     list-style: none;
     min-width: 100px;
@@ -169,24 +168,31 @@ strong {
 }
 
 /*liens des liens de la nav*/
-#listeNav li a {
+#nav li a {
     background: blue;
     color: red;
     text-decoration: none;
     padding: 5px;
     float: left;
     list-style: none;
-    margin: 0 0 20px 10px;
+    margin: 0 10px;
     min-width: 100px;
     text-align: center;
 }
 
 /*liens des liens de la nav en hover*/
-#nav ul li a:hover {
+#nav li a:hover {
     background: red;
     color: blue;
-    text-decoration: none;
-    padding: 5px;
+}
+
+#connexion {
+    margin: 20px 0;
+}
+
+#connexion #user,
+#connexion a {
+    padding: 0 5px;
 }
 
 

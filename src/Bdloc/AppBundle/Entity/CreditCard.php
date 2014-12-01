@@ -55,6 +55,11 @@ class CreditCard
      */
     private $user;
 
+    // Propriétés non enregistrées en BDD
+    private $creditCardNumber;
+    private $codeCVC;
+    private $creditCardName;
+
 
     /**
      * Get id

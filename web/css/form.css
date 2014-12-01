@@ -25,7 +25,13 @@
     color: #00f;
 }
 
+
+
 /*-------------------------- REGISTER -----------------------*/
+
+#bdloc_appbundle_register {
+    padding-bottom: 50px;
+}
 
 #bdloc_appbundle_register div label {
     display: inline-block;
@@ -38,8 +44,6 @@
 #bdloc_appbundle_register input[type="text"],
 #bdloc_appbundle_register input[type="email"],
 #bdloc_appbundle_register input[type="password"],
-/*#bdloc_appbundle_register textarea,
-#bdloc_appbundle_register select,*/
 #bdloc_appbundle_register > div > div > div {
     display: inline-block;
     margin: 5px 10px;
@@ -57,16 +61,61 @@
     list-style: none;
 }
 
-/*#bdloc_appbundle_register textarea {
-    min-height: 100px;
-}*/
-
 #bdloc_appbundle_register button[type="submit"] {
     margin: 5px 10px 5px 260px;
     padding: 5px;
 }
 
+
+
+
+/*-------------------------- LOGIN -----------------------*/
+
+#loginForm {
+    padding-bottom: 50px;
+}
+
+#loginForm div label {
+    display: inline-block;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#loginForm > div > div,
+#loginForm ul {
+    display: inline-block;
+}
+
+#loginForm ul {
+    color: #f00;
+    list-style: none;
+}
+
+#loginForm button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+
+
+
+
+
 /*-------------------------- DROP SPOT -----------------------*/
+
+#bdloc_appbundle_dropspot {
+    padding-bottom: 50px;
+}
 
 #bdloc_appbundle_dropspot div label {
     display: inline-block;

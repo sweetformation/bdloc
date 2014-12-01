@@ -1,13 +1,18 @@
 {% extends ":layouts:base.html.twig" %}
 
 {% block title %}Connexion | BDLOC{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+{% endblock %}
+
 
 {% block main_content %}
     {% if error %}
         <div>{{ error.message }}</div>
     {% endif %}
-    <h1>Connexion</h1>
-    <form action="{{ path('login_check') }}" method="post">
+    <h1 class="formTitle">Connexion</h1>
+    <form action="{{ path('login_check') }}" method="post" id="loginForm">
         <div>
             <label for="username">Pseudo ou email :</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" />

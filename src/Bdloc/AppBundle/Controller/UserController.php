@@ -14,6 +14,7 @@ use Bdloc\AppBundle\Form\CreditCardType;
 use Bdloc\AppBundle\Entity\User;
 use Bdloc\AppBundle\Entity\CreditCard;
 use Bdloc\AppBundle\Util\StringHelper;
+use Bdloc\AppBundle\Util\GpsHelper;
 use Bdloc\AppBundle\Form\ForgotPasswordStepOneType;
 use Bdloc\AppBundle\Form\ForgotPasswordStepTwoType;
 
@@ -126,6 +127,24 @@ class UserController extends Controller
 
         $params = array();
 
+        // Script pour ajout gps coordinates dans bdd
+        /*$gpsCoord = new GpsHelper();
+        // récupère tous les points relais
+        $dropSpotRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:DropSpot");
+        $dropSpots = $dropSpotRepo->findAll();
+
+        foreach ($dropSpots as $dropSpot) {
+            $adresse = $dropSpot->getAddress() . ", Paris";
+            $coords = $gpsCoord->getCoordinates( $adresse );
+            $dropSpot->setLatitude($coords["lat"]);
+            $dropSpot->setLongitude($coords["lng"]);
+            
+            // update en bdd pour DropSpotType
+            $em = $this->getDoctrine()->getManager(); 
+            $em->persist($dropSpot);  
+            $em->flush();
+        }*/
+
         // --------------------- FORMULAIRE POINT RELAIS ---------------------
         // Récupère l'id utilisateur
         $id = $this->get('session')->get('id');
@@ -142,6 +161,9 @@ class UserController extends Controller
             );     
             return $this->redirect( $this->generateUrl("bdloc_app_user_register") );       
         }
+
+        // récupère l'adresse de l'utilisateur
+        $add_user = $user->getAddress();
 
         $dropspotForm = $this->createForm(new DropSpotType(), $user);
 
@@ -172,6 +194,21 @@ class UserController extends Controller
 
         $params['dropspotForm'] = $dropspotForm->createView();
 
+        // Récupération des coord gps des points relais
+        $dropSpotRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:DropSpot");
+        $dropSpots = $dropSpotRepo->findAll();
+        foreach ($dropSpots as $dropSpot) {
+            $dropTab["nom"] = $dropSpot->getName();
+            $dropTab["lat"] = $dropSpot->getLatitude();
+            $dropTab["lng"] = $dropSpot->getLongitude();
+            $dropTab["add"] = $dropSpot->getAddress();
+            $dropTab["zip"] = $dropSpot->getZip();
+            $params['dropSpots'][] = $dropTab;
+        }
+
+        $params['add_user'] = $add_user;
+        //print_r($params);
+
         return $this->render("user/choose_drop_spot.html.twig", $params);
     }
 
@@ -184,7 +221,7 @@ class UserController extends Controller
 
         // --------------------- FORMULAIRE PAIEMENT ---------------------
         // Récupère l'id utilisateur
-        /*$id = $this->get('session')->get('id');
+        $id = $this->get('session')->get('id');
 
         $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
         $user = $userRepo->find( $id );
@@ -197,7 +234,7 @@ class UserController extends Controller
                 'Utilisateur non trouvé !'
             );     
             return $this->redirect( $this->generateUrl("bdloc_app_user_register") );       
-        }*/
+        }
 
         $creditCard = new CreditCard();
         $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);

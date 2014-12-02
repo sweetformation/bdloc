@@ -4,6 +4,7 @@ namespace Bdloc\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * BookRepository
@@ -13,27 +14,57 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
  */
 class BookRepository extends EntityRepository
 {
-    public function findBooksBySearch(){
+    public function findBooksBySearch($page){
 
-        $book = $this->createQueryBuilder('b');
+        //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
+        $qb = $this->createQueryBuilder('b');
 
         //if(){
         //$qb->where();
         //}
         
-        $book->join('b.illustrator', 'i');
-        $book->addSelect('i');        
-        $book->join('b.colorist', 'c');
-        $book->addSelect('c');        
-        $book->join('b.scenarist', 's');
-        $book->addSelect('s');
+        //Jointure pour l'auteur
+        $qb->join('b.illustrator', 'i');
+        $qb->addSelect('i');        
 
-        $book->setFirstResult(0)
-            ->setMaxResults(30);
+        //Jointure pour le coloriste
+        $qb->join('b.colorist', 'c');
+        $qb->addSelect('c');        
 
-        $query = $book->getQuery();
+        //Jointure pour le scénariste
+        $qb->join('b.scenarist', 's');
+        $qb->addSelect('s');
 
-        $paginator = new Paginator($query);
-        return $paginator;
+        //Jointure pour les catégories
+        $qb->join('b.serie', 'cate');
+        $qb->addSelect('cate');
+
+        // $qb->setFirstResult(0)
+        //     ->setMaxResults(30);
+
+        // $query = $qb->getQuery();
+
+        // $paginator = new Paginator($query);
+        // return $paginator;
+        
+        // $page = 1;
+        $nombreParPage = 20;
+
+        //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
+        $request = Request::createFromGlobals();
+        //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
+        $request->query->get('page');
+
+        //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE PAS !
+        //$request->query->get('categorie');
+
+        //AFFICHAGE AVEC LA PAGINATION pour le premier résultat
+        $qb->setFirstResult(($page-1) * $nombreParPage)
+        //LE NOMBRE DE POST PAR PAGE 
+            ->setMaxResults($nombreParPage);
+         
+        return new Paginator($qb);
+
+
     }
 }

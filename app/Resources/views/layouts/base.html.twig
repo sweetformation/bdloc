@@ -26,7 +26,9 @@
                 {% endif %}
             </div>
         </header>
-
+{% block sidebar %}
+    
+{% endblock %}
         <main id="main">
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">

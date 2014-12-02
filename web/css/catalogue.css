@@ -1,9 +1,48 @@
+/*Container de la Sidebar*/
+#sidebar {
+    width: 20%;
+    float: left;
+    margin-right: 5px;
+    background: purple;
+    border-style: solid;
+    border-width: 2px;
+    border-color: grey;
+}
+
+#catesidebar {
+padding: 20px;
+}
+
+#catesidebar li {
+padding-top: 5px;
+}
+
+#disposidebar {
+padding: 20px;
+}
+
+#disposidebar li {
+padding-top: 5px;
+}
+
+#recherchesidebar {
+padding: 20px;
+}
+
+#recherchesidebar input{
+    margin-top: 5px;
+    padding: 5px;
+}
+
+
+/*Container du Catalogue*/
 #containerCatalogue{
-    width: 80%;
+    width: 100%;
     float: right;
     margin-bottom: 50px;
 }
 
+/*Container de la barre de filtre*/
 #barreFiltre{
     background: yellow;
     border-style: solid;
@@ -15,6 +54,7 @@
     padding: 15px;
 }
 
+/*Filtres présents dans la barre de filtres*/
 #filtreAffich {
     width: 50%;
     background: orange;
@@ -25,6 +65,7 @@
     padding: 5px;
 }
 
+/*Pagination dans la barre de filtres*/
 #pagination {
     width: 50%;
     background: purple;
@@ -35,6 +76,7 @@
     padding: 5px;
 }
 
+/*Cadre de chaques post de BD*/
 .BdPost {
     width: 48%;
     float: left;
@@ -46,6 +88,7 @@
     padding: 5px;
 }
 
+/*Images des BDs*/
 .BdPost img {
     height: 250px;
     float: left;
@@ -53,42 +96,50 @@
     margin-right: 20px;
 } 
 
+/*Infos des BDs*/
 #infos{
     margin: 10px;
     margin-right: 20px;
 
 }
 
+/*Titre des BDs*/
 .titreBd {
     font-size: 2em;
     margin-top: 10px
 }
 
+/*Auteur des BDs*/
 .auteur {
     font-size: 1em;
     margin-top: 10px
 }
 
+/*Coloriste des BDs*/
 .coloriste {
     font-size: 1em;
     margin-top: 10px
 }
 
+/*Scénariste des BDs*/
 .scenariste {
     font-size: 1em;
     margin-top: 10px
 }
 
+/*Disponibilité des BDs dans les post*/
 .disponibilite {
     font-size: 1em;
     margin-top: 10px
 }
 
+/*Bouton détail des BDs*/
 .details {
 margin-top: 20px;
 margin-left: 20px;
 }
 
+/*Bouton pour passer commande d'une BD*/
 .commander {
 margin-top: 30px;
 margin-left: 20px;

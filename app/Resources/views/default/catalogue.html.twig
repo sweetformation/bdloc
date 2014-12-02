@@ -6,7 +6,32 @@
 <link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}">
 <link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
 {% endblock %}
+{% block sidebar %}
+    <aside id="sidebar">
+        <div id="catesidebar">Catégories :
+            <ul>   
+                <li><input type="checkbox"><label for="">Polar</label></li>
+                <li><input type="checkbox"><label for="">Historique</label></li>
+                <li><input type="checkbox"><label for="">Biopic</label></li>
+                <li><input type="checkbox"><label for="">Aventure</label></li>
+                <li><input type="checkbox"><label for="">Jeunesse</label></li>
+                <li><input type="checkbox"><label for="">Fantastique</label></li>
+                <li><input type="checkbox"><label for="">...</label></li>
+            </ul>
+            
+        </div>
+        <div id="disposidebar">Disponibilité :
+            <ul>   
+                <li><input type="radio"><label for="">Disponible</label></li>
+                <li><input type="radio"><label for="">Indisponible</label></li>
+            </ul>
+        </div>
 
+        <div id="recherchesidebar">Recherche :
+            <input type="text" placeholder="Mots-clefs" style="width:150px;height:20px;"/>
+        </div>
+    </aside>
+{% endblock %}
 {% block main_content %}
 
     <div id="containerCatalogue">
@@ -108,12 +133,6 @@
                         <input class="commander" type="button" value="Ajouter au panier !">
                     </div>
                 </div>
-
-                
-
-                
-                
     </div>
-
-
 {% endblock %}
+

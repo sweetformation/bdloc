@@ -143,8 +143,9 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager(); 
             $em->persist($dropSpot);  
             $em->flush();
-        }*/
-
+        }
+        die();*/
+        
         // --------------------- FORMULAIRE POINT RELAIS ---------------------
         // Récupère l'id utilisateur
         $id = $this->get('session')->get('id');

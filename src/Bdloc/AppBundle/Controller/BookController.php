@@ -12,7 +12,13 @@ class BookController extends Controller
      */
     public function catalogAction()
     {
-        return $this->render("default/catalogue.html.twig");
+        $bookRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Book");
+
+        $books = $bookRepo->findBooksBySearch();
+
+        $params['books'] = $books;
+
+        return $this->render("default/catalog.html.twig", $params);
     }
 
     /**

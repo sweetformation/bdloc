@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 	height: 100%;
+    background: #7586FF;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -13,7 +14,7 @@ html {
 
 /* A CORRIGER POUR LE SURLIGNAGE */
 *::selection {
-background:red;
+background:#FF666A;
 color:yellow;
 }
 
@@ -140,7 +141,7 @@ strong {
 
 /*Cadre du header*/
 #header{
-    background: grey;
+    background: #FF666A;
     overflow: hidden;
     padding: 50px;
 }
@@ -163,8 +164,8 @@ strong {
 
 /*li de la nav*/
 #nav li {
-    /*background: blue;
-    color: red;*/;
+    /*background: #7586FF;
+    color: #FF666A;*/;
     text-decoration: none;
     float: left;
     list-style: none;
@@ -174,8 +175,8 @@ strong {
 
 /*liens des liens de la nav*/
 #nav li a {
-    background: blue;
-    color: red;
+    background: #7586FF;
+    color: #FF666A;
     text-decoration: none;
     padding: 5px;
     float: left;
@@ -187,8 +188,8 @@ strong {
 
 /*liens des liens de la nav en hover*/
 #nav li a:hover {
-    background: red;
-    color: blue;
+    background: #FF666A;
+    color: #7586FF;
 }
 
 #connexion {
@@ -209,7 +210,7 @@ strong {
 
 /* ___________________________________________________________________________________________________________ */
 #footer {
-    background: green;
+    background: #FF666A;
     padding: 50px;
     text-align: center;
 	width: 100%;

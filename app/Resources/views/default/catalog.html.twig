@@ -1,0 +1,98 @@
+{% extends ':layouts:base.html.twig' %}
+
+{% block title %}Bdloc | Accueil{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
+{% block sidebar %}
+    <aside id="sidebar">
+        <div id="catesidebar">Catégories :
+            <ul>   
+                <li><input type="checkbox"><label for="">Polar</label></li>
+                <li><input type="checkbox"><label for="">Historique</label></li>
+                <li><input type="checkbox"><label for="">Biopic</label></li>
+                <li><input type="checkbox"><label for="">Aventure</label></li>
+                <li><input type="checkbox"><label for="">Jeunesse</label></li>
+                <li><input type="checkbox"><label for="">Fantastique</label></li>
+                <li><input type="checkbox"><label for="">...</label></li>
+            </ul>
+            
+        </div>
+        <div id="disposidebar">Disponibilité :
+            <ul>   
+                <li><input type="radio"><label for="">Disponible</label></li>
+                <li><input type="radio"><label for="">Indisponible</label></li>
+            </ul>
+        </div>
+
+        <div id="recherchesidebar">Recherche :
+            <input type="text" placeholder="Mots-clefs" style="width:150px;height:20px;"/>
+        </div>
+    </aside>
+{% endblock %}
+{% block main_content %}
+
+                <div class="barreFiltre">
+                    <div class="filtreAffich">
+                        <select name="" id=""></select>
+                        <select name="" id=""></select>
+                    </div>
+
+                    <div class="pagination">PAGINATION</div>
+                </div>
+    <div id="containerCatalogue">
+
+<!--                 <div class="BdPost">
+                    <img src="{{ asset("img/couverture/115618_c.jpg") }}"  alt="" class="left">
+                    <div id="infos">
+                        <p class="titreBd">Titre de la BD</p>
+                        <p class="auteur">Auteur : Machin Bidule</p>
+                        <p class="coloriste">Coloriste : Machin Bidule</p>
+                        <p class="scenariste">Scénariste : Machin Bidule</p>
+
+                        <p class="disponibilite">Disponibilité</p>
+
+                        <input class="details" type="button" value="Plus de détails !">
+                        <input class="commander" type="button" value="Ajouter au panier !">
+                    </div>
+                </div> -->
+
+                {% for book in books %}
+                    <div class="BdPost">
+
+                        <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
+                        
+                        <div id="infos">
+                            <p class="titreBd">{{ book.title }}</p>
+                            <p class="auteur">{{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                            <p class="coloriste">{{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+                            <p class="scenariste">{{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+                        {% if book.stock == 0 %}
+                            <p class="indisponible">Indisponible...</p>
+
+                            <input class="details" type="button" value="Plus de détails !">
+                        {% else %}
+                            <!-- <p class="disponible">Disponible !</p> -->
+                            <p class="disponible">{{ book.stock }} dispos !</p>
+
+                            <input class="details" type="button" value="Plus de détails !">
+                            <input class="commander" type="button" value="Ajouter au panier !">
+                        {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+    </div>
+                    <div class="barreFiltre">
+                        <div class="filtreAffich">
+                            <select name="" id=""></select>
+                            <select name="" id=""></select>
+                        </div>
+
+                        <div class="pagination">PAGINATION</div>
+                    </div>
+
+
+{% endblock %}
+

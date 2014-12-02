@@ -3,6 +3,7 @@
 namespace Bdloc\AppBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * BookRepository
@@ -12,4 +13,27 @@ use Doctrine\ORM\EntityRepository;
  */
 class BookRepository extends EntityRepository
 {
+    public function findBooksBySearch(){
+
+        $book = $this->createQueryBuilder('b');
+
+        //if(){
+        //$qb->where();
+        //}
+        
+        $book->join('b.illustrator', 'i');
+        $book->addSelect('i');        
+        $book->join('b.colorist', 'c');
+        $book->addSelect('c');        
+        $book->join('b.scenarist', 's');
+        $book->addSelect('s');
+
+        $book->setFirstResult(0)
+            ->setMaxResults(30);
+
+        $query = $book->getQuery();
+
+        $paginator = new Paginator($query);
+        return $paginator;
+    }
 }

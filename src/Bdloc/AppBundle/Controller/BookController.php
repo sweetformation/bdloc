@@ -8,15 +8,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class BookController extends Controller
 {
     /**
-     * @Route("/catalogue")
+     * @Route("/catalogue/{page}")
      */
-    public function catalogAction()
+    public function catalogAction($page) //Ajouter le $categorie dans les variables
     {
         $bookRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Book");
+        
 
-        $books = $bookRepo->findBooksBySearch();
+        $books = $bookRepo->findBooksBySearch($page); //Ajouter le $categorie dans les variables
 
         $params['books'] = $books;
+        $params['page'] = $page;
+        // $params['categ'] = $categorie;
+        
 
         return $this->render("default/catalog.html.twig", $params);
     }

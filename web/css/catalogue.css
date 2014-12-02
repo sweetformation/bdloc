@@ -6,8 +6,8 @@
     margin-right: 5px;
     background: #FF666A;
     position: fixed;
-    top: 230px;
-    left: 380px;
+    top: 242px;
+    left: 385px;
 }
 
 #catesidebar {
@@ -35,6 +35,11 @@
     padding: 5px;
 }
 
+#soumission {
+    padding: 20px;
+    padding-top: 0;
+}
+
 
 /*Container du Catalogue*/
 #containerCatalogue{
@@ -49,23 +54,33 @@
     margin: 10px;
     margin-right: 20px;
     margin-left: 5px;
+    margin-bottom: 5px;
     padding: 15px;
 }
 
 /*Filtres présents dans la barre de filtres*/
 .filtreAffich {
     width: 50%;
-    background: #FF666A;
-    display: inline;
     padding: 5px;
+    float: left;
+    clear: both;
 }
 
 /*Pagination dans la barre de filtres*/
 .pagination {
     width: 50%;
-    background: purple;
     display: inline;
     padding: 5px;
+    float: left;
+}
+
+.pagination li a {
+    margin: 5px;
+    float: left;
+}    
+
+.clearfix {
+    clear: both;
 }
 
 /*Cadre de chaques post de BD*/

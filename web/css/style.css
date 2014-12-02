@@ -18,6 +18,14 @@ background:#FF666A;
 color:yellow;
 }
 
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /*Pour la scrollbar*/
 /*
 ::-webkit-scrollbar {

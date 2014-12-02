@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: paypal.yml }
 
 framework:
     #esi:             ~
@@ -70,3 +71,4 @@ swiftmailer:
     port:      "%mailer_port%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
+

@@ -56,8 +56,20 @@ class CreditCard
     private $user;
 
     // Propriétés non enregistrées en BDD
+    /**
+     * @var string
+     *
+     */
     private $creditCardNumber;
+    /**
+     * @var string
+     *
+     */
     private $codeCVC;
+    /**
+     * @var string
+     *
+     */
     private $creditCardName;
 
 
@@ -185,4 +197,90 @@ class CreditCard
     {
         return $this->user;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Set creditCardNumber
+     *
+     * @param string $creditCardNumber
+     * @return CreditCard
+     */
+    public function setCreditCardNumber($creditCardNumber)
+    {
+        $this->creditCardNumber = $creditCardNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardNumber
+     *
+     * @return string 
+     */
+    public function getCreditCardNumber()
+    {
+        return $this->creditCardNumber;
+    }
+
+    /**
+     * Set codeCVC
+     *
+     * @param string $codeCVC
+     * @return CreditCard
+     */
+    public function setCodeCVC($codeCVC)
+    {
+        $this->codeCVC = $codeCVC;
+
+        return $this;
+    }
+
+    /**
+     * Get codeCVC
+     *
+     * @return string 
+     */
+    public function getCodeCVC()
+    {
+        return $this->codeCVC;
+    }
+
+    /**
+     * Set creditCardName
+     *
+     * @param string $creditCardName
+     * @return CreditCard
+     */
+    public function setCreditCardName($creditCardName)
+    {
+        $this->creditCardName = $creditCardName;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardName
+     *
+     * @return string 
+     */
+    public function getCreditCardName()
+    {
+        return $this->creditCardName;
+    }
+
 }

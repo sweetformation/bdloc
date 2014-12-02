@@ -17,7 +17,9 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "paypal/rest-api-sdk-php": "dev-master",
+        "kmj/paypalbridgebundle": "dev-master"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "~2.2",

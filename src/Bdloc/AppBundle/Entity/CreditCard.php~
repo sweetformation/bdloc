@@ -55,6 +55,23 @@ class CreditCard
      */
     private $user;
 
+    // Propriétés non enregistrées en BDD
+    /**
+     * @var \varchar
+     *
+     */
+    private $creditCardNumber;
+    /**
+     * @var \varchar
+     *
+     */
+    private $codeCVC;
+    /**
+     * @var \varchar
+     *
+     */
+    private $creditCardName;
+
 
     /**
      * Get id
@@ -156,5 +173,28 @@ class CreditCard
     public function getDateModified()
     {
         return $this->dateModified;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Bdloc\AppBundle\Entity\User $user
+     * @return CreditCard
+     */
+    public function setUser(\Bdloc\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Bdloc\AppBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

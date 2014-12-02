@@ -1,0 +1,15 @@
+kmj_pay_pal_bridge:
+    environment: sandbox
+    sandbox:
+        clientId: 'AWF3MRBCeWczI-IAx7uZRhJ5cENsMUIlSUHWlbXjz-6WiQWpjjb8aHXwb6vu'
+        secret: 'EHJtlhCNMDi7_i0GirqnbaFs0DGltek9-w2-AG9qowiAcnHymlthTl5J2lij' 
+    production:
+        clientId: 'AWF3MRBCeWczI-IAx7uZRhJ5cENsMUIlSUHWlbXjz-6WiQWpjjb8aHXwb6vu'
+        secret: 'EHJtlhCNMDi7_i0GirqnbaFs0DGltek9-w2-AG9qowiAcnHymlthTl5J2lij' 
+    logs:
+        enabled: true                                   
+        filename: %kernel.root_dir%/logs/paypal.log    
+        level: FINE                                  
+    http:
+        timeout: 30                                 
+        retry: true

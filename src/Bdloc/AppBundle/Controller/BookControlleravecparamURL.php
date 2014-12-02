@@ -18,7 +18,7 @@ class BookController extends Controller
     /**
      * @Route("/catalogue/details/{id}")
      */
-    public function detailsAction($alphabetique, $categorie, $disponible, $nbBd, $recherche, $page)
+    public function detailsAction($id)
     {
         return $this->render("default/details.html.twig");
     }

@@ -10,12 +10,18 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 
 use Bdloc\AppBundle\Form\RegisterType;
 use Bdloc\AppBundle\Form\DropSpotType;
+use Bdloc\AppBundle\Form\CreditCardType;
 use Bdloc\AppBundle\Entity\User;
+use Bdloc\AppBundle\Entity\CreditCard;
 use Bdloc\AppBundle\Util\StringHelper;
-//use Bdloc\AppBundle\Form\ForgotPassword1Type;
-//use Bdloc\AppBundle\Form\ForgotPassword2Type;
+use Bdloc\AppBundle\Form\ForgotPasswordStepOneType;
+use Bdloc\AppBundle\Form\ForgotPasswordStepTwoType;
 
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+
+use PayPal\Rest\ApiContext;
+use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Api\Payment;
 
 class UserController extends Controller
 {
@@ -99,13 +105,6 @@ class UserController extends Controller
             // Mettre en session l'id de l'utilisateur
             $this->get('session')->set('id', $user->getId());
 
-            // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
-            // 
-            // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
-                /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
-                $this->get('security.context')->setToken($token);
-                $this->get('session')->set('_security_main',serialize($token));*/
-
 
             // Vider le formulaire et empêche la resoumission des données
             //return $this->redirect( $this->generateUrl("bdloc_app_user_register") );
@@ -183,6 +182,65 @@ class UserController extends Controller
 
         $params = array();
 
+        // --------------------- FORMULAIRE PAIEMENT ---------------------
+        // Récupère l'id utilisateur
+        /*$id = $this->get('session')->get('id');
+
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $user = $userRepo->find( $id );
+
+        //\Doctrine\Common\Util\Debug::dump($user);
+
+        if (empty($user)) {
+            $this->get('session')->getFlashBag()->add(
+                'error',
+                'Utilisateur non trouvé !'
+            );     
+            return $this->redirect( $this->generateUrl("bdloc_app_user_register") );       
+        }*/
+
+        $creditCard = new CreditCard();
+        $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
+
+        // Demande à SF d'injecter les données du formulaire dans notre entité ($creditCard)
+        $request = $this->getRequest();
+        $creditCardForm->handleRequest($request);
+
+        // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
+        if ($creditCardForm->isValid()) {
+
+            die("pret pour enregistrement");
+
+            // Update User
+            $user->setIsEnabled( 1 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
+            
+            // update en bdd pour CreditCardType
+            $em = $this->getDoctrine()->getManager(); 
+            $em->persist($creditCard);  
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Abonnement validé !'
+            );
+
+            // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
+            // 
+            // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
+                /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+                $this->get('security.context')->setToken($token);
+                $this->get('session')->set('_security_main',serialize($token));*/
+
+            // Vider le formulaire et empêche la resoumission des données
+            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
+            //
+            // Redirection vers catalogue
+            //return $this->redirect( $this->generateUrl("bdloc_app_book_catalog") );
+
+        }
+
+        $params['creditCardForm'] = $creditCardForm->createView();
         return $this->render("user/show_subsription_payment_form.html.twig", $params);
     }
 
@@ -194,35 +252,35 @@ class UserController extends Controller
         $params = array();
 
         // --------------------- FORMULAIRE FORGOT PASSWORD 1 ---------------------
-/*        $user = new User();
-        $forgotPassword1Form = $this->createForm(new ForgotPassword1Type(), $user);
+        $user = new User();
+        $forgotPasswordStepOneForm = $this->createForm(new ForgotPasswordStepOneType(), $user);
 
         // Demande à SF d'injecter les données du formulaire dans notre entité ($user)
         $request = $this->getRequest();
-        $forgotPassword1Form->handleRequest($request);
+        $forgotPasswordStepOneForm->handleRequest($request);
 
         // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
-        if ($forgotPassword1Form->isValid()) {
+        if ($forgotPasswordStepOneForm->isValid()) {
 
             // on vérifie que l'email existe
-            $userRepo = $this->getDoctrine()->getRepository("MCAppBundle:User");
-            $userFound = $userRepo->findByEmail( $user->getEmail() );
+            $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+            $userFound = $userRepo->findOneByEmail( $user->getEmail() );
             
             // si userFound on récupère la token correspondante et on envoie un email
             if ($userFound) {
                 $params_message = array();
-                $params_message['email'] = $userFound[0]->getEmail();
-                $params_message['token'] = $userFound[0]->getToken();
+                //$params_message['email'] = $userFound->getEmail();
+                //$params_message['token'] = $userFound->getToken();
 
-                $links = $this->generateUrl("mc_app_user_forgotpasswordone", array("email" => $userFound[0]->getEmail(), "token" => $userFound[0]->getToken() ))
-
+                $links = $this->generateUrl("bdloc_app_user_forgotpasswordsteptwo", array("email" => $userFound->getEmail(), "token" => $userFound->getToken()), true);
+                $params_message['links'] = $links;
                 //print_r($params_message);
                 //die();
 
                 $message = \Swift_Message::newInstance()
-                    ->setSubject('Nouveau mot de passe sur Tickets')
-                    ->setFrom('admin@tickets.com')
-                    ->setTo( $userFound[0]->getEmail() )
+                    ->setSubject('Nouveau mot de passe sur BDLOC')
+                    ->setFrom('admin@bdloc.com')
+                    ->setTo( $userFound->getEmail() )
                     ->setContentType('text/html')
                     ->setBody($this->renderView('emails/forgot_password_email.html.twig', $params_message));
                 $this->get('mailer')->send($message);
@@ -234,10 +292,10 @@ class UserController extends Controller
                 );
 
                 // Vider le formulaire et empêche la resoumission des données
-                return $this->redirect( $this->generateUrl("mc_app_user_forgotpasswordone") );
+                //return $this->redirect( $this->generateUrl("bdloc_app_user_forgotpasswordstepone") );
               
                 // Redirection vers l'accueil
-                //return $this->redirect( $this->generateUrl("mc_app_default_home") );
+                return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
             }
             else {
                 //die("personne");
@@ -249,9 +307,9 @@ class UserController extends Controller
 
         }
 
-        $params['forgotPassword1Form'] = $forgotPassword1Form->createView();
+        $params['forgotPasswordStepOneForm'] = $forgotPasswordStepOneForm->createView();
 
-        return $this->render("user/forgot_password1.html.twig", $params);*/
+        return $this->render("user/forgot_password_step_one.html.twig", $params);
     }
 
     /**
@@ -261,33 +319,33 @@ class UserController extends Controller
 
         $params = array();
 
-/*        // on récupère l'utilisateur pour vérifier que l'email et la token correspondent
-        $userRepo = $this->getDoctrine()->getRepository("MCAppBundle:User");
-        $userFound = $userRepo->findByEmail( $email );
+        // on récupère l'utilisateur pour vérifier que l'email et la token correspondent
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $userFound = $userRepo->findOneByEmail( $email );
 
-        if ( $token == $userFound[0]->getToken() ) {
+        if ( $token === $userFound->getToken() ) {
 
             // --------------------- FORMULAIRE FORGOT PASSWORD 2 ---------------------
-            $user = new User();
-            $forgotPassword2Form = $this->createForm(new ForgotPassword2Type(), $user);
+            //$user = new User();
+            $forgotPasswordStepTwoForm = $this->createForm(new ForgotPasswordStepTwoType(), $userFound);
 
             // Demande à SF d'injecter les données du formulaire dans notre entité ($user)
             $request = $this->getRequest();
-            $forgotPassword2Form->handleRequest($request);
+            $forgotPasswordStepTwoForm->handleRequest($request);
 
             // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
-            if ($forgotPassword2Form->isValid()) {
+            if ($forgotPasswordStepTwoForm->isValid()) {
                 //die("ok");
 
                 // on régénère token et mot de passe hashé
                 $stringHelper = new StringHelper(); 
-                $user->setToken( $stringHelper->randomString(30) ); 
+                $userFound->setToken( $stringHelper->randomString(30) ); 
 
                 // Hasher mot de passe
                 $factory = $this->get('security.encoder_factory');
-                $encoder = $factory->getEncoder($user);
-                $password = $encoder->encodePassword($user->getPassword(), $userFound[0]->getSalt());
-                $user->setPassword($password);
+                $encoder = $factory->getEncoder($userFound);
+                $password = $encoder->encodePassword($userFound->getPassword(), $userFound->getSalt());
+                $userFound->setPassword($password);
 
                 // on update en BDD
                 $em = $this->getDoctrine()->getManager(); 
@@ -298,24 +356,21 @@ class UserController extends Controller
                     'notice',
                     'Votre mot de passe a été changé !'
                 );
-
-                // Vider le formulaire et empêche la resoumission des données
-                return $this->redirect( $this->generateUrl("mc_app_user_forgotpasswordtwo") );
               
                 // Redirection vers l'accueil
-                //return $this->redirect( $this->generateUrl("mc_app_default_home") );
+                return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
 
 
             }
 
-            $params['forgotPassword2Form'] = $forgotPassword2Form->createView();
+            $params['forgotPasswordStepTwoForm'] = $forgotPasswordStepTwoForm->createView();
 
-            return $this->render("user/forgot_password2.html.twig", $params);
+            return $this->render("user/forgot_password_step_two.html.twig", $params);
         }
         else {
             // Redirection vers l'accueil
-            return $this->redirect( $this->generateUrl("mc_app_default_home") );
-        }*/
+            return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
+        }
     }
 
 }

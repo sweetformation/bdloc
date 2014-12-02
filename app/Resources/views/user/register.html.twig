@@ -18,3 +18,10 @@
     <h1 class="formTitle">Abonnement | Informations personnelles</h1>
     {{ form(registerForm, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}
+
+
+{% block javascripts %}
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script> <!-- https: type="text/javascript" -->
+{% endblock %}

@@ -173,6 +173,26 @@ class User implements AdvancedUserInterface
      */
     private $creditCards;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subscriptionType", type="string", length=1)
+     */
+    private $subscriptionType;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="subscriptionRenewal", type="date")
+     */
+    private $subscriptionRenewal;
+
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="Paiement", mappedBy="user")
+     */
+    private $paiements;
+
 
     /**
      * Get id
@@ -612,5 +632,84 @@ class User implements AdvancedUserInterface
     public function getCreditCards()
     {
         return $this->creditCards;
+    }
+
+    /**
+     * Set subscriptionType
+     *
+     * @param string $subscriptionType
+     * @return User
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->subscriptionType = $subscriptionType;
+
+        return $this;
+    }
+
+    /**
+     * Get subscriptionType
+     *
+     * @return string 
+     */
+    public function getSubscriptionType()
+    {
+        return $this->subscriptionType;
+    }
+
+    /**
+     * Set subscriptionRenewal
+     *
+     * @param \DateTime $subscriptionRenewal
+     * @return User
+     */
+    public function setSubscriptionRenewal($subscriptionRenewal)
+    {
+        $this->subscriptionRenewal = $subscriptionRenewal;
+
+        return $this;
+    }
+
+    /**
+     * Get subscriptionRenewal
+     *
+     * @return \DateTime 
+     */
+    public function getSubscriptionRenewal()
+    {
+        return $this->subscriptionRenewal;
+    }
+
+    /**
+     * Add paiements
+     *
+     * @param \Bdloc\AppBundle\Entity\Paiement $paiements
+     * @return User
+     */
+    public function addPaiement(\Bdloc\AppBundle\Entity\Paiement $paiements)
+    {
+        $this->paiements[] = $paiements;
+
+        return $this;
+    }
+
+    /**
+     * Remove paiements
+     *
+     * @param \Bdloc\AppBundle\Entity\Paiement $paiements
+     */
+    public function removePaiement(\Bdloc\AppBundle\Entity\Paiement $paiements)
+    {
+        $this->paiements->removeElement($paiements);
+    }
+
+    /**
+     * Get paiements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPaiements()
+    {
+        return $this->paiements;
     }
 }

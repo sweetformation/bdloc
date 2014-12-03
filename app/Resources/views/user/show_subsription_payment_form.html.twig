@@ -16,5 +16,30 @@
         </ul>
     </div>
     <h1 class="formTitle">Abonnement | Choix du paiement</h1>
+    <div id="presentation">
+        <h2>Mode d'abonnement</h2>
+        <h3>Tarifs :</h3>
+        <ul>
+            <li>L’abonnement mensuel coûte le prix d’une seule BD : 12€ TTC.</li> 
+            <li>Un abonnement annuel permet d’économiser 2 mois : 120€ TTC.</li>
+        </ul>
+        <h2>Choisissez votre type d'abonnement</h2>
+        <!-- <div id="choixAbo">
+            <label><input type="radio" name="abonnement" value="mensuel">Mensuel</label>
+            <label><input type="radio" name="abonnement" value="annuel" checked="checked">Annuel</label>
+        </div>
+        <p id="cout">Coût débité   <strong><span id="prix">120</span> €</strong></p> -->
+        <p id="cout">Coût débité<strong><span id="prix">120.00</span> €</strong></p>
+    </div>
     {{ form(creditCardForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    <!-- { { form_label(creditCardForm.expirationDate) }}
+    { {  form_widget( creditCardForm.expirationDate.day, { 'attr': { 'style': 'display:none' } } )  }} -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/payment.js') }}"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script> <!-- https: type="text/javascript" -->
 {% endblock %}

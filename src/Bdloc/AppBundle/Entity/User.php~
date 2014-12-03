@@ -173,6 +173,26 @@ class User implements AdvancedUserInterface
      */
     private $creditCards;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subscriptionType", type="string", length=1)
+     */
+    private $subscriptionType;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="subscriptionRenewal", type="date")
+     */
+    private $subscriptionRenewal;
+
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="Paiement", mappedBy="user")
+     */
+    private $paiements;
+
 
     /**
      * Get id
@@ -572,5 +592,124 @@ class User implements AdvancedUserInterface
     public function getDropspot()
     {
         return $this->dropspot;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->creditCards = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add creditCards
+     *
+     * @param \Bdloc\AppBundle\Entity\CreditCard $creditCards
+     * @return User
+     */
+    public function addCreditCard(\Bdloc\AppBundle\Entity\CreditCard $creditCards)
+    {
+        $this->creditCards[] = $creditCards;
+
+        return $this;
+    }
+
+    /**
+     * Remove creditCards
+     *
+     * @param \Bdloc\AppBundle\Entity\CreditCard $creditCards
+     */
+    public function removeCreditCard(\Bdloc\AppBundle\Entity\CreditCard $creditCards)
+    {
+        $this->creditCards->removeElement($creditCards);
+    }
+
+    /**
+     * Get creditCards
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCreditCards()
+    {
+        return $this->creditCards;
+    }
+
+    /**
+     * Set subscriptionType
+     *
+     * @param string $subscriptionType
+     * @return User
+     */
+    public function setSubscriptionType($subscriptionType = null)
+    {
+        $this->subscriptionType = $subscriptionType;
+
+        return $this;
+    }
+
+    /**
+     * Get subscriptionType
+     *
+     * @return string 
+     */
+    public function getSubscriptionType()
+    {
+        return $this->subscriptionType;
+    }
+
+    /**
+     * Set subscriptionRenewal
+     *
+     * @param \DateTime $subscriptionRenewal
+     * @return User
+     */
+    public function setSubscriptionRenewal($subscriptionRenewal = null)
+    {
+        $this->subscriptionRenewal = $subscriptionRenewal;
+
+        return $this;
+    }
+
+    /**
+     * Get subscriptionRenewal
+     *
+     * @return \DateTime 
+     */
+    public function getSubscriptionRenewal()
+    {
+        return $this->subscriptionRenewal;
+    }
+
+    /**
+     * Add paiements
+     *
+     * @param \Bdloc\AppBundle\Entity\Paiement $paiements
+     * @return User
+     */
+    public function addPaiement(\Bdloc\AppBundle\Entity\Paiement $paiements)
+    {
+        $this->paiements[] = $paiements;
+
+        return $this;
+    }
+
+    /**
+     * Remove paiements
+     *
+     * @param \Bdloc\AppBundle\Entity\Paiement $paiements
+     */
+    public function removePaiement(\Bdloc\AppBundle\Entity\Paiement $paiements)
+    {
+        $this->paiements->removeElement($paiements);
+    }
+
+    /**
+     * Get paiements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPaiements()
+    {
+        return $this->paiements;
     }
 }

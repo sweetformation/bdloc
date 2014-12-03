@@ -3,12 +3,14 @@
 namespace Bdloc\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * CreditCard
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\CreditCardRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class CreditCard
 {
@@ -58,19 +60,38 @@ class CreditCard
     // Propriétés non enregistrées en BDD
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez fournir un type de carte de crédit.")
+     */
+    private $creditCardType;
+    /**
+     * @var string
+     * @Assert\NotBlank(message="Veuillez fournir un numéro de carte de crédit.")
+     * @Assert\Regex(pattern= "/[0-9]+/", message="Format invalide")
      */
     private $creditCardNumber;
     /**
+     * @var \DateTime
+     * @Assert\NotBlank(message="Veuillez fournir une date d'expiration.")
+     */
+    private $expirationDate;
+    /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez fournir le code CVC.")
+     * @Assert\Regex(pattern= "/[0-9]{3,3}/", message="Format invalide")
      */
     private $codeCVC;
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez fournir le nom figurant sur la carte de crédit.")
+     * @Assert\Regex(pattern= "/[a-zA-Z\s-]+/", message="Format invalide")
      */
-    private $creditCardName;
+    private $creditCardLastName;
+    /**
+     * @var string
+     * @Assert\NotBlank(message="Veuillez fournir le prénom figurant sur la carte de crédit.")
+     * @Assert\Regex(pattern= "/[a-zA-Z\s-]+/", message="Format invalide")
+     */
+    private $creditCardFirstName;
 
 
     /**
@@ -198,6 +219,20 @@ class CreditCard
         return $this->user;
     }
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function beforeInsert() {
+        $this->setDateCreated( new \DateTime() );
+        $this->setDateModified( new \DateTime() );
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function beforeEdit() {
+        $this->setDateModified( new \DateTime() );
+    }
 
 
 
@@ -211,8 +246,28 @@ class CreditCard
 
 
 
+    /**
+     * Set creditCardType
+     *
+     * @param string $creditCardType
+     * @return CreditCard
+     */
+    public function setCreditCardType($creditCardType)
+    {
+        $this->creditCardType = $creditCardType;
 
+        return $this;
+    }
 
+    /**
+     * Get creditCardType
+     *
+     * @return string 
+     */
+    public function getCreditCardType()
+    {
+        return $this->creditCardType;
+    }
 
     /**
      * Set creditCardNumber
@@ -235,6 +290,29 @@ class CreditCard
     public function getCreditCardNumber()
     {
         return $this->creditCardNumber;
+    }
+
+    /**
+     * Set expirationDate
+     *
+     * @param \DateTime $expirationDate
+     * @return CreditCard
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->expirationDate = $expirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get expirationDate
+     *
+     * @return \DateTime 
+     */
+    public function getExpirationDate()
+    {
+        return $this->expirationDate;
     }
 
     /**
@@ -261,26 +339,49 @@ class CreditCard
     }
 
     /**
-     * Set creditCardName
+     * Set creditCardLastName
      *
-     * @param string $creditCardName
+     * @param string $creditCardLastName
      * @return CreditCard
      */
-    public function setCreditCardName($creditCardName)
+    public function setCreditCardLastName($creditCardLastName)
     {
-        $this->creditCardName = $creditCardName;
+        $this->creditCardLastName = $creditCardLastName;
 
         return $this;
     }
 
     /**
-     * Get creditCardName
+     * Get creditCardLastName
      *
      * @return string 
      */
-    public function getCreditCardName()
+    public function getCreditCardLastName()
     {
-        return $this->creditCardName;
+        return $this->creditCardLastName;
+    }
+
+    /**
+     * Set creditCardFirstName
+     *
+     * @param string $creditCardFirstName
+     * @return CreditCard
+     */
+    public function setCreditCardFirstName($creditCardFirstName)
+    {
+        $this->creditCardFirstName = $creditCardFirstName;
+
+        return $this;
+    }
+
+    /**
+     * Get creditCardFirstName
+     *
+     * @return string 
+     */
+    public function getCreditCardFirstName()
+    {
+        return $this->creditCardFirstName;
     }
 
 }

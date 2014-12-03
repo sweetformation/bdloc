@@ -2,7 +2,7 @@
 #map-canvas {
     border: 2px solid #000;
     height: 300px;
-    margin: 20px auto;
+    margin: 20px 0 20px 140px;
     width: 440px;
 }
 

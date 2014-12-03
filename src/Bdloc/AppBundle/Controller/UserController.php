@@ -20,9 +20,18 @@ use Bdloc\AppBundle\Form\ForgotPasswordStepTwoType;
 
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
-use PayPal\Rest\ApiContext;
-use PayPal\Auth\OAuthTokenCredential;
+//use PayPal\Rest\ApiContext;
+//use PayPal\Auth\OAuthTokenCredential;
+//use PayPal\Api\Payment;
+
+use PayPal\Api\Amount;
+use PayPal\Api\CreditCard as PaypalCreditCard;
+use PayPal\Api\Payer; 
 use PayPal\Api\Payment;
+use PayPal\Api\FundingInstrument;
+use PayPal\Api\Transaction;
+
+use Bdloc\AppBundle\Entity\Paiement;
 
 class UserController extends Controller
 {
@@ -80,6 +89,8 @@ class UserController extends Controller
             $user->setAddress( explode(',', $user->getAddress())[0] );
             $user->setRoles( array("ROLE_USER") );
             $user->setIsEnabled( 0 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
+            $user->setSubscriptionType("0");
+            $user->setSubscriptionRenewal(new \DateTime());
 
             // salt (tjs avant de hasher le mdp!!) & token avec notre propre classe
             $stringHelper = new StringHelper();
@@ -239,42 +250,178 @@ class UserController extends Controller
 
         $creditCard = new CreditCard();
         $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
+        //$creditCardForm = $this->createForm(new CreditCardType(), $creditCard, array("action" => $this->generateUrl("bdloc_app_payment_takesubscriptionpayment")));
 
         // Demande à SF d'injecter les données du formulaire dans notre entité ($creditCard)
         $request = $this->getRequest();
         $creditCardForm->handleRequest($request);
 
+
         // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
         if ($creditCardForm->isValid()) {
 
-            die("pret pour enregistrement");
+            // On récupère le prix avec le bouton radio rajouté manuellement dans le form!
+            $typeAbo = $creditCardForm["abonnement"]->getData();
+            if ($typeAbo == "A") {
+                $prixAbo = "120.00";
+            }
+            else if ($typeAbo == "M") {
+                $prixAbo = "12.00";
+            }
+            //echo "<br /><br />prixAbo = " . $prixAbo;
+            //die();
 
-            // Update User
-            $user->setIsEnabled( 1 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
-            
-            // update en bdd pour CreditCardType
-            $em = $this->getDoctrine()->getManager(); 
-            $em->persist($creditCard);  
-            $em->flush();
+        // -----------------------------------------------------------------------------------------------
+        // ------------------------------------------ PAYPAL ---------------------------------------------
+        // -----------------------------------------------------------------------------------------------
+            //see kmj/paypalbridgebundle
+            $apiContext = $this->get('paypal')->getApiContext();
 
-            // Créer un message qui ne s'affichera qu'une fois
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Abonnement validé !'
-            );
+            // ### CreditCard
+            // A resource representing a credit card that can be
+            // used to fund a payment.
+            $card = new PaypalCreditCard();
+            $card->setType($creditCard->getCreditCardType());
+            $card->setNumber($creditCard->getCreditCardNumber());
+            $card->setExpire_month($creditCard->getExpirationDate()->format("m"));
+            $card->setExpire_year($creditCard->getExpirationDate()->format("Y"));
+            $card->setCvv2($creditCard->getCodeCVC());
+            $card->setFirst_name($creditCard->getCreditCardFirstName());
+            $card->setLast_name($creditCard->getCreditCardLastName());
 
-            // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
-            // 
-            // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
-                /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
-                $this->get('security.context')->setToken($token);
-                $this->get('session')->set('_security_main',serialize($token));*/
+            // ### FundingInstrument
+            // A resource representing a Payer's funding instrument.
+            // Use a Payer ID (A unique identifier of the payer generated
+            // and provided by the facilitator. This is required when
+            // creating or using a tokenized funding instrument)
+            // and the `CreditCardDetails`
+            $fi = new FundingInstrument();
+            $fi->setCredit_card($card);
 
-            // Vider le formulaire et empêche la resoumission des données
-            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
-            //
-            // Redirection vers catalogue
-            //return $this->redirect( $this->generateUrl("bdloc_app_book_catalog") );
+            // ### Payer
+            // A resource representing a Payer that funds a payment
+            // Use the List of `FundingInstrument` and the Payment Method
+            // as 'credit_card'
+            $payer = new Payer();
+            $payer->setPayment_method("credit_card");
+            $payer->setFunding_instruments(array($fi));
+
+            // ### Amount
+            // Let's you specify a payment amount.
+            $amount = new Amount();
+            $amount->setCurrency("EUR");
+            $amount->setTotal($prixAbo);
+
+            // ### Transaction
+            // A transaction defines the contract of a
+            // payment - what is the payment for and who
+            // is fulfilling it. Transaction is created with
+            // a `Payee` and `Amount` types
+            $transaction = new Transaction();
+            $transaction->setAmount($amount);
+            $transaction->setDescription("This is the payment description.");
+
+            // ### Payment
+            // A Payment Resource; create one using
+            // the above types and intent as 'sale'
+            $payment = new Payment();
+            $payment->setIntent("sale");
+            $payment->setPayer($payer);
+            $payment->setTransactions(array($transaction));
+
+            // ### Create Payment
+            // Create a payment by posting to the APIService
+            // using a valid ApiContext
+            // The return object contains the status;
+            try {
+                $resultat = $payment->create($apiContext);
+                //echo("<br /><br />result =<br />");
+                //print_r($resultat);
+                $cc_paypal = $card->create($apiContext);
+                //echo("<br /><br />ccpaypal =<br />");
+                //print_r($cc_paypal);
+
+            } catch (\Paypal\Exception\PPConnectionException $pce) {
+                print_r( json_decode($pce->getData()) );
+            }
+
+            $paypal_id = $card->getId();
+            //echo "<br /><br />paypalId = " . $paypal_id;
+            $statut = $resultat->getState();
+            //echo "<br /><br />statut = " . $statut;
+            //die();
+        // -----------------------------------------------------------------------------------------------
+        // -----------------------------------------------------------------------------------------------
+
+
+            if ($statut == "approved") {
+                
+                //Si Paiement Paypal validé
+                $paiement = new Paiement();
+                $paiement->setType("subscription");
+                $paiement->setAmount( $prixAbo );
+                $paiement->setUser( $user );  // On associe ce paiement à l'utilisateur concerné
+
+                // Update User
+                $user->setIsEnabled( 1 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
+                $user->setSubscriptionType($typeAbo);
+                //echo "<br />ok pour subscriptiontype";
+                //$user->setSubscriptionRenewal(date("Y-m-d", strtotime("+1 month")));
+                if ($typeAbo == "A") {
+                    $user->setSubscriptionRenewal(new \DateTime("+1 year")); //date("Y-m-d", strtotime("+1 year"))
+                }
+                else if ($typeAbo == "M") {
+                    $user->setSubscriptionRenewal(new \DateTime("+1 month"));
+                }
+                //echo "<br />ok pour renewal";
+                
+                // On associe la carte de crédit à l'utilisateur
+                $creditCard->setUser( $user );
+
+                // On récupère les infos de paypal
+                $creditCard->setPaypalId( $paypal_id );
+                //echo "<br />ok pour paypalId";
+                //echo "<br />getExpirationDate = <br />";
+                //var_dump($creditCard->getExpirationDate());
+                $creditCard->setValidUntil( $creditCard->getExpirationDate() );  //->format("Y-m-d")
+                //echo "<br />ok pour validUntil";
+                //echo "<br />getvalidUntil = <br />";
+                //var_dump($creditCard->getValidUntil());
+
+
+
+                // update en bdd pour CreditCardType
+                $em = $this->getDoctrine()->getManager(); 
+                //echo "<br />manager choppé";
+                $em->persist($creditCard);  
+                $em->persist($paiement);
+                //echo "<br />persist x2 ok";  
+                $em->flush();
+
+                // Créer un message qui ne s'affichera qu'une fois
+                $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'Abonnement validé !'
+                );
+
+                // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
+                // 
+                // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
+                    /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+                    $this->get('security.context')->setToken($token);
+                    $this->get('session')->set('_security_main',serialize($token));*/
+
+                // Redirection vers catalogue
+                //return $this->redirect( $this->generateUrl("bdloc_app_book_catalog") );
+                return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
+            }
+            else {
+                $this->get('session')->getFlashBag()->add(
+                    'error',
+                    'Problème lors de la transaction !'
+                ); 
+                return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
+            }
 
         }
 

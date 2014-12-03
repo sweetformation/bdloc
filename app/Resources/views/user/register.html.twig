@@ -21,7 +21,7 @@
 
 
 {% block javascripts %}
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+{{ parent() }}
+<script src="{{ asset('js/register.js') }}"></script>
 <script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script> <!-- https: type="text/javascript" -->
 {% endblock %}

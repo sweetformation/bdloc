@@ -52,6 +52,10 @@
     width: 250px;
 }
 
+/*#bdloc_appbundle_register > div:nth-child(8) {
+    display: inline-block;
+}*/
+
 #bdloc_appbundle_register > div > div,
 #bdloc_appbundle_register ul {
     display: inline-block;

@@ -2,8 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Bdloc !{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}">{% endblock %}
+        <title>{% block title %}}Compte | BDLOC{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}">
+            <link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('faviconBdloc.ico') }}" />
     </head>
     <body>
@@ -26,10 +29,19 @@
                 {% endif %}
             </div>
         </header>
-{% block sidebar %}
-    
-{% endblock %}
+
         <main id="main">
+            {% set chemin_ss_menu = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+            <div id="menuCompte">
+                <a href="{{ path('bdloc_app_account_home') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/' %} class="compteActive" {% endif %}>Mon compte</a>
+                <a href="{{ path('bdloc_app_account_editinfo') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/modifier-informations-personnelles' %} class="compteActive" {% endif %}>Modifier mes informations personnelles</a>
+                <a href="{{ path('bdloc_app_account_editpassword') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/modifier-mot-de-passe' %} class="compteActive" {% endif %}>Modifier mon mot de passe</a>
+                <a href="{{ path('bdloc_app_account_editdropspot') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/modifier-point-relais' %} class="compteActive" {% endif %}>Modifier mon point relais</a>
+                <a href="{{ path('bdloc_app_account_editpaymentinfo') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/modifier-informations-paiement' %} class="compteActive" {% endif %}>Modifier mes informations de paiement</a>
+                <a href="{{ path('bdloc_app_account_history') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/consulter-historique-location' %} class="compteActive" {% endif %}>Consulter mon historique de locations</a>
+                <a href="{{ path('bdloc_app_account_showfinepaymentform') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/payer-amende' %} class="compteActive" {% endif %}>Payer une amende</a>
+                <a href="{{ path('bdloc_app_account_unsubscribe') }}" {% if chemin_ss_menu == '/bdloc/web/app_dev.php/compte/se-desabonner' %} class="compteActive" {% endif %}>Me désabonner</a>
+            </div>
             <div id="flash-messages">
             {% for flashMessage in app.session.flashbag.get('notice') %}
                 <div class="flash-notice">

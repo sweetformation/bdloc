@@ -30,6 +30,9 @@ class PaymentController extends Controller
     public function takeSubscriptionPaymentAction()
     {
 
+        /*$pps = $this->get('paypal_subscription');
+        $pps->takePayment();*/
+        
         // Recréer un formulaire pour récupérer les données soumises par l'utilisateur
         $creditCard = new CreditCard();
         $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);

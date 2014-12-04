@@ -19,17 +19,18 @@ use Bdloc\AppBundle\Form\ForgotPasswordStepOneType;
 use Bdloc\AppBundle\Form\ForgotPasswordStepTwoType;
 
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 //use PayPal\Rest\ApiContext;
 //use PayPal\Auth\OAuthTokenCredential;
 //use PayPal\Api\Payment;
 
-use PayPal\Api\Amount;
+/*use PayPal\Api\Amount;
 use PayPal\Api\CreditCard as PaypalCreditCard;
 use PayPal\Api\Payer; 
 use PayPal\Api\Payment;
 use PayPal\Api\FundingInstrument;
-use PayPal\Api\Transaction;
+use PayPal\Api\Transaction;*/
 
 use Bdloc\AppBundle\Entity\Paiement;
 
@@ -84,7 +85,7 @@ class UserController extends Controller
         // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
         if ($registerForm->isValid()) {
 
-            // on termine l'hydratation de notre objet User avant enregistrement (dates, salt, token, roles, isEnabled)
+            // on termine l'hydratation de notre objet User avant enregistrement (dates, salt, token, roles, isEnabled, subscriptionType)
             // dates prises en charge par Doctrine en lifecycle callbacks avec @ORM\PrePersist et @ORM\PreUpdate
             $user->setAddress( explode(',', $user->getAddress())[0] );
             $user->setRoles( array("ROLE_USER") );
@@ -117,10 +118,6 @@ class UserController extends Controller
             // Mettre en session l'id de l'utilisateur
             $this->get('session')->set('id', $user->getId());
 
-
-            // Vider le formulaire et empêche la resoumission des données
-            //return $this->redirect( $this->generateUrl("bdloc_app_user_register") );
-            //
             // Redirection vers étape 2, choix du point relais
             return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
 
@@ -198,7 +195,7 @@ class UserController extends Controller
 
             // Vider le formulaire et empêche la resoumission des données
             //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
-            //
+            
             // Redirection vers étape 3, choix du paiement
             return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
 
@@ -263,15 +260,22 @@ class UserController extends Controller
             // On récupère le prix avec le bouton radio rajouté manuellement dans le form!
             $typeAbo = $creditCardForm["abonnement"]->getData();
             if ($typeAbo == "A") {
-                $prixAbo = "120.00";
+                $prixAbo = $this->container->getParameter('prixAboA');;
             }
             else if ($typeAbo == "M") {
-                $prixAbo = "12.00";
+                $prixAbo = $this->container->getParameter('prixAboM');;
             }
             //echo "<br /><br />prixAbo = " . $prixAbo;
             //die();
+            
+            // Utilisation du service PPUtility
+            $ppu = $this->get('paypal_utility');
+            $ppu->setCreditCard($creditCard);
+            $ppu->setPrixAbo($prixAbo);
+            $statut = $ppu->createPayment();
+            $paypalCC_id = $ppu->registerCreditCard();
 
-        // -----------------------------------------------------------------------------------------------
+/*        // -----------------------------------------------------------------------------------------------
         // ------------------------------------------ PAYPAL ---------------------------------------------
         // -----------------------------------------------------------------------------------------------
             //see kmj/paypalbridgebundle
@@ -345,13 +349,13 @@ class UserController extends Controller
                 print_r( json_decode($pce->getData()) );
             }
 
-            $paypal_id = $card->getId();
-            //echo "<br /><br />paypalId = " . $paypal_id;
+            $paypalCC_id = $card->getId();
+            //echo "<br /><br />paypalId = " . $paypalCC_id;
             $statut = $resultat->getState();
             //echo "<br /><br />statut = " . $statut;
             //die();
         // -----------------------------------------------------------------------------------------------
-        // -----------------------------------------------------------------------------------------------
+        // -----------------------------------------------------------------------------------------------*/
 
 
             if ($statut == "approved") {
@@ -379,7 +383,7 @@ class UserController extends Controller
                 $creditCard->setUser( $user );
 
                 // On récupère les infos de paypal
-                $creditCard->setPaypalId( $paypal_id );
+                $creditCard->setPaypalId( $paypalCC_id );
                 //echo "<br />ok pour paypalId";
                 //echo "<br />getExpirationDate = <br />";
                 //var_dump($creditCard->getExpirationDate());
@@ -410,6 +414,14 @@ class UserController extends Controller
                     /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
                     $this->get('security.context')->setToken($token);
                     $this->get('session')->set('_security_main',serialize($token));*/
+
+                // tiré de http://stackoverflow.com/questions/9550079/how-to-programmatically-login-authenticate-a-user
+                    $token = new UsernamePasswordToken($user, $user->getPassword(), "secured_area", $user->getRoles());
+                    $this->get("security.context")->setToken($token);
+
+                    // déclenche l'évènement de login
+                    $event = new InteractiveLoginEvent($request, $token);
+                    $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
 
                 // Redirection vers catalogue
                 //return $this->redirect( $this->generateUrl("bdloc_app_book_catalog") );

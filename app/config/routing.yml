@@ -6,12 +6,12 @@ bdloc_app:
 bdloc_app_admin:
     resource: "@BdlocAppBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /admin
+    prefix:   /admin/
 
-# bdloc_app_account:
-#     resource: "@BdlocAppBundle/Controller/AccountController.php"
-#     type:     annotation
-#     prefix:   /compte/
+bdloc_app_account:
+    resource: "@BdlocAppBundle/Controller/AccountController.php"
+    type:     annotation
+    prefix:   /compte/
 
 # bdloc_app_account:
 #     resource: "@BdlocAppBundle/Controller/PaymentController.php"

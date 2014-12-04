@@ -46,7 +46,7 @@ app = {
         var autocomplete = new google.maps.places.Autocomplete(input, options)
 
         // lors de la sélection d'adresse, on récupère les coordonnées
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        /*google.maps.event.addListener(autocomplete, 'place_changed', function() {
             // On récupère 
             var loc = autocomplete.getPlace().geometry.location
 
@@ -59,9 +59,9 @@ app = {
             // On affiche la météo avec les coordonnées
             //app.meteo(data)
 
-        })
+        })*/
 
-    },
+    }/*,
 
     meteo: function(myData) {
 
@@ -103,7 +103,7 @@ app = {
             }, function(results) {
             console.log(results[0].geometry.location); //LatLng
         })
-    }
+    }*/
 
 }
 

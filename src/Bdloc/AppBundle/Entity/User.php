@@ -45,7 +45,7 @@ class User implements AdvancedUserInterface
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un email.")
      * @ORM\Column(name="email", type="string", length=255, unique=true)
-     * @Assert\Email()
+     * @Assert\Email(message="Format invalide")
      */
     private $email;
 
@@ -113,7 +113,7 @@ class User implements AdvancedUserInterface
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un code postal.", groups={"registration"})
-     * @Assert\Regex(pattern= "/[0-9]{5}/", message="Code postal de 5 chiffres")
+     * @Assert\Regex(pattern= "#^[0-9]{5,5}$#", message="Code postal de 5 chiffres")
      * @ORM\Column(name="zip", type="string", length=5)
      */
     private $zip;
@@ -135,7 +135,7 @@ class User implements AdvancedUserInterface
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.", groups={"registration"})
-     * @Assert\Regex(pattern= "/[0-9(+)\s\.]+/", message="Format invalide")
+     * @Assert\Regex(pattern= "#^0[1-8]([-.\s]?[0-9]{2}){4}$|^\+[1-9]{2}(\(0\))?[1-8]([-.\s]?[0-9]{2}){4}$|^00[1-9]{2}[1-8]([-.\s]?[0-9]{2}){4}$#", message="Format invalide")
      * @ORM\Column(name="phone", type="string", length=20)
      */
     private $phone;

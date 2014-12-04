@@ -72,3 +72,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
 
+services:
+    #bd.slugger:
+    #    class: Bdloc\AppBundle\Service\Slugger
+    #    arguments: ['bla']
+    paypal_utility:
+        class: Bdloc\AppBundle\Service\PPUtility
+        arguments: [@paypal, %prixAboM%, %prixAboA%]

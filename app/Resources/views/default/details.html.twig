@@ -1,0 +1,38 @@
+{% extends ':layouts:base.html.twig' %}
+
+{% block title %}Détails BD | Bdloc{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
+{% block main_content %}
+
+                
+    <div id="containerPostBd">
+            <div class="PostBD">
+           
+                <div class="BdPost">
+                    <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
+                    <div id="infos">
+                        <p class="titreBd">Titre de la BD : {{ book.title }}</p>
+                        <p class="langue">En {% if book.serie.language = "fr" %}{{ "Français" }}{% else %}{{ "Anglais"}}{% endif %}<p>
+                        <p class="categorie">{{ book.serie.style }}</p>
+                        <p class="auteur">L'auteur de cette BD est : {{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                        <p class="coloriste">Le coloriste de cette BD est : {{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+                        <p class="scenariste">Le scenariste de cette BD est : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+                        <p class="description">Synopsis : {{ book.serie.comment }}</p>
+                    {% if book.stock == 0 %}
+                        <p class="indisponible">Indisponible...</p>
+                    {% else %}
+                        <!-- <p class="disponible">Disponible !</p> -->
+                        <p class="disponible">Il nous reste {{ book.stock }} BD dispos !</p>
+                        <input class="commander" type="button" value="Ajouter au panier !">
+                    {% endif %}
+                </div>
+            </div>
+    </div>
+
+
+{% endblock %}
+

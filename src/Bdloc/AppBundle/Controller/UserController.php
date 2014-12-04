@@ -424,8 +424,8 @@ class UserController extends Controller
                     $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
 
                 // Redirection vers catalogue
-                //return $this->redirect( $this->generateUrl("bdloc_app_book_catalog") );
-                return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
+                return $this->redirect( $this->generateUrl("bdloc_app_book_catalog", array('page' => '1')) );
+                //return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
             }
             else {
                 $this->get('session')->getFlashBag()->add(

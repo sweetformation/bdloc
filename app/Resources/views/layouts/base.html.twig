@@ -7,28 +7,8 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('faviconBdloc.ico') }}" />
     </head>
     <body>
-        <header id="header">
-            <h1 id="titreSite" class="left">BdLoc</h1>
-            <nav id="nav" class="left">
-                {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
-                <ul>
-                    <li><a href="{{ path('bdloc_app_book_catalog', {'page': 1}) }}">Les BDs !</a></li>
-                    <li><a href="{#{{ path("bdloc_app_cart_recap", {'id': id_cart}) }}#}">Mon Panier (nb)</a></li>
-                    <li><a href="">Mon Compte</a></li>     
-                </ul>    
-            </nav>
-            <div id="connexion" class="right">
-                {% if app.user %} <!-- app.session.started -->
-                    <div id="user"class="left">Bonjour {{ app.user.lastName }}</div>
-                    <a href="{{ path('logout') }}" class="left">Déconnexion</a>
-                {% else %}
-                    <a href="{{ path('bdloc_app_user_login') }}" {% if currentPath == '/bdloc/web/app_dev.php/login' %} class="active" {% endif %} >Connexion</a>
-                {% endif %}
-            </div>
-        </header>
-{% block sidebar %}
-    
-{% endblock %}
+        {% include ':layouts:header.html.twig' %}
+        {% block sidebar %}{% endblock %}
         <main id="main">
             <div id="flash-messages">
             {% for flashMessage in app.session.flashbag.get('notice') %}

@@ -29,13 +29,12 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un pseudo.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un pseudo.")
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
      *      minMessage = "Votre pseudo doit faire au moins {{ limit }} caractères",
-     *      maxMessage = "Votre pseudo ne peut pas être plus long que {{ limit }} caractères",
-     *      groups={"registration"}
+     *      maxMessage = "Votre pseudo ne peut pas être plus long que {{ limit }} caractères"
      * )
      * @ORM\Column(name="username", type="string", length=255, unique=true)
      */
@@ -54,8 +53,7 @@ class User implements AdvancedUserInterface
      * @Assert\NotBlank(message="Veuillez fournir un mot de passe.", groups={"registration"})
      * @Assert\Length(
      *      min = "6",
-     *      minMessage = "Votre mot de passe doit faire au moins {{ limit }} caractères",
-     *      groups={"registration"}
+     *      minMessage = "Votre mot de passe doit faire au moins {{ limit }} caractères"
      * )
      * @ORM\Column(name="password", type="string", length=255)
      */
@@ -84,13 +82,12 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un nom.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un nom.")
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
      *      minMessage = "Votre nom doit faire au moins {{ limit }} caractères",
-     *      maxMessage = "Votre nom ne peut pas être plus long que {{ limit }} caractères",
-     *      groups={"registration"}
+     *      maxMessage = "Votre nom ne peut pas être plus long que {{ limit }} caractères"
      * )
      * @ORM\Column(name="firstName", type="string", length=255)
      */
@@ -98,13 +95,12 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un prénom.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un prénom.")
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
      *      minMessage = "Votre prénom doit faire au moins {{ limit }} caractères",
-     *      maxMessage = "Votre prénom ne peut pas être plus long que {{ limit }} caractères",
-     *      groups={"registration"}
+     *      maxMessage = "Votre prénom ne peut pas être plus long que {{ limit }} caractères"
      * )
      * @ORM\Column(name="lastName", type="string", length=255)
      */
@@ -112,7 +108,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un code postal.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un code postal.")
      * @Assert\Regex(pattern= "#^[0-9]{5,5}$#", message="Code postal de 5 chiffres")
      * @ORM\Column(name="zip", type="string", length=5)
      */
@@ -120,13 +116,12 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir une adresse.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir une adresse.")
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
      *      minMessage = "Votre adresse doit faire au moins {{ limit }} caractères",
-     *      maxMessage = "Votre adresse ne peut pas être plus long que {{ limit }} caractères",
-     *      groups={"registration"}
+     *      maxMessage = "Votre adresse ne peut pas être plus long que {{ limit }} caractères"
      * )
      * @ORM\Column(name="address", type="string", length=255)
      */
@@ -134,7 +129,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.")
      * @Assert\Regex(pattern= "#^0[1-8]([-.\s]?[0-9]{2}){4}$|^\+[1-9]{2}(\(0\))?[1-8]([-.\s]?[0-9]{2}){4}$|^00[1-9]{2}[1-8]([-.\s]?[0-9]{2}){4}$#", message="Format invalide")
      * @ORM\Column(name="phone", type="string", length=20)
      */
@@ -258,6 +253,7 @@ class User implements AdvancedUserInterface
      */
     public function setPassword($password)
     {
+
         $this->password = $password;
 
         return $this;
@@ -528,7 +524,7 @@ class User implements AdvancedUserInterface
 
     // requis par le UserInterface
     public function eraseCredentials() {
-        $this->password = null;
+        //$this->password = null;
     }
 
     // requis par le AdvancedUserInterface

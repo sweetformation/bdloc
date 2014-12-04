@@ -1,6 +1,6 @@
 {% extends ":layouts:account.html.twig" %}
 
 {% block main_content %}
-    <h1>Modifier mes informations personnelles<h1>
-    <!-- { { form(registerForm, {'attr': {'novalidate': 'novalidate'}}) }} -->
+    <h1>Modifier mes informations personnelles</h1>
+    {{ form(editInfoForm, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}

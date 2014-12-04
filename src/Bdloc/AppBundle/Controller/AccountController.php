@@ -11,11 +11,12 @@ use Bdloc\AppBundle\Entity\User;
 use Bdloc\AppBundle\Entity\CreditCard;
 use Bdloc\AppBundle\Util\StringHelper;
 
-use Bdloc\AppBundle\Form\RegisterType;
-use Bdloc\AppBundle\Form\DropSpotType;
-use Bdloc\AppBundle\Form\CreditCardType;
+use Bdloc\AppBundle\Form\EditInfoType;
+use Bdloc\AppBundle\Form\EditPasswordType;
+//use Bdloc\AppBundle\Form\DropSpotType;
+//use Bdloc\AppBundle\Form\CreditCardType;
 
-use Bdloc\AppBundle\Entity\Paiement;
+//use Bdloc\AppBundle\Entity\Paiement;
 
 class AccountController extends Controller
 {
@@ -38,9 +39,37 @@ class AccountController extends Controller
     public function editInfoAction()
     {
         // récupère l'utilisateur en session
-        $user = $this->getUser();
+        $user_session = $this->getUser();
+        //\Doctrine\Common\Util\Debug::dump($user_session);
         
-        return $this->render("account/edit_info.html.twig");
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $user = $userRepo->find( $user_session->getId() );
+
+        $editInfoForm = $this->createForm(new EditInfoType(), $user);
+
+        $request = $this->getRequest();
+        $editInfoForm->handleRequest($request);
+
+        if ($editInfoForm->isValid()) {
+
+            // update en bdd
+            $em = $this->getDoctrine()->getManager(); 
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Modification(s) prise(s) en compte !'
+            );
+            
+            // Redirection vers accueil compte
+            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+
+        }
+
+        $params['editInfoForm'] = $editInfoForm->createView();
+        
+        return $this->render("account/edit_info.html.twig", $params);
     }
 
     /**
@@ -49,9 +78,37 @@ class AccountController extends Controller
     public function editPasswordAction()
     {
         // récupère l'utilisateur en session
-        $user = $this->getUser();
+        $user_session = $this->getUser();
+        //\Doctrine\Common\Util\Debug::dump($user_session);
+
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $user = $userRepo->find( $user_session->getId() );
+
+        $editPasswordForm = $this->createForm(new EditPasswordType(), $user);
+
+        $request = $this->getRequest();
+        $editPasswordForm->handleRequest($request);
+
+        if ($editPasswordForm->isValid()) {
+
+            // update en bdd
+            $em = $this->getDoctrine()->getManager(); 
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Modification(s) prise(s) en compte !'
+            );
+            
+            // Redirection vers accueil compte
+            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+
+        }
+
+        $params['editPasswordForm'] = $editPasswordForm->createView();
         
-        return $this->render("account/edit_password.html.twig");
+        return $this->render("account/edit_password.html.twig", $params);
     }
 
     /**

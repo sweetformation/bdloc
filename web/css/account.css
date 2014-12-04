@@ -48,3 +48,44 @@
     margin: 5px 10px 5px 190px;
     padding: 5px;
 }
+
+
+
+
+/*-------------------------- EDIT PASSWORD -----------------------*/
+
+#bdloc_appbundle_editpassword {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_editpassword div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 180px;
+}
+
+#bdloc_appbundle_editpassword input[type="password"],
+#bdloc_appbundle_editpassword > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_editpassword > div > div,
+#bdloc_appbundle_editpassword ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_editpassword ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_editpassword button[type="submit"] {
+    margin: 5px 10px 5px 190px;
+    padding: 5px;
+}

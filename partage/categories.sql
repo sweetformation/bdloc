@@ -1,0 +1,11 @@
+UPDATE Serie SET style = "Science-fiction" WHERE style in ("Science fiction", "Anticipation", "Sf/fantastique/anticipation");
+UPDATE Serie SET style = "Heroic Fantasy" WHERE style in ("Fantastique", "Aventure fantastique");
+UPDATE Serie SET style = "Policier-Thriller-Polar" WHERE style in ("Polar/Thriller", "Polar", "Thriller", "Polar/Thriler", "Policier");
+UPDATE Serie SET style = "Historique" WHERE style in ("Histoire", "Histoire/fiction historique", "Aventure historique", "Histoire - Fiction");
+UPDATE Serie SET style = "Biographie" WHERE style in ("Autobiographie");
+UPDATE Serie SET style = "Quotidien" WHERE style in ("Chronique urbaine", "Société/quotidien", "Chronique", "Tranche de vie");
+UPDATE Serie SET style = "Manga" WHERE style in ("Manga - Seinen");
+UPDATE Serie SET style = "Aventure" WHERE style in ("Aventures");
+UPDATE Serie SET style = "Comics" WHERE style in ("Super héros");
+UPDATE Serie SET style = "Humour" WHERE style in ("Humoristique", "Western humoristique");
+UPDATE Serie SET style = "Divers" WHERE style is NULL;

@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class CreditCardRepository extends EntityRepository
 {
+
+    public function findCreditCardWithUserId($id)
+    {
+        $query = $this->createQueryBuilder('c')
+            ->addSelect('u')
+            ->join('c.user', 'u')
+            ->where('u.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery();
+
+        return $query->getSingleResult();
+    }
 }

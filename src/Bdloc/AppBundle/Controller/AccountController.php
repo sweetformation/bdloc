@@ -13,8 +13,11 @@ use Bdloc\AppBundle\Util\StringHelper;
 
 use Bdloc\AppBundle\Form\EditInfoType;
 use Bdloc\AppBundle\Form\EditPasswordType;
-//use Bdloc\AppBundle\Form\DropSpotType;
-//use Bdloc\AppBundle\Form\CreditCardType;
+
+use Bdloc\AppBundle\Security\ChangePassword;
+use Bdloc\AppBundle\Form\ChangePasswordType;
+use Bdloc\AppBundle\Form\DropSpotType;
+use Bdloc\AppBundle\Form\CreditCardType;
 
 //use Bdloc\AppBundle\Entity\Paiement;
 
@@ -84,13 +87,26 @@ class AccountController extends Controller
         $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
         $user = $userRepo->find( $user_session->getId() );
 
+
+        //$changePassword = new ChangePassword();
+        //$changePasswordForm = $this->createForm(new ChangePasswordType(), $changePassword);
+
+        //$request = $this->getRequest();
+        //$changePasswordForm->handleRequest($request);
+
+
+
         $editPasswordForm = $this->createForm(new EditPasswordType(), $user);
 
         $request = $this->getRequest();
         $editPasswordForm->handleRequest($request);
 
         if ($editPasswordForm->isValid()) {
+        //if ($changePasswordForm->isValid()) {
 
+            echo $changePasswordForm['oldPassword'];
+            echo $changePasswordForm['newPassword'];
+            die();
             // update en bdd
             $em = $this->getDoctrine()->getManager(); 
             $em->flush();
@@ -107,6 +123,7 @@ class AccountController extends Controller
         }
 
         $params['editPasswordForm'] = $editPasswordForm->createView();
+        //$params['changePasswordForm'] = $changePasswordForm->createView();
         
         return $this->render("account/edit_password.html.twig", $params);
     }
@@ -117,9 +134,59 @@ class AccountController extends Controller
     public function editDropSpotAction()
     {
         // récupère l'utilisateur en session
-        $user = $this->getUser();
+        $user_session = $this->getUser();
+
+        $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
+        $user = $userRepo->find( $user_session->getId() );
+
+        // récupère l'adresse de l'utilisateur
+        $add_user = $user->getAddress();
+
+        $dropspotForm = $this->createForm(new DropSpotType(), $user);
+
+        // Demande à SF d'injecter les données du formulaire dans notre entité ($user)
+        $request = $this->getRequest();
+        $dropspotForm->handleRequest($request);
+
+        // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
+        if ($dropspotForm->isValid()) {
+
+            // update en bdd pour DropSpotType
+            $em = $this->getDoctrine()->getManager(); 
+            //$em->persist($user);
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Point relais modifié !'
+            );
+
+            // Vider le formulaire et empêche la resoumission des données
+            //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
+            
+            // Redirection vers étape 3, choix du paiement
+            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+
+        }
+
+        $params['dropspotForm'] = $dropspotForm->createView();
+
+        // Récupération des coord gps des points relais
+        $dropSpotRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:DropSpot");
+        $dropSpots = $dropSpotRepo->findAll();
+        foreach ($dropSpots as $dropSpot) {
+            $dropTab["nom"] = $dropSpot->getName();
+            $dropTab["lat"] = $dropSpot->getLatitude();
+            $dropTab["lng"] = $dropSpot->getLongitude();
+            $dropTab["add"] = $dropSpot->getAddress();
+            $dropTab["zip"] = $dropSpot->getZip();
+            $params['dropSpots'][] = $dropTab;
+        }
+
+        $params['add_user'] = $add_user;
         
-        return $this->render("account/edit_dropspot.html.twig");
+        return $this->render("account/edit_dropspot.html.twig", $params);
     }
 
     /**
@@ -128,9 +195,32 @@ class AccountController extends Controller
     public function editPaymentInfoAction()
     {
         // récupère l'utilisateur en session
-        $user = $this->getUser();
+        $user_session = $this->getUser();
+
+        $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
+        $creditCard = $creditCardRepo->findCreditCardWithUserId( $user_session->getId() );
+        //\Doctrine\Common\Util\Debug::dump($creditCard);
+        //die();
+        $paypalCC_id = $creditCard->getPaypalId();
+        die($paypalCC_id);
+
+        // Utilisation du service PPUtility
+        /*$ppu = $this->get('paypal_utility');
+        $ppu->setCreditCard($creditCard);
+        $card = $ppu->getCreditCard();
+        print_r($card);
+        die();*/
+
+
+        $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
+
+        $request = $this->getRequest();
+        $creditCardForm->handleRequest($request);
+
+        //
+        $params['creditCardForm'] = $creditCardForm->createView();
         
-        return $this->render("account/edit_payment_info.html.twig");
+        return $this->render("account/edit_payment_info.html.twig", $params);
     }
 
     /**

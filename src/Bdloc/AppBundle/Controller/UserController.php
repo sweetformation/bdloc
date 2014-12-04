@@ -197,7 +197,7 @@ class UserController extends Controller
             //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
             
             // Redirection vers étape 3, choix du paiement
-            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
+            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform") );
 
         }
 
@@ -224,7 +224,7 @@ class UserController extends Controller
     /**
      * @Route("/abonnement/choix-de-paiement")
      */
-    public function showSubsriptionPaymentFormAction() {
+    public function showSubscriptionPaymentFormAction() {
 
         $params = array();
 
@@ -432,7 +432,7 @@ class UserController extends Controller
                     'error',
                     'Problème lors de la transaction !'
                 ); 
-                return $this->redirect( $this->generateUrl("bdloc_app_user_showsubsriptionpaymentform") );
+                return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform") );
             }
 
         }

@@ -1,0 +1,6 @@
+{% extends ":layouts:account.html.twig" %}
+
+{% block main_content %}
+    <h1>Modifier mes informations de paiement</h1>
+    {{ form(creditCardForm, {'attr': {'novalidate': 'novalidate'}}) }}
+{% endblock %}

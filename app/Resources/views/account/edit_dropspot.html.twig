@@ -1,0 +1,38 @@
+{% extends ":layouts:account.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/dropspot.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block main_content %}
+    <h1>Modifier mon point relais</h1>
+    <script>
+        var dropTab = []
+        var add_user = "{{ add_user }}"
+        {% for dropSpot in dropSpots %}
+            dropTab.push({
+                nom: "{{ dropSpot.nom }}", 
+                lat: {{ dropSpot.lat }}, 
+                lng: {{ dropSpot.lng }},
+                add: "{{ dropSpot.add }}",
+                zip: {{ dropSpot.zip }} 
+            }) 
+        {% endfor %}
+    </script>
+
+
+    <div id="map-canvas"></div>
+
+    {{ form(dropspotForm, {'attr': {'novalidate': 'novalidate'}}) }}
+
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="{{ asset('js/dropspot.js') }}"></script>
+{% endblock %}

@@ -50,7 +50,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un mot de passe.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un mot de passe.")
      * @Assert\Length(
      *      min = "6",
      *      minMessage = "Votre mot de passe doit faire au moins {{ limit }} caractères"

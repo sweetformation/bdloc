@@ -1,0 +1,26 @@
+#presentation {
+    margin: 50px;
+    margin-bottom: 100px;
+}
+
+#boutonAbo {
+    padding: 10px;
+    background: #7586FF;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FF666A;
+    color: #FF666A;
+    float: middle;
+    border-radius: 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    top: -50px;
+    left: 500px;
+}
+
+#boutonAbo:hover {
+    background: #FF666A;
+    color: #7586FF;
+}

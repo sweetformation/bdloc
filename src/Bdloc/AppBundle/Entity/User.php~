@@ -29,7 +29,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un pseudo.")
+     * @Assert\NotBlank(message="Veuillez fournir un pseudo.", groups={"registration"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -50,7 +50,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un mot de passe.")
+     * @Assert\NotBlank(message="Veuillez fournir un mot de passe.", groups={"registration"})
      * @Assert\Length(
      *      min = "6",
      *      minMessage = "Votre mot de passe doit faire au moins {{ limit }} caractères"
@@ -82,7 +82,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un nom.")
+     * @Assert\NotBlank(message="Veuillez fournir un nom.", groups={"registration"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -95,7 +95,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un prénom.")
+     * @Assert\NotBlank(message="Veuillez fournir un prénom.", groups={"registration"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -108,7 +108,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un code postal.")
+     * @Assert\NotBlank(message="Veuillez fournir un code postal.", groups={"registration"})
      * @Assert\Regex(pattern= "#^[0-9]{5,5}$#", message="Code postal de 5 chiffres")
      * @ORM\Column(name="zip", type="string", length=5)
      */
@@ -116,7 +116,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir une adresse.")
+     * @Assert\NotBlank(message="Veuillez fournir une adresse.", groups={"registration"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -129,7 +129,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.")
+     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.", groups={"registration"})
      * @Assert\Regex(pattern= "#^0[1-8]([-.\s]?[0-9]{2}){4}$|^\+[1-9]{2}(\(0\))?[1-8]([-.\s]?[0-9]{2}){4}$|^00[1-9]{2}[1-8]([-.\s]?[0-9]{2}){4}$#", message="Format invalide")
      * @ORM\Column(name="phone", type="string", length=20)
      */
@@ -713,5 +713,38 @@ class User implements AdvancedUserInterface
     public function getPaiements()
     {
         return $this->paiements;
+    }
+
+    /**
+     * Add carts
+     *
+     * @param \Bdloc\AppBundle\Entity\Cart $carts
+     * @return User
+     */
+    public function addCart(\Bdloc\AppBundle\Entity\Cart $carts)
+    {
+        $this->carts[] = $carts;
+
+        return $this;
+    }
+
+    /**
+     * Remove carts
+     *
+     * @param \Bdloc\AppBundle\Entity\Cart $carts
+     */
+    public function removeCart(\Bdloc\AppBundle\Entity\Cart $carts)
+    {
+        $this->carts->removeElement($carts);
+    }
+
+    /**
+     * Get carts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCarts()
+    {
+        return $this->carts;
     }
 }

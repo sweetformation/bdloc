@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\CartItemRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class CartItem
 {
@@ -43,7 +44,7 @@ class CartItem
 
     /**
      *
-     *@ORM\OnetoOne(targetEntity="Book", inversedBy="cartItem")
+     *@ORM\ManytoOne(targetEntity="Book", inversedBy="cartItems")
      */
     private $book;
 
@@ -102,5 +103,66 @@ class CartItem
     public function getDateModified()
     {
         return $this->dateModified;
+    }
+
+    /**
+     * Set cart
+     *
+     * @param \Bdloc\AppBundle\Entity\Cart $cart
+     * @return CartItem
+     */
+    public function setCart(\Bdloc\AppBundle\Entity\Cart $cart = null)
+    {
+        $this->cart = $cart;
+
+        return $this;
+    }
+
+    /**
+     * Get cart
+     *
+     * @return \Bdloc\AppBundle\Entity\Cart 
+     */
+    public function getCart()
+    {
+        return $this->cart;
+    }
+
+    /**
+     * Set book
+     *
+     * @param \Bdloc\AppBundle\Entity\Book $book
+     * @return CartItem
+     */
+    public function setBook(\Bdloc\AppBundle\Entity\Book $book = null)
+    {
+        $this->book = $book;
+
+        return $this;
+    }
+
+    /**
+     * Get book
+     *
+     * @return \Bdloc\AppBundle\Entity\Book 
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+    
+    /**
+     * @ORM\PrePersist
+     */
+    public function beforeInsert() {
+        $this->setDateCreated( new \DateTime() );
+        $this->setDateModified( new \DateTime() );
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function beforeEdit() {
+        $this->setDateModified( new \DateTime() );
     }
 }

@@ -100,9 +100,9 @@ class Book
 
     /**
      *
-     *@ORM\OnetoOne(targetEntity="CartItem", mappedBy="book")
+     *@ORM\OnetoMany(targetEntity="CartItem", mappedBy="book")
      */
-    private $cartItem;
+    private $cartItems;
 
 
     /**
@@ -517,5 +517,45 @@ class Book
     public function getCartItem()
     {
         return $this->cartItem;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cartItems = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add cartItems
+     *
+     * @param \Bdloc\AppBundle\Entity\CartItem $cartItems
+     * @return Book
+     */
+    public function addCartItem(\Bdloc\AppBundle\Entity\CartItem $cartItems)
+    {
+        $this->cartItems[] = $cartItems;
+
+        return $this;
+    }
+
+    /**
+     * Remove cartItems
+     *
+     * @param \Bdloc\AppBundle\Entity\CartItem $cartItems
+     */
+    public function removeCartItem(\Bdloc\AppBundle\Entity\CartItem $cartItems)
+    {
+        $this->cartItems->removeElement($cartItems);
+    }
+
+    /**
+     * Get cartItems
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCartItems()
+    {
+        return $this->cartItems;
     }
 }

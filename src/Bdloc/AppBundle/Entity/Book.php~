@@ -100,9 +100,9 @@ class Book
 
     /**
      *
-     *@ORM\OnetoOne(targetEntity="CartItem", mappedBy="book")
+     *@ORM\OnetoMany(targetEntity="CartItem", mappedBy="book")
      */
-    private $cartItem;
+    private $cartItems;
 
 
     /**
@@ -494,5 +494,28 @@ class Book
     public function getSerie()
     {
         return $this->serie;
+    }
+
+    /**
+     * Set cartItem
+     *
+     * @param \Bdloc\AppBundle\Entity\CartItem $cartItem
+     * @return Book
+     */
+    public function setCartItem(\Bdloc\AppBundle\Entity\CartItem $cartItem = null)
+    {
+        $this->cartItem = $cartItem;
+
+        return $this;
+    }
+
+    /**
+     * Get cartItem
+     *
+     * @return \Bdloc\AppBundle\Entity\CartItem 
+     */
+    public function getCartItem()
+    {
+        return $this->cartItem;
     }
 }

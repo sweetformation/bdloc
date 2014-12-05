@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\CartItemRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class CartItem
 {
@@ -43,7 +44,7 @@ class CartItem
 
     /**
      *
-     *@ORM\OnetoOne(targetEntity="Book", inversedBy="cartItem")
+     *@ORM\ManytoOne(targetEntity="Book", inversedBy="cartItems")
      */
     private $book;
 
@@ -148,5 +149,20 @@ class CartItem
     public function getBook()
     {
         return $this->book;
+    }
+    
+    /**
+     * @ORM\PrePersist
+     */
+    public function beforeInsert() {
+        $this->setDateCreated( new \DateTime() );
+        $this->setDateModified( new \DateTime() );
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function beforeEdit() {
+        $this->setDateModified( new \DateTime() );
     }
 }

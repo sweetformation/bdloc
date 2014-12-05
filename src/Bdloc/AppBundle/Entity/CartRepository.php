@@ -12,4 +12,39 @@ use Doctrine\ORM\EntityRepository;
  */
 class CartRepository extends EntityRepository
 {
+
+    public function findUserCurrentCart( $user ) {
+
+        $query = $this->createQueryBuilder('c')
+            ->where('c.user = :user')
+            ->setParameter('user', $user)
+            ->andWhere('c.status = :status')
+            ->setParameter('status', 'en cours')
+            ->getQuery();
+
+        return $query->getResult();
+
+    }
+
+    public function CountItemsNumberInCurrentCart( $id ) {
+        // requete avec COUNT
+    }
+
+    public function findBooksInCurrentCart( $id ) {
+
+        $qb = $this->createQueryBuilder('c')
+            ->where('c.id = :id')
+            ->setParameter('id', $id)
+            ->join('c.cartItems', 'ci')
+            ->addSelect('ci');
+            ->join('ci.book', 'b')
+            ->addSelect('b');
+            ->getQuery();
+
+        return $query->getResult();
+
+    }
+
+
+
 }

@@ -82,7 +82,7 @@
                             <p class="disponible">{{ book.stock }} dispos !</p>
 
                             <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}"><input class="details" type="button" value="Plus de détails !"></a>
-                            <input class="commander" type="button" value="Ajouter au panier !">
+                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}"><input class="commander" type="button" value="Ajouter au panier !"></a>
                         {% endif %}
                         </div>
                     </div>

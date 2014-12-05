@@ -1,0 +1,22 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Inscription | BDLOC{% endblock %}
+
+{% block main_content %}
+    <h1>Votre panier</h1>
+    {% if books is empty %}
+        <p>Votre panier est vide</p>
+    {% else %}
+    <table>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td><img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}"/></td>
+                <td>{{ book.title }}</td>
+                <td><a class="removeBook" href="{{ path('bdloc_app_cart_removebook', {book_id: book.id}) }}">Retirer du panier</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+{% endblock %}

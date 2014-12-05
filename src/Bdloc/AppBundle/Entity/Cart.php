@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\CartRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Cart
 {
@@ -195,5 +196,20 @@ class Cart
     public function getCartItems()
     {
         return $this->cartItems;
+    }
+    
+    /**
+     * @ORM\PrePersist
+     */
+    public function beforeInsert() {
+        $this->setDateCreated( new \DateTime() );
+        $this->setDateModified( new \DateTime() );
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function beforeEdit() {
+        $this->setDateModified( new \DateTime() );
     }
 }

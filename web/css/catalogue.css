@@ -6,11 +6,11 @@
     margin-right: 5px;
     background: #FF666A;
     position: fixed;
-    top: 225px;
+    top: 270px; /*225px;*/
     left: 20%; /*385px;*/
 }
 
-/*#catesidebar {
+#catesidebar {
     padding: 20px;
 }
 
@@ -38,7 +38,7 @@
 #soumission {
     padding: 20px;
     padding-top: 0;
-}*/
+}
 
 
 /*Container du Catalogue*/
@@ -167,7 +167,7 @@
 
 /*-------------------------- FORMUALIRES -----------------------*/
 
-#bdloc_appbundle_filterbookpagination {
+/*#bdloc_appbundle_filterbookpagination {
     padding: 10px;
 }
 
@@ -179,7 +179,6 @@
 
 #bdloc_appbundle_filterbookpagination div label {
     display: inline-block;
-    /*width: 60%;*/
 }
 
 #bdloc_appbundle_filterbookpagination input[type="text"] {
@@ -202,13 +201,19 @@
     padding: 10px;
 }
 
-#bdloc_appbundle_filterbook_categories {
-    color: #00f;
+#bdloc_appbundle_filterbook > div label {
+    display: inline-block;
+    width: 100%;
 }
 
-#bdloc_appbundle_filterbook > label {
-    display: block;
-    width: 50%;
+#bdloc_appbundle_filterbook #bdloc_appbundle_filterbook_categories > label {
+    display: inline-block;
+    margin: 5px 0;
+    width: 120px;
+}
+
+#bdloc_appbundle_filterbook_categories > input[type="text"] {
+    margin: 5px 0;
 }
 
 #bdloc_appbundle_filterbook input[type="text"] {
@@ -219,7 +224,7 @@
 #bdloc_appbundle_filterbook button[type="submit"] {
     display: inline-block;
     padding: 5px;
-}
+}*/
 
 
 

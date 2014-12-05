@@ -6,8 +6,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-//use Bdloc\AppBundle\Entity\SerieRepository;
-
 class FilterBookType extends AbstractType
 {
     /**
@@ -35,8 +33,18 @@ class FilterBookType extends AbstractType
                 }
                 ))
             ->add('availability', null, array(
-                'label' => "Disponibilité"
-                ))
+               'label' => "Disponibilité"
+               ))
+            /*->add('availability', 'entity', array(
+                'label' => "Disponibilité",
+                'class' => 'BdlocAppBundle:Book',
+                'property' => 'stock',
+                'multiple' => true,
+                'expanded' => false,
+                'query_builder' => function(\Doctrine\ORM\EntityRepository $r) {
+                    return $r->getSelectDispo();
+                }
+                ))*/
             ->add('submit', 'submit', array(
                 'label' => 'Filtrer'
                 ))

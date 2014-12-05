@@ -18,10 +18,10 @@ bdloc_app_account:
 #     type:     annotation
 #     prefix:   /paiement/
 
-# bdloc_app_account:
-#     resource: "@BdlocAppBundle/Controller/CartController.php"
-#     type:     annotation
-#     prefix:   /panier/
+bdloc_app_cart:
+    resource: "@BdlocAppBundle/Controller/CartController.php"
+    type:     annotation
+    prefix:   /panier/
 
 # bdloc_app_account:
 #     resource: "@BdlocAppBundle/Controller/BookController.php"

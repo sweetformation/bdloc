@@ -98,6 +98,12 @@ class Book
      */
     private $serie;
 
+    /**
+     *
+     *@ORM\OnetoOne(targetEntity="CartItem", mappedBy="book")
+     */
+    private $cartItem;
+
 
     /**
      * Set id
@@ -488,5 +494,28 @@ class Book
     public function getSerie()
     {
         return $this->serie;
+    }
+
+    /**
+     * Set cartItem
+     *
+     * @param \Bdloc\AppBundle\Entity\CartItem $cartItem
+     * @return Book
+     */
+    public function setCartItem(\Bdloc\AppBundle\Entity\CartItem $cartItem = null)
+    {
+        $this->cartItem = $cartItem;
+
+        return $this;
+    }
+
+    /**
+     * Get cartItem
+     *
+     * @return \Bdloc\AppBundle\Entity\CartItem 
+     */
+    public function getCartItem()
+    {
+        return $this->cartItem;
     }
 }

@@ -98,6 +98,12 @@ class Book
      */
     private $serie;
 
+    /**
+     *
+     *@ORM\OnetoOne(targetEntity="CartItem", mappedBy="book")
+     */
+    private $cartItem;
+
 
     /**
      * Set id

@@ -251,7 +251,7 @@ strong {
 }
 
 #flash-messages {
-    min-height: 20px;
+    min-height: 30px;
     padding: 5px;
     text-align: center;
 }

@@ -1,0 +1,42 @@
+{% extends ':layouts:base.html.twig' %}
+
+{% block title %}Bdloc | Accueil{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
+
+{% block sidebar %}
+    <aside id="sidebar">
+    {{ form(filterForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    </aside>
+{% endblock %}
+
+{% block main_content %}
+    {{ form(filterPaginationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    <div id="containerCatalogue">
+        {% for book in books %}
+            <div class="BdPost">
+                <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
+                <div id="infos">
+                    <p class="titreBd">{{ book.title }}</p>
+                    <p class="titreBd">{{ book.serie.style }}</p>
+                    <p class="auteur">{{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                    <p class="coloriste">{{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+                    <p class="scenariste">{{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+                {% if book.stock == 0 %}
+                    <p class="indisponible">Indisponible...</p>
+                    <input class="details" type="button" value="Plus de détails !">
+                {% else %}
+                    <p class="disponible">{{ book.stock }} dispos !</p>
+
+                    <input class="details" type="button" value="Plus de détails !">
+                    <input class="commander" type="button" value="Ajouter au panier !">
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -17,20 +17,20 @@ class BookRepository extends EntityRepository
 
     public function findBooksBySearch($page){
 
-        $qb = $this->createQueryBuilder('b');
-        $qb->addSelect('b');         
-        //Jointure pour l'auteur
-        $qb->join('b.illustrator', 'il');
-        $qb->addSelect('il');        
-        //Jointure pour le coloriste
-        $qb->join('b.colorist', 'co');
-        $qb->addSelect('co');        
-        //Jointure pour le scénariste
-        $qb->join('b.scenarist', 'sc');
-        $qb->addSelect('sc');
-        //Jointure pour les catégories
-        $qb->join('b.serie', 'cat');
-        $qb->addSelect('cat');
+        $qb = $this->createQueryBuilder('b')
+            ->addSelect('b')        
+            //Jointure pour l'auteur
+            ->join('b.illustrator', 'il')
+            ->addSelect('il')     
+            //Jointure pour le coloriste
+            ->join('b.colorist', 'co')
+            ->addSelect('co')       
+            //Jointure pour le scénariste
+            ->join('b.scenarist', 'sc')
+            ->addSelect('sc')
+            //Jointure pour les catégories
+            ->join('b.serie', 'cat')
+            ->addSelect('cat');
 
         /*if (!empty author) {
             $qb->expr()->orX()
@@ -44,7 +44,7 @@ class BookRepository extends EntityRepository
         // return $paginator;
         
         // $page = 1;
-        $nombreParPage = 20; //limit
+        $numPerPage = 20; //limit
 
         //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
         $request = Request::createFromGlobals();
@@ -55,16 +55,16 @@ class BookRepository extends EntityRepository
         //$request->query->get('categorie');
 
         //AFFICHAGE AVEC LA PAGINATION pour le premier résultat
-        $qb->setFirstResult(($page-1) * $nombreParPage)
+        $qb->setFirstResult(($page-1) * $numPerPage)
         //LE NOMBRE DE POST PAR PAGE 
-            ->setMaxResults($nombreParPage);
+            ->setMaxResults($numPerPage);
          
         return new Paginator($qb);
 
 
     }
 
-    public function findCatalogBooks(FilterBook $filterBook) {
+    /*public function findCatalogBooks(FilterBook $filterBook) {
 
         //print_r($filterBook);
         $numPerPage = $filterBook->getNumPerPage();
@@ -74,10 +74,16 @@ class BookRepository extends EntityRepository
         $offset = ($page - 1) * $numPerPage;
 
         $qb = $this->createQueryBuilder('b');
-        //if (!empty($keywords) && $keywords != "none") {
-        //  $qb->andWhere("b.title LIKE :keywords");
-        //  $qb->setParameters("keywords", "%".$keywords."%");
-        //}
+
+        if (!empty($keywords) && $keywords != "none") {
+          $qb->andWhere("b.title LIKE :keywords");
+          $qb->setParameters("keywords", "%".$keywords."%");
+        }
+        
+        if (!empty($categories) && count($categories) != 0) {
+          $qb->andWhere("b.title LIKE :keywords");
+          $qb->setParameters("keywords", "%".$keywords."%");
+        }
 
         $qb->addSelect('b')
             ->join('b.illustrator', 'il')
@@ -98,4 +104,12 @@ class BookRepository extends EntityRepository
         return $paginator;
 
     }
+
+    public function getSelectDispo() {
+        $query = $this->createQueryBuilder('b')
+                      ->groupBy('b.stock')
+                      ->orderBy('b.stock', 'ASC');
+     
+        return $query;
+    }*/
 }

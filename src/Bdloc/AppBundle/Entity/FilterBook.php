@@ -27,7 +27,7 @@ class FilterBook
 
     private $availability;
 
-    public function __construct($page = 1, $orderBy = "dateCreated", $orderDir = "desc", $numPerPage = 30, $keywords = "none", $categories = array(), $availability = "all") {
+    public function __construct( $page = 1, $orderBy = "dateCreated", $orderDir = "desc", $numPerPage = 30, $keywords = "none", $categories = array(), $availability = array() ) {
         $this->page = $page;
         $this->orderBy = $orderBy;
         $this->orderDir = $orderDir;

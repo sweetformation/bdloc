@@ -33,7 +33,7 @@ class CreditCard
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="validUntil", type="datetime")
+     * @ORM\Column(name="validUntil", type="date")
      */
     private $validUntil;
 
@@ -66,7 +66,7 @@ class CreditCard
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir un numéro de carte de crédit.")
-     * @Assert\Regex(pattern= "/[0-9]+/", message="Format invalide")
+     * @Assert\Regex(pattern= "#^[0-9]+$#", message="Format invalide")
      */
     private $creditCardNumber;
     /**
@@ -77,19 +77,19 @@ class CreditCard
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le code CVC.")
-     * @Assert\Regex(pattern= "/[0-9]{3,3}/", message="Format invalide")
+     * @Assert\Regex(pattern= "#^[0-9]{3,3}$#", message="Format invalide")
      */
     private $codeCVC;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le nom figurant sur la carte de crédit.")
-     * @Assert\Regex(pattern= "/[a-zA-Z\s-]+/", message="Format invalide")
+     * @Assert\Regex(pattern= "#^[a-zA-Z\s-]+$#", message="Format invalide")
      */
     private $creditCardLastName;
     /**
      * @var string
      * @Assert\NotBlank(message="Veuillez fournir le prénom figurant sur la carte de crédit.")
-     * @Assert\Regex(pattern= "/[a-zA-Z\s-]+/", message="Format invalide")
+     * @Assert\Regex(pattern= "#^[a-zA-Z\s-]+$#", message="Format invalide")
      */
     private $creditCardFirstName;
 

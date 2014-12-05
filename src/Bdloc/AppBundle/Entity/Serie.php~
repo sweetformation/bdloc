@@ -3,7 +3,7 @@ namespace Bdloc\AppBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Bdloc\AppBundle\Entity\SerieRepository")
  */
 class Serie
 {

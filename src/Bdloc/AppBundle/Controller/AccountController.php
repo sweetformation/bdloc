@@ -202,7 +202,7 @@ class AccountController extends Controller
         //\Doctrine\Common\Util\Debug::dump($creditCard);
         //die();
         $paypalCC_id = $creditCard->getPaypalId();
-        die($paypalCC_id);
+        //die($paypalCC_id);
 
         // Utilisation du service PPUtility
         /*$ppu = $this->get('paypal_utility');

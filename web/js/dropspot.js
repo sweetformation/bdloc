@@ -14,7 +14,7 @@ function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(48.856614, 2.3522219000000177);  // coord de Paris
     var mapOptions = {
-        zoom: 14,
+        zoom: 12,
         center: latlng
     }
 
@@ -22,13 +22,15 @@ function initialize() {
 
     // Ajoute markers verts pour les adresses des dropspots
     ajoutAddMarkers()
+    // Ajoute Marker bleu pour le point relais sélectionné dans l'input
+    applyMarkerSelected()
 
     // Ajoute marker rouge pour l'adresse de l'utilisateur
     ajoutAddUser()
 
     // Ecouteurs d'évènements
     $("#map-canvas").on("click", ".infoChoix", choisir)
-    $("#bdloc_appbundle_dropspot_dropspot").on("change", changeMarker)
+    $("#bdloc_appbundle_dropspot_dropspot").on("change", applyMarkerSelected)
 
 }
 
@@ -114,7 +116,7 @@ function choisir() {
     markers[it].setIcon(marker_bleu)
 }
 
-function changeMarker() {
+function applyMarkerSelected() {
 
     var select = $("#bdloc_appbundle_dropspot_dropspot option:selected")
     console.log(select.text())

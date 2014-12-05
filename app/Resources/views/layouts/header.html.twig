@@ -5,7 +5,7 @@
             <nav id="nav" class="left">
                 {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
                 <ul>
-                    <li><a href="{{ path('bdloc_app_book_catalog', {'page': 1}) }}">Les BDs !</a></li>
+                    <li><a href="{#{{ path('bdloc_app_book_catalog', {'page': 1}) }}#}">Les BDs !</a></li>
                     <li><a href="{#{{ path("bdloc_app_cart_recap", {'id': id_cart}) }}#}">Mon Panier (nb)</a></li>
                     <li><a href="{{ path('bdloc_app_account_home') }}">Mon Compte</a></li>     
                 </ul>    

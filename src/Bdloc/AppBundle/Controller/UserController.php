@@ -192,9 +192,6 @@ class UserController extends Controller
                 'notice',
                 'Point relais ajouté !'
             );
-
-            // Vider le formulaire et empêche la resoumission des données
-            //return $this->redirect( $this->generateUrl("bdloc_app_user_choosedropspot") );
             
             // Redirection vers étape 3, choix du paiement
             return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform") );
@@ -409,16 +406,9 @@ class UserController extends Controller
                 );
 
                 // Pour loguer automatiquement qd on s'inscrit ! ATTENTION A FAIRE A l'ETAPE 3 !!!!!!!!!!!
-                // 
-                // tiré de http://stackoverflow.com/questions/5886713/automatic-post-registration-user-authentication
-                    /*$token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
-                    $this->get('security.context')->setToken($token);
-                    $this->get('session')->set('_security_main',serialize($token));*/
-
                 // tiré de http://stackoverflow.com/questions/9550079/how-to-programmatically-login-authenticate-a-user
                     $token = new UsernamePasswordToken($user, $user->getPassword(), "secured_area", $user->getRoles());
                     $this->get("security.context")->setToken($token);
-
                     // déclenche l'évènement de login
                     $event = new InteractiveLoginEvent($request, $token);
                     $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
@@ -465,14 +455,9 @@ class UserController extends Controller
             
             // si userFound on récupère la token correspondante et on envoie un email
             if ($userFound) {
-                $params_message = array();
-                //$params_message['email'] = $userFound->getEmail();
-                //$params_message['token'] = $userFound->getToken();
 
                 $links = $this->generateUrl("bdloc_app_user_forgotpasswordsteptwo", array("email" => $userFound->getEmail(), "token" => $userFound->getToken()), true);
                 $params_message['links'] = $links;
-                //print_r($params_message);
-                //die();
 
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Nouveau mot de passe sur BDLOC')
@@ -487,15 +472,11 @@ class UserController extends Controller
                     'notice',
                     'Un email de modification de mot de passe vous a été envoyé !'
                 );
-
-                // Vider le formulaire et empêche la resoumission des données
-                //return $this->redirect( $this->generateUrl("bdloc_app_user_forgotpasswordstepone") );
               
                 // Redirection vers l'accueil
                 return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
             }
             else {
-                //die("personne");
                 $this->get('session')->getFlashBag()->add(
                     'error',
                     'Email inconnu !'
@@ -532,7 +513,6 @@ class UserController extends Controller
 
             // Déclenche la validation sur notre entité ET teste si le formulaire est soumis
             if ($forgotPasswordStepTwoForm->isValid()) {
-                //die("ok");
 
                 // on régénère token et mot de passe hashé
                 $stringHelper = new StringHelper(); 
@@ -554,8 +534,8 @@ class UserController extends Controller
                     'Votre mot de passe a été changé !'
                 );
               
-                // Redirection vers l'accueil
-                return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
+                // Redirection vers le login
+                return $this->redirect( $this->generateUrl("bdloc_app_user_login") );
 
 
             }

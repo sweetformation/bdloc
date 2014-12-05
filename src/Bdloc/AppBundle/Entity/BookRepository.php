@@ -14,31 +14,27 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class BookRepository extends EntityRepository
 {
+
     public function findBooksBySearch($page){
 
-        //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
         $qb = $this->createQueryBuilder('b');
-
-        //if(){
-        //$qb->where();
-        //}
-        
+        $qb->addSelect('b');         
         //Jointure pour l'auteur
-        $qb->join('b.illustrator', 'i');
-        $qb->addSelect('i');        
-
+        $qb->join('b.illustrator', 'il');
+        $qb->addSelect('il');        
         //Jointure pour le coloriste
-        $qb->join('b.colorist', 'c');
-        $qb->addSelect('c');        
-
+        $qb->join('b.colorist', 'co');
+        $qb->addSelect('co');        
         //Jointure pour le scénariste
-        $qb->join('b.scenarist', 's');
-        $qb->addSelect('s');
-
+        $qb->join('b.scenarist', 'sc');
+        $qb->addSelect('sc');
         //Jointure pour les catégories
-        $qb->join('b.serie', 'cate');
-        $qb->addSelect('cate');
+        $qb->join('b.serie', 'cat');
+        $qb->addSelect('cat');
 
+        /*if (!empty author) {
+            $qb->expr()->orX()
+        }  */ 
         // $qb->setFirstResult(0)
         //     ->setMaxResults(30);
 
@@ -48,7 +44,7 @@ class BookRepository extends EntityRepository
         // return $paginator;
         
         // $page = 1;
-        $nombreParPage = 20;
+        $nombreParPage = 20; //limit
 
         //JE SAIS PAS CE QUE C'EST MAIS CA MARCHE !
         $request = Request::createFromGlobals();
@@ -65,6 +61,41 @@ class BookRepository extends EntityRepository
          
         return new Paginator($qb);
 
+
+    }
+
+    public function findCatalogBooks(FilterBook $filterBook) {
+
+        //print_r($filterBook);
+        $numPerPage = $filterBook->getNumPerPage();
+        $page = $filterBook->getPage();
+        $keywords = $filterBook->getKeywords();
+
+        $offset = ($page - 1) * $numPerPage;
+
+        $qb = $this->createQueryBuilder('b');
+        //if (!empty($keywords) && $keywords != "none") {
+        //  $qb->andWhere("b.title LIKE :keywords");
+        //  $qb->setParameters("keywords", "%".$keywords."%");
+        //}
+
+        $qb->addSelect('b')
+            ->join('b.illustrator', 'il')
+            ->join('b.colorist', 'co')
+            ->join('b.scenarist', 'sc')
+            ->addSelect('il', 'co', 'sc')
+            ->join('b.serie', 'cat')
+            ->addSelect('cat');
+
+        $qb->setFirstResult($offset)
+            ->setMaxResults($numPerPage);
+
+        $query = $qb->getQuery();
+
+        $paginator = new Paginator($query);
+
+        //return $query->getResult();
+        return $paginator;
 
     }
 }

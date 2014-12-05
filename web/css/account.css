@@ -1,7 +1,35 @@
+#header{
+    background: #FF666A;
+    overflow: hidden;
+    padding: 50px;
+    -webkit-border-bottom-left-radius: 100px;
+    -moz-border-radius-bottomleft: 100px;
+    border-bottom-left-radius: 100px;
+}
 
+#menuCompte {
+    float: right;
+    margin-bottom: 5px;
+}
 
 #menuCompte a {
     color: #000;
+}
+
+#menuCompte li {
+    padding: 10px;
+    margin-bottom: -5px;
+    width: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #7586FF;
+    background: #FF666A;
+    /*-webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;*/
 }
 
 #menuCompte .compteActive {

@@ -1,0 +1,20 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Commande | BDLOC{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
+
+{% block main_content %}
+    <h1>Votre commande</h1>
+    <div id="commande">
+        <p>Horaire de livraison : Vous trouverez vos BDs à l'adresse ci-dessous le {{ "now"|date_modify("+1 day")|date("d/m/Y") }} à partir de {{ "now"|date_modify("+1 day")|date("H") }}h.</p>
+        <p>Adresse de livraison : {{ cart.user.dropspot.address }} - {{ cart.user.dropspot.zip }} PARIS <a href="{{ path('bdloc_app_account_editdropspot') }}" title="Modifier Point relais"><input class="modifierDropspot" type="button" value="Modifier Point relais"></a></p>
+        <p>Nb de BD commandées : {{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }} <a href="{{ path('bdloc_app_cart_recap') }}" title="Liste BD commandées"><input class="listeBdCommandees" type="button" value="Liste BD commandées"></a></p>
+    </div>
+    <div id="commander">
+        <a href="" title="Passer commande"><input class="passerCommande" type="button" value="Passer commande"></a>
+    </div>
+{% endblock %}

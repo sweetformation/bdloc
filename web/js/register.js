@@ -9,18 +9,18 @@
  *   Objet principal    *
  ************************/
 
-app = {
+register = {
     
     
     /* Chargement du DOM */
     init: function() {
-        console.log("app.init")
+        console.log("register.init")
 
     },
 
     /* Chargement de la page */
     chargement: function(){
-        console.log("app.chargement")
+        console.log("register.chargement")
 
         // Autocompletion d'address
         this.adresses()
@@ -28,7 +28,7 @@ app = {
     },
 
     adresses: function() {
-        console.log("app.adresses")
+        console.log("register.adresses")
 
         // On chope notre input
         var input = document.getElementById("bdloc_appbundle_register_address")
@@ -116,7 +116,7 @@ app = {
 
 $(function() {
     console.log("chargement du dom")
-    app.init()
+    register.init()
 })
 
 
@@ -127,5 +127,5 @@ $(function() {
 
 $(window).load(function() {
     console.log("chargement de la page")
-    app.chargement()
+    register.chargement()
 });

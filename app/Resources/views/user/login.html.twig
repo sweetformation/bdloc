@@ -21,12 +21,8 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="_password" />
         </div>
+        <input type="hidden" name="_target_path" value="{{ url('bdloc_app_book_catalog', {'page': 1}) }}" />
 
-        {#
-            If you want to control the URL the user
-            is redirected to on success (more details below)
-            <input type="hidden" name="_target_path" value="/account" />
-        #}
 
         <button type="submit">Connexion</button>
     </form>

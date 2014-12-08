@@ -22,7 +22,11 @@ class CartRepository extends EntityRepository
             ->setParameter('status', 'en cours')
             ->getQuery();
 
-        return $query->getResult();
+        try {
+            return $query->getSingleResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            return null;
+        }
 
     }
 
@@ -33,15 +37,20 @@ class CartRepository extends EntityRepository
     public function findBooksInCurrentCart( $id ) {
 
         $qb = $this->createQueryBuilder('c')
+            ->addSelect('c')
             ->where('c.id = :id')
             ->setParameter('id', $id)
             ->join('c.cartItems', 'ci')
-            ->addSelect('ci');
+            ->addSelect('ci')
             ->join('ci.book', 'b')
-            ->addSelect('b');
+            ->addSelect('b')
             ->getQuery();
 
-        return $query->getResult();
+        try {
+            return $qb->getSingleResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            return null;
+        }
 
     }
 

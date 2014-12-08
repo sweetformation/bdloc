@@ -1,8 +1,11 @@
 {% extends ":layouts:base.html.twig" %}
 
-{% block title %}Panier | BDLOC{% endblock %}
-
 {% block main_content %}
-    <h1>Ajout de BD</h1>
-    {{ itemsNumber }}
+    {% if bookStock == 0 %}
+        <span id="bookStock">Indisponible...</span>
+    {% elseif bookStock == 1 %}
+        <span id="bookStock">{{ bookStock }} dispo !</span>
+    {% else %}
+        <span id="bookStock">{{ bookStock }} dispos !</span>
+    {% endif %}
 {% endblock %}

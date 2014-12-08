@@ -61,6 +61,7 @@ a{
 /*Pour modifier les input*/
 input {
 	color: #7586FF;
+    cursor: pointer;
 	border-radius: 10px;
 	outline: none;
 }
@@ -173,6 +174,12 @@ strong {
     border-bottom-left-radius: 100px;
 }
 
+#itemsNumber {
+    color: #000;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 5px;
+}
 
 
 

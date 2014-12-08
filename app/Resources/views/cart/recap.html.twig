@@ -1,22 +1,39 @@
 {% extends ":layouts:base.html.twig" %}
 
-{% block title %}Inscription | BDLOC{% endblock %}
+{% block title %}Panier | BDLOC{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset("css/catalogue.css") }}">
+{% endblock %}
 
 {% block main_content %}
     <h1>Votre panier</h1>
-    {% if books is empty %}
+    <div id="cart">
+    {% if cart.cartItems is empty %}
         <p>Votre panier est vide</p>
     {% else %}
-    <table>
-        <tbody>
-        {% for book in books %}
-            <tr>
-                <td><img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}"/></td>
-                <td>{{ book.title }}</td>
-                <td><a class="removeBook" href="{{ path('bdloc_app_cart_removebook', {book_id: book.id}) }}">Retirer du panier</a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table id="tablePanier">
+            <tbody>
+            {% for key, cartItem in cart.cartItems %}
+                {% set modulo = key%2 %}
+                <tr class='ligne_{{modulo}}'>
+                    <td><img src="{{ asset("img/couverture/" ~ cartItem.book.cover ) }}" alt="{{ cartItem.book.title }}" class="couvertureBDpanier" /></td>
+                    <td class="titreBDpanier">{{ cartItem.book.title }}</td>
+                    <td><a href="{{ path('bdloc_app_cart_removebook', {id: cartItem.id}) }}" title="Retirer l'objet {{cartItem.id}} du panier"><input class="removeBDpanier" type="button" value="Retirer du panier"></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div id="validation">
+            <a href="{{ path('bdloc_app_cart_validate') }}" title="Valider mon panier"><input class="validerPanier" type="button" value="Valider mon panier"></a>
+            <a href="{{ path('bdloc_app_book_catalog', {'page': 1}) }}" title="Catalogue"><input class="retourCatalogue" type="button" value="Catalogue"></a>
+        </div>
     {% endif %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/book.js') }}"></script>
 {% endblock %}

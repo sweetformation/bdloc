@@ -48,6 +48,33 @@
     margin-bottom: 50px;
 }
 
+/*----------------------------------- POPUP -----------------------------------*/
+#popup {
+    background-color: #000;
+    border: 2px solid #7586FF;
+    display: none;
+    left: 50%;
+    margin-left: -250px;
+    position: fixed;
+    top: 20%;
+    width: 500px;
+}
+
+#croixFermeture {
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 20px;
+}
+
+#popupContent {
+    background: #FF666A;
+    margin: 20px;
+    padding: 20px;
+}
+
+/*--------------------------------- FIN POPUP ---------------------------------*/
+
 /*Container de la barre de filtre*/
 .barreFiltre{
     background: #FF666A;
@@ -93,7 +120,8 @@
 }
 
 /*Images des BDs*/
-.BdPost img {
+.BdPost img,
+#containerPostBd img {
     height: 250px;
     max-width: 200px;
     float: left;
@@ -102,7 +130,7 @@
 } 
 
 /*Infos des BDs*/
-#infos{
+.infos{
     margin: 10px;
     margin-right: 20px;
 
@@ -135,14 +163,14 @@
     background: #7586FF;
 }
 
-/*Si la BD est disponible*/
-.disponible {
+/*Si la BD est indisponible*/
+.indisponible {
     font-size: 1em;
-    margin-top: 10px;;
-    color:#FF666A;
+    margin-top: 10px;
+    color: #000;
 }
 
-/*Si la BD est indisponible*/
+/*Si la BD est disponible*/
 .disponible {
     font-size: 1em;
     margin-top: 10px;
@@ -226,5 +254,64 @@
     padding: 5px;
 }*/
 
+#tablePanier {
+    border: 2px solid #000;
+    margin: 0 50px 20px;
+}
 
+#tablePanier tr,
+#tablePanier td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ligne_0 {
+    background-color: #fff;
+}
+
+.ligne_1 {
+    background-color: #dbdedd;
+}
+
+.couvertureBDpanier {
+    height: 125px;
+    max-width: 100px;
+    margin: 10px;
+}
+
+.titreBDpanier {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+.removeBDpanier {
+    font-size: 1em;
+    margin: 10px;
+}
+
+#validation {
+    margin: auto;
+    width: 40%;
+}
+
+.validerPanier,
+.retourCatalogue,
+.passerCommande {
+    /*background: #FF666A;
+    color: #7586FF;*/
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    padding: 5px;
+}
+
+#commande {
+    margin: 0 20px 20px 40px;
+}
+
+#commande p {
+    margin-bottom: 10px;
+}
 

@@ -37,58 +37,74 @@
     </aside>
 {% endblock %}
 {% block main_content %}
+    <div class="barreFiltre">
+        <div class="filtreAffich">
+            <select name="" id="" style="width:200px"></select>
+            <select name="" id="" style="width:200px"></select>
+        </div>
 
-                <div class="barreFiltre">
-                    <div class="filtreAffich">
-                        <select name="" id="" style="width:200px"></select>
-                        <select name="" id="" style="width:200px"></select>
-                    </div>
-
-                    <div class="pagination">
-                    <ul>
-                            <li>
-                                <a href="{{ path('bdloc_app_book_catalog', {'page': page - 1}) }}"><</a>
-                            </li>
-                        {% for p in range(1, 10) %}
-                            <li>
-                                <a href="{{ path('bdloc_app_book_catalog', {'page': p}) }}">{{ p }}</a>
-                            </li>
-                        {% endfor %}
-                            <li>
-                                <a href="{{ path('bdloc_app_book_catalog', {'page': page + 1}) }}">></a>
-                            </li>
-                    </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-    <div id="containerCatalogue">
-                {% for book in books %}
-                    <div class="BdPost">
-
-                        <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
-                        
-                        <div id="infos">
-                            <p class="titreBd">{{ book.title }}</p>
-                            <p class="titreBd">{{ book.serie.style }}</p>
-                            <p class="auteur">{{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
-                            <p class="coloriste">{{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
-                            <p class="scenariste">{{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
-                        {% if book.stock == 0 %}
-                            <p class="indisponible">Indisponible...</p>
-
-                            <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}"><input class="details" type="button" value="Plus de détails !"></a>
-                        {% else %}
-                            <!-- <p class="disponible">Disponible !</p> -->
-                            <p class="disponible">{{ book.stock }} dispos !</p>
-
-                            <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}"><input class="details" type="button" value="Plus de détails !"></a>
-                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}"><input class="commander" type="button" value="Ajouter au panier !"></a>
-                        {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
+        <div class="pagination">
+        <ul>
+                <li>
+                    <a href="{{ path('bdloc_app_book_catalog', {'page': page - 1}) }}"><</a>
+                </li>
+            {% for p in range(1, 10) %}
+                <li>
+                    <a href="{{ path('bdloc_app_book_catalog', {'page': p}) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+                <li>
+                    <a href="{{ path('bdloc_app_book_catalog', {'page': page + 1}) }}">></a>
+                </li>
+        </ul>
+        </div>
+        <div class="clearfix"></div>
     </div>
 
+    <div id="containerCatalogue">
+        <div id="popup">
+            <div id="croixFermeture"><img src="{{ asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
+            <div id="popupContent"></div>
+        </div>
+        {% for book in books %}
+            <div class="BdPost">
 
+                <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
+                
+                <div class="infos">
+                    <p class="titreBd">{{ book.title }}</p>
+                    <p class="titreBd">{{ book.serie.style }}</p>
+                    <p class="auteur">{{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                    <p class="coloriste">{{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+                    <p class="scenariste">{{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+                {% if book.stock == 0 %}
+                    <p class="indisponible">Indisponible...</p>
+                    <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                {% elseif book.stock == 1 %}
+                    <p class="disponible"><span class="bookStock">{{ book.stock }} dispo !</span></p>
+                    <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                    {% if book.id in booksIdInCart %}
+                        <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
+                    {% else %}
+                        <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier !"></a>
+                    {% endif %}
+                {% else %}
+                    <p class="disponible"><span class="bookStock">{{ book.stock }} dispos !</span></p>
+                    <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                    {% if book.id in booksIdInCart %}
+                        <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
+                    {% else %}
+                        <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier !"></a>
+                    {% endif %}
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/book.js') }}"></script>
 {% endblock %}
 

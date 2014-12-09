@@ -23,7 +23,7 @@ class FilterBookType extends AbstractType
                 'label' => "Recherche"
                 ))
             ->add('categories', 'entity', array(
-                'label' => "Catégorie",
+                'label' => "Catégories",
                 'class' => 'BdlocAppBundle:Serie',
                 'property' => 'style',
                 'multiple' => true,
@@ -32,9 +32,14 @@ class FilterBookType extends AbstractType
                     return $r->getSelectList();
                 }
                 ))
-            ->add('availability', null, array(
-               'label' => "Disponibilité"
+            ->add('availability', 'choice', array(
+                'label' => "Disponibilité",
+                'expanded' => true,
+                'choices' => array('0' => 'Toutes', '1' => 'BD disponibles')
                ))
+            /*->add('availability', null, array(
+               'label' => "Disponibilité"
+               ))*/
             /*->add('availability', 'entity', array(
                 'label' => "Disponibilité",
                 'class' => 'BdlocAppBundle:Book',

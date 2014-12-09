@@ -11,33 +11,52 @@ use Doctrine\ORM\Mapping as ORM;
 class FilterBook
 {
 
-    private $id;
 
+    /**
+     * @var integer
+     *
+     */
     private $page;
 
-    private $orderBy;
-
-    private $orderDir;
-
+    /**
+     * @var integer
+     *
+     */
     private $numPerPage;
 
-    private $keywords;
+    /**
+     * @var string
+     *
+     */
+    private $orderBy;
 
-    private $categories;
+    /**
+     * @var string
+     *
+     */
+    private $orderDir;
 
-    private $availability;
+    /**
+     * @var string
+     *
+     */
+    private $keywords;  
 
-    public function __construct( $page = 1, $orderBy = "dateCreated", $orderDir = "desc", $numPerPage = 10, $keywords = "none", $categories = array(), $availability = 0 ) {
-        $this->page = $page;
-        $this->orderBy = $orderBy;
-        $this->orderDir = $orderDir;
-        $this->numPerPage = $numPerPage;
-        $this->keywords = $keywords;
-        $this->categories = $categories;
-        $this->availability = $availability;
-    }
+    /**
+     * @var array
+     *
+     */
+    private $categories;  
 
-    /*public function __construct($page = 1, $orderBy = "dateCreated", $orderDir = "desc", $numPerPage = 30, $keywords = "none", $categories = "all", $availability = "all"){
+
+    /**
+     * @var mixed
+     *
+     */
+    private $availability;  
+
+
+    public function __construct($page = 1, $orderBy = "dateCreated", $orderDir = "desc", $numPerPage = 30, $keywords = "none", $categories = "all", $availability = "all"){
 
         $this->categories = ($categories == "all") ? array() : $categories;
         $this->page = $page;
@@ -50,31 +69,23 @@ class FilterBook
 
     private function getCategoriesToString(){
         return (empty($this->categories)) ? "all" : implode(",", $this->categories);
-    }*/
+    }
 
-    public function getUrlParams() {
+
+    public function getUrlParams(){
+
         $params = array(
-            "page" => $this->getPage(),
-            "orderBy" => $this->getOrderBy(),
-            "orderDir" => $this->getOrderDir(),
+            "page"=>$this->getPage(),
             "numPerPage" => $this->getNumPerPage(),
             "keywords" => $this->getKeywords(),
-            "categories" => $this->getCategories(),
+            "orderBy" => $this->getOrderBy(),
+            "orderDir" => $this->getOrderDir(),
             "availability" => $this->getAvailability(),
+            "categories" => $this->getCategoriesToString()
         );
         return $params;
     }
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set page
@@ -97,6 +108,29 @@ class FilterBook
     public function getPage()
     {
         return $this->page;
+    }
+
+    /**
+     * Set numPerPage
+     *
+     * @param integer $numPerPage
+     * @return FilterBook
+     */
+    public function setNumPerPage($numPerPage)
+    {
+        $this->numPerPage = $numPerPage;
+
+        return $this;
+    }
+
+    /**
+     * Get numPerPage
+     *
+     * @return integer 
+     */
+    public function getNumPerPage()
+    {
+        return $this->numPerPage;
     }
 
     /**
@@ -145,28 +179,6 @@ class FilterBook
         return $this->orderDir;
     }
 
-    /**
-     * Set numPerPage
-     *
-     * @param integer $numPerPage
-     * @return FilterBook
-     */
-    public function setNumPerPage($numPerPage)
-    {
-        $this->numPerPage = $numPerPage;
-
-        return $this;
-    }
-
-    /**
-     * Get numPerPage
-     *
-     * @return integer 
-     */
-    public function getNumPerPage()
-    {
-        return $this->numPerPage;
-    }
 
     /**
      * Set keywords
@@ -191,11 +203,23 @@ class FilterBook
         return $this->keywords;
     }
 
+
     /**
-     * Set categories
+     * Gets the value of categories.
      *
-     * @param string $categories
-     * @return FilterBook
+     * @return mixed
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Sets the value of categories.
+     *
+     * @param mixed $categories the categories
+     *
+     * @return self
      */
     public function setCategories($categories)
     {
@@ -205,35 +229,27 @@ class FilterBook
     }
 
     /**
-     * Get categories
+     * Gets the value of availability.
      *
-     * @return string 
+     * @return integer
      */
-    public function getCategories()
+    public function getAvailability()
     {
-        return $this->categories;
+        return $this->availability;
     }
 
     /**
-     * Set availability
+     * Sets the value of availability.
      *
-     * @param string $availability
-     * @return FilterBook
+     * @param integer $availability the availability
+     *
+     * @return self
      */
-    public function setAvailability($availability)
+    private function setAvailability($availability)
     {
         $this->availability = $availability;
 
         return $this;
     }
 
-    /**
-     * Get availability
-     *
-     * @return string 
-     */
-    public function getAvailability()
-    {
-        return $this->availability;
-    }
 }

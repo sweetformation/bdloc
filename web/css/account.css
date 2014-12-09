@@ -117,3 +117,33 @@
     margin: 5px 10px 5px 190px;
     padding: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+#allPaniers .paniers {
+    overflow: hidden;
+}
+
+#allPaniers .panierContent {
+    float: left;
+    margin: 10px;
+}
+
+#allPaniers .panierContent .couvertureBDpanier {
+    height: 125px;
+    max-width: 100px;
+    margin: auto;
+}
+
+#allPaniers .panierContent .titreBDpanier {
+    text-align: center;
+}

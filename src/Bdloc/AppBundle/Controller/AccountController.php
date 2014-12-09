@@ -230,8 +230,19 @@ class AccountController extends Controller
     {
         // récupère l'utilisateur en session
         $user = $this->getUser();
+
+        $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
+        $carts = $cartRepo->findUserValidatedCarts( $user );
         
-        return $this->render("account/history.html.twig");
+        $userCarts = array();
+        foreach ($carts as $cart) {
+            $cart = $cartRepo->findBooksInCurrentCart( $cart->getId() );
+            $userCarts[] = $cart;
+        }
+
+        $params['carts'] = $userCarts;
+
+        return $this->render("account/history.html.twig", $params);
     }
 
     /**
@@ -242,7 +253,7 @@ class AccountController extends Controller
         // récupère l'utilisateur en session
         $user = $this->getUser();
         
-        return $this->render("account/show_fine_payment_form.html.twig");
+        return $this->render("account/show_fine_payment_form.html.twig", $params);
     }
 
     /**
@@ -253,7 +264,7 @@ class AccountController extends Controller
         // récupère l'utilisateur en session
         $user = $this->getUser();
         
-        return $this->render("account/unsubscribe.html.twig");
+        return $this->render("account/unsubscribe.html.twig", $params);
     }
 
     

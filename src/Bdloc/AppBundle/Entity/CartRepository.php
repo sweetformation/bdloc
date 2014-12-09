@@ -30,6 +30,18 @@ class CartRepository extends EntityRepository
 
     }
 
+    public function findUserValidatedCarts( $user ) {
+
+        $query = $this->createQueryBuilder('c')
+            ->where('c.user = :user')
+            ->setParameter('user', $user)
+            ->andWhere('c.status = :status')
+            ->setParameter('status', 'validé')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
     public function CountItemsNumberInCurrentCart( $id ) {
         // requete avec COUNT
     }

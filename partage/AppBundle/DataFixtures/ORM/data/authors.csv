@@ -1,0 +1,311 @@
+IdAuteur,Nom,Prenom,Surnom,DateNaissance,DateDeces,Pays,Pseudo,IdBEL
+1,<Indéterminé>,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+2,Jodorowsky,Alexandro,jodorowsky.jpg,07/02/29 00:00,NULL,CHILI,NULL,89
+3,Giraud,Jean,MOEBUSGiraudJean.jpg,08/05/38 00:00,NULL,FRANCE,Moebius,70
+4,Beaumenay-Joannet,Isabelle,BeaumenayJoannetIsabelle.jpg,01/01/57 00:00,NULL,FRANCE,NULL,2167
+5,Janjetov,Zoran,janjetov.jpg,NULL,NULL,YOUGOSLAVIE,NULL,318
+6,Chaland,Yves,chaland.jpg,03/04/57 00:00,18/07/90 00:00,FRANCE,NULL,23
+7,Studio Beltran,NULL,NULL,NULL,NULL,FRANCE,NULL,3991
+8,Beltran,Valérie,NULL,NULL,NULL,NULL,NULL,4755
+9,Bess,Georges,bessG.jpg,01/01/47 00:00,NULL,France,NULL,2139
+10,Bess,Guillaume,NULL,NULL,NULL,NULL,NULL,652
+11,Nolent,Alexis,Matz.jpg,01/01/67 00:00,NULL,FRANCE,Matz,590
+12,Jacamon,Luc,jacamon.jpg,NULL,NULL,NULL,NULL,591
+13,Brunschwig,Luc,BrunschwigLuc.jpg,03/09/67 00:00,NULL,FRANCE,NULL,4544
+14,Hirn,Laurent,HirnL_10012002.jpg,05/04/63 00:00,NULL,France,NULL,1936
+15,Guth,Claude,guth.jpg,02/03/62 00:00,NULL,NULL,NULL,80
+16,Benacquista,Tonino,benacquista.jpg,01/09/61 00:00,NULL,NULL,NULL,876
+17,Ferrandez,Jacques,ferrandez.jpg,12/12/55 00:00,NULL,NULL,NULL,877
+18,Paringaux,Philippe,NULL,NULL,NULL,NULL,NULL,6757
+19, De Loustal,Jacques,loustaljacques.jpg,10/04/56 00:00,NULL,FRANCE,Loustal,3262
+20,<Collectif>,NULL,NULL,NULL,NULL,NULL,NULL,734
+21,Kris,NULL,kris.jpeg,04/09/72 00:00,NULL,NULL,NULL,5286
+22,Davodeau,Etienne,davodeauetienne.jpg,19/10/65 00:00,NULL,FRANCE,NULL,187
+23,Manara,Maurilio,manaramilo.jpg,12/09/45 00:00,NULL,Italie,"Manara, Milo",1629
+24,<N&B>,NULL,NULL,NULL,NULL,NULL,NULL,477
+25,Rabaté,Pascal,NULL,13/08/61 00:00,NULL,FRANCE,NULL,191
+26,Diaz Canales,Juan,CanalesJuanDiaz.jpg,01/01/72 00:00,NULL,ESPAGNE,NULL,543
+27,Guarnido,Juanjo,guarnido.jpg,01/01/67 00:00,NULL,ESPAGNE,NULL,544
+28,Abouet,Marguerite,NULL,01/01/71 00:00,NULL,CÔTE D'IVOIRE,NULL,11554
+29,Oubrerie,Clément,NULL,NULL,NULL,NULL,NULL,11555
+30,Mandryka,Nikita,Mandryka.jpg,20/10/40 00:00,NULL,NULL,NULL,982
+31,Frezzato,Massimiliano,NULL,12/03/67 00:00,NULL,ITALIE,NULL,206
+32,Gratien,Eric,NULL,NULL,NULL,NULL,NULL,311
+33,David,Didier,Cromwell_16042002.jpg,09/09/59 00:00,NULL,FRANCE,Cromwell,3757
+34,Abolin,Georges,NULL,09/05/69 00:00,NULL,NULL,NULL,524
+35,Pont,Olivier,pontphoto.jpg,01/06/69 00:00,NULL,FRANCE,NULL,122
+36,Chagnaud,Jean-Jacques,chagnaudjeanjacques.jpg,NULL,NULL,NULL,NULL,480
+37,Szalewa,Igor,NULL,01/01/66 00:00,NULL,France,NULL,2056
+38,Ryser,Nicolas,NULL,NULL,NULL,NULL,NULL,1528
+39,Polonsky,Stephan,NULL,NULL,NULL,NULL,NULL,9046
+40, Phoussera,Ing,NULL,24/06/61 00:00,NULL,CAMBODGE,Séra,2097
+41,Siefer,Laurent,NULL,NULL,NULL,NULL,NULL,8618
+42,Pontarolo,Frédéric,pontarolo.jpg,10/02/70 00:00,NULL,FRANCE,NULL,198
+43,Omond,Eric,OmondEric.jpg,16/05/68 00:00,NULL,France,NULL,667
+44,Beuzelin,Boris,beuzelin.JPG,30/06/71 00:00,NULL,FRANCE,NULL,5815
+45,Gallié,Mathieu,NULL,NULL,NULL,France,NULL,304
+46,Andréae,Jean-Baptiste,Andreae.gif,10/01/64 00:00,NULL,France,NULL,1695
+47,Moore,Alan,alanmoore.jpg,18/11/53 00:00,NULL,ANGLETERRE,NULL,264
+48,Gibbons,Dave,GibbonsDave.jpg,14/04/49 00:00,NULL,ANGLETERRE,NULL,1538
+49,Higgins,John,NULL,NULL,NULL,NULL,NULL,1539
+50,Burns,Charles,burnscharles.jpg,27/09/55 00:00,NULL,USA,NULL,4294
+51,Eisner,William Erwin,NULL,06/03/17 00:00,03/01/05 00:00,USA,"Eisner, Will",2117
+52,Miller,Frank,NULL,NULL,NULL,USA,NULL,2586
+53,Mizuki,Shigeru,26256.jpg,08/03/22 00:00,NULL,JAPON,NULL,12656
+54,Kusumi,Masayuki,NULL,NULL,NULL,JAPON,NULL,11443
+55,Taniguchi,Jirô,taniguchijiro.jpg,12/08/47 00:00,NULL,JAPON,NULL,233
+56,Rabagliati,Michel,NULL,NULL,NULL,CANADA,NULL,6232
+57,Lapierre,François,lapierrefrancoisphoto.jpg,21/03/70 00:00,NULL,Québec,NULL,5801
+58,Beaulieu,Jimmy,Beaulieu_24042005.jpg,01/01/74 00:00,NULL,CANADA,NULL,10599
+59,Larcenet,Manu,larcenetmanu.jpg,06/05/69 00:00,NULL,FRANCE,NULL,457
+60,Larcenet,Patrice,NULL,05/06/71 00:00,NULL,FRANCE,NULL,1574
+61,Chabosy,Laurent,ChabosyLaurentTrondheim.jpg,01/01/64 00:00,NULL,FRANCE,"Trondheim, Lewis",145
+62,Findakly,Brigitte,NULL,NULL,NULL,FRANCE,NULL,1382
+63,Ferri,Jean-Yves,ferrijeanyves.jpg,NULL,NULL,NULL,NULL,6227
+64,Sfar,Joann,NULL,28/08/71 00:00,NULL,FRANCE,NULL,132
+65,Guibert,Emmanuel,15297.jpg,01/01/64 00:00,NULL,France,NULL,1685
+66,Lindingre,Yan,NULL,NULL,NULL,NULL,NULL,11863
+67,Dupuy,Philippe,dupuy.jpeg,15/12/60 00:00,NULL,FRANCE,NULL,55
+68,Legris,Claude,NULL,NULL,NULL,NULL,NULL,529
+69,Berberian,Charles,berberian.jpg,28/05/59 00:00,NULL,FRANCE,NULL,288
+70,Sapin,Mathieu,NULL,NULL,NULL,NULL,NULL,6419
+71,Chedru,Delphine,NULL,NULL,NULL,NULL,NULL,1748
+72,Le Gall,Frank,legallfranck.jpg,23/09/59 00:00,NULL,FRANCE,NULL,161
+73,Boulard,Hubert,hubert.jpg,01/01/71 00:00,NULL,NULL,Hubert,506
+74, Kerascoët,NULL,kerascoet.jpg,NULL,NULL,FRANCE,Kerascoët,10785
+75,Blain,Christophe,blain.jpg,10/08/70 00:00,NULL,FRANCE,NULL,232
+76, Pezzali,Walter,NULL,NULL,NULL,NULL,Walter,486
+77,Loisel,Régis,loiselregis07.jpg,04/12/51 00:00,NULL,FRANCE,NULL,101
+78,Cosandey,Bernard,cosey.jpg,14/06/50 00:00,NULL,SUISSE,Cosey,35
+79, Hislaire,Bernard,yslaireph.jpg,11/01/57 00:00,NULL,BELGIQUE,Yslaire,154
+80,Le Pennetier,Yann,lepennetieryannbalac.jpg,NULL,NULL,FRANCE,Balac,1039
+81,Bastide,Jean,NULL,01/01/82 00:00,NULL,NULL,NULL,13732
+82,Mezil,Vincent,NULL,01/01/83 00:00,NULL,France,NULL,13733
+83,Le Tendre,Serge,letendreserge.jpg,01/12/46 00:00,NULL,FRANCE,NULL,94
+84, Legeard,Dominique,lidwine.jpg,12/05/60 00:00,NULL,FRANCE,Lidwine,100
+85,Aouamri,Mohamed,aouamri.jpg,24/03/57 00:00,NULL,ALGERIE,NULL,370
+86,Lencot,Yves,NULL,29/04/59 00:00,NULL,France,NULL,632
+87,Quilici,Laurence,NULL,NULL,NULL,NULL,NULL,1606
+88, Wasem,Pierre,WAZEM.JPG,16/07/70 00:00,NULL,SUISSE,"Wazem, Pierre",555
+89,Peeters,Frederik,22609.jpg,14/08/74 00:00,NULL,SUISSE,NULL,1821
+90,Ralenti,Albertine,NULL,NULL,NULL,NULL,NULL,7663
+91,Ayroles,Alain,AyrollesAlain.jpg,26/01/68 00:00,NULL,FRANCE,NULL,7
+92,Masbou,Jean-Luc,masboujeanluc.jpg,14/03/63 00:00,NULL,FRANCE,NULL,329
+93,Mayer,Jean-marc,NULL,NULL,NULL,NULL,NULL,14745
+94,Moynot,Emmanuel,moynot_emmanuel.jpeg,15/04/60 00:00,NULL,FRANCE,NULL,276
+95,Bravo,Emile,bravoemile.jpg,18/09/64 00:00,NULL,FRANCE,NULL,1747
+96,Tripp,Jean-Louis,tripp.jpg,04/02/58 00:00,NULL,FRANCE,NULL,7216
+97, Girard,Philippe,NULL,NULL,NULL,QUÉBEC,Phlppgrrd,10202
+98,Girard,Pascal,NULL,NULL,NULL,QUÉBEC,NULL,12430
+99,Duberger,Jean-sébastien,NULL,NULL,NULL,NULL,Dub,15490
+100,Tan,Shaun,shaun.jpg,NULL,NULL,AUSTRALIE,NULL,13327
+101,Bonifay,Philippe,bonifay.jpg,13/08/59 00:00,NULL,FRANCE,NULL,186
+102,Pé,Frank,frank_19012003.gif,15/07/56 00:00,NULL,BELGIQUE,Frank(Pé),6039
+103,Lloyd,David,NULL,NULL,NULL,Angleterre,NULL,1647
+104,Roussel,Gilles,Boulet_20012002.jpg,01/02/75 00:00,NULL,France,Boulet,2052
+105,Albon,Lucie,NULL,01/01/77 00:00,NULL,FRANCE,NULL,10563
+106,Lefèvre,Didier,NULL,NULL,29/01/07 00:00,NULL,NULL,7664
+107,Pacinotti,Gianni,26266.jpg,01/01/63 00:00,NULL,ITALIE,Gipi,10118
+108,Dragon,Pierre,PierreDragon.jpg,01/01/65 00:00,NULL,FRANCE,NULL,13698
+109,Debeurme,Ludovic,NULL,NULL,NULL,FRANCE,NULL,6556
+110,Hincker,Christian,HinckerChristianBlutch.jpg,27/12/67 00:00,NULL,FRANCE,Blutch,193
+111,Van Hamme,Jean,vanhammejean.jpg,16/01/39 00:00,NULL,BELGIQUE,NULL,150
+112,Rosinski,Grzegorz,rosinskygrzegorz.jpg,03/08/41 00:00,NULL,POLOGNE,NULL,344
+113,Kasprzak,Graza,graza.jpg,NULL,NULL,NULL,Graza,481
+114,Sente,Yves,sente.jpg,17/01/64 00:00,NULL,BELGIQUE,NULL,254
+115,Pelinq,Christophe,ArlestonScotch.jpg,14/08/63 00:00,NULL,FRANCE,Arleston Scotch,6
+116,Tarquin,Didier,tarquin.jpg,20/01/67 00:00,NULL,FRANCE,NULL,171
+117,Hislaire,Bernard,hislairebernardyslaire.jpg,11/01/57 00:00,NULL,BELGIQUE,NULL,2844
+118, Herman,Jean,NULL,17/05/33 00:00,NULL,FRANCE,"Vautrin, Jean",1576
+119,Tardi,Jacques,tardi.jpg,30/08/46 00:00,NULL,FRANCE,NULL,141
+120,Haldeman,Joe,haldemanJoe.jpg,09/06/43 00:00,NULL,USA,NULL,81
+121,Van Oppen,Mark,marvano.jpg,29/04/53 00:00,NULL,BELGIQUE,Marvano,328
+122,Marchand,Bruno,Marchandb.jpg,01/01/63 00:00,NULL,FRANCE,NULL,401
+123,Juillard,André,juillardandre.jpg,09/06/48 00:00,NULL,FRANCE,NULL,382
+124,Convard,Didier,convard_didier.jpg,16/01/50 00:00,NULL,FRANCE,NULL,189
+125,<Quadrichromie>,NULL,NULL,NULL,NULL,NULL,NULL,7691
+126,Gibrat,Jean-Pierre,gibrat.jpg,17/04/54 00:00,NULL,FRANCE,NULL,68
+127,Kraehn,Jean-Charles,kraehn.jpg,27/06/55 00:00,NULL,FRANCE,NULL,90
+128,Vallée,Sylvain,vallee_sylvain.jpeg,28/06/72 00:00,NULL,FRANCE,NULL,414
+129,Jambers,Patricia,NULL,NULL,NULL,NULL,NULL,631
+130,Lapière,Denis,lapierreDenis.jpg,08/08/58 00:00,NULL,BELGIQUE,NULL,234
+131,Pellejero,Ruben,NULL,20/12/52 00:00,NULL,ESPAGNE,NULL,409
+132,Christin,Pierre,christin.jpg,27/07/38 00:00,NULL,FRANCE,NULL,6568
+133,Satrapi,Marjane,NULL,NULL,NULL,Iran,NULL,1578
+134,De Crécy,Nicolas,decrecynicolas.jpg,29/09/66 00:00,NULL,FRANCE,NULL,176
+135,Tjoyas,Alexios,NULL,NULL,NULL,NULL,NULL,4506
+136,Ruby,NULL,NULL,NULL,NULL,NULL,NULL,610
+137,Chomet,Sylvain,ChometSylvain.jpg,01/01/63 00:00,NULL,FRANCE,NULL,216
+138,Chevillard,Hubert,chevillardhubert.JPG,NULL,NULL,NULL,NULL,1587
+139,Zaza et Zik,NULL,NULL,NULL,NULL,NULL,NULL,13239
+140,Gale,Janet,NULL,NULL,NULL,Nouvelle-Zélande,NULL,621
+141,Langlois,Monica,NULL,NULL,NULL,NULL,NULL,6298
+142,Karali,Olivier,KaOlivier.jpg,29/12/67 00:00,NULL,NULL,"Ka, Olivier",6247
+143,Papagalli,Lionel,Alfred.jpg,19/05/76 00:00,NULL,FRANCE,Alfred,405
+144,Meunier,Henri,meunierportrait.jpg,01/01/72 00:00,NULL,FRANCE,NULL,12546
+145,Chevalier,Bruno,NULL,NULL,NULL,FRANCE,NULL,27
+146,Ségur,Thierry,segur.jpg,11/02/64 00:00,NULL,FRANCE,NULL,347
+147,De Oliveira,Luiz Eduardo,leo04.jpg,01/01/44 00:00,NULL,BRESIL,Léo,97
+148, Smulkowski,Scarlett,NULL,NULL,NULL,NULL,Scarlett,1296
+149,Jacquette,Rodolphe Daniel,rodolphe.jpg,18/05/48 00:00,NULL,FRANCE,Rodolphe,128
+150,Smulkowski,Scarlett,NULL,NULL,NULL,NULL,NULL,9328
+151,Boudjellal,Farid,boudjellal.jpg,12/03/53 00:00,NULL,FRANCE,NULL,2605
+152,Stassen,Jean-Philippe,STASSEN.JPG,14/03/66 00:00,NULL,NULL,NULL,4375
+153,Herman,Dieter,hermandietercomesdidier.jpg,11/02/42 00:00,NULL,BELGIQUE,"Comès, Didier",164
+154,Breccia,Alberto,BrecciaAlberto.jpg,15/04/19 00:00,10/11/93 00:00,URUGUAY,NULL,2228
+155,Oger,Tiburce,NULL,01/01/67 00:00,NULL,FRANCE,NULL,115
+156,Prugne,Patrick,NULL,NULL,NULL,FRANCE,NULL,124
+157,Leroy,Emmanuel,NULL,NULL,NULL,NULL,NULL,17943
+158,Bilal,Enes,NULL,07/10/51 00:00,NULL,YOUGOSLAVIE,"Bilal, Enki",14
+159,David,Fabrice,NULL,NULL,NULL,NULL,NULL,7515
+160,Bourgier,Eric,NULL,01/01/75 00:00,NULL,FRANCE,NULL,7516
+161,Nury,Fabien,NULL,31/05/76 00:00,NULL,FRANCE,NULL,7073
+162,Delf,NULL,NULL,NULL,NULL,NULL,NULL,3741
+163,Lupano,Wilfrid,NULL,26/09/71 00:00,NULL,FRANCE,NULL,9437
+164,Augustin,Virginie,augustin-virginie.jpg,01/01/73 00:00,NULL,FRANCE,NULL,9438
+165,Penloup,Geneviève,NULL,NULL,NULL,NULL,NULL,523
+166,Itoïz,Mayana,NULL,NULL,NULL,NULL,NULL,17536
+167,Prudhomme,David,prudhomme_david.jpeg,01/01/69 00:00,NULL,FRANCE,NULL,3378
+168,Merlet,Isabelle,NULL,07/10/67 00:00,NULL,FRANCE,NULL,528
+169,Rouger,Jean-Jacques,NULL,NULL,NULL,FRANCE,NULL,6512
+170,Clémence,NULL,NULL,NULL,NULL,NULL,NULL,12263
+171,Ravon,Philippe,NULL,NULL,NULL,NULL,NULL,16793
+172,Chailleux,Maximilien,NULL,NULL,NULL,NULL,NULL,17067
+173, Pelinq,Christophe,ArlestonScotch.jpg,14/08/63 00:00,NULL,FRANCE,"Arleston, Scotch",6
+174,Lamirand,Sébastien,NULL,NULL,NULL,NULL,NULL,8920
+175,Mathias,Guy,NULL,NULL,NULL,NULL,NULL,15198
+176, De Oliveira,Luiz Eduardo,leo04.jpg,01/01/44 00:00,NULL,BRESIL,Leo,97
+177, Pé,Frank,frank.jpg,15/07/56 00:00,NULL,BELGIQUE,Frank (Pé),6039
+178, Giraud,Jean,MOEBUSGiraudJean.jpg,08/05/38 00:00,NULL,FRANCE,Moebius,70
+179,Glogowski,Philippe,NULL,16/06/60 00:00,NULL,BELGIQUE,NULL,7341
+180,Le Guirec,Rose,NULL,NULL,NULL,NULL,NULL,678
+181,Peeters,Benoît,peeters-benoit.jpg,28/08/56 00:00,NULL,FRANCE,NULL,172
+182,Schuiten,François,schuiten-francois.jpg,26/04/56 00:00,NULL,BELGIQUE,NULL,442
+183,Willingham,Bill,NULL,NULL,NULL,NULL,NULL,4997
+184,Medina,Lan,NULL,NULL,NULL,NULL,NULL,8371
+185,Van Valkenburgh,Sherilyn,NULL,NULL,NULL,NULL,NULL,7202
+186,Buckingham,Mark,NULL,NULL,NULL,NULL,NULL,9506
+187,Vozzo,Daniel,NULL,NULL,NULL,USA,NULL,3646
+188,Akins,Tony,NULL,NULL,NULL,NULL,NULL,14474
+189,Bertho,Pascal,Bertho.jpg,07/10/64 00:00,NULL,FRANCE,NULL,2324
+190,Duval,Stéphane,duvalsteph_01042003.JPG,25/12/70 00:00,NULL,FRANCE,NULL,6437
+191,Cochet,Isabelle,cochetisabelle.JPG,NULL,NULL,NULL,NULL,515
+192,Aifelle,NULL,NULL,NULL,NULL,NULL,NULL,7669
+193,Bajram,Denis,bajram.jpg,01/02/70 00:00,NULL,FRANCE,NULL,184
+194,Plessix,Michel,Plessix_30062002.jpg,10/11/59 00:00,NULL,FRANCE,NULL,4567
+195,Jouannigot,Loïc,NULL,NULL,NULL,NULL,NULL,17392
+196,Corbeyran,Eric,corbeyran.jpg,14/12/64 00:00,NULL,FRANCE,NULL,1494
+197, Coronas,Christophe,cecil.jpg,18/05/66 00:00,NULL,FRANCE,Cécil,430
+198,Mallié,Vincent,mallie.jpg,24/04/73 00:00,NULL,FRANCE,NULL,462
+199,  Hislaire,Bernard,yslaireph.jpg,11/01/57 00:00,NULL,BELGIQUE,Yslaire,154
+200,Mézil,Vincent,mezil_vincent.jpg,01/01/83 00:00,NULL,FRANCE,NULL,13733
+201,Charest,Travis,CharestTravis.jpg,NULL,NULL,NULL,NULL,2027
+202,Mettout,Éric,NULL,NULL,NULL,NULL,NULL,14437
+203,Ghielmetti,Philippe,NULL,NULL,NULL,NULL,Dugenou,16723
+204,Richard,Marc,NULL,NULL,NULL,QUÉBEC,NULL,12429
+205,Houde,Jocelyn,NULL,NULL,NULL,QUÉBEC,NULL,11731
+206,Dufaux,Jean,dufaux.jpg,07/06/49 00:00,NULL,BELGIQUE,NULL,53
+207,Tillier,Béatrice,TillierBeatricephoto.jpg,18/09/72 00:00,NULL,FRANCE,NULL,925
+208,Montésinos,Éric,NULL,NULL,NULL,NULL,NULL,14615
+209,Davodeau,Étienne,davodeau.jpg,19/10/65 00:00,NULL,FRANCE,NULL,187
+210,Bravo,Émile,bravo.jpg,18/09/64 00:00,NULL,FRANCE,NULL,1747
+211,Kerascoët,NULL,kerascoet.jpg,NULL,NULL,FRANCE,NULL,10785
+212,Jacobs,Edgar Pierre,JacobsEP.jpg,30/03/04 00:00,20/02/87 00:00,BELGIQUE,NULL,1888
+213,Marssignac,Paul-Serge,NULL,24/12/37 00:00,08/02/07 00:00,NULL,NULL,5004
+214,Corbeyran,Éric,Corbeyran-dargaud.jpg,14/12/64 00:00,NULL,FRANCE,NULL,1494
+215, Lucas,Erwan,NULL,08/02/77 00:00,NULL,FRANCE,Obion,7306
+216,Delobel,Anne,NULL,01/01/49 00:00,NULL,NULL,NULL,1642
+217,Pedrosa,Cyril,PEDROSA.jpg,22/11/72 00:00,NULL,FRANCE,NULL,443
+218,Leialoha,Steve,NULL,27/01/52 00:00,NULL,USA,NULL,3926
+219,Klein,Todd,KleinTodd.jpg,NULL,NULL,ÉTATS-UNIS,NULL,4162
+220,Maleev,Alex,MaleevAlex.jpg,01/01/71 00:00,NULL,BULGARIE,NULL,6100
+221,Jean,James,NULL,NULL,NULL,NULL,NULL,14469
+222,Hamilton,Craig,NULL,NULL,NULL,NULL,NULL,14475
+223,Wiesenfeld,Aron,NULL,NULL,NULL,NULL,NULL,2018
+224,Talbot,Bryan,NULL,24/02/52 00:00,NULL,ANGLETERRE,NULL,4434
+225,Medley,Linda,NULL,NULL,NULL,NULL,NULL,14857
+226,Russell,Paul Craig,NULL,NULL,NULL,ÉTATS-UNIS,NULL,3896
+227,Kindzierski,Lovern,NULL,NULL,NULL,USA,NULL,4654
+228,Palmiotti,James,Jimmy_Palmiotti.jpg,16/08/61 00:00,NULL,ÉTATS-UNIS,"Palmiotti, Jimmy",7590
+229,Hahn,David,NULL,NULL,NULL,NULL,NULL,14472
+230,Green,Dan,Green-Dan.jpg,NULL,NULL,NULL,NULL,14473
+231,Pepoy,Andrew,NULL,NULL,NULL,NULL,NULL,14470
+232,Fern,Jim,NULL,NULL,NULL,NULL,NULL,14471
+233,Loughridge,Lee,NULL,NULL,NULL,USA,NULL,4147
+234,McManus,Shawn,NULL,NULL,NULL,ÉTATS-UNIS,NULL,4163
+235,Allred,Laura,allredlaura.jpg,NULL,NULL,NULL,NULL,7317
+236,De La Cruz,Eva,NULL,NULL,NULL,NULL,NULL,13386
+237,Alexovich,Aaron,NULL,01/01/77 00:00,NULL,U.S.A.,NULL,15782
+238,Mineo,Yoneyama,Yoneyama_21032008_115719.jpg,01/01/51 00:00,NULL,JAPON,"Yumemakura, Baku",8425
+239,Niffle,Frédéric,NiffleFrederic.jpg,NULL,NULL,NULL,NULL,4557
+240,Chollet,Sylvain,NULL,NULL,NULL,NULL,NULL,19673
+241, Cosandey,Bernard,cosey.jpg,14/06/50 00:00,NULL,SUISSE,Cosey,35
+242,Denis,Jean-Claude,denis.jpg,01/01/51 00:00,NULL,FRANCE,NULL,46
+243,Sattouf,Riad,sattouf.jpg,05/05/78 00:00,NULL,FRANCE,NULL,10964
+244, Vasseur,Didier,tronchet.jpg,29/09/58 00:00,NULL,FRANCE,Tronchet,144
+245,Giroud,Frank,Giroud.jpg,03/05/56 00:00,NULL,FRANCE,NULL,771
+246,Meyer,Ralph,meyer_ralph.jpeg,11/08/71 00:00,NULL,FRANCE,NULL,2006
+247,Delabie,Caroline,NULL,NULL,NULL,NULL,NULL,14755
+248,Fogolin,Dimitri,NULL,NULL,NULL,NULL,NULL,19644
+249,Ferté,Ségolène,NULL,NULL,NULL,NULL,NULL,15236
+250,Ruiz,Anne-Marie,NULL,NULL,NULL,NULL,NULL,16572
+251,Minguez,Jean-Marie,09_100.jpg,01/01/77 00:00,NULL,FRANCE,NULL,9082
+252,Cuveele,NULL,NULL,NULL,NULL,NULL,NULL,23083
+253,Caballero,Tatto,NULL,NULL,NULL,MEXIQUE,NULL,16942
+254,Turf,NULL,Photo_146.jpg,22/08/66 00:00,NULL,FRANCE,NULL,146
+255,Gaudin,Nadège,NULL,NULL,NULL,NULL,NULL,15156
+256,Raule,NULL,raule.jpg,10/11/71 00:00,NULL,NULL,NULL,13642
+257,Ibañez Ugena,Roger,NULL,06/07/77 00:00,NULL,ESPAGNE,Roger,13656
+258,D'Haene,Charles,NULL,NULL,NULL,NULL,NULL,15803
+259,Le Roux,Étienne,Leroux.jpg,14/12/66 00:00,NULL,MADAGASCAR,NULL,426
+260,Brizard,Jérôme,NULL,NULL,NULL,NULL,NULL,17714
+261,Desberg,Stephen,Desberg.jpg,10/09/54 00:00,NULL,BELGIQUE,NULL,47
+262,Marini,Enrico,marini.jpg,13/08/69 00:00,NULL,SUISSE,NULL,327
+263,Felicetti,Stella,NULL,NULL,NULL,NULL,NULL,17049
+264,Bourgeon,François,Bourgeon.jpg,05/07/45 00:00,NULL,FRANCE,NULL,16
+265,Vasseur,Didier,Photo_144.jpg,29/09/58 00:00,NULL,FRANCE,Tronchet,144
+266,De Oliveira,Luiz Eduardo,Photo_97.jpg,13/12/44 00:00,NULL,BRÉSIL,Leo,97
+267,Marchal,Bertrand,marchal.jpg,01/05/74 00:00,NULL,BELGIQUE,NULL,1913
+268,Bouët,Sébastien,NULL,NULL,NULL,NULL,NULL,8793
+269,Díaz Canales,Juan,CanalesJuanDiaz.jpg,01/01/72 00:00,NULL,ESPAGNE,NULL,543
+270,Munuera,José-Luis,Munuera.jpg,21/04/72 00:00,NULL,ESPAGNE,NULL,359
+271,Sédyas,NULL,NULL,NULL,NULL,NULL,NULL,23621
+272,Moscow Eye,NULL,NULL,NULL,NULL,NULL,NULL,15596
+273,Gaudin,Jean-Charles,GaudinJC.jpg,01/01/63 00:00,NULL,FRANCE,NULL,79
+274,Picaud,Christophe,Photo_8546.jpg,01/01/69 00:00,NULL,FRANCE,NULL,8546
+275,Alquier,Fabien,NULL,NULL,NULL,NULL,NULL,8605
+276,Hobb,Robin,NULL,NULL,NULL,USA,NULL,20599
+277,Sieurac,Laurent,Sieurac.jpg,06/03/74 00:00,NULL,FRANCE,NULL,3270
+278,Graffet,Didier,Graffet.jpg,01/01/70 00:00,NULL,FRANCE,NULL,16751
+279,Herik,Hanna,NULL,NULL,NULL,NULL,NULL,23102
+280,Hairsine,Trevor,hairshine.jpg,NULL,NULL,NULL,NULL,9185
+281,Blengino,Luca,blengino.jpg,01/01/78 00:00,NULL,ITALIE,NULL,11976
+282,Sarchione,Antonio,NULL,01/06/69 00:00,NULL,ITALIE,NULL,11324
+283,Pieri,Lorenzo,NULL,NULL,NULL,NULL,NULL,10444
+284,Sibran,Anne,Sibran.jpg,03/02/63 00:00,NULL,FRANCE,NULL,2302
+285, Petiqueux,Jérémy,Petiqueux.jpg,26/10/84 00:00,NULL,BELGIQUE,Jérémy,22973
+286,Fructus,Nicolas,fructus.jpg,24/06/70 00:00,NULL,FRANCE,NULL,1594
+287,Lemire,Jeff,NULL,01/01/76 00:00,NULL,NULL,NULL,21204
+288,Blanchet,Pascal,blanchetpascal.jpg,01/01/80 00:00,NULL,QUÉBEC,NULL,12432
+289,<Bichromie>,NULL,NULL,NULL,NULL,NULL,NULL,6563
+290,Shaw,Dash,NULL,06/04/83 00:00,NULL,ÉTATS-UNIS,NULL,17310
+291,Vidberg,Martin,Vidberg.jpg,20/03/80 00:00,NULL,FRANCE,NULL,12728
+292,Wild,Nicolas,NULL,01/01/77 00:00,NULL,FRANCE,NULL,13606
+293,Delisle,Guy,Photo_277.jpg,19/01/66 00:00,NULL,QUÉBEC,NULL,277
+294,Doxiadis,Apostolos,Apostolosdoxiadis.jpg,NULL,NULL,GRÈCE,NULL,22116
+295,Papadatos,Alecos,Alekos.jpg,NULL,NULL,GRÈCE,NULL,22117
+296,Di Donna,Annie,didonnaannie.jpg,NULL,NULL,FRANCE,NULL,22094
+297,Papadimitriou,Christos,christospapadim.jpg,NULL,NULL,GRÈCE,NULL,22095
+298,Dauzat,Pierre-Emmanuel,dauzatpe.jpg,NULL,NULL,NULL,NULL,22416
+299,Doxat,Eric,NULL,NULL,NULL,NULL,NULL,22417
+300, Ladrönn,José Omar,Photo_4008.jpg,01/01/67 00:00,NULL,MEXIQUE,"Ladrönn, José",4008
+301,Costa,Marianne,Photo_22451.jpg,NULL,NULL,FRANCE,NULL,22451
+302,Facio,Sebastian,NULL,NULL,NULL,NULL,NULL,25369
+303,Bourgier,Éric,Photo_7516.jpg,11/12/75 00:00,NULL,FRANCE,NULL,7516
+304, Mitildjian,Jean-Blaise,Photo_682.jpg,01/01/53 00:00,NULL,FRANCE,Djian,682
+305,Nouhaud,David,nouhaulddavid.jpg,22/01/76 00:00,NULL,FRANCE,NULL,10168
+306,Salomone,Paul,Photo_24194.jpg,01/01/81 00:00,NULL,FRANCE,NULL,24194
+307,Lanzac,Abel,NULL,NULL,NULL,FRANCE,NULL,21459
+308,Sapin,Clémence,NULL,NULL,NULL,NULL,NULL,11775
+309,Ricci,Roberto,riccirobertophoto.jpg,21/09/76 00:00,NULL,ITALIE,NULL,6163
+310,Gonord,Didier,NULL,NULL,NULL,NULL,NULL,17937

@@ -28,6 +28,11 @@ bdloc_app_cart:
 #     type:     annotation
 #     prefix:   /catalogue/
 
+bdloc_app_cronjob:
+    resource: "@BdlocAppBundle/Controller/CronJobController.php"
+    type:     annotation
+    prefix:   /
+
 login_check:
     path: /login_check
 logout:

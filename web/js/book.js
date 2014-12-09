@@ -61,13 +61,28 @@ cart = {
             url: url, 
             success: function(server_response) {
                 // Maj du nb d'éléments en panier
-                $("#itemsNumber").html( $(server_response).find("#itemsNumber") )
+                //console.log($(server_response).find("#itemsNumber").html())
+                //$("#itemsNumber").html( $(server_response).find("#itemsNumber").html() )
+                //$("#itemsNumber").html( $(server_response).find("#itnum").html() )
                 // Changement d'attributs du bouton...
-                bouton.val("Dans votre panier").off("click")
+                bouton.off("click")
                 bouton.parent().attr("href", "")
+                if ($("#itemsNumber").html() < 10) {
+                    bouton.val("Dans votre panier")
+                }
                 // Maj du stock
-                console.log(bouton.parent().parent().find(".bookStock").html())
+                //console.log(bouton.parent().parent().find(".bookStock").html())
                 bouton.parent().parent().find(".bookStock").html( $(server_response).find("#bookStock") )
+                // Affichage des messages
+                //console.log(bouton.parent().parent().parent().parent().parent().find("#flash-messages").html())
+                bouton.parent().parent().parent().parent().parent().find("#flash-messages").html( $(server_response).find("#flash-messages").html() )
+                url_items = $(server_response).find("#urlItemsNumber").html()
+                $.ajax({
+                   url: url_items, 
+                   success: function(server_response) {
+                       $("#itemsNumber").html( server_response )
+                   }
+                })
             },
             error: function() {
                 console.log("erreur dans fonction cart.ajouteBd")
@@ -123,6 +138,8 @@ book = {
 
         /* ******** On pose des écouteurs ********** */
         $(document).on("click", ".details", this.detailsBd)
+        $(document).on("click", ".listeBdCommandees", this.listingBd)
+        
 
     },
 
@@ -141,6 +158,17 @@ book = {
             }
 
         })
+    },
+
+    listingBd: function(e) {
+        console.log("book.listingBd")
+        var listing = $("#listing")
+        //if (listing.css({display: "none"})) {
+            popup.afficher( listing.html() )
+        //}
+        //if (listing.css({display: "block"})) {
+        //    popup.fermer
+        //}
     }
 
 

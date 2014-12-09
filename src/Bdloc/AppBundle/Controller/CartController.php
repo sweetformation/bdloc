@@ -34,9 +34,8 @@ class CartController extends Controller
         $book = $bookRepo->find( $book_id );
         //\Doctrine\Common\Util\Debug::dump($book);
 
-                
+              
         if (empty($cart)) {
-            //echo "création de panier<br />";
             // Création de panier
             $cart = new Cart();
             $cart->setStatus( "en cours" );
@@ -54,9 +53,14 @@ class CartController extends Controller
             $em->persist($cart);  
             $em->persist($cartItem);  
             $em->flush();
+        
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'BD ajoutée à votre panier !'
+            );
         }
-        else {
-            //echo "panier en cours<br />";
+        elseif ( count($cart->getCartItems()) < 10 ) {
+            // Maj de panier en cours
             $cartItem = new CartItem();
             $cartItem->setCart( $cart );
             $cartItem->setBook( $book );
@@ -67,15 +71,25 @@ class CartController extends Controller
 
             // update cart et sauvegarde cartItem
             $em = $this->getDoctrine()->getManager(); 
+            $em->persist($cart);  
             $em->persist($cartItem);  
             $em->flush();
-        }
         
-
-        $this->get('session')->getFlashBag()->add(
-            'notice',
-            'BD ajoutée à votre panier !'
-        );
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'BD ajoutée à votre panier !'
+            );
+        }
+        else {
+            $this->get('session')->getFlashBag()->add(
+                'error',
+                'Vous avez atteint le maximum de BD dans votre panier !'
+            );
+            $bookStock = $book->getStock();
+        }
+        /*$cart = $cartRepo->findUserCurrentCart( $user );
+        $itemsNumber = count($cart->getCartItems());
+        $params['itemsNumber'] = $itemsNumber;*/
 
         $params['bookStock'] = $bookStock;
         return $this->render("cart/add_book.html.twig", $params);
@@ -143,27 +157,34 @@ class CartController extends Controller
     /**
      * @Route("/validation")
      */
-
     public function validateAction()
-    {
-        $this->checkCartTiming();
+    {   
+        //
+        // Si user a une amende, le rediriger vers page amende!
+        // @todo
+
         $params = array();
         $user = $this->getUser();
         $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
         $cart = $cartRepo->findUserCurrentCart( $user );
+
+        // Récupération des BDs
+        $cart = $cartRepo->findBooksInCurrentCart( $cart->getId() );
+
         $params['cart'] = $cart;
-
-            // Maj statut panier
-            $cart->setStatus( "validé" );
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($cart);
-            $em->flush();
+      
+        // Maj statut panier
+        $cart->setStatus( "validé" );
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($cart);
+        $em->flush();
         
         return $this->render("cart/validate.html.twig", $params);
     }
 
-    // Fonction qui va chercher le nombre d'éléments dans panier courant et qui est appelée en template twig dans le header
+    /**
+     * @Route("/itemsNumber")
+     */
     public function getItemsNumberInCurrentCartAction() {
         $user = $this->getUser();
         $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
@@ -177,40 +198,7 @@ class CartController extends Controller
         return new Response($itemsNumber);
 
     }
-
-    // Utilisation de Cron Job toutes les minutes par exemple qui appelle cette méthode.
-    // Sous linux, facile à mettre en place = soit via méthode, soit carrément via commande
-    // Sous Windows, se fait avec les scheduled task, mais compliqué...je m'arrête là.
-    public function checkCartTiming() {
-        $user = $this->getUser();
-        $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
-        $cart = $cartRepo->findUserCurrentCart( $user );
-
-        if ($cart != null) {
-            $datetime1 = $cart->getDateModified();
-            $datetime2 = new \DateTime("now");
-            $interval = $datetime1->diff($datetime2);
-            if ( $interval->format('%i') > 30 ){
-                // Maj statut panier
-                $cart->setStatus( "vidé" );
-
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($cart);
-
-                // gestion stock des books
-                $cartItems = $cart->getCartItems();
-                foreach ($cartItems as $cartItem) {
-                    $book = $cartItem->getBook();
-                    // remet le stock à jour
-                    $book->setStock( $book->getStock() + 1 );
-                    $em->persist($book);
-                }  
-                // Exécute en BDD
-                $em->flush();
-            }
-        }
-
-    }
+    // Fonction qui va chercher le nombre d'éléments dans panier courant et qui est appelée en template twig dans le header
 
 
 

@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block main_content %}
+    {{ render(controller('BdlocAppBundle:CronJob:checkCartTiming')) }}
     <h1>Bienvenue sur BdLoc !</h1>
     
     <div id="presentation">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

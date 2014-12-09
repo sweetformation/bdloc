@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc73d181ffe48c30c68ebe3933411324",
+    "hash": "d265587d31953c329fa12f9ed9b87d30",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1856,6 +1856,114 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2014-11-29 10:12:05"
+        },
+        {
+            "name": "symfony/var-dumper",
+            "version": "v2.6.1",
+            "target-dir": "Symfony/Component/VarDumper",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "8f3ee04faeca3b8418229b2efbfc8b2b8625b8aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/8f3ee04faeca3b8418229b2efbfc8b2b8625b8aa",
+                "reference": "8f3ee04faeca3b8418229b2efbfc8b2b8625b8aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-symfony_debug": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-0": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "http://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2014-11-18 10:08:24"
+        },
+        {
+            "name": "tchwork/debug-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tchwork/debug-bundle.git",
+                "reference": "85e7f767a023f36705c4f5bf22d24d9a443e7bc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tchwork/debug-bundle/zipball/85e7f767a023f36705c4f5bf22d24d9a443e7bc9",
+                "reference": "85e7f767a023f36705c4f5bf22d24d9a443e7bc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/config": "~2.3",
+                "symfony/dependency-injection": "~2.2",
+                "symfony/event-dispatcher": "~2.3",
+                "symfony/http-kernel": "~2.3",
+                "symfony/var-dumper": "~2.6"
+            },
+            "require-dev": {
+                "twig/twig": "~1.12"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Bundle\\DebugBundle\\": "src",
+                    "Symfony\\Bridge\\Twig\\": "src",
+                    "Symfony\\Component\\HttpKernel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "The DebugBundle of Symfony 2.6 backported for 2.3+",
+            "homepage": "https://github.com/tchwork/debug-bundle",
+            "keywords": [
+                "dump"
+            ],
+            "time": "2014-12-02 19:45:04"
         }
     ],
     "aliases": [
@@ -1864,7 +1972,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "paypal/rest-api-sdk-php": 20,
-        "kmj/paypalbridgebundle": 20
+        "kmj/paypalbridgebundle": 20,
+        "tchwork/debug-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

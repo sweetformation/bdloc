@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "~2.2",
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "tchwork/debug-bundle": "dev-master"
     },
     "scripts": {
         "post-root-package-install": [

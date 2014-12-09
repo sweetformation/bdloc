@@ -1,0 +1,11 @@
+Ouvrir Taches planifiées
+Créer une nouvelle tache...
+Onglet Général -> donner un nom 
+Onglet Déclencheur -> nouveau... chaque jour, répéter la tache toutes les min...
+Onglet Action -> nouveau... Démarrer un programme
+			programme = powershell
+			arguments = copier-coller toute la ligne executionPolicy...
+
+powershell
+
+-ExecutionPolicy unrestricted -Command "(New-Object Net.WebClient).DownloadString(\"http://localhost/cron.aspx\")"

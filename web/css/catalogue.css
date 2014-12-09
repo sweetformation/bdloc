@@ -315,3 +315,11 @@
     margin-bottom: 10px;
 }
 
+#commande #listing {
+    /*visibility: hidden;*/
+    display: none;
+}
+
+#listing .listeTitres {
+    padding-left: 40px;
+}

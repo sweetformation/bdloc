@@ -48,9 +48,22 @@ class BookController extends Controller
         $bookRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Book");
         $book = $bookRepo->find($id);
 
-        $params = array(
-            "book" => $book
-        );
+        // récupère le nombre d'items dans panier
+        $user = $this->getUser();
+        $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
+        $cart = $cartRepo->findUserCurrentCart( $user );
+        // récupère les id des items dans panier
+        $booksIdInCart = array();
+        if ($cart != null) {
+            $cartItems = $cart->getCartItems();
+            foreach ($cartItems as $cartItem) {
+                $booksIdInCart[] = $cartItem->getBook()->getId();
+            }
+        }
+
+        $params['booksIdInCart'] = $booksIdInCart;
+
+        $params["book"] = $book;
 
         return $this->render("book/details.html.twig", $params);
     }

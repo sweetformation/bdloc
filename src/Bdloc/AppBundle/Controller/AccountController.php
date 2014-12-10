@@ -252,6 +252,7 @@ class AccountController extends Controller
     {
         // récupère l'utilisateur en session
         $user = $this->getUser();
+        $params = array();
         
         return $this->render("account/show_fine_payment_form.html.twig", $params);
     }
@@ -263,6 +264,7 @@ class AccountController extends Controller
     {
         // récupère l'utilisateur en session
         $user = $this->getUser();
+        $params = array();
         
         return $this->render("account/unsubscribe.html.twig", $params);
     }

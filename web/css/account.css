@@ -108,6 +108,94 @@
 }
 
 
+/*-------------------------- Credit Card Change -----------------------*/
+
+#bdloc_appbundle_creditcardchange {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_creditcardchange div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcardchange > div:nth-child(1) {
+    padding: 10px 0;
+}
+
+#bdloc_appbundle_creditcardchange #bdloc_appbundle_creditcardchange_abonnement {
+    margin-left: 10px;
+}
+
+/*#bdloc_appbundle_creditcardchange > div:nth-child(1) > label {
+    padding-top: 0px;
+    vertical-align: top;
+}*/
+
+#bdloc_appbundle_creditcardchange > div:nth-child(1) > div label {
+    display: inline-block;
+    padding-right: 0px;
+    margin-right: 20px;
+    padding-top: 2px;
+    width: 50px;
+}
+
+#bdloc_appbundle_creditcardchange input[type="text"],
+#bdloc_appbundle_creditcardchange > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcardchange > div:nth-child(5),
+#bdloc_appbundle_creditcardchange > div:nth-child(6) {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcardchange > div:nth-child(6) label {
+    display: inline-block;
+    padding-right: 5px;
+    width: 5px;
+}
+
+#bdloc_appbundle_creditcardchange #bdloc_appbundle_creditcardchange_creditCardLastName,
+#bdloc_appbundle_creditcardchange #bdloc_appbundle_creditcardchange_creditCardFirstName {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 112px;
+}
+
+#bdloc_appbundle_creditcardchange select {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 80px;
+}
+
+#bdloc_appbundle_creditcardchange > div > div,
+#bdloc_appbundle_creditcardchange ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcardchange ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_creditcardchange button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+#bdloc_appbundle_creditcardchange_validUntil_day {
+    visibility: hidden;
+}
 
 
 

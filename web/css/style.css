@@ -15,8 +15,8 @@ html {
 /********************************************************************/
 
 *::selection {
-    /*background:#FF666A;
-    color:yellow;*/
+    background: #272928;
+    color: #fff;
 }
 
 body {
@@ -91,6 +91,15 @@ select {
     font-family: 'Advent Pro', sans-serif;
     font-size: 1.1em;
 }
+
+input {
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #fe8e2b;
+} 
 
 
 

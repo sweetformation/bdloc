@@ -18,6 +18,7 @@ use Bdloc\AppBundle\Security\ChangePassword;
 use Bdloc\AppBundle\Form\ChangePasswordType;
 use Bdloc\AppBundle\Form\DropSpotType;
 use Bdloc\AppBundle\Form\CreditCardType;
+use Bdloc\AppBundle\Form\CreditCardChangeType;
 
 //use Bdloc\AppBundle\Entity\Paiement;
 
@@ -204,14 +205,32 @@ class AccountController extends Controller
         $ppu = $this->get('paypal_utility');
         $ppu->setCreditCard($creditCard);
         $card = $ppu->getCreditCard();
-        print_r($card);
+        //print_r($card);
+        $creditCard->setCreditCardType($card->getType());
+        $creditCard->setCreditCardNumber($card->getNumber());
+        //$creditCard->setExpirationDate($card->getValidUntil());
+        $creditCard->setCreditCardLastName($card->getLast_name());
+        $creditCard->setCreditCardFirstName($card->getFirst_name());
 
-        $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
+        $creditCardChangeForm = $this->createForm(new CreditCardChangeType(), $creditCard);
 
         $request = $this->getRequest();
-        $creditCardForm->handleRequest($request);
+        $creditCardChangeForm->handleRequest($request);
 
-        $params['creditCardForm'] = $creditCardForm->createView();
+        if ($creditCardChangeForm->isValid()) {
+
+                // On récupère les infos de paypal
+                $paypalCC_id = $ppu->registerCreditCard();
+                $creditCard->setPaypalId( $paypalCC_id );
+                //$creditCard->setValidUntil( $creditCard->getExpirationDate() ); 
+
+                // update en bdd pour CreditCard
+                $em = $this->getDoctrine()->getManager(); 
+                $em->persist($creditCard);   
+                $em->flush();
+        }
+
+        $params['creditCardChangeForm'] = $creditCardChangeForm->createView();
         
         return $this->render("account/edit_payment_info.html.twig", $params);
     }

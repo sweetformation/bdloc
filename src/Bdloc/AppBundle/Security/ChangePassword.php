@@ -22,6 +22,6 @@ class ChangePassword
      *     minMessage = "Le mot de passe doit contenir au moins {{ limit }} caractères."
      * )
      */
-     protected $newPassword;
+    protected $newPassword;
 
 }

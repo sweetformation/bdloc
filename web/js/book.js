@@ -9,7 +9,6 @@ popup = {
         console.log("popup.chargement")
         // Je récupère la popup
         this.overlay = $("#popup")
-
         // On écoute le click sur croix fermeture
         $("#croixFermeture").on("click", this.fermer)
 
@@ -20,6 +19,9 @@ popup = {
         //this.overlay.append(x).fadeIn()
         $("#popupContent").append(x)
         this.overlay.fadeIn()
+        $(".container").css({opacity: 0.3})
+        //$(".container").css({background: "rgba(255, 255, 255, 0.5)"})
+        //this.overlay.css({opacity: 1})
     },
 
     fermer: function() {
@@ -27,7 +29,8 @@ popup = {
         $("#popup").fadeOut({
             duration: 1000,
             complete: function() {
-                $("#popupContent").html("")  
+                $("#popupContent").html("")
+                $(".container").css({opacity: 1})  
             }
         })
     }
@@ -135,10 +138,12 @@ book = {
     /* Chargement de la page */
     chargement: function(){
         console.log("book.chargement")
+        this.catAllCheckBd()
 
         /* ******** On pose des écouteurs ********** */
         $(document).on("click", ".details", this.detailsBd)
         $(document).on("click", ".listeBdCommandees", this.listingBd)
+        $(document).on("change", ".catCheck", this.catCheckBd)
         
 
     },
@@ -160,16 +165,32 @@ book = {
         })
     },
 
-    listingBd: function(e) {
+    listingBd: function() {
         console.log("book.listingBd")
         var listing = $("#listing")
-        //if (listing.css({display: "none"})) {
-            popup.afficher( listing.html() )
-        //}
-        //if (listing.css({display: "block"})) {
-        //    popup.fermer
-        //}
+        popup.afficher( listing.html() )
+    },
+
+    catAllCheckBd: function() {
+        console.log("book.catAllCheckBd")
+        $( ".catCheck" ).each( function() {
+            if (this.checked) {
+                $(this).parent().find(".catLabCheck").css({color: "#fe8e2b"})
+            }
+        })
+    },
+
+    catCheckBd: function() {
+        console.log("book.catCheckBd")
+        var inputCheck = $(this)
+        if (inputCheck[0].checked) {
+            inputCheck.parent().find(".catLabCheck").css({color: "#fe8e2b"})
+        }
+        if (!inputCheck[0].checked) {
+            inputCheck.parent().find(".catLabCheck").css({color: "#fff"})
+        }
     }
+
 
 
 

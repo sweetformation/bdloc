@@ -1,0 +1,244 @@
+@import "reset.css";
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro:400,700);
+
+
+/********************************************* BORDER-BOX *************/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+	height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/********************************************************************/
+
+*::selection {
+    /*background:#FF666A;
+    color:yellow;*/
+}
+
+body {
+    background: #272928;
+    color: #fff;
+    position: relative;
+}
+
+.container {
+    background: #dfdee4;
+    /*background: linear-gradient(to bottom, #c9c8cd 0%, #dfdee4 50%, #c9c8cd 100%);*/
+    border: 2px solid #dfdee4;
+    color: #000;
+    font-family: 'Advent Pro', sans-serif;
+    margin: auto;
+    position: relative;
+    width: 60%;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 20px 0 10px 20px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 10px 40px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+strong {
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+button[type="submit"],
+select {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.1em;
+}
+
+
+
+
+
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************** HEADER *****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+#header{
+    background: linear-gradient(to bottom, #000 0%, #dfdee4 100%);
+    /*border-bottom: 2px solid #fe8e2b;*/
+    overflow: hidden;
+    padding: 20px;
+}
+
+#logo {
+    margin: 10px;
+}
+
+#nav,
+#connexion {
+    margin: 20px;
+}
+
+#nav a,
+#connexion a {
+    background: #272928;
+    border: 2px solid transparent;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 5px 2px;
+    padding: 10px;
+    text-align: center;
+}
+
+#nav a.active,
+#connexion a.active {
+    color: #fe8e2b;
+}
+
+#nav a:hover,
+#connexion a:hover {
+    border: 2px solid #fe8e2b;
+}
+
+#itemsNumber {
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 5px;
+}
+
+#user {
+    color: #fe8e2b;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ *************************************************** MAIN ******************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+#main {
+    overflow: hidden;
+}
+
+#flash-messages {
+    min-height: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.flash-notice {
+    color: #00f;
+}
+
+.flash-error {
+    color: #f00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ___________________________________________________________________________________________________________ */
+
+/***************************************************************************************************************
+ ************************************************** FOOTER *****************************************************
+ ***************************************************************************************************************/
+
+/* ___________________________________________________________________________________________________________ */
+
+
+#footer{
+    background: linear-gradient(to top, #000 0%, #dfdee4 100%);
+    /*border-top: 2px solid #fe8e2b;*/
+    color: #fe8e2b;
+    font-size: 1.2em;
+    padding: 50px;
+    text-align: center;
+}
+
+
+

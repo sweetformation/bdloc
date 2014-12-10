@@ -13,10 +13,10 @@
     {% if cart is empty %}
         <p>Votre panier est vide</p>
     {% else %}
-        <div id="popup">
-            <div id="croixFermeture"><img src="{{ asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
+        <!-- <div id="popup">
+            <div id="croixFermeture"><img src="{ { asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
             <div id="popupContent"></div>
-        </div>
+        </div> -->
         <table id="tablePanier">
             <tbody>
             {% for key, cartItem in cart.cartItems %}
@@ -32,7 +32,7 @@
         </table>
         <div id="validation">
             <a href="{{ path('bdloc_app_cart_validate') }}" title="Valider mon panier"><input class="validerPanier" type="button" value="Valider mon panier"></a>
-            <a href="{{ path('bdloc_app_book_catalog', {'page': 1}) }}" title="Catalogue"><input class="retourCatalogue" type="button" value="Catalogue"></a>
+            <a href="{{ path('bdloc_app_book_catalogredirect') }}" title="Catalogue"><input class="retourCatalogue" type="button" value="Catalogue"></a>
         </div>
     {% endif %}
     </div>

@@ -13,89 +13,114 @@
 {% set orderDir = variables['orderDir'] %}
 {% set keywords = variables['keywords'] %}
 {% set categories = variables['categories'] %}
+{% set categories_url = variables['categories_url'] %}
 {% set availability = variables['availability'] %}
 
 {% block sidebar %}
-    <aside id="sidebar">
-        <form method="GET">
-            <div id="catesidebar">Catégories :
-                <ul>   
-                    <li><input type="checkbox" name="categories[]" value="Adaptation" id="Adaptation" {% for category in categories %}{% if category == "Adaptation" %} checked="checked" {% endif %}{% endfor %}><label for="Adaptation">Adaptation</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Animalier" id="Animalier" {% for category in categories %}{% if category == "Animalier" %} checked="checked" {% endif %}{% endfor %}><label for="Animalier">Animalier</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Aventure" id="Aventure" {% for category in categories %}{% if category == "Aventure" %} checked="checked" {% endif %}{% endfor %}><label for="Aventure">Aventure</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Biographie" id="Biographie" {% for category in categories %}{% if category == "Biographie" %} checked="checked" {% endif %}{% endfor %}><label for="Biographie">Biographie</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Comics" id="Comics" {% for category in categories %}{% if category == "Comics" %} checked="checked" {% endif %}{% endfor %}><label for="Comics">Comics</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Divers" id="Divers" {% for category in categories %}{% if category == "Divers" %} checked="checked" {% endif %}{% endfor %}><label for="Divers">Divers</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Drame" id="Drame" {% for category in categories %}{% if category == "Drame" %} checked="checked" {% endif %}{% endfor %}><label for="Drame">Drame</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Erotique" id="Erotique" {% for category in categories %}{% if category == "Erotique" %} checked="checked" {% endif %}{% endfor %}><label for="Erotique">Erotique</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Heroic Fantasy" id="Heroic Fantasy" {% for category in categories %}{% if category == "Heroic Fantasy" %} checked="checked" {% endif %}{% endfor %}><label for="Heroic Fantasy">Heroic Fantasy</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Historique" id="Historique" {% for category in categories %}{% if category == "Historique" %} checked="checked" {% endif %}{% endfor %}><label for="Historique">Historique</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Humour" id="Humour" {% for category in categories %}{% if category == "Humour" %} checked="checked" {% endif %}{% endfor %}><label for="Humour">Humour</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Independant" id="Independant" {% for category in categories %}{% if category == "Independant" %} checked="checked" {% endif %}{% endfor %}><label for="Independant">Independant</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Jeunesse" id="Jeunesse" {% for category in categories %}{% if category == "Jeunesse" %} checked="checked" {% endif %}{% endfor %}><label for="Jeunesse">Jeunesse</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Manga" id="Manga" {% for category in categories %}{% if category == "Manga" %} checked="checked" {% endif %}{% endfor %}><label for="Manga">Manga</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Policier-Thriller-Polar" id="Policier-Thriller-Polar" {% for category in categories %}{% if category == "Policier-Thriller-Polar" %} checked="checked" {% endif %}{% endfor %}><label for="Policier-Thriller-Polar">Policier-Thriller-Polar</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Quotidien" id="Quotidien" {% for category in categories %}{% if category == "Quotidien" %} checked="checked" {% endif %}{% endfor %}><label for="Quotidien">Quotidien</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Roman graphique" id="Roman graphique" {% for category in categories %}{% if category == "Roman graphique" %} checked="checked" {% endif %}{% endfor %}><label for="Roman graphique">Roman graphique</label></li>
-                    <li><input type="checkbox" name="categories[]" value="Science-fiction" id="Science-fiction" {% for category in categories %}{% if category == "Science-fiction" %} checked="checked" {% endif %}{% endfor %}><label for="Science-fiction">Science-fiction</label></li>
+    <aside id="aside">
+    <!-- { { categories_url }} -->
+        <form method="POST" id="formFiltres">
+            <div id="catesidebar" class="left">
+                <p class="filtre">Catégories :</p>
+                <ul class="col">   
+                    <li><input type="checkbox" name="categories[]" value="Adaptation" id="Adaptation" class="catCheck" {% for category in categories %}{% if category == "Adaptation" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Adaptation">Adaptation</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Animalier" id="Animalier" class="catCheck" {% for category in categories %}{% if category == "Animalier" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Animalier">Animalier</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Aventure" id="Aventure" class="catCheck" {% for category in categories %}{% if category == "Aventure" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Aventure">Aventure</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Biographie" id="Biographie" class="catCheck" {% for category in categories %}{% if category == "Biographie" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Biographie">Biographie</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Comics" id="Comics" class="catCheck" {% for category in categories %}{% if category == "Comics" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Comics">Comics</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Divers" id="Divers" class="catCheck" {% for category in categories %}{% if category == "Divers" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Divers">Divers</label></li>
+                </ul>
+                <ul class="col">   
+                    <li><input type="checkbox" name="categories[]" value="Drame" id="Drame" class="catCheck" {% for category in categories %}{% if category == "Drame" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Drame">Drame</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Erotique" id="Erotique" class="catCheck" {% for category in categories %}{% if category == "Erotique" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Erotique">Erotique</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Heroic Fantasy" id="Heroic Fantasy" class="catCheck" {% for category in categories %}{% if category == "Heroic Fantasy" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Heroic Fantasy">Heroic Fantasy</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Historique" id="Historique" class="catCheck" {% for category in categories %}{% if category == "Historique" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Historique">Historique</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Humour" id="Humour" class="catCheck" {% for category in categories %}{% if category == "Humour" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Humour">Humour</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Independant" id="Independant" class="catCheck" {% for category in categories %}{% if category == "Independant" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Independant">Independant</label></li>
+                </ul>
+                <ul class="col"> 
+                    <li><input type="checkbox" name="categories[]" value="Jeunesse" id="Jeunesse" class="catCheck" {% for category in categories %}{% if category == "Jeunesse" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Jeunesse">Jeunesse</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Manga" id="Manga" class="catCheck" {% for category in categories %}{% if category == "Manga" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Manga">Manga</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Policier-Thriller-Polar" id="Policier-Thriller-Polar" class="catCheck" {% for category in categories %}{% if category == "Policier-Thriller-Polar" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Policier-Thriller-Polar">Policier-Thriller-Polar</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Quotidien" id="Quotidien" class="catCheck" {% for category in categories %}{% if category == "Quotidien" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Quotidien">Quotidien</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Roman graphique" id="Roman graphique" class="catCheck" {% for category in categories %}{% if category == "Roman graphique" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Roman graphique">Roman graphique</label></li>
+                    <li><input type="checkbox" name="categories[]" value="Science-fiction" id="Science-fiction" class="catCheck" {% for category in categories %}{% if category == "Science-fiction" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Science-fiction">Science-fiction</label></li>
                 </ul>
             </div>
-            <div id="disposidebar">Disponibilité :
+            <div id="disposidebar" class="left">
+                <p class="filtre">Disponibilité :</p>
                 <ul>   
-                    <li><input type="radio" name="availability[]" id="toutes" value="0" {% for avail in availability %}{% if avail == 0 %} checked="checked" {% endif %}{% endfor %}><label for="toutes">Toutes</label></li>
-                    <li><input type="radio" name="availability[]" id="disponibles" value="1" {% for avail in availability %}{% if avail == 1 %} checked="checked" {% endif %}{% endfor %}><label for="disponibles">Disponibles</label></li>
+                    <li><input type="radio" name="availability[]" id="toutes" value="0" {% if availability == 0 %} checked="checked" {% endif %}><label for="toutes">Toutes</label></li>
+                    <li><input type="radio" name="availability[]" id="disponibles" value="1" {% if availability == 1 %} checked="checked" {% endif %}><label for="disponibles">Disponibles</label></li>
                 </ul>
             </div>
-            <div id="Keywords">
-                <label for="keywords">Recherche :</label>
-                <input type="search" id="keywords" name="keywords" placeholder="Mots-clefs" value="{{ keywords }}"/>
+            <div id="filtresidebar" class="left">
+                <!-- <p class="filtre">Filtres :</p> -->
+                <div id="Keywords">
+                    <label for="keywords">Recherche :</label>
+                    <input type="search" id="keywords" name="keywords" placeholder="Mots-clefs" {% if keywords != "none" %} value="{{ keywords }}" {% endif %}/>
+                </div>
+                <div id="NumPerPage">
+                    <label for="numPerPage">Nb / page :</label>
+                    <input type="text" id="numPerPage" name="numPerPage" value="{{ numPerPage }}"/>
+                </div>
+                <div class="filtreAffich">
+                    <label>Trié par :</label>
+                    <select name="orderBy" id="orderBy">
+                        <option value="dateCreated" {% if orderBy == "dateCreated" %} selected="selected" {% endif %}>Date d'ajout au catalogue</option>
+                        <option value="title" {% if orderBy == "title" %} selected="selected" {% endif %}>Titre de BD</option>
+                    </select>
+                    <select name="orderDir" id="orderDir">
+                        <option value="asc" {% if orderDir == "asc" %} selected="selected" {% endif %}>Croissant</option>
+                        <option value="desc" {% if orderDir == "desc" %} selected="selected" {% endif %}>Décroissant</option>
+                    </select>
+                </div>
             </div>
-            <div id="NumPerPage">
-                <label for="numPerPage">Nb/page :</label>
-                <input type="text" id="numPerPage" name="numPerPage" value="{{ numPerPage }}"/>
-            </div>
-            <div class="filtreAffich">
-                <select name="orderBy" id="orderBy">
-                    <option value="dateCreated" {% if orderBy == "dateCreated" %} selected="selected" {% endif %}>Date d'ajout au catalogue</option>
-                    <option value="title" {% if orderBy == "title" %} selected="selected" {% endif %}>Titre de BD</option>
-                </select>
-                <select name="orderDir" id="orderDir">
-                    <option value="asc" {% if orderDir == "asc" %} selected="selected" {% endif %}>Croissant</option>
-                    <option value="desc" {% if orderDir == "desc" %} selected="selected" {% endif %}>Décroissant</option>
-                </select>
-            </div>
-            <div id="soumission">
+            <div id="soumission" class="left">
                 <input type="submit" value="Rechercher" />
             </div>
         </form>
     </aside>
 {% endblock %}
 {% block main_content %}
-    <div class="barreFiltre">
+    <div id="pagination">
+        {% if page > 1 %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}"><<</a>
+        {% endif %}
+        {% if page > 1 %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': page - 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}"><</a>
+        {% endif %}
 
-        <div class="pagination">
-        <ul>
-                <li>
-                    <a href="{{ path('bdloc_app_book_catalog', {'page': page - 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': "", 'availability': 0}) }}"><</a>
-                </li>
-            {% for p in range(1, 10) %}
-                <li>
-                    <a href="{{ path('bdloc_app_book_catalog', {'page': p, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': "", 'availability': 0}) }}">{{ p }}</a>
-                </li>
+        {% if nbPage < 10 %}
+            {% for p in range(1, nbPage) %}
+                <a href="{{ path('bdloc_app_book_catalog', {'page': p, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">{{ p }}</a>
             {% endfor %}
-                <li>
-                    <a href="{{ path('bdloc_app_book_catalog', {'page': page + 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': "", 'availability': 0}) }}">></a>
-                </li>
-        </ul>
-        </div>
-        <div class="clearfix"></div>
+        {% elseif (nbPage >= 10) and (nbPage < 20) %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">{{ 1 }}</a>
+            {% for p in range(2, nbPage, 2) %}
+                <a href="{{ path('bdloc_app_book_catalog', {'page': p, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">{{ p }}</a>
+            {% endfor %}
+        {% elseif nbPage >= 20 %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">{{ 1 }}</a>
+            {% for p in range(5, nbPage, 5) %}
+                <a href="{{ path('bdloc_app_book_catalog', {'page': p, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">{{ p }}</a>
+            {% endfor %}
+        {% endif %}
+
+        {% if page < nbPage %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': page + 1, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">></a>
+        {% endif %}
+        {% if page < nbPage %}
+            <a href="{{ path('bdloc_app_book_catalog', {'page': nbPage, 'orderBy': orderBy, 'orderDir': orderDir, 'numPerPage': numPerPage, 'keywords': keywords, 'categories': categories_url, 'availability': availability}) }}">>></a>
+        {% endif %}
     </div>
 
     <div id="containerCatalogue">
-        <div id="popup">
-            <div id="croixFermeture"><img src="{{ asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
+        <!-- <div id="popup">
+            <div id="croixFermeture"><img src="{ { asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
             <div id="popupContent"></div>
         </div>
+ -->        <div id="books">
         {% for book in books %}
             <div class="BdPost">
 
@@ -103,10 +128,10 @@
                 
                 <div class="infos">
                     <p class="titreBd">{{ book.title }}</p>
-                    <p class="titreBd">{{ book.serie.style }}</p>
-                    <p class="auteur">{{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
-                    <p class="coloriste">{{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
-                    <p class="scenariste">{{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+                    <p class="categorieBd">{{ book.serie.style }}</p>
+                    <p class="auteur">Auteur : {{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+                    <p class="coloriste">Coloriste : {{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+                    <p class="scenariste">Scénariste : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
                     {% if book.stock == 0 %}
                         <p class="indisponible">Indisponible...</p>
                         <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
@@ -130,6 +155,7 @@
                 </div>
             </div>
         {% endfor %}
+        </div>
     </div>
 {% endblock %}
 

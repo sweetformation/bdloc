@@ -157,7 +157,7 @@ class PPUtility {
         return $paypalCC_id;
     }
 
-    /*public function getCreditCard() {
+    public function getCreditCard() {
         // from https://github.com/paypal/PayPal-PHP-SDK/blob/master/sample/vault/CreateCreditCard.php
         // # Create Credit Card Sample
         // You can store credit card details securely
@@ -170,14 +170,14 @@ class PPUtility {
         // ### CreditCard
         // A resource representing a credit card that is 
         // to be stored with PayPal.
-        $card = new PaypalCreditCard();
+        /*$card = new PaypalCreditCard();
         $card->setType($this->creditCard->getCreditCardType());
         $card->setNumber($this->creditCard->getCreditCardNumber());
         $card->setExpire_month($this->creditCard->getExpirationDate()->format("m"));
         $card->setExpire_year($this->creditCard->getExpirationDate()->format("Y"));
         $card->setCvv2($this->creditCard->getCodeCVC());
         $card->setFirst_name($this->creditCard->getCreditCardFirstName());
-        $card->setLast_name($this->creditCard->getCreditCardLastName());
+        $card->setLast_name($this->creditCard->getCreditCardLastName());*/
 
         // ### Save card
         // Creates the credit card as a resource
@@ -186,7 +186,8 @@ class PPUtility {
         // in future payments.
         // (See bootstrap.php for more on `ApiContext`)
         try {
-            $card = CreditCard::get($card->getId(), $this->apiContext);
+            //$card = CreditCard::get($card->getId(), $this->apiContext);
+            $card = PaypalCreditCard::get($this->creditCard->getPaypalId(), $this->apiContext);
             //echo("<br /><br />card =<br />");
             //print_r($card);
 
@@ -195,6 +196,6 @@ class PPUtility {
         }
 
         return $card;
-    }*/
+    }
 
 }

@@ -1,0 +1,354 @@
+
+
+
+/***********************
+**   FORMULAIRE       **
+***********************/
+
+.formTitle {
+    margin-left: 150px;
+}
+
+#menuAbonnement ul {
+    overflow: hidden;
+}
+
+#menuAbonnement ul li {
+    color: #000;
+    float: left;
+    padding: 10px 0;
+    text-align: center;
+    width: 33%;
+}
+
+#menuAbonnement ul li.etapeActive {
+    color: #00f;
+}
+
+
+
+/*-------------------------- REGISTER -----------------------*/
+
+#bdloc_appbundle_register {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_register div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_register input[type="text"],
+#bdloc_appbundle_register input[type="email"],
+#bdloc_appbundle_register input[type="password"],
+#bdloc_appbundle_register > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+/*#bdloc_appbundle_register > div:nth-child(8) {
+    display: inline-block;
+}*/
+
+#bdloc_appbundle_register > div > div,
+#bdloc_appbundle_register ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_register ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_register button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+
+
+
+/*-------------------------- LOGIN -----------------------*/
+
+/*#loginForm {
+    padding-bottom: 50px;
+}*/
+
+#loginForm div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#loginForm > div > div,
+#loginForm ul {
+    display: inline-block;
+}
+
+#loginForm ul {
+    color: #f00;
+    list-style: none;
+}
+
+#loginForm button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+#mdpoublie {
+    display: inline-block;
+    padding: 5px 0 50px 260px;
+}
+
+
+
+
+
+
+/*-------------------------- DROP SPOT -----------------------*/
+
+#bdloc_appbundle_dropspot {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_dropspot div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_dropspot select,
+#bdloc_appbundle_dropspot > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_dropspot > div > div,
+#bdloc_appbundle_dropspot ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_dropspot ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_dropspot button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+
+
+
+/*-------------------------- FORGOT PASSWORD 1 -----------------------*/
+
+#bdloc_appbundle_forgotpasswordstepone {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_forgotpasswordstepone div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_forgotpasswordstepone input[type="email"] {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_forgotpasswordstepone > div > div,
+#bdloc_appbundle_forgotpasswordstepone ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_forgotpasswordstepone ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_forgotpasswordstepone button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+
+
+
+/*-------------------------- FORGOT PASSWORD 2 -----------------------*/
+
+#bdloc_appbundle_forgotpasswordsteptwo {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_forgotpasswordsteptwo div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_forgotpasswordsteptwo input[type="password"] {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_forgotpasswordsteptwo > div > div,
+#bdloc_appbundle_forgotpasswordsteptwo ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_forgotpasswordsteptwo ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_forgotpasswordsteptwo button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+
+/*-------------------------- Credit Card -----------------------*/
+
+#bdloc_appbundle_creditcard {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_creditcard div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) {
+    padding: 10px 0;
+}
+
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_abonnement {
+    margin-left: 10px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) > label {
+    padding-top: 0px;
+    vertical-align: top;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(1) > div label {
+    display: inline-block;
+    padding-right: 0px;
+    margin-right: 20px;
+    padding-top: 2px;
+    width: 50px;
+}
+
+#bdloc_appbundle_creditcard input[type="text"],
+#bdloc_appbundle_creditcard > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(6),
+#bdloc_appbundle_creditcard > div:nth-child(7) {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcard > div:nth-child(7) label {
+    display: inline-block;
+    padding-right: 5px;
+    width: 5px;
+}
+
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_creditCardLastName,
+#bdloc_appbundle_creditcard #bdloc_appbundle_creditcard_creditCardFirstName {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 112px;
+}
+
+#bdloc_appbundle_creditcard select {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 80px;
+}
+
+/*#bdloc_appbundle_creditcard select option {
+    text-align: center;
+}*/
+
+#bdloc_appbundle_creditcard > div > div,
+#bdloc_appbundle_creditcard ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_creditcard ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_creditcard button[type="submit"] {
+    margin: 5px 10px 5px 260px;
+    padding: 5px;
+}
+
+#bdloc_appbundle_creditcard_expirationDate_day {
+    visibility: hidden;
+}
+
+#presentation {
+    margin-left: 150px;
+}
+
+#choixAbo{
+    margin: 10px 30px 20px;
+}
+
+#cout {
+    color: #00f;
+    /*font-style: italic;*/
+    margin: 20px 0 10px 20px;
+}
+
+#prix {
+    margin: 5px 0 5px 10px;
+    padding: 5px 0 5px 5px;
+}

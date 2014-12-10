@@ -15,19 +15,76 @@ class BookController extends Controller
 {
 
     /**
-     * @Route("/catalogue/{page}/{orderBy}/{orderDir}/{numPerPage}/{keywords}/{categories}/{availability}", defaults={"page" = 1, "orderBy"= "dateCreated", "orderDir"= "desc", "numPerPage"= 30, "keywords"= "", "categories"= "", "availability"= 0})
+     * @Route("/catalogue")
+     */
+    public function catalogRedirectAction()
+    {
+        // valeurs par défaut
+        $params = array(
+            "page" => 1,
+            "orderBy" => "dateCreated",
+            "orderDir" => "desc",
+            "numPerPage" => 30,
+            "keywords" => "none",
+            "categories" => "all",
+            "availability" => 0
+        );
+
+        $url = $this->generateUrl("bdloc_app_book_catalog", $params);
+        return $this->redirect($url);
+    }
+
+    /**
+     * @Route("/catalogue/{page}/{orderBy}/{orderDir}/{numPerPage}/{keywords}/{categories}/{availability}", requirements={"page" = "\d+"})
      */
     public function catalogAction($page, $orderBy, $orderDir, $numPerPage, $keywords, $categories, $availability)
     {
-        // On récupère les données du formulaire
+        if ($categories == "all")  {
+            $categories_url = "all";
+            $categories = array();
+        }
+        else {
+            $categories_url = $categories;
+            $categories = explode(',', $categories_url);
+        }
+
         $request = $this->getRequest();
-        $page = $request->get('page');
-        $orderBy = $request->get('orderBy');
-        $orderDir = $request->get('orderDir');
-        $numPerPage = $request->get('numPerPage');
-        $keywords = $request->get('keywords');
-        $categories = $request->get('categories');
-        $availability = $request->get('availability');
+        // Si formulaire en POST 
+        if ($request->getMethod() == 'POST') {
+            // On récupère les données du formulaire
+            $page = 1; //$request->request->get('page');
+            $orderBy = $request->request->get('orderBy');
+            $orderDir = $request->request->get('orderDir');
+            $numPerPage = $request->request->get('numPerPage');
+            $keywords = $request->request->get('keywords');
+            if (empty($request->request->get('keywords'))) {
+                $keywords = "none";
+            }
+            if (empty($request->request->get('categories'))) {
+                $categories_url = "all";
+                $categories = explode(',', $categories_url);
+            } else {
+                $categories_url = implode(',', $request->request->get('categories'));
+                $categories = explode(',', $categories_url); 
+            }
+            if (!empty($request->request->get('availability'))) {
+                $availability = $request->request->get('availability')[0];
+            }
+
+            // redirection
+            $params = array(
+                "page" => $page,
+                "orderBy" => $orderBy,
+                "orderDir" => $orderDir,
+                "numPerPage" => $numPerPage,
+                "keywords" => $keywords,
+                "categories" => $categories_url,
+                "availability" => $availability,
+            );
+            $url = $this->generateUrl("bdloc_app_book_catalog", $params);
+            return $this->redirect($url);
+
+        }
 
         // on les place dans un array passé à bookRepo
         $variables = array(
@@ -37,13 +94,17 @@ class BookController extends Controller
             "numPerPage" => $numPerPage,
             "keywords" => $keywords,
             "categories" => $categories,
+            "categories_url" => $categories_url,
             "availability" => $availability,
         );
 
+        //print_r($variables);
+
         $bookRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Book");
-        //$books = $bookRepo->findBooksBySearch($page); 
         $books = $bookRepo->findBooksBySearch($variables); 
 
+        $nbPage = ceil($books->count() / $numPerPage); 
+        $params['nbPage'] = $nbPage;
         $params['books'] = $books;
         $params['variables'] = $variables;
         // $params['categ'] = $categorie;

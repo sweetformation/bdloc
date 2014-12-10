@@ -1,0 +1,476 @@
+
+
+
+#aside {
+    background: #272928;
+    color: #fff;
+    font-size: 1.1em;
+    margin: 10px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+#formFiltres #catesidebar {
+    margin: 0 20px;
+}
+
+#formFiltres .filtre {
+    margin-bottom: 10px;
+}
+
+#formFiltres #catesidebar .col {
+    float: left;
+    margin-right: 20px;
+}
+
+#formFiltres #catesidebar ul li {
+    margin-bottom: 5px;
+}
+
+/*#formFiltres #catesidebar input[type="checkbox"]:checked {
+    color: #fe8e2b;
+}*/
+
+#formFiltres #disposidebar {
+    margin: 50px 20px;
+}
+
+#formFiltres #filtresidebar {
+    margin: 0 20px 0 30px;
+}
+
+#aside input[type="text"],
+#aside input[type="search"],
+#aside select {
+    font-size: 0.9em;
+    margin: 5px;
+    padding: 5px;
+}
+
+#aside .filtreAffich #orderBy {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#aside .filtreAffich #orderDir {
+    display: block;
+    margin-left: 85px;
+}
+
+#formFiltres #soumission {
+    margin: 70px 20px 0 0;
+}
+
+#formFiltres #soumission input[type="submit"] {
+    background: #272928;
+    color: #fff;    
+    cursor: pointer;
+    padding: 10px;
+}
+
+#formFiltres #soumission input[type="submit"]:hover {
+    border: 2px solid #fe8e2b;
+}
+
+
+
+
+
+
+
+#pagination {
+    background: #272928;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#pagination a {
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    margin: 5px;
+}
+
+#pagination a.active {
+    color: #fe8e2b;
+}
+
+#containerCatalogue {
+    margin-bottom: 20px;
+}
+
+/*----------------------------------- POPUP -----------------------------------*/
+#popup {
+    background-color: #272928;
+    border: 2px solid #fe8e2b;
+    display: none;
+    left: 50%;
+    margin-left: -300px;
+    opacity: 1;
+    position: fixed;
+    top: 20%;
+    width: 600px;
+    z-index: 555;
+}
+
+#croixFermeture {
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 20px;
+}
+
+#popupContent {
+    background: #272928;
+    margin: 20px;
+    padding: 20px;
+}
+
+/*--------------------------------- FIN POPUP ---------------------------------*/
+
+#books {
+    margin: 10px 8px;
+    overflow: hidden;
+}
+
+#books .BdPost {
+    background: #272928;
+    /*border: 2px solid #272928;*/
+    color: #fff;
+    float: left;
+    margin: 4px;
+    padding: 5px;
+    width: 49%;
+    /*max-width: 220px;
+    min-height: 585px;*/
+}
+
+/*Images des BDs*/
+.BdPost img,
+#containerPostBd img {
+    height: 250px;
+    max-width: 200px;
+    float: left;
+    margin: 10px;
+    margin-right: 20px;
+} 
+
+/*Infos des BDs*/
+.infos{
+    margin: 10px;
+    margin-right: 20px;
+}
+
+#infos{
+    margin: 10px;
+    margin-right: 20px;
+    min-height: 270px;
+}
+
+/*Titre des BDs*/
+.titreBd {
+    color: #fe8e2b;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/*Langue des BDs*/
+.langueBd {
+    color: #fff;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/*Catégorie des BDs*/
+.categorieBd {
+    color: #fff;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+/*Auteur des BDs*/
+.auteur {
+    color: #272928;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 2px 0;
+    background: #fe8e2b;
+}
+
+/*Coloriste des BDs*/
+.coloriste {
+    color: #272928;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 2px 0;
+    background: #dfdee4;
+}
+
+/*Scénariste des BDs*/
+.scenariste {
+    color: #272928;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 10px;
+    padding: 2px 0;
+    background: #fe8e2b;
+}
+
+/*Synopsis des BDs*/
+#descriptionBd {
+    color: #fff;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+#descriptionBd #syno {
+    color: #fe8e2b;
+    margin-bottom: 10px;
+}
+
+#descriptionBd #descr {
+    margin-left: 10px;
+    text-align: justify;
+}
+
+/*Si la BD est indisponible*/
+.indisponible {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/*Si la BD est disponible*/
+.disponible {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/*Bouton détail des BDs*/
+.details {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+/*Bouton pour passer commande d'une BD*/
+.commander {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.details:hover,
+.commander:hover {
+    /*background: #272928;*/
+    border: 2px solid #fe8e2b;
+    /*color: #fff;*/
+}
+ 
+
+
+
+
+/*-------------------------- FORMUALIRES -----------------------*/
+
+/*#bdloc_appbundle_filterbookpagination {
+    padding: 10px;
+}
+
+#bdloc_appbundle_filterbookpagination div {
+    display: inline-block;
+    text-align: right;
+}
+
+#bdloc_appbundle_filterbookpagination > div:nth-child(1) {
+    width: 12%;
+}
+
+#bdloc_appbundle_filterbookpagination > div:nth-child(2) {
+    width: 25%;
+}
+
+#bdloc_appbundle_filterbookpagination > div:nth-child(3) {
+    width: 22%;
+}
+
+#bdloc_appbundle_filterbookpagination > div:nth-child(4) {
+    margin-right: 20px;
+    width: 20%;
+}
+
+#bdloc_appbundle_filterbookpagination > div:nth-child(5) {
+    width: 12%;
+}
+
+#bdloc_appbundle_filterbookpagination div label {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+#bdloc_appbundle_filterbookpagination input[type="text"] {
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+}
+
+#bdloc_appbundle_filterbookpagination #bdloc_appbundle_filterbookpagination_page {
+    width: 25%;
+}
+
+#bdloc_appbundle_filterbookpagination #bdloc_appbundle_filterbookpagination_numPerPage {
+    width: 25%;
+}
+
+#bdloc_appbundle_filterbookpagination button[type="submit"] {
+    display: inline-block;
+    padding: 5px;
+}*/
+
+
+
+
+/* ----------- FILTRES BD --------------- */
+
+/*#bdloc_appbundle_filterbook {
+    padding: 10px;
+}
+
+#bdloc_appbundle_filterbook > div label {
+    display: inline-block;
+    width: 100%;
+}
+
+#bdloc_appbundle_filterbook #bdloc_appbundle_filterbook_categories > label {
+    display: inline-block;
+    margin: 5px 0;
+    width: 80%;
+}
+
+#bdloc_appbundle_filterbook_categories > input[type="text"] {
+    margin: 5px 0;
+}
+
+#bdloc_appbundle_filterbook input[type="text"] {
+    display: inline-block;
+    margin: 5px 0 10px;
+    text-align: center;
+    width: 90%;
+}
+
+#bdloc_appbundle_filterbook #bdloc_appbundle_filterbook_availability label {
+    width: 80%;
+}
+
+#bdloc_appbundle_filterbook button[type="submit"] {
+    display: inline-block;
+    padding: 5px;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#tablePanier {
+    border: 2px solid #000;
+    margin: 0 50px 20px;
+}
+
+#tablePanier tr,
+#tablePanier td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ligne_0 {
+    background-color: #fff;
+}
+
+.ligne_1 {
+    background-color: #dbdedd;
+}
+
+.couvertureBDpanier {
+    height: 125px;
+    max-width: 100px;
+    margin: 10px;
+}
+
+.titreBDpanier {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+.removeBDpanier {
+    font-size: 1em;
+    margin: 10px;
+}
+
+#validation {
+    margin: auto;
+    width: 40%;
+}
+
+.validerPanier,
+.retourCatalogue,
+.passerCommande {
+    /*background: #FF666A;
+    color: #7586FF;*/
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    padding: 5px;
+}
+
+#commande {
+    margin: 0 20px 20px 40px;
+}
+
+#commande p {
+    margin-bottom: 10px;
+}
+
+#commande #listing {
+    /*visibility: hidden;*/
+    display: none;
+}
+
+#listing .listeTitres {
+    padding-left: 40px;
+}

@@ -12,13 +12,13 @@
     <div id="containerPostBd">
         <img src="{{ asset("img/couverture/" ~ book.cover ) }}" alt="{{ book.title }}" class="left couvertureBD">
         <div id="infos">
-            <p class="titreBd">Titre de la BD : {{ book.title }}</p>
-            <p class="langue">En {% if book.serie.language == "fr" %}{{ "Français" }}{% else %}{{ "Anglais"}}{% endif %}<p>
-            <p class="categorie">{{ book.serie.style }}</p>
-            <p class="auteur">L'auteur de cette BD est : {{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
-            <p class="coloriste">Le coloriste de cette BD est : {{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
-            <p class="scenariste">Le scenariste de cette BD est : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
-            <p class="description">Synopsis : {{ book.serie.comment }}</p>
+            <p class="titreBd">{{ book.title }}</p>
+            <p class="langueBd">En {% if book.serie.language == "fr" %}{{ "Français" }}{% else %}{{ "Anglais"}}{% endif %}</p>
+            <p class="categorieBd">{{ book.serie.style }}</p>
+            <p class="auteur">Auteur : {{ book.illustrator.lastName }} {{ book.illustrator.firstName }}</p>
+            <p class="coloriste">Coloriste : {{ book.colorist.lastName }} {{ book.colorist.firstName }}</p>
+            <p class="scenariste">Scénariste : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
+            
             {% if book.stock == 0 %}
                 <p class="indisponible">Indisponible...</p>
             {% else %}
@@ -31,6 +31,12 @@
                     <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier !"></a>
                 {% endif %}
             {% endif %}
+        </div>
+        {% if book.serie.comment|length != 0 %}
+        <div id="descriptionBd">
+            <p id="syno">Synopsis : </p>
+            <p id="descr">{{ book.serie.comment }}</p>
+        </div>{% endif %}
     </div>
 
 

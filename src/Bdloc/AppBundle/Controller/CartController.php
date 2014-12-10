@@ -69,6 +69,9 @@ class CartController extends Controller
             $book->setStock( $book->getStock() - 1 );
             $bookStock = $book->getStock();
 
+            // maj dateModified
+            $cart->setDateModified( new \DateTime() );
+
             // update cart et sauvegarde cartItem
             $em = $this->getDoctrine()->getManager(); 
             $em->persist($cart);  

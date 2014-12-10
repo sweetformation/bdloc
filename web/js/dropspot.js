@@ -5,16 +5,16 @@ var markers = []
 var contentString = []
 var geocoder
 var map
-var marker_rouge = "http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png"
-var marker_vert = "http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png"
-var marker_bleu = "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png"
+var marker_rouge = "http://www.google.com/intl/en_us/mapfiles/ms/micons/purple-dot.png"
+var marker_vert = "http://www.google.com/intl/en_us/mapfiles/ms/micons/orange-dot.png"
+var marker_bleu = "http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png"
 
 
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(48.856614, 2.3522219000000177);  // coord de Paris
     var mapOptions = {
-        zoom: 12,
+        zoom: 13,
         center: latlng
     }
 
@@ -57,7 +57,7 @@ function ajoutAddMarkers() {
             position: {lat: dropTab[i].lat,lng: dropTab[i].lng},
             animation: google.maps.Animation.DROP,
             icon: marker_vert,
-            title: ''+i
+            title: '' +i //dropTab[i].nom
         });
         // If the user clicks a dropspot marker, show the details in an info window.
         google.maps.event.addListener(markers[i], 'click', showInfoWindow)
@@ -74,16 +74,19 @@ function ajoutAddUser() {
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
-                icon: marker_rouge
+                icon: marker_rouge,
+                title: 'Vous'
             });
         } else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            alert('Geocode was not successful for the following reason: ' + status)
         }
     })
 }
 
-function showInfoWindow() {
-    var marker = this;
+function showInfoWindow(e) {
+    console.log(e)
+    var marker = this
+    //console.log(i)
     var i = marker.title
     infoWindow[i].open(map, marker)
 }

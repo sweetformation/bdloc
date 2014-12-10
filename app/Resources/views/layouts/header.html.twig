@@ -1,21 +1,22 @@
             
 
         <header id="header">
-            <h1 id="titreSite" class="left">BdLoc</h1>
+            <div id="logo" class="left">
+                <img src="{{ asset('img/appearances/BDloc.png') }}" alt="Logo BDLOC"/>
+            </div>
             <nav id="nav" class="left">
-                {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
-                <ul>
-                    <li><a href="{{ path('bdloc_app_book_catalog', {'page': 1}) }}">Les BDs !</a></li>
-                    <li><a href="{{ path("bdloc_app_cart_recap") }}">Mon Panier <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a></li>
-                    <li><a href="{{ path('bdloc_app_account_home') }}">Mon Compte</a></li>     
-                </ul>    
+                <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if app.request.getPathInfo == '/catalogue' %} class="active" {% endif %}>Catalogue</a>
+                <a href="{{ path("bdloc_app_cart_recap") }}" id="lien_panier" {% if app.request.getPathInfo == '/panier/' %} class="active" {% endif %}>Panier <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a>
+                {% if app.user %}       
+                    <a href="{{ path('bdloc_app_account_home') }}" id="lien_compte" {% if app.request.getPathInfo == '/compte/' %} class="active" {% endif %}>Compte</a>
+                {% endif %}
             </nav>
             <div id="connexion" class="right">
-                {% if app.user %} 
+                {% if app.user %}  
                     <div id="user"class="left">Bonjour {{ app.user.lastName }}</div>
                     <a href="{{ path('logout') }}" class="left">Déconnexion</a>
                 {% else %}
-                    <a href="{{ path('bdloc_app_user_login') }}" {% if currentPath == '/bdloc/web/app_dev.php/login' %} class="active" {% endif %} >Connexion</a>
+                    <a href="{{ path('bdloc_app_user_login') }}" {% if app.request.getPathInfo == '/login' %} class="active" {% endif %}>Connexion</a>
                 {% endif %}
             </div>
         </header>

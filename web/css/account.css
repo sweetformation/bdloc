@@ -1,0 +1,138 @@
+
+#menuCompte {
+    float: right;
+    margin-bottom: 5px;
+}
+
+#menuCompte a {
+    background: #272928;
+    border-bottom: 1px solid #dfdee4;
+    border-left: 10px solid #dfdee4;
+    color: #fff;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+}
+
+#menuCompte a.compteActive {
+    color: #fe8e2b;
+}
+
+#menuCompte a:hover {
+    /*border-top: 1px solid #fe8e2b;*/
+    border-left: 10px solid #fe8e2b;
+}
+
+
+
+/*-------------------------- EDIT INFO -----------------------*/
+
+#bdloc_appbundle_editinfo {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_editinfo div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 180px;
+}
+
+#bdloc_appbundle_editinfo input[type="text"],
+#bdloc_appbundle_editinfo input[type="email"],
+#bdloc_appbundle_editinfo > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_editinfo > div > div,
+#bdloc_appbundle_editinfo ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_editinfo ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_editinfo button[type="submit"] {
+    margin: 5px 10px 5px 190px;
+    padding: 5px;
+}
+
+
+
+
+/*-------------------------- EDIT PASSWORD -----------------------*/
+
+#bdloc_appbundle_editpassword {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_editpassword div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 12px;
+    vertical-align: top;
+    text-align: right;
+    width: 180px;
+}
+
+#bdloc_appbundle_editpassword input[type="password"],
+#bdloc_appbundle_editpassword > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_editpassword > div > div,
+#bdloc_appbundle_editpassword ul {
+    display: inline-block;
+}
+
+#bdloc_appbundle_editpassword ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_editpassword button[type="submit"] {
+    margin: 5px 10px 5px 190px;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#allPaniers .paniers {
+    overflow: hidden;
+}
+
+#allPaniers .panierContent {
+    float: left;
+    margin: 10px;
+}
+
+#allPaniers .panierContent .couvertureBDpanier {
+    height: 125px;
+    max-width: 100px;
+    margin: auto;
+}
+
+#allPaniers .panierContent .titreBDpanier {
+    text-align: center;
+}

@@ -199,25 +199,18 @@ class AccountController extends Controller
 
         $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
         $creditCard = $creditCardRepo->findCreditCardWithUserId( $user_session->getId() );
-        //\Doctrine\Common\Util\Debug::dump($creditCard);
-        //die();
-        $paypalCC_id = $creditCard->getPaypalId();
-        //die($paypalCC_id);
 
         // Utilisation du service PPUtility
-        /*$ppu = $this->get('paypal_utility');
+        $ppu = $this->get('paypal_utility');
         $ppu->setCreditCard($creditCard);
         $card = $ppu->getCreditCard();
         print_r($card);
-        die();*/
-
 
         $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
 
         $request = $this->getRequest();
         $creditCardForm->handleRequest($request);
 
-        //
         $params['creditCardForm'] = $creditCardForm->createView();
         
         return $this->render("account/edit_payment_info.html.twig", $params);

@@ -68,7 +68,8 @@ class BookRepository extends EntityRepository
         $orderBy = $variables['orderBy'];
         $orderDir = $variables['orderDir'];
         $categories = $variables['categories'];
-        $availability = $variables['availability'][0];
+        //$categories= explode(',', $variables['categories_url']);
+        $availability = $variables['availability'];
         //print_r($categories);
 
         $qb = $this->createQueryBuilder('b');
@@ -81,7 +82,7 @@ class BookRepository extends EntityRepository
             ->join('b.serie', 'cat')
             ->addSelect('cat');
 
-        if (!empty($keywords)) {
+        if (!empty($keywords) && $keywords != "none") {
             $qb->andWhere(
                 $qb->expr()->orX(
                     "b.title LIKE :keywords",
@@ -121,11 +122,7 @@ class BookRepository extends EntityRepository
 
         $query = $qb->getQuery();
 
-        $paginator = new Paginator($query);
-        //dump($paginator);
-        //echo($paginator->count()); 
-        $nbPage = ceil($paginator->count() / $numPerPage);  
-        //echo "-" .$nbPage;      
+        $paginator = new Paginator($query);     
 
         return $paginator;
 

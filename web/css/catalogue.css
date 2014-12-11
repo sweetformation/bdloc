@@ -92,42 +92,13 @@
     margin: 5px;
 }
 
-#pagination a.active {
+#pagination a.pageActive {
     color: #fe8e2b;
 }
 
 #containerCatalogue {
     margin-bottom: 20px;
 }
-
-/*----------------------------------- POPUP -----------------------------------*/
-#popup {
-    background-color: #272928;
-    border: 2px solid #fe8e2b;
-    display: none;
-    left: 50%;
-    margin-left: -300px;
-    opacity: 1;
-    position: fixed;
-    top: 20%;
-    width: 600px;
-    z-index: 555;
-}
-
-#croixFermeture {
-    cursor: pointer;
-    float: right;
-    height: 20px;
-    width: 20px;
-}
-
-#popupContent {
-    background: #272928;
-    margin: 20px;
-    padding: 20px;
-}
-
-/*--------------------------------- FIN POPUP ---------------------------------*/
 
 #books {
     margin: 10px 8px;
@@ -259,7 +230,8 @@
 }
 
 /*Bouton pour passer commande d'une BD*/
-.commander {
+.commander,
+.commander2 {
     cursor: pointer;
     margin-top: 20px;
     margin-left: 20px;
@@ -267,7 +239,10 @@
 }
 
 .details:hover,
-.commander:hover {
+.commander:hover,
+.commander2:hover,
+.details2:hover,
+.removeBDpanier:hover {
     /*background: #272928;*/
     border: 2px solid #fe8e2b;
     /*color: #fff;*/
@@ -403,6 +378,10 @@
 
 
 
+.panierVide {
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
 
 
 #tablePanier {
@@ -418,10 +397,12 @@
 
 .ligne_0 {
     background-color: #fff;
+    color: #272928;
 }
 
 .ligne_1 {
-    background-color: #dbdedd;
+    background-color: #272928;
+    color: #fff;
 }
 
 .couvertureBDpanier {
@@ -436,26 +417,34 @@
     padding: 0 10px;
 }
 
+.details2,
 .removeBDpanier {
-    font-size: 1em;
-    margin: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    margin: 0 20px;
+    padding: 5px;
 }
 
 #validation {
-    margin: auto;
-    width: 40%;
+    margin-left: 300px;
 }
 
 .validerPanier,
 .retourCatalogue,
 .passerCommande {
-    /*background: #FF666A;
-    color: #7586FF;*/
+    background: #272928;
+    color: #fff;
+    cursor: pointer;
     display: inline-block;
-    font-size: 1.5em;
-    font-weight: 700;
-    margin: 10px;
-    padding: 5px;
+    font-size: 1.2em;
+    margin: 20px 10px;
+    padding: 5px 10px;
+}
+
+.validerPanier:hover,
+.retourCatalogue:hover,
+.passerCommande:hover {
+    border: 2px solid #fe8e2b;
 }
 
 #commande {
@@ -471,6 +460,34 @@
     display: none;
 }
 
+#listing .orange {
+    color: #fe8e2b;
+}
+
 #listing .listeTitres {
-    padding-left: 40px;
+    display: inline-block;
+    padding-left: 60px;
+    padding-bottom: 10px;
+}
+
+#commander {
+    margin-left: 50px;
+}
+
+.modifierDropspot,
+.listeBdCommandees {
+    background: #272928;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 0 10px;
+    padding: 5px 10px;
+
+}
+
+.modifierDropspot:hover,
+.listeBdCommandees:hover {
+    border: 2px solid #fe8e2b;
+
 }

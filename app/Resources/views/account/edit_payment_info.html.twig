@@ -1,5 +1,7 @@
 {% extends ":layouts:account.html.twig" %}
 
+{% block title %}Compte | Paiement | BDLOC{% endblock %}
+
 {% block main_content %}
     <h1>Modifier mes informations de paiement</h1>
     {{ form(creditCardChangeForm, {'attr': {'novalidate': 'novalidate'}}) }}

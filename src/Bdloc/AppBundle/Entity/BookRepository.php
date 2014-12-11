@@ -176,9 +176,6 @@ class BookRepository extends EntityRepository
 
         $paginator = new Paginator($query);
 
-        echo($paginator->count());
-        die();
-
         return $paginator;
 
     }

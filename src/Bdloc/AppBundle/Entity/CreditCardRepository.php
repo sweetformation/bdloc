@@ -22,6 +22,10 @@ class CreditCardRepository extends EntityRepository
             ->setParameter('id', $id)
             ->getQuery();
 
-        return $query->getSingleResult();
+        try {
+            return $query->getSingleResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            return null;
+        }
     }
 }

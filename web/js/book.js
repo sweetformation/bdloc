@@ -50,6 +50,9 @@ cart = {
         if ($(".commander").val() == "Ajouter au panier !") {
             $(".commander").on("click", this.ajouteBd)
         }
+        if ($(".commander2").val() == "Ajouter au panier !") {
+            $(".commander2").on("click", this.ajouteBdbis)
+        }
         $(document).on("click", ".removeBDpanier", this.supprimeBd)
 
     },
@@ -78,7 +81,47 @@ cart = {
                 bouton.parent().parent().find(".bookStock").html( $(server_response).find("#bookStock") )
                 // Affichage des messages
                 //console.log(bouton.parent().parent().parent().parent().parent().find("#flash-messages").html())
-                bouton.parent().parent().parent().parent().parent().find("#flash-messages").html( $(server_response).find("#flash-messages").html() )
+                bouton.parent().parent().parent().parent().parent().parent().find("#flash-messages").html( $(server_response).find("#flash-messages").html() )
+                url_items = $(server_response).find("#urlItemsNumber").html()
+                $.ajax({
+                   url: url_items, 
+                   success: function(server_response) {
+                       $("#itemsNumber").html( server_response )
+                   }
+                })
+            },
+            error: function() {
+                console.log("erreur dans fonction cart.ajouteBd")
+            }
+
+        })
+        // Prevent Default
+        return false
+    },
+
+    ajouteBdbis: function(e) {
+        e.preventDefault()
+        console.log("cart.ajouteBdbis")
+        var bouton = $(this)
+        popup.fermer()
+        //console.log(bouton)
+        var url = bouton.parent().attr("href")
+        $.ajax({
+            url: url, 
+            success: function(server_response) {
+                // Changement d'attributs du bouton...
+                bouton.off("click")
+                bouton.parent().attr("href", "")
+                if ( $(server_response).find("#itnum").html() < 10 ) {
+                    bouton.val("Dans votre panier")
+                }
+                // Maj du stock
+                bouton.parent().parent().find(".bookStock").html( $(server_response).find("#bookStock") )
+                // Affichage des messages
+                // 
+                $(document).find("#flash-messages").html( $(server_response).find("#message").html() )
+
+                // Maj du nb d'éléments en panier
                 url_items = $(server_response).find("#urlItemsNumber").html()
                 $.ajax({
                    url: url_items, 

@@ -8,12 +8,11 @@
 {% endblock %}
 
 {% block main_content %}
-    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
     <div id="menuAbonnement">
         <ul>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+            <li {% if app.request.getPathInfo == '/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
         </ul>
     </div>
     <h1 class="formTitle">Abonnement | Choix du point relais</h1>

@@ -2,31 +2,14 @@
 
 {% block title %}Bdloc | Accueil{% endblock %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset("css/style.css") }}">
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet" />
-{% endblock %}
-
 {% block main_content %}
     {{ render(controller('BdlocAppBundle:CronJob:checkCartTiming')) }}
-    <h1>Bienvenue sur BdLoc !</h1>
-    
-    <div id="presentation">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-
-    <a href="{{ path('bdloc_app_user_register') }}" id="boutonAbo">S'abonner !</a>
+    <h1 class="center">La plateforme de location multi bandes dessinées</h1>
+    <div id="fond"></div>
+    <div id="presentation">
+        <p>Accédez à une <span class="big">multitude de BDs</span> en quelques clics !</p>
+        <p>BDloc vous permet de récupérer vos BDs préférées au point relais de votre choix pour 2 semaines.</p>
+        <p><span class="offre">Offre inédite :</span> abonnement mensuel de 12€ ou annuel de 120€ pour une lecture illimitée.</p>
+        <a href="{{ path('bdloc_app_user_register') }}" id="abo"><img src="{{ asset("img/appearances/abo1.png") }}" alt="s'abonner"/></a>
+    </div>
 {% endblock %}

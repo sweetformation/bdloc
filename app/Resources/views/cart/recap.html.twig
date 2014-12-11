@@ -11,7 +11,7 @@
     <h1>Votre panier</h1>
     <div id="cart">
     {% if cart is empty %}
-        <p>Votre panier est vide</p>
+        <p class="panierVide">Votre panier est vide</p>
     {% else %}
         <!-- <div id="popup">
             <div id="croixFermeture"><img src="{ { asset("img/appearances/croix_fermeture.png") }}" alt="" /></div>
@@ -24,8 +24,8 @@
                 <tr class='ligne_{{modulo}}'>
                     <td><img src="{{ asset("img/couverture/" ~ cartItem.book.cover ) }}" alt="{{ cartItem.book.title }}" class="couvertureBDpanier" /></td>
                     <td class="titreBDpanier">{{ cartItem.book.title }}</td>
-                    <td><a href="{{ path('bdloc_app_book_details', {id: cartItem.book.id}) }}" title="Details de la BD {{cartItem.book.id}}"><input class="details" type="button" value="Plus de détails !"></a></td>
-                    <td><a href="{{ path('bdloc_app_cart_removebook', {id: cartItem.id}) }}" title="Retirer l'objet {{cartItem.id}} du panier"><input class="removeBDpanier" type="button" value="Retirer du panier"></a></td>
+                    <td><a href="{{ path('bdloc_app_book_details', {id: cartItem.book.id}) }}" title="Details de la BD {{cartItem.book.id}}"><input class="details2" type="button" value="Plus de détails !"></a></td>
+                    <td><a href="{{ path('bdloc_app_cart_removebook', {id: cartItem.id}) }}" title="Retirer l'objet {{cartItem.id}} du panier"><!-- <input class="removeBDpanier" type="button" value="Retirer du panier"> --><img src="{{ asset("img/appearances/retirer.png" ) }}" alt="Retirer du panier" class="removeBDpanier"/></a></td>
                 </tr>
             {% endfor %}
             </tbody>

@@ -206,6 +206,7 @@ class AccountController extends Controller
         $ppu->setCreditCard($creditCard);
         $card = $ppu->getCreditCard();
         //print_r($card);
+
         $creditCard->setCreditCardType($card->getType());
         $creditCard->setCreditCardNumber($card->getNumber());
         //$creditCard->setExpirationDate($card->getValidUntil());

@@ -78,21 +78,22 @@ class CartController extends Controller
             $em->persist($cartItem);  
             $em->flush();
         
-            $this->get('session')->getFlashBag()->add(
+            $message = $this->get('session')->getFlashBag()->add(
                 'notice',
                 'BD ajoutée à votre panier !'
             );
         }
         else {
-            $this->get('session')->getFlashBag()->add(
+            $message = $this->get('session')->getFlashBag()->add(
                 'error',
                 'Vous avez atteint le maximum de BD dans votre panier !'
             );
             $bookStock = $book->getStock();
         }
-        /*$cart = $cartRepo->findUserCurrentCart( $user );
+        $cart = $cartRepo->findUserCurrentCart( $user );
         $itemsNumber = count($cart->getCartItems());
-        $params['itemsNumber'] = $itemsNumber;*/
+        $params['itemsNumber'] = $itemsNumber;
+        $params['message'] = $message;
 
         $params['bookStock'] = $bookStock;
         return $this->render("cart/add_book.html.twig", $params);
@@ -175,6 +176,10 @@ class CartController extends Controller
         $cart = $cartRepo->findBooksInCurrentCart( $cart->getId() );
 
         $params['cart'] = $cart;
+
+        // récupération du nb dans panier
+        $itemsNumber = count($cart->getCartItems());
+        $params['itemsNumber'] = $itemsNumber;
       
         // Maj statut panier
         $cart->setStatus( "validé" );

@@ -14,15 +14,19 @@
 }
 
 #menuAbonnement ul li {
-    color: #000;
+    background: #272928;
+    border-right: 1px solid #dfdee4;
+    color: #fff;
+    display: inline-block;
     float: left;
-    padding: 10px 0;
+    font-size: 1.2em;
+    padding: 10px;
     text-align: center;
     width: 33%;
 }
 
 #menuAbonnement ul li.etapeActive {
-    color: #00f;
+    color: #fe8e2b;
 }
 
 
@@ -334,7 +338,30 @@
     visibility: hidden;
 }
 
-#presentation {
+#presentation2 {
+    background: rgba(39, 41, 40, 0.95); /*#272928;*/
+    border: 2px solid #fe8e2b;
+    color: #fff;
+    line-height: 1.5em;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 600px;
+    margin-top: -95px;
+    padding: 20px;
+    width: 350px;
+}
+
+#presentation2 ul li {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+#presentation2 .orange {
+    color: #fe8e2b;
+}
+
+#presentationAbo {
     margin-left: 150px;
 }
 
@@ -343,8 +370,7 @@
 }
 
 #cout {
-    color: #00f;
-    /*font-style: italic;*/
+    color: #272928;
     margin: 20px 0 10px 20px;
 }
 

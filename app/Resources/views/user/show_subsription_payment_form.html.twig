@@ -7,29 +7,30 @@
 {% endblock %}
 
 {% block main_content %}
-    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
     <div id="menuAbonnement">
         <ul>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
-            <li {% if currentPath == '/bdloc/web/app_dev.php/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+            <li {% if app.request.getPathInfo == '/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
         </ul>
     </div>
     <h1 class="formTitle">Abonnement | Choix du paiement</h1>
-    <div id="presentation">
+    <div id="presentation2">
         <h2>Mode d'abonnement</h2>
-        <h3>Tarifs :</h3>
+        <h3 class="orange">Tarifs :</h3>
         <ul>
-            <li>L’abonnement mensuel coûte le prix d’une seule BD : 12€ TTC.</li> 
-            <li>Un abonnement annuel permet d’économiser 2 mois : 120€ TTC.</li>
+            <li>L’abonnement mensuel coûte le prix d’une seule BD : <span class="orange">12€</span> TTC.</li> 
+            <li>Un abonnement annuel permet d’économiser 2 mois : <span class="orange">120€</span> TTC.</li>
         </ul>
+    </div>
+    <div id="presentationAbo">
         <h2>Choisissez votre type d'abonnement</h2>
         <!-- <div id="choixAbo">
             <label><input type="radio" name="abonnement" value="mensuel">Mensuel</label>
             <label><input type="radio" name="abonnement" value="annuel" checked="checked">Annuel</label>
         </div>
         <p id="cout">Coût débité   <strong><span id="prix">120</span> €</strong></p> -->
-        <p id="cout">Coût débité<strong><span id="prix">120.00</span> €</strong></p>
+        <p id="cout">Coût débité<strong><span id="prix">120,00</span> €</strong></p>
     </div>
     {{ form(creditCardForm, {'attr': {'novalidate': 'novalidate'}}) }}
     <!-- { { form_label(creditCardForm.expirationDate) }}

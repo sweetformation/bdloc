@@ -9,7 +9,7 @@
 {% block main_content %}
     <h1>Historique de location</h1>
     {% if carts is empty %}
-        <p>Vous n'avez effectué aucune commande.</p>
+        <p class="decale">Vous n'avez effectué aucune commande.</p>
     {% else %}
     <div id="allPaniers">
         {% for cart in carts %}

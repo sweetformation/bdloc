@@ -22,167 +22,70 @@ use PayPal\Api\Transaction;
 use Bdloc\AppBundle\Form\CreditCardType;
 use Bdloc\AppBundle\Entity\CreditCard;
 
+use Symfony\Component\HttpFoundation\Response;
+use Bdloc\AppBundle\Entity\Paiement;
+
 class PaymentController extends Controller
 {
+
     /**
-     * @Route("/paiement")
+     * @Route("/paiement/amende/{fineId}/{cout}", requirements={"cout" = "[\d\.]+"})
      */
-    public function takeSubscriptionPaymentAction()
+    public function takeFinePaymentAction($fineId, $cout)
     {
 
-        /*$pps = $this->get('paypal_subscription');
-        $pps->takePayment();*/
-        
-        // Recréer un formulaire pour récupérer les données soumises par l'utilisateur
-        $creditCard = new CreditCard();
-        $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
+        $user = $this->getUser();
 
-        // Demande à SF d'injecter les données du formulaire dans notre entité ($creditCard)
-        $request = $this->getRequest();
-        $creditCardForm->handleRequest($request);
+        // Payer amendes
+            // Récupère l'amende
+        $fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fine = $fineRepo->find( $fineId );
 
+            // récupérer paypalId de la carte de crédit
+        $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
+        $creditCard = $creditCardRepo->findCreditCardWithUserId( $user->getId() );
+        $ccppid = $creditCard->getPaypalId();
 
+        // Utilisation du service PPUtility
+        $ppu = $this->get('paypal_utility');
+        $statut = $ppu->createPaymentUsingSavedCard($ccppid, $cout);
 
-        //see kmj/paypalbridgebundle
-        $apiContext = $this->get('paypal')->getApiContext();
+        if ($statut == "approved") {
+                
+            //Si Paiement Paypal validé
+            $paiement = new Paiement();
+            $paiement->setType("fine");
+            $paiement->setAmount( $cout );
+            $paiement->setUser( $user );  // On associe ce paiement à l'utilisateur concerné
 
-        // ### CreditCard
-        // A resource representing a credit card that can be
-        // used to fund a payment.
-            $card = new PaypalCreditCard();
-            $card->setType("visa");
-            $card->setNumber("4417119669820331");
-            $card->setExpire_month("11");
-            $card->setExpire_year("2018");
-            $card->setCvv2("987");
-            $card->setFirst_name("Joe");
-            $card->setLast_name("Shopper");
-        //$card = new PaypalCreditCard();
-        //$card->setType($creditCard->getCreditCardType());
-        //$card->setNumber($creditCard->getCreditCardNumber());
-        //$card->setExpire_month($creditCard->getExpirationDate()->format("m"));
-        //$card->setExpire_year($creditCard->getExpirationDate()->format("Y"));
-        //$card->setCvv2($creditCard->getCodeCVC());
-        //$card->setFirst_name($creditCard->getCreditCardFirstName());
-        //$card->setLast_name($creditCard->getCreditCardLastName());
+            $fine->setDateModified(new \DateTime());
+            $fine->setStatus("validé");
 
-        // ### FundingInstrument
-        // A resource representing a Payer's funding instrument.
-        // Use a Payer ID (A unique identifier of the payer generated
-        // and provided by the facilitator. This is required when
-        // creating or using a tokenized funding instrument)
-        // and the `CreditCardDetails`
-        $fi = new FundingInstrument();
-        $fi->setCredit_card($card);
+            // BDD
+            $em = $this->getDoctrine()->getManager(); 
+            $em->persist($fine);  
+            $em->persist($paiement); 
+            $em->flush();
 
-        // ### Payer
-        // A resource representing a Payer that funds a payment
-        // Use the List of `FundingInstrument` and the Payment Method
-        // as 'credit_card'
-        $payer = new Payer();
-        $payer->setPayment_method("credit_card");
-        $payer->setFunding_instruments(array($fi));
-
-        // ### Amount
-        // Let's you specify a payment amount.
-        $amount = new Amount();
-        $amount->setCurrency("EUR");
-        $amount->setTotal("12.00");
-
-        // ### Transaction
-        // A transaction defines the contract of a
-        // payment - what is the payment for and who
-        // is fulfilling it. Transaction is created with
-        // a `Payee` and `Amount` types
-        $transaction = new Transaction();
-        $transaction->setAmount($amount);
-        $transaction->setDescription("This is the payment description.");
-
-        // ### Payment
-        // A Payment Resource; create one using
-        // the above types and intent as 'sale'
-        $payment = new Payment();
-        $payment->setIntent("sale");
-        $payment->setPayer($payer);
-        $payment->setTransactions(array($transaction));
-
-        // ### Create Payment
-        // Create a payment by posting to the APIService
-        // using a valid ApiContext
-        // The return object contains the status;
-        try {
-            $result = $payment->create($apiContext);
-            echo("<br /><br />result =<br />");
-            print_r($result);
-            $cc_paypal = $card->create($apiContext);
-            echo("<br /><br />ccpaypal =<br />");
-            print_r($cc_paypal);
-            //$card->getId();
-
-        } catch (\Paypal\Exception\PPConnectionException $pce) {
-            echo("catch<br /><br />");
-            print_r( json_decode($pce->getData()) );
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Amende payée !'
+            );
+            return $this->redirect( $this->generateUrl("bdloc_app_account_showfinepaymentform") );
+        }
+        else {
+            $this->get('session')->getFlashBag()->add(
+                'error',
+                'Problème lors de la transaction !'
+            ); 
+            return $this->redirect( $this->generateUrl("bdloc_app_account_showfinepaymentform") );
         }
 
-        $paypal_id = $card->getId();
-        echo "<br /><br />paypalId = " . $paypal_id;
-        $statut = $result->getState();
-        echo "<br /><br />statut = " . $statut;
-        die();
+        //return new Response("done");
 
-        return $this->render("default/paiement.html.twig");
-    }
-
-    /**
-     * @Route("/paiement/amende")
-     */
-    public function takeFinePaymentAction()
-    {
-        return $this->render("default/paiement.html.twig");
     }
 
 
-
-
-
-
-
-
-
-/*<?php
-// # Create Credit Card Sample
-// You can store credit card details securely
-// with PayPal. You can then use the returned
-// Credit card id to process future payments.
-// API used: POST /v1/vault/credit-card
-require __DIR__ . '/../bootstrap.php';
-use PayPal\Api\CreditCard;
-// ### CreditCard
-// A resource representing a credit card that is 
-// to be stored with PayPal.
-$card = new CreditCard();
-$card->setType("visa")
-->setNumber("4417119669820331")
-->setExpireMonth("11")
-->setExpireYear("2019")
-->setCvv2("012")
-->setFirstName("Joe")
-->setLastName("Shopper");
-// For Sample Purposes Only.
-$request = clone $card;
-// ### Save card
-// Creates the credit card as a resource
-// in the PayPal vault. The response contains
-// an 'id' that you can use to refer to it
-// in future payments.
-// (See bootstrap.php for more on `ApiContext`)
-try {
-$card->create($apiContext);
-} catch (Exception $ex) {
-ResultPrinter::printError("Create Credit Card", "Credit Card", null, $request, $ex);
-exit(1);
-}
-ResultPrinter::printResult("Create Credit Card", "Credit Card", $card->getId(), $request, $card);
-return $card;*/
 
 }

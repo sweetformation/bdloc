@@ -5,10 +5,10 @@
                 <img src="{{ asset('img/appearances/BDloc.png') }}" alt="Logo BDLOC"/>
             </div>
             <nav id="nav" class="left">
-                <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if app.request.getPathInfo == '/catalogue' %} class="active" {% endif %}>Catalogue</a>
-                <a href="{{ path("bdloc_app_cart_recap") }}" id="lien_panier" {% if app.request.getPathInfo == '/panier/' %} class="active" {% endif %}>Panier <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a>
+                <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if "catalogue" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Catalogue</a>
+                <a href="{{ path("bdloc_app_cart_recap") }}" id="lien_panier" {% if "panier" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Panier <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a>
                 {% if app.user %}       
-                    <a href="{{ path('bdloc_app_account_home') }}" id="lien_compte" {% if app.request.getPathInfo == '/compte/' %} class="active" {% endif %}>Compte</a>
+                    <a href="{{ path('bdloc_app_account_home') }}" id="lien_compte" {% if "compte" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Compte</a>
                 {% endif %}
             </nav>
             <div id="connexion" class="right">

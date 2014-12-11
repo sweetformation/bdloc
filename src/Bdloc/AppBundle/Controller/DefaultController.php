@@ -20,6 +20,10 @@ class DefaultController extends Controller
 
         print_r($slugger);
         $slugger->test();*/
+
+        if (!empty($this->getUser())) {
+            return $this->redirect($this->generateUrl("bdloc_app_book_catalogredirect"));
+        }
         return $this->render("default/home.html.twig");
     }
 }

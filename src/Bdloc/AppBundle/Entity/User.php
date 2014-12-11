@@ -29,7 +29,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un pseudo.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un pseudo.", groups={"registration", "editinfo"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -82,7 +82,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un nom.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un nom.", groups={"registration", "editinfo"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -95,7 +95,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un prénom.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un prénom.", groups={"registration", "editinfo"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -108,7 +108,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un code postal.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un code postal.", groups={"registration", "editinfo"})
      * @Assert\Regex(pattern= "#^[0-9]{5,5}$#", message="Code postal de 5 chiffres")
      * @ORM\Column(name="zip", type="string", length=5)
      */
@@ -116,7 +116,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir une adresse.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir une adresse.", groups={"registration", "editinfo"})
      * @Assert\Length(
      *      min = "2",
      *      max = "255",
@@ -129,7 +129,7 @@ class User implements AdvancedUserInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.", groups={"registration"})
+     * @Assert\NotBlank(message="Veuillez fournir un numéro de téléphone.", groups={"registration", "editinfo"})
      * @Assert\Regex(pattern= "#^0[1-8]([-.\s]?[0-9]{2}){4}$|^\+[1-9]{2}(\(0\))?[1-8]([-.\s]?[0-9]{2}){4}$|^00[1-9]{2}[1-8]([-.\s]?[0-9]{2}){4}$#", message="Format invalide")
      * @ORM\Column(name="phone", type="string", length=20)
      */
@@ -193,6 +193,12 @@ class User implements AdvancedUserInterface
      *@ORM\OnetoMany(targetEntity="Cart", mappedBy="user")
      */
     private $carts;
+
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="Fine", mappedBy="user")
+     */
+    private $fines;
 
 
     /**
@@ -746,5 +752,38 @@ class User implements AdvancedUserInterface
     public function getCarts()
     {
         return $this->carts;
+    }
+
+    /**
+     * Add fines
+     *
+     * @param \Bdloc\AppBundle\Entity\Fine $fines
+     * @return User
+     */
+    public function addFine(\Bdloc\AppBundle\Entity\Fine $fines)
+    {
+        $this->fines[] = $fines;
+
+        return $this;
+    }
+
+    /**
+     * Remove fines
+     *
+     * @param \Bdloc\AppBundle\Entity\Fine $fines
+     */
+    public function removeFine(\Bdloc\AppBundle\Entity\Fine $fines)
+    {
+        $this->fines->removeElement($fines);
+    }
+
+    /**
+     * Get fines
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFines()
+    {
+        return $this->fines;
     }
 }

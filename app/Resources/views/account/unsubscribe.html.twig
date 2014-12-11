@@ -8,5 +8,7 @@
 {% endblock %}
 
 {% block main_content %}
-    <h1>Se désabonner</h1>
+    <h1>Me désabonner</h1>
+    <p class="decale">Afin d'optimiser nos services, merci d'indique les raisons de votre départ...</p>
+    {{ form(byeForm, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}

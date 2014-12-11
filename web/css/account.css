@@ -25,6 +25,10 @@
     border-left: 10px solid #fe8e2b;
 }
 
+.decale {
+    margin-left: 40px;
+}
+
 
 
 /*-------------------------- EDIT INFO -----------------------*/
@@ -223,4 +227,126 @@
 
 #allPaniers .panierContent .titreBDpanier {
     text-align: center;
+}
+
+
+
+
+
+#amende {
+    margin-left: 40px;
+    overflow: hidden;
+}
+
+#amende p {
+    line-height: 1.3em;
+}
+
+.payer {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px;
+
+}
+
+.payer:hover {
+    border: 2px solid #fe8e2b;
+}
+
+.paiments {
+    background: #272928;
+    color: #fff;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+}
+
+.typeorange {
+    color: #fe8e2b;
+}
+
+
+
+
+
+
+
+
+
+/*-------------------------- UNSUBSCRIBE -----------------------*/
+
+#bdloc_appbundle_unsubscribe {
+    padding-bottom: 50px;
+}
+
+#bdloc_appbundle_unsubscribe div label {
+    display: inline-block;
+    padding-right: 10px;
+    padding-top: 15px;
+    vertical-align: top;
+    text-align: right;
+    width: 180px;
+}
+
+#bdloc_appbundle_unsubscribe > div:nth-child(2) {
+    overflow: hidden;
+}
+
+#bdloc_appbundle_unsubscribe > div:nth-child(2) label {
+    float: left;
+}
+
+#bdloc_appbundle_unsubscribe > div:nth-child(2) img {
+    border: 1px solid #000;
+    float: left;
+    margin-left: 10px;
+}
+
+#bdloc_appbundle_unsubscribe input[type="text"] {
+    display: inline-block;
+    float: left;
+    margin: 10px 10px 0;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_unsubscribe textarea {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    min-height: 100px;
+    width: 390px;
+}
+
+/*#bdloc_appbundle_unsubscribe textarea,*/
+#bdloc_appbundle_unsubscribe > div > div > div {
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 250px;
+}
+
+#bdloc_appbundle_unsubscribe > div > div,
+#bdloc_appbundle_unsubscribe ul {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#bdloc_appbundle_unsubscribe ul {
+    color: #f00;
+    list-style: none;
+}
+
+#bdloc_appbundle_unsubscribe > div:nth-child(1) ul li {
+    margin-top: 15px;
+}
+
+#bdloc_appbundle_unsubscribe > div:nth-child(2) ul li {
+    margin-top: 20px;
+}
+
+#bdloc_appbundle_unsubscribe button[type="submit"] {
+    margin: 10px 10px 5px 190px;
+    padding: 5px 10px;
 }

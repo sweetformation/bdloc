@@ -19,6 +19,7 @@ use Bdloc\AppBundle\Form\ChangePasswordType;
 use Bdloc\AppBundle\Form\DropSpotType;
 use Bdloc\AppBundle\Form\CreditCardType;
 use Bdloc\AppBundle\Form\CreditCardChangeType;
+use Bdloc\AppBundle\Form\UnsubscribeType;
 
 //use Bdloc\AppBundle\Entity\Paiement;
 
@@ -49,7 +50,7 @@ class AccountController extends Controller
         $userRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:User");
         $user = $userRepo->find( $user_session->getId() );
 
-        $editInfoForm = $this->createForm(new EditInfoType(), $user);
+        $editInfoForm = $this->createForm(new EditInfoType(), $user, array('validation_groups' => array('editinfo', 'Default')));
 
         $request = $this->getRequest();
         $editInfoForm->handleRequest($request);
@@ -59,6 +60,9 @@ class AccountController extends Controller
             // update en bdd
             $em = $this->getDoctrine()->getManager(); 
             $em->flush();
+            // pour recharger BDD
+            //$em->refresh( $user );
+            $user = $userRepo->refreshUser($user);
 
             // Créer un message qui ne s'affichera qu'une fois
             $this->get('session')->getFlashBag()->add(
@@ -95,7 +99,7 @@ class AccountController extends Controller
         //$request = $this->getRequest();
         //$changePasswordForm->handleRequest($request);
 
-
+        $currentPassword = $user->getPassword();
 
         $editPasswordForm = $this->createForm(new EditPasswordType(), $user);
 
@@ -105,22 +109,45 @@ class AccountController extends Controller
         if ($editPasswordForm->isValid()) {
         //if ($changePasswordForm->isValid()) {
 
-            echo $changePasswordForm['oldPassword'];
-            echo $changePasswordForm['newPassword'];
-            die();
-            // update en bdd
-            $em = $this->getDoctrine()->getManager(); 
-            $em->flush();
+            //echo $changePasswordForm['oldPassword'];
+            //echo $changePasswordForm['newPassword'];
+            //die();
+            $oldmdp = $editPasswordForm['currentpassword']->getData();
+            // Hasher mot de passe
+            $factory = $this->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($user);
+            $oldmdpHash = $encoder->encodePassword($oldmdp, $user->getSalt());
 
-            // Créer un message qui ne s'affichera qu'une fois
-            $this->get('session')->getFlashBag()->add(
-                'notice',
-                'Modification(s) prise(s) en compte !'
-            );
-            
-            // Redirection vers accueil compte
-            return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+            if ($oldmdpHash === $currentPassword) {
 
+                $stringHelper = new StringHelper();
+                $user->setSalt( $stringHelper->randomString() ); 
+                $user->setToken( $stringHelper->randomString(30) ); 
+
+                // Hasher mot de passe
+                $password = $encoder->encodePassword($user->getPassword(), $user->getSalt());
+                $user->setPassword($password);
+
+                // update en bdd
+                $em = $this->getDoctrine()->getManager(); 
+                $em->flush();
+
+                // Créer un message qui ne s'affichera qu'une fois
+                $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'Modification(s) prise(s) en compte !'
+                );
+                // Redirection vers accueil compte
+                return $this->redirect( $this->generateUrl("bdloc_app_account_home") );
+            }
+            else {
+                $this->get('session')->getFlashBag()->add(
+                    'error',
+                    'Mot de passe actuel invalide !'
+                );
+                // Redirection vers accueil compte
+                return $this->redirect( $this->generateUrl("bdloc_app_account_editpassword") );
+            }
         }
 
         $params['editPasswordForm'] = $editPasswordForm->createView();
@@ -263,10 +290,20 @@ class AccountController extends Controller
      */
     public function showFinePaymentFormAction()
     {
-        // récupère l'utilisateur en session
-        $user = $this->getUser();
         $params = array();
-        
+        $user = $this->getUser();
+
+        // Récupère les amendes
+        $fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fines = $fineRepo->findUserFines( $user );
+
+        // Récupère les paiements
+        $paymentRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Paiement");
+        $payments = $paymentRepo->findUserPayments( $user );
+
+        $params['fines'] = $fines;
+        $params['payments'] = $payments;
+
         return $this->render("account/show_fine_payment_form.html.twig", $params);
     }
 
@@ -278,7 +315,52 @@ class AccountController extends Controller
         // récupère l'utilisateur en session
         $user = $this->getUser();
         $params = array();
-        
+
+        // Si user a une amende, le rediriger vers page amende!
+        $fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fines = $fineRepo->findUserFines( $user );
+
+        if (!empty($fines)) {
+            $url = $this->generateUrl("bdloc_app_account_showfinepaymentform");
+            return $this->redirect($url);
+        }
+
+        $byeForm = $this->createForm(new UnsubscribeType(), $user);
+        $request = $this->getRequest();
+        $byeForm->handleRequest($request);
+
+        if ($byeForm->isValid()) {
+            // récupération du message
+            $message = $byeForm["message"]->getData();
+            $params_message = array(
+                "username" => $user->getUsername(),
+                "email" => $user->getEmail(),
+                "firstName" => $user->getFirstName(),
+                "lastName" => $user->getLastName(),
+            );
+
+            // Envoyer un mail à l'admin
+            $messageMail = \Swift_Message::newInstance()
+                ->setSubject('Désabonnement sur BDloc')
+                ->setFrom('admin@bdloc.com')
+                ->setTo( 'sweetformation@yahoo.fr' )
+                ->setContentType('text/html')
+                ->setBody($this->renderView('emails/unsubscribe_email.html.twig', $params_message));
+            $this->get('mailer')->send($messageMail);
+            
+            // User->setIsEnabled à 0 !
+            $user->setIsEnabled(0);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            // rediriger vers default home
+            return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+
+        }
+
+        $params['byeForm'] = $byeForm->createView();
+
         return $this->render("account/unsubscribe.html.twig", $params);
     }
 

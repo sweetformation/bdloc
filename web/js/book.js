@@ -19,7 +19,7 @@ popup = {
         //this.overlay.append(x).fadeIn()
         $("#popupContent").append(x)
         this.overlay.fadeIn()
-        $(".container").css({opacity: 0.3})
+        $(".container").animate({opacity: 0.3})
         //$(".container").css({background: "rgba(255, 255, 255, 0.5)"})
         //this.overlay.css({opacity: 1})
     },
@@ -30,9 +30,10 @@ popup = {
             duration: 1000,
             complete: function() {
                 $("#popupContent").html("")
-                $(".container").css({opacity: 1})  
+                //$(".container").animate({opacity: 1})  
             }
         })
+        $(".container").animate({opacity: 1}, {duration: 1000})
     }
 
 }
@@ -47,12 +48,12 @@ cart = {
 
         /* ******** On pose des écouteurs ********** */
         //$(document).on("click", ".commander", this.ajouteBd)
-        if ($(".commander").val() == "Ajouter au panier !") {
+        /*if ($(".commander").val() == "Ajouter au panier !") {
             $(".commander").on("click", this.ajouteBd)
         }
         if ($(".commander2").val() == "Ajouter au panier !") {
             $(".commander2").on("click", this.ajouteBdbis)
-        }
+        }*/
         $(document).on("click", ".removeBDpanier", this.supprimeBd)
 
     },
@@ -185,6 +186,7 @@ book = {
 
         /* ******** On pose des écouteurs ********** */
         $(document).on("click", ".details", this.detailsBd)
+        $(document).on("click", ".details2", this.detailsBd)
         $(document).on("click", ".listeBdCommandees", this.listingBd)
         $(document).on("change", ".catCheck", this.catCheckBd)
         

@@ -26,10 +26,14 @@ class EditPasswordType extends AbstractType
             //    ))
             ->add('currentpassword', 'password', array(
                 'label'=>'Mot de passe actuel',
+                'mapped' => false, 
+            ))
+            /*->add('currentpassword', 'password', array(
+                'label'=>'Mot de passe actuel',
                 'mapped' => false,
                 'constraints' => new UserPassword(array('message' => 'Mot de passe invalide')),
                 'validation_groups' => array('Default') 
-            ))
+            ))*/
             ->add('password', 'repeated', array(
                 'type' => 'password',
                 'invalid_message' => 'Les mots de passe doivent correspondre',

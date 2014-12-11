@@ -112,13 +112,18 @@
 }
 
 #loginForm button[type="submit"] {
-    margin: 5px 10px 5px 260px;
+    margin: 5px 10px 5px 265px;
     padding: 5px;
 }
 
 #mdpoublie {
+    color: #272928;
     display: inline-block;
-    padding: 5px 0 50px 260px;
+    margin: 10px 0 50px 265px;
+}
+
+#mdpoublie:hover {
+    text-decoration: underline;
 }
 
 

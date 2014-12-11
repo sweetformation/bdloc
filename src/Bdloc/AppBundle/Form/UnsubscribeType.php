@@ -6,7 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class EditInfoType extends AbstractType
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
+class UnsubscribeType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,29 +18,19 @@ class EditInfoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', 'text', array(
-                "label" => "Pseudo"
-                ))
-            ->add('email', 'email', array(
-                "label" => "Email"
-                ))
-            ->add('firstName', 'text', array(
-                "label" => "Nom"
-                ))
-            ->add('lastName', 'text', array(
-                "label" => "Prénom"
-                ))
-            ->add('address', 'text', array(
-                "label" => "Adresse (num, rue, app)"
-                ))
-            ->add('zip', 'text', array(
-                "label" => "Code Postal"
-                ))
-            ->add('phone', 'text', array(
-                "label" => "Téléphone"
+            ->add('message', 'textarea', array(
+                'label'=>'Message',
+                'mapped' => false,
+                'constraints' => array(
+                    new Length(array('min' => 20, 'minMessage' => "trop court")),
+                    new NotBlank(array('message'=>"???"))
+                ),
+            ))
+            ->add('captcha', 'captcha', array(
+                'invalid_message' => 'Captcha invalide',
                 ))
             ->add('submit', 'submit', array(
-                "label" => "Modifier"
+                "label" => "Merci"
                 ))
         ;
     }
@@ -57,6 +50,6 @@ class EditInfoType extends AbstractType
      */
     public function getName()
     {
-        return 'bdloc_appbundle_editinfo';
+        return 'bdloc_appbundle_unsubscribe';
     }
 }

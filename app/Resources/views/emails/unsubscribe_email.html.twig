@@ -1,0 +1,13 @@
+{% extends ":layouts:email.html.twig" %}
+
+{% block content %}
+    <h1>Désabonnement BDLOC</h1>
+    <p>Un abonné s'est barré...</p>
+    <p>Coordonnées :</p>
+    <ul>
+        <li>Pseudo : {{ username }}</li>
+        <li>Email : {{ email }}</li>
+        <li>Prénom : {{ firstName }}</li>
+        <li>Nom : {{ lastName }}</li>
+    </ul>
+{% endblock %}

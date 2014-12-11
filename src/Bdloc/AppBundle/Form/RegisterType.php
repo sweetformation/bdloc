@@ -37,11 +37,11 @@ class RegisterType extends AbstractType
             ->add('lastName', 'text', array(
                 "label" => "Prénom"
                 ))
-            ->add('zip', 'text', array(
-                "label" => "Code Postal"
-                ))
             ->add('address', 'text', array(
                 "label" => "Adresse (num, rue, app)"
+                ))
+            ->add('zip', 'text', array(
+                "label" => "Code Postal"
                 ))
             ->add('phone', 'text', array(
                 "label" => "Téléphone"

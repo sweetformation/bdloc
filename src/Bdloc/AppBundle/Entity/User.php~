@@ -194,6 +194,12 @@ class User implements AdvancedUserInterface
      */
     private $carts;
 
+    /**
+     *
+     *@ORM\OnetoMany(targetEntity="Fine", mappedBy="user")
+     */
+    private $fines;
+
 
     /**
      * Get id
@@ -746,5 +752,38 @@ class User implements AdvancedUserInterface
     public function getCarts()
     {
         return $this->carts;
+    }
+
+    /**
+     * Add fines
+     *
+     * @param \Bdloc\AppBundle\Entity\Fine $fines
+     * @return User
+     */
+    public function addFine(\Bdloc\AppBundle\Entity\Fine $fines)
+    {
+        $this->fines[] = $fines;
+
+        return $this;
+    }
+
+    /**
+     * Remove fines
+     *
+     * @param \Bdloc\AppBundle\Entity\Fine $fines
+     */
+    public function removeFine(\Bdloc\AppBundle\Entity\Fine $fines)
+    {
+        $this->fines->removeElement($fines);
+    }
+
+    /**
+     * Get fines
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFines()
+    {
+        return $this->fines;
     }
 }

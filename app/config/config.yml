@@ -79,3 +79,4 @@ services:
     paypal_utility:
         class: Bdloc\AppBundle\Service\PPUtility
         arguments: [@paypal, %prixAboM%, %prixAboA%]
+

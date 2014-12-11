@@ -23,9 +23,9 @@
                     <a href="{{ path('bdloc_app_account_editinfo') }}" {% if app.request.getPathInfo == '/compte/modifier-informations-personnelles' %} class="compteActive" {% endif %}>Modifier mes informations personnelles</a>
                     <a href="{{ path('bdloc_app_account_editpassword') }}" {% if app.request.getPathInfo == '/compte/modifier-mot-de-passe' %} class="compteActive" {% endif %}>Modifier mon mot de passe</a>
                     <a href="{{ path('bdloc_app_account_editdropspot') }}" {% if app.request.getPathInfo == '/compte/modifier-point-relais' %} class="compteActive" {% endif %}>Modifier mon point relais</a>
-                    <a href="{{ path('bdloc_app_account_editpaymentinfo') }}" {% if app.request.getPathInfo == '/compte/modifier-informations-paiement' %} class="<compteActiveli>" {% endif %}>Modifier mes informations de paiement</a>
+                    <a href="{{ path('bdloc_app_account_editpaymentinfo') }}" {% if app.request.getPathInfo == '/compte/modifier-informations-paiement' %} class="compteActive" {% endif %}>Modifier mes informations de paiement</a>
                     <a href="{{ path('bdloc_app_account_history') }}" {% if app.request.getPathInfo == '/compte/consulter-historique-location' %} class="compteActive" {% endif %}>Consulter mon historique de locations</a>
-                    <a href="{{ path('bdloc_app_account_showfinepaymentform') }}" {% if app.request.getPathInfo == '/compte/payer-amende' %} class="compteActive" {% endif %}>Payer une amende</a>
+                    <a href="{{ path('bdloc_app_account_showfinepaymentform') }}" {% if app.request.getPathInfo == '/compte/payer-amende' %} class="compteActive" {% endif %}>Payer une amende / Historique de paiements</a>
                     <a href="{{ path('bdloc_app_account_unsubscribe') }}" {% if app.request.getPathInfo == '/compte/se-desabonner' %} class="compteActive" {% endif %}>Me désabonner</a>
                 </div>
                 <div id="flash-messages">

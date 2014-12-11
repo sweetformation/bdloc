@@ -12,6 +12,8 @@ use PayPal\Api\Payment;
 use PayPal\Api\FundingInstrument;
 use PayPal\Api\Transaction;
 
+use PayPal\Api\CreditCardToken;
+
 class PPUtility {
 
     // On passe le service paypal via le constructor
@@ -196,6 +198,72 @@ class PPUtility {
         }
 
         return $card;
+    }
+
+    public function createPaymentUsingSavedCard($ccppid, $cout) {
+
+        // # Create payment using a saved credit card
+        // This sample code demonstrates how you can process a 
+        // Payment using a previously stored credit card token.
+        // API used: /v1/payments/payment
+        /** @var CreditCard $card */
+        //$card = require __DIR__ . '/../vault/CreateCreditCard.php';
+
+        // ### Credit card token
+        // Saved credit card id from a previous call to
+        // CreateCreditCard.php
+        $creditCardToken = new CreditCardToken();
+        //$creditCardToken->setCreditCardId($card->getId());
+        $creditCardToken->setCreditCardId($ccppid);
+
+        // ### FundingInstrument
+        // A resource representing a Payer's funding instrument.
+        // For stored credit card payments, set the CreditCardToken
+        // field on this object.
+        $fi = new FundingInstrument();
+        $fi->setCreditCardToken($creditCardToken);
+        // ### Payer
+        // A resource representing a Payer that funds a payment
+        // For stored credit card payments, set payment method
+        // to 'credit_card'.
+        $payer = new Payer();
+        $payer->setPaymentMethod("credit_card")
+            ->setFundingInstruments(array($fi));
+        // ### Amount
+        // Lets you specify a payment amount.
+        // You can also specify additional details
+        // such as shipping, tax.
+        $amount = new Amount();
+        $amount->setCurrency("EUR");
+        $amount->setTotal($cout);
+        // ### Transaction
+        // A transaction defines the contract of a
+        // payment - what is the payment for and who
+        // is fulfilling it. 
+        $transaction = new Transaction();
+        $transaction->setAmount($amount);
+        $transaction->setDescription("This is the payment description.");
+        // ### Payment
+        // A Payment Resource; create one using
+        // the above types and intent set to 'sale'
+        $payment = new Payment();
+        $payment->setIntent("sale")
+            ->setPayer($payer)
+            ->setTransactions(array($transaction));
+            
+        // ###Create Payment
+        // Create a payment by calling the 'create' method
+        // passing it a valid apiContext.
+        // (See bootstrap.php for more on `ApiContext`)
+        // The return object contains the state.
+        try {
+            $resultat = $payment->create($this->apiContext);
+        } catch (\Paypal\Exception\PPConnectionException $pce) {
+            print_r( json_decode($pce->getData()) );
+        }
+        $statut = $resultat->getState();
+
+        return $statut;
     }
 
 }

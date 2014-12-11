@@ -90,13 +90,15 @@ class CartController extends Controller
             );
             $bookStock = $book->getStock();
         }
-        $cart = $cartRepo->findUserCurrentCart( $user );
+        /*$cart = $cartRepo->findUserCurrentCart( $user );
         $itemsNumber = count($cart->getCartItems());
         $params['itemsNumber'] = $itemsNumber;
         $params['message'] = $message;
 
         $params['bookStock'] = $bookStock;
-        return $this->render("cart/add_book.html.twig", $params);
+        return $this->render("cart/add_book.html.twig", $params);*/
+        $referer = $this->getRequest()->headers->get('referer');
+        return $this->redirect($referer);
 
     }
 
@@ -162,13 +164,20 @@ class CartController extends Controller
      * @Route("/validation")
      */
     public function validateAction()
-    {   
-        //
-        // Si user a une amende, le rediriger vers page amende!
-        // @todo
+    {         
 
         $params = array();
         $user = $this->getUser();
+
+        // Si user a une amende, le rediriger vers page amende!
+        $fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fines = $fineRepo->findUserFines( $user );
+
+        if (!empty($fines)) {
+            $url = $this->generateUrl("bdloc_app_account_showfinepaymentform");
+            return $this->redirect($url);
+        }
+        
         $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
         $cart = $cartRepo->findUserCurrentCart( $user );
 

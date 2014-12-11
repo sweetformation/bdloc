@@ -19,7 +19,7 @@ popup = {
         //this.overlay.append(x).fadeIn()
         $("#popupContent").append(x)
         this.overlay.fadeIn()
-        $(".container").animate({opacity: 0.3})
+        $("#container").animate({opacity: 0.2})
         //$(".container").css({background: "rgba(255, 255, 255, 0.5)"})
         //this.overlay.css({opacity: 1})
     },
@@ -33,7 +33,7 @@ popup = {
                 //$(".container").animate({opacity: 1})  
             }
         })
-        $(".container").animate({opacity: 1}, {duration: 1000})
+        $("#container").animate({opacity: 1}, {duration: 1000})
     }
 
 }
@@ -234,6 +234,14 @@ book = {
         if (!inputCheck[0].checked) {
             inputCheck.parent().find(".catLabCheck").css({color: "#fff"})
         }
+        $( "#disposidebar .catCheck" ).each(function() {
+            if ($(this)[0].checked) {
+                $(this).parent().find(".catLabCheck").css({color: "#fe8e2b"})
+            }
+            if (!$(this)[0].checked) {
+                $(this).parent().find(".catLabCheck").css({color: "#fff"})
+            }
+        })
     }
 
 

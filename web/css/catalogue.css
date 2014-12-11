@@ -65,11 +65,13 @@
     background: #272928;
     color: #fff;    
     cursor: pointer;
+    margin-bottom: 10px;
     padding: 10px;
 }
 
 #formFiltres #soumission input[type="submit"]:hover {
     border: 2px solid #fe8e2b;
+    color: #fe8e2b;
 }
 
 
@@ -94,6 +96,11 @@
 
 #pagination a.pageActive {
     color: #fe8e2b;
+    text-decoration: none;
+}
+
+#pagination a:hover {
+    text-decoration: none;
 }
 
 #containerCatalogue {
@@ -223,18 +230,22 @@
 
 /*Bouton détail des BDs*/
 .details {
+    background-color: #272928;
+    color: #fff;
     cursor: pointer;
     margin-top: 20px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     padding: 5px;
 }
 
 /*Bouton pour passer commande d'une BD*/
 .commander,
 .commander2 {
+    background-color: #272928;
+    color: #fff;
     cursor: pointer;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 5px;
     padding: 5px;
 }
 
@@ -245,7 +256,7 @@
 .removeBDpanier:hover {
     /*background: #272928;*/
     border: 2px solid #fe8e2b;
-    /*color: #fff;*/
+    color: #fe8e2b;
 }
  
 
@@ -419,10 +430,15 @@
 
 .details2,
 .removeBDpanier {
+    background-color: #272928;
+    color: #fff;
     cursor: pointer;
-    border: 2px solid transparent;
     margin: 0 20px;
     padding: 5px;
+}
+
+.removeBDpanier {
+    border: 2px solid #fff;
 }
 
 #validation {
@@ -445,6 +461,7 @@
 .retourCatalogue:hover,
 .passerCommande:hover {
     border: 2px solid #fe8e2b;
+    color: #fe8e2b;
 }
 
 #commande {
@@ -460,12 +477,13 @@
     display: none;
 }
 
-#listing .orange {
+.titreorange {
     color: #fe8e2b;
+    padding-bottom: 20px;
 }
 
 .listeTitres {
-    display: inline-block;
+    display: block;
     padding-left: 60px;
     padding-bottom: 10px;
 }
@@ -489,5 +507,6 @@
 .modifierDropspot:hover,
 .listeBdCommandees:hover {
     border: 2px solid #fe8e2b;
+    color: #fe8e2b;
 
 }

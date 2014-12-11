@@ -17,7 +17,7 @@
             <h2>Panier du {{ cart.dateModified|date("d/m/Y") }}</h2>
             {% for cartItem in cart.cartItems %}
                 <div class="panierContent">
-                    <p><img src="{{ asset("img/couverture/" ~ cartItem.book.cover ) }}" alt="{{ cartItem.book.title }}" class="couvertureBDpanier" /></p>
+                    <p><img src="{{ asset("img/couverture/" ~ cartItem.book.cover ) }}" title="{{ cartItem.book.title }}" class="couvertureBDpanier" /></p>
                     <p class="titreBDpanier">{{ cartItem.book.title }}</p>
                 </div>
             {% endfor %}

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df51ab026fda337bce68283ed0bd7f95",
+    "hash": "74a96d9cb66700c1c537d286eb71584f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2078,9 +2078,7 @@
             "time": "2014-12-02 19:45:04"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "paypal/rest-api-sdk-php": 20,
@@ -2088,10 +2086,9 @@
         "gregwar/captcha-bundle": 20,
         "tchwork/debug-bundle": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

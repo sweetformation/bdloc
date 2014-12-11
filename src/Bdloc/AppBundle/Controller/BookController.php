@@ -102,9 +102,10 @@ class BookController extends Controller
 
         $bookRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Book");
         $books = $bookRepo->findBooksBySearch($variables); 
-
-        $nbPage = ceil($books->count() / $numPerPage); 
+        $nbBooks = $books->count();
+        $nbPage = ceil($nbBooks / $numPerPage); 
         $params['nbPage'] = $nbPage;
+        $params['nbBooks'] = $nbBooks;
         $params['books'] = $books;
         $params['variables'] = $variables;
         // $params['categ'] = $categorie;

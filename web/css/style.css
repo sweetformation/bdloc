@@ -25,7 +25,7 @@ body {
     position: relative;
 }
 
-.container {
+#container {
     background: #dfdee4;
     /*background: linear-gradient(to bottom, #c9c8cd 0%, #dfdee4 50%, #c9c8cd 100%);*/
     border: 2px solid #dfdee4;
@@ -93,6 +93,7 @@ textarea
 input[type="submit"],
 button[type="submit"],
 select {
+    color: #000;
     font-family: 'Advent Pro', sans-serif;
     font-size: 1.1em;
 }
@@ -107,6 +108,17 @@ select:focus,
 textarea:focus {
     border-color: #fe8e2b;
 } 
+
+/*option:checked {
+    background: #272928;
+    color: #fff;
+}
+
+select:focus,
+select:hover {
+    background: #272928;
+    color: #fff; 
+}*/
 
 
 
@@ -130,12 +142,12 @@ textarea:focus {
 }
 
 #logo {
-    margin: 10px;
+    margin: 20px 20px 10px;
 }
 
 #nav,
 #connexion {
-    margin: 20px;
+    margin: 20px 0;
 }
 
 #nav a,
@@ -153,12 +165,25 @@ textarea:focus {
 
 #nav a.active,
 #connexion a.active {
+    border: 2px solid #fe8e2b;
     color: #fe8e2b;
 }
 
 #nav a:hover,
 #connexion a:hover {
     border: 2px solid #fe8e2b;
+    text-decoration: none;
+}
+
+/*#nav a.active:hover {
+    border: 2px solid #fe8e2b;
+}*/
+
+#nav a .txt,
+#connexion a .txt {
+    display: inline-block;
+    font-family: 'Advent Pro', sans-serif;
+    margin-left: 5px;
 }
 
 #itemsNumber {
@@ -246,15 +271,23 @@ textarea:focus {
 }
 
 .flash-notice {
-    color: #00f;
+    background: #272928;
+    color: #fff;
+    /*color: #00f;*/
+    padding: 3px 0;
 }
 
 .flash-error {
-    color: #f00;
+    background: #272928;
+    color: #fe8e2b;
+    /*color: #f00;*/
+    padding: 3px 0;
 }
 
 .login_error {
-    color: #f00;
+    background: #272928;
+    color: #fe8e2b;
+    /*color: #f00;*/
     display: inline-block;
 }
 
@@ -280,7 +313,7 @@ textarea:focus {
     top: 50%;
     left: 50%;
     margin-left: -250px;
-    margin-top: -95px;
+    margin-top: -115px;
     padding: 20px;
     width: 500px;
 }

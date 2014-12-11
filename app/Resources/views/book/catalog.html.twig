@@ -50,8 +50,8 @@
             <div id="disposidebar" class="left">
                 <p class="filtre">Disponibilité :</p>
                 <ul>   
-                    <li><input type="radio" name="availability[]" id="toutes" value="0" {% if availability == 0 %} checked="checked" {% endif %}><label for="toutes">Toutes</label></li>
-                    <li><input type="radio" name="availability[]" id="disponibles" value="1" {% if availability == 1 %} checked="checked" {% endif %}><label for="disponibles">Disponibles</label></li>
+                    <li><input type="radio" name="availability[]" id="toutes" class="catCheck" value="0" {% if availability == 0 %} checked="checked" {% endif %}><label class="catLabCheck" for="toutes">Toutes</label></li>
+                    <li><input type="radio" name="availability[]" id="disponibles" class="catCheck" value="1" {% if availability == 1 %} checked="checked" {% endif %}><label class="catLabCheck" for="disponibles">Disponibles</label></li>
                 </ul>
             </div>
             <div id="filtresidebar" class="left">
@@ -78,6 +78,7 @@
             </div>
             <div id="soumission" class="left">
                 <input type="submit" value="Rechercher" />
+                <div id="resultatsBD">{{ nbBooks }} BD(s) trouvée(s)</div>
             </div>
         </form>
     </aside>
@@ -134,22 +135,22 @@
                     <p class="scenariste">Scénariste : {{ book.scenarist.lastName }} {{ book.scenarist.firstName }}</p>
                     {% if book.stock == 0 %}
                         <p class="indisponible">Indisponible...</p>
-                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Détails"></a>
                     {% elseif book.stock == 1 %}
                         <p class="disponible"><span class="bookStock">{{ book.stock }} dispo !</span></p>
-                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Détails"></a>
                         {% if book.id in booksIdInCart %}
                             <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
                         {% else %}
-                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier !"></a>
+                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier"></a>
                         {% endif %}
                     {% else %}
                         <p class="disponible"><span class="bookStock">{{ book.stock }} dispos !</span></p>
-                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Plus de détails !"></a>
+                        <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Détails"></a>
                         {% if book.id in booksIdInCart %}
                             <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
                         {% else %}
-                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier !"></a>
+                            <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier"></a>
                         {% endif %}
                     {% endif %}
                 </div>

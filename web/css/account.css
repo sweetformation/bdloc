@@ -11,9 +11,15 @@
     color: #fff;
     display: block;
     font-size: 1.2em;
-    font-weight: 700;
+    /*font-weight: 700;*/
     padding: 10px;
     text-align: center;
+}
+
+#menuCompte a .txt {
+    display: inline-block;
+    font-family: 'Advent Pro', sans-serif;
+    margin-left: 5px;
 }
 
 #menuCompte a.compteActive {
@@ -23,6 +29,7 @@
 #menuCompte a:hover {
     /*border-top: 1px solid #fe8e2b;*/
     border-left: 10px solid #fe8e2b;
+    text-decoration: none;
 }
 
 .decale {
@@ -212,11 +219,15 @@
 
 #allPaniers .paniers {
     overflow: hidden;
+    margin-left: 20px;
 }
 
 #allPaniers .panierContent {
     float: left;
     margin: 10px;
+    overflow: hidden;
+    height: 180px;
+    max-width: 100px;
 }
 
 #allPaniers .panierContent .couvertureBDpanier {

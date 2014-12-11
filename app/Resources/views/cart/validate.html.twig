@@ -19,7 +19,7 @@
         <p>Nb de BD commandées : {{ itemsNumber }} <a href="#listing" title="Liste BD commandées"><input class="listeBdCommandees" type="button" value="Liste BD commandées"></a></p>
         <p>Date de retour avant le : {{ "now"|date_modify("+15 day")|date("d/m/Y") }} à {{ "now"|date_modify("+15 day")|date("H") }}h.</p>
         <div id="listing">
-            <h2 class="orange">Liste de vos BDs commandées :</h2>
+            <h2 class="titreorange">Liste de vos BDs commandées :</h2>
             <ul>
             {% for cartItem in cart.cartItems %}
                 <li class="listeTitres">{{ cartItem.book.title }}</li>

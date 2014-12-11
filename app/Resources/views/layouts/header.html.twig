@@ -5,18 +5,18 @@
                 <img src="{{ asset('img/appearances/BDloc.png') }}" alt="Logo BDLOC"/>
             </div>
             <nav id="nav" class="left">
-                <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if "catalogue" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Catalogue</a>
-                <a href="{{ path("bdloc_app_cart_recap") }}" id="lien_panier" {% if "panier" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Panier <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a>
+                <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if "catalogue" in app.request.getPathInfo|split('/') %} class="active" {% endif %}><span class="glyphicon glyphicon-book"><span class="txt">Catalogue</span></span></a>
+                <a href="{{ path("bdloc_app_cart_recap") }}" id="lien_panier" {% if "panier" in app.request.getPathInfo|split('/') %} class="active" {% endif %}><span class="glyphicon glyphicon-shopping-cart"><span class="txt">Panier</span></span> <div id="itemsNumber">{{ render(controller('BdlocAppBundle:Cart:getItemsNumberInCurrentCart')) }}</div></a>
                 {% if app.user %}       
-                    <a href="{{ path('bdloc_app_account_home') }}" id="lien_compte" {% if "compte" in app.request.getPathInfo|split('/') %} class="active" {% endif %}>Compte</a>
+                    <a href="{{ path('bdloc_app_account_home') }}" id="lien_compte" {% if "compte" in app.request.getPathInfo|split('/') %} class="active" {% endif %}><span class="glyphicon glyphicon-user"><span class="txt">Compte</span></span></a>
                 {% endif %}
             </nav>
             <div id="connexion" class="right">
                 {% if app.user %}  
                     <div id="user"class="left">Bonjour {{ app.user.lastName }}</div>
-                    <a href="{{ path('logout') }}" class="left">Déconnexion</a>
+                    <a href="{{ path('logout') }}" class="left"><span class="glyphicon glyphicon-log-out"><span class="txt">Déconnexion</span></span></a>
                 {% else %}
-                    <a href="{{ path('bdloc_app_user_login') }}" {% if app.request.getPathInfo == '/login' %} class="active" {% endif %}>Connexion</a>
+                    <a href="{{ path('bdloc_app_user_login') }}" {% if app.request.getPathInfo == '/login' %} class="active" {% endif %}><span class="glyphicon glyphicon-log-in"><span class="txt">Connexion</span></span></a>
                 {% endif %}
             </div>
         </header>

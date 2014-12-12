@@ -361,3 +361,23 @@
     margin: 10px 10px 5px 190px;
     padding: 5px 10px;
 }
+
+
+
+
+
+
+
+.check {
+    background-color: #272928;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 40px;
+    padding: 5px 10px;
+}
+
+.check:hover {
+    /*background: #272928;*/
+    border: 2px solid #fe8e2b;
+    color: #fe8e2b;
+}

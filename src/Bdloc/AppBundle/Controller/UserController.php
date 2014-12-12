@@ -195,6 +195,7 @@ class UserController extends Controller
             
             // Redirection vers étape 3, choix du paiement
             return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform") );
+            //return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform", array('id' => $id)) );
 
         }
 
@@ -244,9 +245,7 @@ class UserController extends Controller
 
         $creditCard = new CreditCard();
         $creditCardForm = $this->createForm(new CreditCardType(), $creditCard);
-        //$creditCardForm = $this->createForm(new CreditCardType(), $creditCard, array("action" => $this->generateUrl("bdloc_app_payment_takesubscriptionpayment")));
 
-        // Demande à SF d'injecter les données du formulaire dans notre entité ($creditCard)
         $request = $this->getRequest();
         $creditCardForm->handleRequest($request);
 
@@ -257,13 +256,11 @@ class UserController extends Controller
             // On récupère le prix avec le bouton radio rajouté manuellement dans le form!
             $typeAbo = $creditCardForm["abonnement"]->getData();
             if ($typeAbo == "A") {
-                $prixAbo = $this->container->getParameter('prixAboA');;
+                $prixAbo = $this->container->getParameter('prixAboA');
             }
             else if ($typeAbo == "M") {
-                $prixAbo = $this->container->getParameter('prixAboM');;
+                $prixAbo = $this->container->getParameter('prixAboM');
             }
-            //echo "<br /><br />prixAbo = " . $prixAbo;
-            //die();
             
             // Utilisation du service PPUtility
             $ppu = $this->get('paypal_utility');
@@ -366,37 +363,26 @@ class UserController extends Controller
                 // Update User
                 $user->setIsEnabled( 1 );  // on le passe à 1 en fin d'enregistrement, après étape 3 abonnement
                 $user->setSubscriptionType($typeAbo);
-                //echo "<br />ok pour subscriptiontype";
-                //$user->setSubscriptionRenewal(date("Y-m-d", strtotime("+1 month")));
+                $user->setRoles( array("ROLE_USER") ); // pour ceux qui viennent du renouvellement d'abo
+
                 if ($typeAbo == "A") {
                     $user->setSubscriptionRenewal(new \DateTime("+1 year")); //date("Y-m-d", strtotime("+1 year"))
                 }
                 else if ($typeAbo == "M") {
                     $user->setSubscriptionRenewal(new \DateTime("+1 month"));
                 }
-                //echo "<br />ok pour renewal";
                 
                 // On associe la carte de crédit à l'utilisateur
                 $creditCard->setUser( $user );
 
                 // On récupère les infos de paypal
                 $creditCard->setPaypalId( $paypalCC_id );
-                //echo "<br />ok pour paypalId";
-                //echo "<br />getExpirationDate = <br />";
-                //var_dump($creditCard->getExpirationDate());
                 $creditCard->setValidUntil( $creditCard->getExpirationDate() );  //->format("Y-m-d")
-                //echo "<br />ok pour validUntil";
-                //echo "<br />getvalidUntil = <br />";
-                //var_dump($creditCard->getValidUntil());
-
-
 
                 // update en bdd pour CreditCardType
                 $em = $this->getDoctrine()->getManager(); 
-                //echo "<br />manager choppé";
                 $em->persist($creditCard);  
-                $em->persist($paiement);
-                //echo "<br />persist x2 ok";  
+                $em->persist($paiement); 
                 $em->flush();
 
                 // Créer un message qui ne s'affichera qu'une fois
@@ -549,5 +535,101 @@ class UserController extends Controller
             return $this->redirect( $this->generateUrl("bdloc_app_default_home") );
         }
     }
+
+    /**
+     * @Route("/abonnement/fin-de-validite")
+     */
+    public function checkSubscriptionAction() {
+
+        $params = array();
+        // récupère l'utilisateur en session
+        $user = $this->getUser();
+
+        // on récupère l'utilisateur pour vérifier que l'email et la token correspondent
+        $subscriptionRenewal = $user->getSubscriptionRenewal();
+        $today = new \DateTime("-1 day");
+        if ( $subscriptionRenewal < $today){
+            // mettre en ROLE_USER_EXPIRED
+            $user->setRoles( array("ROLE_USER_EXPIRED") );
+            $em = $this->getDoctrine()->getManager(); 
+            $em->persist($user); 
+            $em->flush();
+            $em->refresh( $user );
+
+            return $this->render("user/check_subscription.html.twig", $params);
+        }
+        else {
+            // Redirection vers le catalogue
+            return $this->redirect( $this->generateUrl("bdloc_app_book_catalogredirect") );
+        }
+    }
+
+    /**
+     * @Route("/abonnement/renouvellement")
+     */
+    public function updateSubscriptionAction() {
+
+        $params = array();
+        $user = $this->getUser();
+
+        // --------------------- FORMULAIRE RENOUVELLEMENT ---------------------
+        $creditCards = $user->getCreditCards();
+        //dump($creditCards);
+        //die();
+        foreach ($creditCards as $creditCard) {
+            //@todo attention, quelle carte de crédit ??
+            //
+            $userCCDate = $creditCard->getValidUntil();
+        }
+        //dump( $userCCDate );
+        //die();
+        $today = new \DateTime("-1 day");
+        if ( $userCCDate < $today ){
+            // Reprendre une nouvelle carte
+            // Mettre en session l'id de l'utilisateur pour la redirection vers showsubscriptionpaymentform
+            $this->get('session')->set('id', $user->getId());
+            return $this->redirect( $this->generateUrl("bdloc_app_user_showsubscriptionpaymentform") );
+
+        } else {
+            // new paiement
+            $typeAbo = $user->getSubscriptionType();
+            return $this->redirect( $this->generateUrl("bdloc_app_payment_takepayment", array("type" => $typeAbo)) );
+        }
+    }
+
+    /**
+     * @Route("abonnement/a-bientot")
+     */
+    public function unsubscribeAction()
+    {
+        // récupère l'utilisateur en session
+        $user = $this->getUser();
+
+        $params_message = array(
+            "username" => $user->getUsername(),
+            "email" => $user->getEmail(),
+            "firstName" => $user->getFirstName(),
+            "lastName" => $user->getLastName(),
+        );
+
+        // Envoyer un mail à l'admin
+        $messageMail = \Swift_Message::newInstance()
+            ->setSubject('Désabonnement sur BDloc')
+            ->setFrom('admin@bdloc.com')
+            ->setTo( 'sweetformation@yahoo.fr' )
+            ->setContentType('text/html')
+            ->setBody($this->renderView('emails/unsubscribe_email.html.twig', $params_message));
+        $this->get('mailer')->send($messageMail);
+        
+        // User->setIsEnabled à 0 !
+        $user->setIsEnabled(0);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        // rediriger vers default home
+        return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+    }
+
 
 }

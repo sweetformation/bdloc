@@ -1,5 +1,7 @@
 
-
+.orange {
+    color: #fe8e2b;
+}
 
 #aside {
     background: #272928;
@@ -58,7 +60,7 @@
 }
 
 #formFiltres #soumission {
-    margin: 70px 20px 0 0;
+    margin: 50px 20px 0 0;
 }
 
 #formFiltres #soumission input[type="submit"] {
@@ -72,6 +74,10 @@
 #formFiltres #soumission input[type="submit"]:hover {
     border: 2px solid #fe8e2b;
     color: #fe8e2b;
+}
+
+#resultatsBD {
+    margin-left: 20px;
 }
 
 

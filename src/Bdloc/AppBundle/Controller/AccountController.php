@@ -337,6 +337,7 @@ class AccountController extends Controller
                 "email" => $user->getEmail(),
                 "firstName" => $user->getFirstName(),
                 "lastName" => $user->getLastName(),
+                "message" => $message
             );
 
             // Envoyer un mail à l'admin
@@ -345,7 +346,7 @@ class AccountController extends Controller
                 ->setFrom('admin@bdloc.com')
                 ->setTo( 'sweetformation@yahoo.fr' )
                 ->setContentType('text/html')
-                ->setBody($this->renderView('emails/unsubscribe_email.html.twig', $params_message));
+                ->setBody($this->renderView('emails/deliberately_unsubscribe_email.html.twig', $params_message));
             $this->get('mailer')->send($messageMail);
             
             // User->setIsEnabled à 0 !

@@ -18,7 +18,8 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="_password" />
         </div>
-        <input type="hidden" name="_target_path" value="{{ url('bdloc_app_book_catalogredirect') }}" />
+        <!-- <input type="hidden" name="_target_path" value="{ { url('bdloc_app_book_catalogredirect') }}" /> -->
+        <input type="hidden" name="_target_path" value="{{ url('bdloc_app_user_checksubscription') }}" />
 
 
         <button type="submit">Connexion</button>

@@ -8,10 +8,12 @@ parameters:
     mailer_transport: smtp
     mailer_host: smtp.mandrillapp.com
     mailer_port: 587
-    mailer_user: machinchoseformation@gmail.com
-    mailer_password: 38Utc_Sd5KdI4sz0Gr2Y4g
+    mailer_user: mandrillformation@gmail.com
+    mailer_password: b_qSvk4PBN3LTrNsNUw1tQ
     locale: fr
     secret: fjdsf323093R32a09ewIJrqrjqr9bczcvEjfdgpfqewr543534Fw
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+    prixAboM: 12.00
+    prixAboA: 120.00

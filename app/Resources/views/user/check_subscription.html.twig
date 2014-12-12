@@ -1,0 +1,16 @@
+{% extends ":layouts:base.html.twig" %}
+
+{% block title %}Abonnement | BDLOC{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+{% endblock %}
+
+
+{% block main_content %}
+    <h1 class="formTitle">Abonnement</h1>
+    <p class="decale">Votre abonnement est périmé.</p>
+    <p class="decale">Voulez-vous le renouveler ?</p>
+    <a href="{{ path('bdloc_app_user_updatesubscription') }}"><input class="check" type="button" value="OUI"></a>
+    <a href="{{ path('bdloc_app_user_unsubscribe') }}"><input class="check" type="button" value="NON"></a>
+{% endblock %}

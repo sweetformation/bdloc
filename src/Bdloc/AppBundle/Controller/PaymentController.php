@@ -86,6 +86,69 @@ class PaymentController extends Controller
 
     }
 
+    /**
+     * @Route("/paiement/renouvellement/{type}", requirements={"type" = "[A]|[M]"})
+     */
+    public function takePaymentAction($type)
+    {
+
+        $user = $this->getUser();
+
+            // récupérer paypalId de la carte de crédit
+        $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
+        $creditCard = $creditCardRepo->findCreditCardWithUserId( $user->getId() );
+        $ccppid = $creditCard->getPaypalId();
+
+        if ($type == "A") {
+            $cout = $this->container->getParameter('prixAboA');
+        }
+        else if ($type == "M") {
+            $cout = $this->container->getParameter('prixAboM');
+        }
+        // Utilisation du service PPUtility
+        $ppu = $this->get('paypal_utility');
+        $statut = $ppu->createPaymentUsingSavedCard($ccppid, $cout);
+
+        if ($statut == "approved") {
+                
+            //Si Paiement Paypal validé
+            $paiement = new Paiement();
+            $paiement->setType("subscription");
+            $paiement->setAmount( $cout );
+            $paiement->setUser( $user );  // On associe ce paiement à l'utilisateur concerné
+
+            if ($type == "A") {
+                $user->setSubscriptionRenewal(new \DateTime("+1 year")); //date("Y-m-d", strtotime("+1 year"))
+            }
+            else if ($type == "M") {
+                $user->setSubscriptionRenewal(new \DateTime("+1 month"));
+            }
+            // On repasse l'utilisateur en ROLE_USER
+            $user->setRoles( array("ROLE_USER") );
+
+            // BDD
+            $em = $this->getDoctrine()->getManager(); 
+            $em->persist($user);  
+            $em->persist($paiement); 
+            $em->flush();
+
+            // Créer un message qui ne s'affichera qu'une fois
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Abonnement renouvelé !'
+            );
+            return $this->redirect( $this->generateUrl("bdloc_app_book_catalogredirect") );
+        }
+        else {
+            $this->get('session')->getFlashBag()->add(
+                'error',
+                'Problème lors de la transaction !'
+            ); 
+            return $this->redirect( $this->generateUrl("bdloc_app_user_checksubscription") );
+        }
+
+    }
+
 
 
 }

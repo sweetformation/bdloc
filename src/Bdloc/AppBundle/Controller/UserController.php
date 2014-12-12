@@ -626,6 +626,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();
+        $em->refresh( $user );
 
         // rediriger vers default home
         return $this->redirect($this->generateUrl("bdloc_app_default_home"));

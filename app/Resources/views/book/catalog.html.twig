@@ -140,7 +140,7 @@
                         <p class="disponible"><span class="bookStock">{{ book.stock }} dispo !</span></p>
                         <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Détails"></a>
                         {% if book.id in booksIdInCart %}
-                            <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
+                            <a href="{{ path('bdloc_app_cart_recap') }}" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
                         {% else %}
                             <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier"></a>
                         {% endif %}
@@ -148,7 +148,7 @@
                         <p class="disponible"><span class="bookStock">{{ book.stock }} dispos !</span></p>
                         <a href="{{ path('bdloc_app_book_details', {id: book.id}) }}" title="Details de la BD {{book.id}}"><input class="details" type="button" value="Détails"></a>
                         {% if book.id in booksIdInCart %}
-                            <a href="" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
+                            <a href="{{ path('bdloc_app_cart_recap') }}" title="Dans votre panier"><input class="commander" type="button" value="Dans votre panier"></a>
                         {% else %}
                             <a href="{{ path('bdloc_app_cart_addbook', {book_id: book.id}) }}" title="Ajouter au panier"><input class="commander" type="button" value="Ajouter au panier"></a>
                         {% endif %}

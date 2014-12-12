@@ -137,7 +137,8 @@ class PaymentController extends Controller
                 'notice',
                 'Abonnement renouvelé !'
             );
-            return $this->redirect( $this->generateUrl("bdloc_app_book_catalogredirect") );
+            //return $this->redirect( $this->generateUrl("bdloc_app_book_catalogredirect") );
+            return $this->redirect( $this->generateUrl("bdloc_app_user_login") );
         }
         else {
             $this->get('session')->getFlashBag()->add(

@@ -7,10 +7,12 @@
         {% if fines|length > 0 %}
             <h2>Vous avez une amende à payer !</h2>
             {% for fine in fines %}
-                <p>Motif : {{ fine.type }}</p>
-                <p>Description : {{ fine.description }}</p>
-                <p>Montant : <strong>{{ fine.amount }} €</strong></p>
-                <a href="{{ path('bdloc_app_payment_takefinepayment', {fineId: fine.id, cout: fine.amount}) }}" title="payer"><input class="payer" type="button" value="Payer"></a>
+                <div class="amendes">
+                    <p>Motif : {{ fine.type }}</p>
+                    <p>Description : {{ fine.description }}</p>
+                    <p>Montant : <strong>{{ fine.amount }} €</strong></p>
+                    <a href="{{ path('bdloc_app_payment_takefinepayment', {fineId: fine.id, cout: fine.amount}) }}" title="payer"><input class="payer" type="button" value="Payer"></a>
+                </div>
             {% endfor %}
         {% else %}
             <p>Vous n'avez aucune amende à régler.</p>

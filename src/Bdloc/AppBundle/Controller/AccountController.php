@@ -226,7 +226,7 @@ class AccountController extends Controller
         $user_session = $this->getUser();
 
         $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
-        $creditCard = $creditCardRepo->findCreditCardWithUserId( $user_session->getId() );
+        $creditCard = $creditCardRepo->findLastCreditCardWithUserId( $user_session->getId() );
 
         // Utilisation du service PPUtility
         $ppu = $this->get('paypal_utility');
@@ -357,7 +357,8 @@ class AccountController extends Controller
             $em->refresh( $user );
 
             // rediriger vers default home
-            return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+            //return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+            return $this->redirect($this->generateUrl("logout"));
 
         }
 

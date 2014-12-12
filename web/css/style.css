@@ -278,16 +278,16 @@ select:hover {
 }
 
 .flash-error {
-    background: #272928;
-    color: #fe8e2b;
-    /*color: #f00;*/
+    /*background: #272928;
+    color: #fe8e2b;*/
+    color: #f00;
     padding: 3px 0;
 }
 
 .login_error {
-    background: #272928;
-    color: #fe8e2b;
-    /*color: #f00;*/
+    /*background: #272928;
+    color: #fe8e2b;*/
+    color: #f00;
     display: inline-block;
 }
 

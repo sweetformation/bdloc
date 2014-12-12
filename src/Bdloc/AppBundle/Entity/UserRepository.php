@@ -30,4 +30,5 @@ class UserRepository extends EntityRepository implements UserProviderInterface
         return $class === 'Bdloc\AppBundle\Entity\User';
     }
 
+
 }

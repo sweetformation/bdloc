@@ -2,7 +2,7 @@
 
         <header id="header">
             <div id="logo" class="left">
-                <img src="{{ asset('img/appearances/BDloc.png') }}" alt="Logo BDLOC"/>
+                <a href="{{ path('bdloc_app_default_home') }}" title="Accueil"><img src="{{ asset('img/appearances/BDloc.png') }}" alt="Logo BDLOC"/></a>
             </div>
             <nav id="nav" class="left">
                 <a href="{{ path('bdloc_app_book_catalogredirect') }}" id="lien_catalogue" {% if "catalogue" in app.request.getPathInfo|split('/') %} class="active" {% endif %}><span class="glyphicon glyphicon-book"><span class="txt">Catalogue</span></span></a>

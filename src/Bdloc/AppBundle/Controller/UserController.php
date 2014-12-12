@@ -545,6 +545,21 @@ class UserController extends Controller
         // récupère l'utilisateur en session
         $user = $this->getUser();
 
+        // Si user a une amende, appelle directement le paiement (il faudrait que la méthode redirige vers ici...pb avec le foreach...)
+        $fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fines = $fineRepo->findUserFines( $user );
+
+        if (!empty($fines)) {
+            foreach ($fines as $fine) {
+                $params = array(
+                    "fineId" => $fine->getId(),
+                    "cout" => $fine->getAmount(),
+                    );
+                $url = $this->generateUrl("bdloc_app_payment_takeautomaticalfinepayment", $params);
+                return $this->redirect($url);
+            }
+        }
+
         // on récupère l'utilisateur pour vérifier que l'email et la token correspondent
         $subscriptionRenewal = $user->getSubscriptionRenewal();
         $today = new \DateTime("-1 day");
@@ -573,7 +588,7 @@ class UserController extends Controller
         $user = $this->getUser();
 
         // --------------------- FORMULAIRE RENOUVELLEMENT ---------------------
-        $creditCards = $user->getCreditCards();
+        /*$creditCards = $user->getCreditCards();
         //dump($creditCards);
         //die();
         foreach ($creditCards as $creditCard) {
@@ -582,7 +597,12 @@ class UserController extends Controller
             $userCCDate = $creditCard->getValidUntil();
         }
         //dump( $userCCDate );
-        //die();
+        //die();*/
+        
+        $creditCardRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:CreditCard");
+        $creditCard = $creditCardRepo->findLastCreditCardWithUserId( $user->getId() );
+        $userCCDate = $creditCard->getValidUntil();
+
         $today = new \DateTime("-1 day");
         if ( $userCCDate < $today ){
             // Reprendre une nouvelle carte
@@ -629,7 +649,8 @@ class UserController extends Controller
         $em->refresh( $user );
 
         // rediriger vers default home
-        return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+        //return $this->redirect($this->generateUrl("bdloc_app_default_home"));
+        return $this->redirect($this->generateUrl("logout"));
     }
 
 

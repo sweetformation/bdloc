@@ -246,6 +246,7 @@
 
 #amende {
     margin-left: 40px;
+    margin-bottom: 50px;
     overflow: hidden;
 }
 
@@ -253,16 +254,23 @@
     line-height: 1.3em;
 }
 
+.amendes {
+    margin-left: 60px;
+}
+
 .payer {
+    background-color: #272928;
+    color: #fff;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 10px;
+    margin-left: 0px;
     padding: 5px;
 
 }
 
 .payer:hover {
     border: 2px solid #fe8e2b;
+    color: #fe8e2b;
 }
 
 .paiments {

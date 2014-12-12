@@ -13,13 +13,16 @@ use Doctrine\ORM\EntityRepository;
 class CreditCardRepository extends EntityRepository
 {
 
-    public function findCreditCardWithUserId($id)
+    public function findLastCreditCardWithUserId($id)
     {
         $query = $this->createQueryBuilder('c')
             ->addSelect('u')
+            //->addSelect('c, MAX(c.validUntil) AS max_date')
             ->join('c.user', 'u')
             ->where('u.id = :id')
             ->setParameter('id', $id)
+            ->orderBy('c.validUntil', 'DESC')
+            ->setMaxResults( 1 )
             ->getQuery();
 
         try {

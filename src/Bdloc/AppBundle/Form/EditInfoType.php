@@ -16,25 +16,25 @@ class EditInfoType extends AbstractType
     {
         $builder
             ->add('username', 'text', array(
-                "label" => "Pseudo"
+                "label" => "Pseudo*"
                 ))
             ->add('email', 'email', array(
-                "label" => "Email"
+                "label" => "Email*"
                 ))
             ->add('firstName', 'text', array(
-                "label" => "Nom"
+                "label" => "Nom*"
                 ))
             ->add('lastName', 'text', array(
-                "label" => "Prénom"
+                "label" => "Prénom*"
                 ))
             ->add('address', 'text', array(
-                "label" => "Adresse (num, rue, app)"
+                "label" => "Adresse (num, rue, app)*"
                 ))
             ->add('zip', 'text', array(
-                "label" => "Code Postal"
+                "label" => "Code Postal*"
                 ))
             ->add('phone', 'text', array(
-                "label" => "Téléphone"
+                "label" => "Téléphone*"
                 ))
             ->add('submit', 'submit', array(
                 "label" => "Modifier"

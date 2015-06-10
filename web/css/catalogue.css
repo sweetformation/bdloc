@@ -34,11 +34,19 @@
 }*/
 
 #formFiltres #disposidebar {
-    margin: 60px 20px;
+    margin: 20px 20px 0;
 }
 
 #formFiltres #filtresidebar {
-    margin: 0 20px 0 30px;
+    margin: 0 0 10px 30px;
+}
+
+#formFiltres .enligne {
+    display: inline-block;
+}
+
+#formFiltres .filtre {
+    margin-right: 10px;
 }
 
 #aside input[type="text"],
@@ -60,14 +68,14 @@
 }
 
 #formFiltres #soumission {
-    margin: 50px 20px 0 0;
+    margin: 10px 20px 0 20px;
 }
 
 #formFiltres #soumission input[type="submit"] {
     background: #272928;
     color: #fff;    
     cursor: pointer;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     padding: 10px;
 }
 
@@ -126,6 +134,7 @@
     margin: 4px;
     padding: 5px;
     width: 49%;
+    min-height: 291px;
     /*max-width: 220px;
     min-height: 585px;*/
 }

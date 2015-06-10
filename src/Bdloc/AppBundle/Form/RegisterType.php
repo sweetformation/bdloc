@@ -16,35 +16,38 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('username', 'text', array(
-                "label" => "Pseudo"
+                "label" => "Pseudo*"
                 ))
             ->add('email', 'email', array(
-                "label" => "Email"
+                "label" => "Email*"
                 ))
             ->add('password', 'repeated', array(
                 'type' => 'password',
                 'invalid_message' => 'Les mots de passe doivent correspondre',
                 'options' => array('required' => true),
-                'first_options'  => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Mot de passe (confirmation)'),
+                'first_options'  => array('label' => 'Mot de passe*'),
+                'second_options' => array('label' => 'Mot de passe (confirmation)*'),
                 ))
             //->add('token')
             //->add('salt')
             //->add('roles')
             ->add('firstName', 'text', array(
-                "label" => "Nom"
+                "label" => "Nom*"
                 ))
             ->add('lastName', 'text', array(
-                "label" => "Prénom"
+                "label" => "Prénom*"
                 ))
             ->add('address', 'text', array(
-                "label" => "Adresse (num, rue, app)"
+                "label" => "Adresse (num, rue, app)*"
                 ))
             ->add('zip', 'text', array(
-                "label" => "Code Postal"
+                "label" => "Code Postal* (PARIS!)",
+                'attr' => array(
+                        'value' => '75',
+                    )
                 ))
             ->add('phone', 'text', array(
-                "label" => "Téléphone"
+                "label" => "Téléphone*"
                 ))
             //->add('isEnabled')
             //->add('dateCreated')

@@ -191,12 +191,57 @@ class CartController extends Controller
         $params['itemsNumber'] = $itemsNumber;
       
         // Maj statut panier
+        /*$cart->setStatus( "validé" );
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($cart);
+        $em->flush();*/
+        
+        return $this->render("cart/validate.html.twig", $params);
+    }
+
+    /**
+     * @Route("/commande")
+     */
+    public function commandAction()
+    {         
+
+        $params = array();
+        $user = $this->getUser();
+
+        // Si user a une amende, le rediriger vers page amende!
+        /*$fineRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Fine");
+        $fines = $fineRepo->findUserFines( $user );
+
+        if (!empty($fines)) {
+            $url = $this->generateUrl("bdloc_app_account_showfinepaymentform");
+            return $this->redirect($url);
+        }*/
+        
+        $cartRepo = $this->getDoctrine()->getRepository("BdlocAppBundle:Cart");
+        $cart = $cartRepo->findUserCurrentCart( $user );
+
+        // Récupération des BDs
+        $cart = $cartRepo->findBooksInCurrentCart( $cart->getId() );
+
+        /*$params['cart'] = $cart;*/
+
+        // récupération du nb dans panier
+        /*$itemsNumber = count($cart->getCartItems());
+        $params['itemsNumber'] = $itemsNumber;*/
+      
+        // Maj statut panier
         $cart->setStatus( "validé" );
         $em = $this->getDoctrine()->getManager();
         $em->persist($cart);
         $em->flush();
+
+        // Créer un message qui ne s'affichera qu'une fois
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Commande validée !'
+        );
         
-        return $this->render("cart/validate.html.twig", $params);
+        return $this->redirect($this->generateUrl("bdloc_app_book_catalogredirect"));
     }
 
     /**

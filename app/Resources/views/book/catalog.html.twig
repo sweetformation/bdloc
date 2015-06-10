@@ -47,13 +47,6 @@
                     <li><input type="checkbox" name="categories[]" value="Science-fiction" id="Science-fiction" class="catCheck" {% for category in categories %}{% if category == "Science-fiction" %} checked="checked" {% endif %}{% endfor %}><label class="catLabCheck" for="Science-fiction">Science-fiction</label></li>
                 </ul>
             </div>
-            <div id="disposidebar" class="left">
-                <p class="filtre">Disponibilité :</p>
-                <ul>   
-                    <li><input type="radio" name="availability[]" id="toutes" class="catCheck" value="0" {% if availability == 0 %} checked="checked" {% endif %}><label class="catLabCheck" for="toutes">Toutes</label></li>
-                    <li><input type="radio" name="availability[]" id="disponibles" class="catCheck" value="1" {% if availability == 1 %} checked="checked" {% endif %}><label class="catLabCheck" for="disponibles">Disponibles</label></li>
-                </ul>
-            </div>
             <div id="filtresidebar" class="left">
                 <!-- <p class="filtre">Filtres :</p> -->
                 <div id="Keywords">
@@ -76,9 +69,16 @@
                     </select>
                 </div>
             </div>
-            <div id="soumission" class="left">
+            <div id="disposidebar" class="left">
+                <p class="filtre enligne">Disponibilité :</p>
+                <ul class="enligne">   
+                    <li class="filtre enligne"><input type="radio" name="availability[]" id="toutes" class="catCheck" value="0" {% if availability == 0 %} checked="checked" {% endif %}><label class="catLabCheck" for="toutes">Toutes</label></li>
+                    <li class="filtre enligne"><input type="radio" name="availability[]" id="disponibles" class="catCheck" value="1" {% if availability == 1 %} checked="checked" {% endif %}><label class="catLabCheck" for="disponibles">Disponibles</label></li>
+                </ul>
+            </div>
+            <div id="soumission" class="right">
                 <input type="submit" value="Rechercher" />
-                <div id="resultatsBD"><span class="orange">{{ nbBooks }}</span> BD(s)<br /> trouvée(s)</div>
+                <div id="resultatsBD" class="enligne"><span class="orange">{{ nbBooks }}</span> BD(s) trouvée(s)</div>
             </div>
         </form>
     </aside>

@@ -75,6 +75,10 @@
     padding: 5px;
 }
 
+#requis {
+    margin: 0 0 50px 260px;
+}
+
 
 
 
@@ -124,6 +128,10 @@
 
 #mdpoublie:hover {
     text-decoration: underline;
+}
+
+#creerCompte {
+    margin: 20px;
 }
 
 

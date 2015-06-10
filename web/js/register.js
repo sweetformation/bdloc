@@ -35,7 +35,11 @@ register = {
         //console.log(input)
 
         // Paramètres
+        var southWest = new google.maps.LatLng( 48.7, 2.2 )
+        var northEast = new google.maps.LatLng( 48.9, 2.4 )
+        var myBounds = new google.maps.LatLngBounds( southWest, northEast )
         var options = {
+            bounds: myBounds,
             types: ['address'],
             componentRestrictions: {
                 country: 'fr'

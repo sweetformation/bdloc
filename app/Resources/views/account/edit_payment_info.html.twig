@@ -4,5 +4,6 @@
 
 {% block main_content %}
     <h1>Modifier mes informations de paiement</h1>
+    <p class="decale">Il s'agit d'un site fictif d'utilisation de Symfony2, si vous rentrez un numéro de carte de crédit différent de celui pré-rempli et masqué, l'application va accepter mais <strong>n'effectuera pas</strong> les changements en BDD.</p>
     {{ form(creditCardChangeForm, {'attr': {'novalidate': 'novalidate'}}) }}
 {% endblock %}

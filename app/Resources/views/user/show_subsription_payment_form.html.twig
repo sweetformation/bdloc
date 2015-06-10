@@ -11,7 +11,7 @@
         <ul>
             <li {% if app.request.getPathInfo == '/abonnement/inscription' %} class="etapeActive" {% endif %}>1.Informations personnelles</li>
             <li {% if app.request.getPathInfo == '/abonnement/choix-point-relais' %} class="etapeActive" {% endif %}>2.Choix du point relais</li>
-            <li {% if app.request.getPathInfo == '/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix du mode d'abonnement et paiement</li>
+            <li {% if app.request.getPathInfo == '/abonnement/choix-de-paiement' %} class="etapeActive" {% endif %}>3.Choix abonnement et paiement</li>
         </ul>
     </div>
     <h1 class="formTitle">Abonnement | Choix du paiement</h1>
@@ -25,6 +25,7 @@
     </div>
     <div id="presentationAbo">
         <h2>Choisissez votre type d'abonnement</h2>
+        <p>*Il s'agit d'un site fictif d'utilisation de Symfony2, si vous rentrez un numéro de carte de crédit différent de celui pré-rempli (numéro de test), l'application vous représentera la même page.</p>
         <!-- <div id="choixAbo">
             <label><input type="radio" name="abonnement" value="mensuel">Mensuel</label>
             <label><input type="radio" name="abonnement" value="annuel" checked="checked">Annuel</label>

@@ -42,7 +42,7 @@ h1 {
     margin: 20px;
 }
 
-h1.center {
+.center {
     text-align: center;
 }
 
@@ -294,7 +294,7 @@ select:hover {
 #fond {
     background: url(../img/appearances/planche1.png) no-repeat 0 0;
     height: 424px;
-    margin: 0 auto 50px;
+    margin: 0 auto 20px;
     opacity: 0.3;
     position: relative;
     /*padding-top: 50px;*/
@@ -313,7 +313,7 @@ select:hover {
     top: 50%;
     left: 50%;
     margin-left: -250px;
-    margin-top: -115px;
+    margin-top: -190px; /*-60px;*/ /*-115px;*/
     padding: 20px;
     width: 500px;
 }
@@ -336,6 +336,16 @@ select:hover {
     height: 55px;
     margin: 10px 0 0 85px;
     width: 281px;
+}
+
+#sitetest {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+}
+
+#sitetest .underline {
+    font-size: 1.5em;
+    text-decoration: underline;
 }
 
 #abo img:hover {

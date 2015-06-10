@@ -245,7 +245,7 @@ class AccountController extends Controller
         $request = $this->getRequest();
         $creditCardChangeForm->handleRequest($request);
 
-        if ($creditCardChangeForm->isValid()) {
+        /*if ($creditCardChangeForm->isValid()) {
 
                 // On récupère les infos de paypal
                 $paypalCC_id = $ppu->registerCreditCard();
@@ -256,7 +256,7 @@ class AccountController extends Controller
                 $em = $this->getDoctrine()->getManager(); 
                 $em->persist($creditCard);   
                 $em->flush();
-        }
+        }*/
 
         $params['creditCardChangeForm'] = $creditCardChangeForm->createView();
         

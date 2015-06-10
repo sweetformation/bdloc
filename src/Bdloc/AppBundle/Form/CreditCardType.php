@@ -22,23 +22,29 @@ class CreditCardType extends AbstractType
                 'data' => "A"
                 ))
             ->add('creditCardType', null, array(
-                "label" => "Type"
+                "label" => "Type*",
+                'attr' => array(
+                        'value' => 'visa',
+                    )
                 ))
             ->add('creditCardNumber', null, array(
-                "label" => "Numéro"
+                "label" => "Numéro*",
+                'attr' => array(
+                        'value' => '4916549042671181',
+                    )
                 ))
             ->add('expirationDate', 'date', array(
-                'label' =>"Date d'expiration",
+                'label' =>"Date d'expiration*",
                 'format' =>'MMM-yyyy  d',
                 'years' => range(date('Y'), date('Y')+12),
                 'days' => array(1),
                 'empty_value' => array('year' => 'Année', 'month' => 'Mois', 'day' => false)
                 ))
             ->add('codeCVC', null, array(
-                "label" => "Code CVC"
+                "label" => "Code CVC*"
                 ))
             ->add('creditCardLastName', null, array(
-                "label" => "Nom figurant sur la carte",
+                "label" => "Nom figurant sur la carte*",
                 'attr' => array(
                         'placeholder' => 'NOM',
                     )
